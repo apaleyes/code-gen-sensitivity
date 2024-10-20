@@ -14,7 +14,7 @@ for phrase in phrases:
     print(phrase)
     aug = nac.KeyboardAug()
     augmented_texts = aug.augment(phrase, n=1)
-    print("Symbol aug:")
+    print("Keyboard aug:")
     print(augmented_texts)
 
     # wea = naw.WordEmbsAug(
@@ -23,3 +23,7 @@ for phrase in phrases:
     # augmented_texts = wea.augment(phrase, n=1)
     # print("Word embedding aug:")
     # print(augmented_texts)
+    aug = naw.SpellingAug(aug_p=0.5)
+    augmented_texts = aug.augment(phrase, n=1)
+    print("Spelling aug:")
+    print(augmented_texts)
