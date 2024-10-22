@@ -37,7 +37,7 @@ def get_code(prompt):
 original_code = get_code(original_prompt)
 typo_percentages = range(0, 105, 5)
 
-n_repeats = 10
+n_repeats = 20
 # Sometimes requests to Gemini seem to fail with a reason completely beyond user's control:
 #############
 #  ValueError: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 4. Meaning that the model was reciting from copyrighted material.
