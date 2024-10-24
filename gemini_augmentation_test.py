@@ -18,7 +18,16 @@ def get_code_dummy(prompt):
     return "def calc(x, y):\n    return x + y"
 
 def get_code(prompt):
-    response = model.generate_content(prompt)
+    # possible values range from 0 to 2
+    # default is 1
+    # we use 0 to minimise variation unrelated to our changes
+    temperature = 0.0
+    response = model.generate_content(
+        prompt,
+        generation_config=genai.types.GenerationConfig(
+            temperature=temperature,
+        )
+    )
 
     # annoyingly, it seems to always wrap responses in ```python ... ```
     # here is a hacky way to remove these, so that we only deal with code itself
@@ -37,7 +46,7 @@ def get_code(prompt):
 original_code = get_code(original_prompt)
 typo_percentages = range(0, 105, 5)
 
-n_repeats = 20
+n_repeats = 10
 # Sometimes requests to Gemini seem to fail with a reason completely beyond user's control:
 #############
 #  ValueError: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 4. Meaning that the model was reciting from copyrighted material.
