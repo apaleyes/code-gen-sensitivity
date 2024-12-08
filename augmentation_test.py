@@ -12,10 +12,10 @@ phrases = [
 for phrase in phrases:
     print("Original:")
     print(phrase)
-    aug = nac.KeyboardAug()
-    augmented_texts = aug.augment(phrase, n=1)
-    print("Keyboard aug:")
-    print(augmented_texts)
+    # aug = nac.KeyboardAug(aug_char_p=0.1, aug_word_p=1.0, aug_word_max=len(phrase))
+    # augmented_texts = aug.augment(phrase, n=1)
+    # print("Keyboard aug:")
+    # print(augmented_texts)
 
     # wea = naw.WordEmbsAug(
     #     model_type='word2vec', model_path=model_dir+'GoogleNews-vectors-negative300.bin',
@@ -23,7 +23,14 @@ for phrase in phrases:
     # augmented_texts = wea.augment(phrase, n=1)
     # print("Word embedding aug:")
     # print(augmented_texts)
-    aug = naw.SpellingAug(aug_p=0.5)
+    # aug = naw.SpellingAug(aug_p=0.5)
+    # augmented_texts = aug.augment(phrase, n=1)
+    # print("Spelling aug:")
+    # print(augmented_texts)
+
+
+
+    aug = naw.SynonymAug(aug_p=0.5)
     augmented_texts = aug.augment(phrase, n=1)
     print("Spelling aug:")
     print(augmented_texts)

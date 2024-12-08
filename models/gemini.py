@@ -54,3 +54,8 @@ class Gemini(BaseModel):
 
         code_text = "\n".join(lines)
         return code_text
+
+    @property
+    def call_timeout(self):
+        # This is to stay within free tier for Gemini
+        return 5

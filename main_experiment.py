@@ -1,68 +1,69 @@
-# for access to Gemini, see https://ai.google.dev/gemini-api/docs/quickstart?lang=python
-
-import os
 import time
 import json
 import datetime
 
 import nlpaug.augmenter.char as nac
+import nlpaug.augmenter.word as naw
 from TSED import TSED
 
-from models.dummy import Dummy
-from models.gemini import Gemini
-from models.openai import OpenAI
+from models import get_model
 
+model_name = "openai" # possible values 'openai', 'gemini', 'dummy'
+augmentation_method = "synonym" # possible values 'keyboard', 'synonym'
 prompt_title = "calculator"
-original_prompt = "Write a Calculator class in Python. It shall contain common operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry."
-original_prompt = original_prompt + " " +  "Output only Python code and nothing else. CRITICAL:Do not include any markdown _or_ code block indicators."
+original_prompt = "Write a Calculator class. It shall contain common operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry."
+def get_full_prompt(prompt):
+    prefix = "Write Python code."
+    postfix = "Output only Python code and nothing else. CRITICAL:Do not include any markdown _or_ code block indicators."
+    return prefix + prompt + postfix
 
 #########################
 # configuration
 #########################
-# model = Dummy()
-# model = Gemini()
-model = OpenAI()
-original_code = model.get_code(original_prompt)
-typo_percentages = range(0, 105, 5)
+model = get_model(model_name)
+original_code = model.get_code(get_full_prompt(original_prompt))
+all_aug_rates = [x / 100.0 for x in range(0, 105, 5)] 
 n_repeats = 10
-
-# set to 5 to stay within free tier for Gemini
-# maybe worth making this a model-level hard-coded setting
-timeout = 1
 
 
 experiment_data = {}
 experiment_data["llm_model"] = model.name
 experiment_data["prompt_title"] = prompt_title
 experiment_data["original_prompt"] = original_prompt
-experiment_data["augmentation_method"] = "Keyboard"
+experiment_data["augmentation_method"] = augmentation_method
 experiment_data["parameters"] = {
     "temperature": 0.0,
     "n_repeats": n_repeats,
 }
 experiment_data["measurements"] = []
 
-for typo_percentage in typo_percentages:
-    typo_rate = typo_percentage / 100.0
-    augmenter = nac.KeyboardAug(aug_char_p=typo_percentage / 100.0, aug_char_min=0)
+for aug_rate in all_aug_rates:
+    if experiment_data["augmentation_method"].lower() == "keyboard":
+        # work out a proper way to calculate these rates
+        # aug_char_p and aug_word_p in combination should give aug_rate
+        augmenter = nac.KeyboardAug(aug_char_p=aug_rate, aug_word_p=aug_rate, aug_char_min=0, aug_word_max=len(original_prompt))
+    elif experiment_data["augmentation_method"].lower() == "synonym":
+        augmenter = naw.SynonymAug(aug_p=aug_rate, aug_max=len(original_prompt))
+    else:
+        raise ValueError(f"Unknown augmentation method {experiment_data['augmentation_method']}")
 
     for i in range(n_repeats):
         augmented_prompt = augmenter.augment(original_prompt, n=1)[0]
 
-        new_code = model.get_code(augmented_prompt)
+        new_code = model.get_code(get_full_prompt(augmented_prompt))
 
         similarity_score = TSED.Calaulte("python", original_code, new_code, 1.0, 0.8, 1.0)
-        print(f"Typo percentage: {typo_percentage}, similarity score: {similarity_score}")
+        print(f"Augmentation percentage: {aug_rate * 100}, similarity score: {similarity_score}")
 
         experiment_data["measurements"].append({
             "n_repeat": i,
-            "augmentation_rate": typo_rate,
+            "augmentation_rate": aug_rate,
             "code_similarity": similarity_score
         })
-        time.sleep(timeout)
+        time.sleep(model.call_timeout)
 
 timestamp_now = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-experiment_data["id"] = f"{experiment_data['llm_model']}-{experiment_data['prompt_title']}-{timestamp_now}"
+experiment_data["id"] = f"{experiment_data['llm_model']}-{experiment_data['prompt_title']}-{experiment_data['augmentation_method']}-{timestamp_now}"
 
 with open(experiment_data["id"] + ".json", 'w') as f:
     json.dump(experiment_data, f, indent=4)

@@ -6,3 +6,7 @@ class Dummy(BaseModel):
     
     def get_code(self, prompt):
         return "def calc(x, y):\n    return x + y"
+    
+    @property
+    def call_timeout(self):
+        return 0

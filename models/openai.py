@@ -45,3 +45,7 @@ class OpenAI(BaseModel):
 
         code_text = "\n".join(lines)
         return code_text
+
+    @property
+    def call_timeout(self):
+        return 1

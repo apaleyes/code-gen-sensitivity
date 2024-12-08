@@ -1,0 +1,1063 @@
+{
+    "llm_model": "OpenAI",
+    "prompt_title": "calculator",
+    "original_prompt": "Write a Calculator class. It shall contain common operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry.",
+    "augmentation_method": "synonym",
+    "parameters": {
+        "temperature": 0.0,
+        "n_repeats": 10
+    },
+    "measurements": [
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.0,
+            "code_similarity": 0.8454106280193237
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.0,
+            "code_similarity": 0.9227053140096618
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.0,
+            "code_similarity": 0.5363984674329502
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.0,
+            "code_similarity": 0.7251063829787233
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.0,
+            "code_similarity": 0.8695652173913043
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.0,
+            "code_similarity": 1.0
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.0,
+            "code_similarity": 0.8753623188405797
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.0,
+            "code_similarity": 0.5990338164251208
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.0,
+            "code_similarity": 0.8599033816425121
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.0,
+            "code_similarity": 0.6095505617977538
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.05,
+            "code_similarity": 0.8571428571428571
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.05,
+            "code_similarity": 0.8685990338164252
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.05,
+            "code_similarity": 1.0
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.05,
+            "code_similarity": 1.0
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.05,
+            "code_similarity": 0.8599033816425121
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.05,
+            "code_similarity": 0.8454106280193237
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.05,
+            "code_similarity": 1.0
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.05,
+            "code_similarity": 0.9468599033816425
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.05,
+            "code_similarity": 0.8985507246376812
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.05,
+            "code_similarity": 0.8571428571428571
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.1,
+            "code_similarity": 0.45290322580644954
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.1,
+            "code_similarity": 0.8985507246376812
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.1,
+            "code_similarity": 0.6560386473429953
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.1,
+            "code_similarity": 1.0
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.1,
+            "code_similarity": 0.782608695652174
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.1,
+            "code_similarity": 0.9227053140096618
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.1,
+            "code_similarity": 0.5421203438395414
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.1,
+            "code_similarity": 0.4889705882352943
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.1,
+            "code_similarity": 0.49951690821256056
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.1,
+            "code_similarity": 1.0
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.15,
+            "code_similarity": 0.8560386473429951
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.15,
+            "code_similarity": 0.9004830917874397
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.15,
+            "code_similarity": 0.9227053140096618
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.15,
+            "code_similarity": 0.9429906542056076
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.15,
+            "code_similarity": 1.0
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.15,
+            "code_similarity": 0.9227053140096618
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.15,
+            "code_similarity": 0.6389705882352947
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.15,
+            "code_similarity": 0.782608695652174
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.15,
+            "code_similarity": 0.782608695652174
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.15,
+            "code_similarity": 0.8985507246376812
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.2,
+            "code_similarity": 0.8985507246376812
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.2,
+            "code_similarity": 1.0
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.2,
+            "code_similarity": 0.8985507246376812
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.2,
+            "code_similarity": 0.4859903381642513
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.2,
+            "code_similarity": 0.8685990338164252
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.2,
+            "code_similarity": 0.782608695652174
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.2,
+            "code_similarity": 0.7342995169082127
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.2,
+            "code_similarity": 0.7739130434782608
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.2,
+            "code_similarity": 0.6231884057971014
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.2,
+            "code_similarity": 0.7342995169082127
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.25,
+            "code_similarity": 0.7746478873239436
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.25,
+            "code_similarity": 0.524861878453039
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.25,
+            "code_similarity": 0.7394736842105265
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.25,
+            "code_similarity": 0.8019323671497585
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.25,
+            "code_similarity": 0.9468599033816425
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.25,
+            "code_similarity": 0.6862559241706164
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.25,
+            "code_similarity": 0.7816425120772947
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.25,
+            "code_similarity": 0.8454106280193237
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.25,
+            "code_similarity": 0.9468599033816425
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.25,
+            "code_similarity": 0.7816425120772947
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.3,
+            "code_similarity": 0.8637681159420291
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.3,
+            "code_similarity": 0.524861878453039
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.3,
+            "code_similarity": 0.8454106280193237
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.3,
+            "code_similarity": 0.8685990338164252
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.3,
+            "code_similarity": 0.8830917874396136
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.3,
+            "code_similarity": 0.5130434782608696
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.3,
+            "code_similarity": 0.7796610169491526
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.3,
+            "code_similarity": 0.7191489361702132
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.3,
+            "code_similarity": 0.9227053140096618
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.3,
+            "code_similarity": 0.5560693641618506
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.35,
+            "code_similarity": 0.8019323671497585
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.35,
+            "code_similarity": 0.5386666666666673
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.35,
+            "code_similarity": 0.8695652173913043
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.35,
+            "code_similarity": 1.0
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.35,
+            "code_similarity": 0.7924170616113745
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.35,
+            "code_similarity": 0.7120772946859903
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.35,
+            "code_similarity": 0.8502415458937198
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.35,
+            "code_similarity": 0.4357487922705315
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.35,
+            "code_similarity": 0.876328502415459
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.35,
+            "code_similarity": 0.43294797687861314
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.4,
+            "code_similarity": 0.7164444444444444
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.4,
+            "code_similarity": 0.688888888888889
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.4,
+            "code_similarity": 0.9130434782608695
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.4,
+            "code_similarity": 0.5386666666666673
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.4,
+            "code_similarity": 0.18550724637681162
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.4,
+            "code_similarity": 0.8231884057971015
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.4,
+            "code_similarity": 0.7236714975845411
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.4,
+            "code_similarity": 0.5495844875346261
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.4,
+            "code_similarity": 0.6328502415458938
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.4,
+            "code_similarity": 0.22651515151515123
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.45,
+            "code_similarity": 0.7352657004830919
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.45,
+            "code_similarity": 0.4608695652173913
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.45,
+            "code_similarity": 0.6887892376681612
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.45,
+            "code_similarity": 0.9004830917874397
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.45,
+            "code_similarity": 0.876328502415459
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.45,
+            "code_similarity": 0.688888888888889
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.45,
+            "code_similarity": 0.8144927536231884
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.45,
+            "code_similarity": 0.45290322580644954
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.45,
+            "code_similarity": 1.0
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.45,
+            "code_similarity": 0.4823151125401932
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.5,
+            "code_similarity": 0.4792270531400966
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.5,
+            "code_similarity": 0.3410094637223956
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.5,
+            "code_similarity": 0.1574879227053137
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.5,
+            "code_similarity": 0.8183574879227054
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.5,
+            "code_similarity": 0.8251207729468599
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.5,
+            "code_similarity": 0.6507288629737614
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.5,
+            "code_similarity": 0.5227053140096618
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.5,
+            "code_similarity": 0.6840579710144928
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.5,
+            "code_similarity": 0.7584541062801933
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.5,
+            "code_similarity": 0.16607142857142826
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.55,
+            "code_similarity": 0.7429951690821257
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.55,
+            "code_similarity": 0.5118644067796608
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.55,
+            "code_similarity": 0.7739130434782608
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.55,
+            "code_similarity": 0.6280193236714976
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.55,
+            "code_similarity": 0.178743961352657
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.55,
+            "code_similarity": 0.354985754985754
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.55,
+            "code_similarity": 0.6681034482758621
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.55,
+            "code_similarity": 0.8019323671497585
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.55,
+            "code_similarity": 0.5257617728531859
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.55,
+            "code_similarity": 0.5362318840579713
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.6,
+            "code_similarity": 0.39999999999999997
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.6,
+            "code_similarity": 0.7741071428571429
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.6,
+            "code_similarity": 0.7741071428571429
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.6,
+            "code_similarity": 0.8637681159420291
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.6,
+            "code_similarity": 0.27350427350427337
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.6,
+            "code_similarity": 0.9004830917874397
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.6,
+            "code_similarity": 0.3855072463768118
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.6,
+            "code_similarity": 0.27931034482758615
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.6,
+            "code_similarity": 0.8695652173913043
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.6,
+            "code_similarity": 0.27530364372469623
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.65,
+            "code_similarity": 0.2241545893719807
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.65,
+            "code_similarity": 0.3744680851063833
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.65,
+            "code_similarity": 0.4643216080402014
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.65,
+            "code_similarity": 0.34396135265700506
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.65,
+            "code_similarity": 0.5461773700305812
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.65,
+            "code_similarity": 0.5053140096618357
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.65,
+            "code_similarity": 0.5449275362318841
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.65,
+            "code_similarity": 0.45893719806763295
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.65,
+            "code_similarity": 0.8086538461538461
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.65,
+            "code_similarity": 0.16908212560386474
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.7,
+            "code_similarity": 0.31006289308176
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.7,
+            "code_similarity": 0.13014354066985626
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.7,
+            "code_similarity": 0.8531400966183574
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.7,
+            "code_similarity": 0.5120772946859904
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.7,
+            "code_similarity": 0.5584541062801933
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.7,
+            "code_similarity": 0.4225165562913913
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.7,
+            "code_similarity": 0.2792270531400968
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.7,
+            "code_similarity": 0.29880668257756354
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.7,
+            "code_similarity": 0.2946859903381641
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.7,
+            "code_similarity": 0.2695652173913045
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.75,
+            "code_similarity": 0.7741071428571429
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.75,
+            "code_similarity": 0.7584541062801933
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.75,
+            "code_similarity": 0.37345399698340664
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.75,
+            "code_similarity": 0.8222222222222222
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.75,
+            "code_similarity": 0.3884057971014493
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.75,
+            "code_similarity": 0.6357798165137616
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.75,
+            "code_similarity": 0.4603248259860775
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.75,
+            "code_similarity": 0.4804780876494027
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.75,
+            "code_similarity": 0.34106280193236727
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.75,
+            "code_similarity": 0.6028985507246377
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.8,
+            "code_similarity": 0.18840579710144928
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.8,
+            "code_similarity": 0.6821256038647344
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.8,
+            "code_similarity": 0.15072463768115923
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.8,
+            "code_similarity": 0.14975845410627991
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.8,
+            "code_similarity": 0.30171821305841995
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.8,
+            "code_similarity": 0.6666666666666666
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.8,
+            "code_similarity": 0.761352657004831
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.8,
+            "code_similarity": 0.5702702702702711
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.8,
+            "code_similarity": 0.5634615384615387
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.8,
+            "code_similarity": 0.3857142857142859
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.85,
+            "code_similarity": 0.3345345345345337
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.85,
+            "code_similarity": 0.3529790660225421
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.85,
+            "code_similarity": 0.26018518518518513
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.85,
+            "code_similarity": 0.4995169082125606
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.85,
+            "code_similarity": 0.44434389140271513
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.85,
+            "code_similarity": 0.778743961352657
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.85,
+            "code_similarity": 0.7758454106280193
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.85,
+            "code_similarity": 0.3649572649572652
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.85,
+            "code_similarity": 0.4978873239436621
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.85,
+            "code_similarity": 0.14879227053140087
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.9,
+            "code_similarity": 0.26859903381642525
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.9,
+            "code_similarity": 0.34389438943894396
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.9,
+            "code_similarity": 0.5634615384615387
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.9,
+            "code_similarity": 0.5352380952380952
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.9,
+            "code_similarity": 0.30048309178743954
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.9,
+            "code_similarity": 0.3844444444444449
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.9,
+            "code_similarity": 0.5478260869565218
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.9,
+            "code_similarity": 0.31839999999999996
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.9,
+            "code_similarity": 0.8048309178743961
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.9,
+            "code_similarity": 0.8019323671497585
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 0.95,
+            "code_similarity": 0.5004830917874395
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 0.95,
+            "code_similarity": 0.5759036144578313
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 0.95,
+            "code_similarity": 0.385756676557864
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 0.95,
+            "code_similarity": 0.4966183574879227
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 0.95,
+            "code_similarity": 0.44117647058823517
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 0.95,
+            "code_similarity": 0.8251207729468599
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 0.95,
+            "code_similarity": 0.13623188405797096
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 0.95,
+            "code_similarity": 0.33757700205338825
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 0.95,
+            "code_similarity": 0.36521739130434777
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 0.95,
+            "code_similarity": 0.2473429951690818
+        },
+        {
+            "n_repeat": 0,
+            "augmentation_rate": 1.0,
+            "code_similarity": 0.7594202898550724
+        },
+        {
+            "n_repeat": 1,
+            "augmentation_rate": 1.0,
+            "code_similarity": 0.30434782608695665
+        },
+        {
+            "n_repeat": 2,
+            "augmentation_rate": 1.0,
+            "code_similarity": 0.2115942028985509
+        },
+        {
+            "n_repeat": 3,
+            "augmentation_rate": 1.0,
+            "code_similarity": 0.5787439613526572
+        },
+        {
+            "n_repeat": 4,
+            "augmentation_rate": 1.0,
+            "code_similarity": 0.3659305993690853
+        },
+        {
+            "n_repeat": 5,
+            "augmentation_rate": 1.0,
+            "code_similarity": 0.08405797101449237
+        },
+        {
+            "n_repeat": 6,
+            "augmentation_rate": 1.0,
+            "code_similarity": 0.5207729468599034
+        },
+        {
+            "n_repeat": 7,
+            "augmentation_rate": 1.0,
+            "code_similarity": 0.46666666666666673
+        },
+        {
+            "n_repeat": 8,
+            "augmentation_rate": 1.0,
+            "code_similarity": 0.5021428571428574
+        },
+        {
+            "n_repeat": 9,
+            "augmentation_rate": 1.0,
+            "code_similarity": 0.40483091787439646
+        }
+    ],
+    "id": "OpenAI-calculator-synonym-2024-12-08-02-24-54"
+}
