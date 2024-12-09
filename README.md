@@ -16,6 +16,7 @@ git clone https://github.com/Etamin/TSED.git
 ```
 
 Guided tour:
-* [augmentation_test](augmentation_test.py) and [code_distance_test](code_distance_test.py) showcase key dependencies: NLPaug library we use to augment prompts, and TSED method we use to calculate code distance. [dataset](dataset.yml) provides some data for the latter test.
-* [multi-stage-pipeline](multi-stage-pipeline.txt) is and example of what multi-stage code generate pipeline with LLM could look like. It was created with ChatGPT.
-* [Gemini test](gemini_augmentation_test.py) does the augment-generate-measure test using Google's Gemini. It saves a csv file that [analysis](analysis.ipynb) looks at.
+* Any *_test file is just a snippet for trying some package/API. For example, [augmentation_test](augmentation_test.py) showcases NLPaug library we use to augment prompts
+* [dataset](dataset.yml) provides some testing data.
+* [multi-stage-pipeline](multi-stage-pipeline.txt) is and example of what multi-stage code generate pipeline with LLM could look like. It was created with ChatGPT UI.
+* [Main experiment](main_experiment.py) implements an experiment that measures an LLM's sensitivity. It saves a csv file that [analysis](analysis.ipynb) looks at. `models` folder implements intefaces for calling LLM model APIs.
