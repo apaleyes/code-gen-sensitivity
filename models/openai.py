@@ -12,7 +12,7 @@ class OpenAI(BaseModel):
         # we use 0 to minimise variation
         self.temperature = 0.0
 
-    def make_model_call(self, prompt):
+    def __call__(self, prompt):
         completion = self.client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[

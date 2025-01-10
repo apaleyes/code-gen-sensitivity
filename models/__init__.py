@@ -1,3 +1,5 @@
+from .model_caller import ModelCaller
+
 def get_model(model_name):
     if model_name.lower() == "dummy":
         from .dummy import Dummy

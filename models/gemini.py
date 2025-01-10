@@ -16,7 +16,7 @@ class Gemini(BaseModel):
         # we use 0 to minimise variation
         self.temperature = 0.0
 
-    def make_model_call(self, prompt):
+    def __call__(self, prompt):
         response = self.client.generate_content(
             prompt,
             generation_config=genai.types.GenerationConfig(

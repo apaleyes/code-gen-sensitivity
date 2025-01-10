@@ -5,7 +5,7 @@ class Dummy(BaseModel):
         super().__init__("Dummy")
         self.temperature = 0.0
 
-    def make_model_call(self, prompt):
+    def __call__(self, prompt):
         return "def calc(x, y):\n    return x + y"
 
     @property
