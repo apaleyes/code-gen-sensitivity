@@ -1,3 +1,4 @@
+from .base import BaseModel
 from .model_caller import ModelCaller
 
 def get_model(model_name):

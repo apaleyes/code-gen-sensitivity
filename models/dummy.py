@@ -7,7 +7,3 @@ class Dummy(BaseModel):
 
     def __call__(self, prompt):
         return "def calc(x, y):\n    return x + y"
-
-    @property
-    def call_timeout(self):
-        return 0

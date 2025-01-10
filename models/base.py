@@ -8,4 +8,4 @@ class BaseModel():
 
     @property
     def call_timeout(self):
-        raise NotImplementedError()
+        return 0
