@@ -18,7 +18,7 @@ phrases = [
     "Given the business logic code below, implement Flask backend. Do not include example of usage or the business logic, do not repeat any code from this prompt. Only write the Flask API code."
 ]
 
-approaches = ["transformers"]
+approaches = ["parrot", "transformers"]
 
 
 def paraphrase(phrase, approach):
