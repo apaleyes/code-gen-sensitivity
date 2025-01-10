@@ -17,4 +17,4 @@ git clone https://github.com/Etamin/TSED.git
 
 Guided tour:
 * [sandbox](sandbox/) contains different dabbles, small experiments and API tries. [dataset](sandbox/dataset.yml) provides some data for it. [multi-stage-pipeline](sandbox/multi-stage-pipeline.txt) is an example of what multi-stage code generate pipeline with LLM could look like. It was created with ChatGPT.
-* [Main experiment](main_experiment.py) does the augment-generate-measure test. It saves a JSON file with inputs and metrics that [analysis](analysis.ipynb) looks at. LLSs currently supported can be found in [models](models/) folder.
+* [Main experiment](main_experiment.py) does the augment-generate-measure test. It saves a JSON file with inputs and metrics that [analysis](analysis.ipynb) looks at. LLMs currently supported can be found in [models](models/) folder.
