@@ -3,6 +3,12 @@ pandas
 # prompt augmentation
 nlpaug
 
+# paraphrasing
+git+https://github.com/PrithivirajDamodaran/Parrot_Paraphraser.git@main#egg=parrot
+transformers
+sentencepiece
+nltk
+
 # code distance
 apted
 tree_sitter_languages
@@ -11,3 +17,5 @@ pyyaml
 
 # Google Gemini
 google-generativeai
+
+
