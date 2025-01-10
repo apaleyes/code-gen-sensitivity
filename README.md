@@ -16,7 +16,5 @@ git clone https://github.com/Etamin/TSED.git
 ```
 
 Guided tour:
-* Any *_test file is just a snippet for trying some package/API. For example, [augmentation_test](augmentation_test.py) showcases NLPaug library we use to augment prompts
-* [dataset](dataset.yml) provides some testing data.
-* [multi-stage-pipeline](multi-stage-pipeline.txt) is and example of what multi-stage code generate pipeline with LLM could look like. It was created with ChatGPT UI.
-* [Main experiment](main_experiment.py) implements an experiment that measures an LLM's sensitivity. It saves a csv file that [analysis](analysis.ipynb) looks at. `models` folder implements intefaces for calling LLM model APIs.
+* [sandbox](sandbox/) contains different dabbles, small experiments and API tries. [dataset](sandbox/dataset.yml) provides some data for it. [multi-stage-pipeline](sandbox/multi-stage-pipeline.txt) is an example of what multi-stage code generate pipeline with LLM could look like. It was created with ChatGPT.
+* [Main experiment](main_experiment.py) does the augment-generate-measure test. It saves a JSON file with inputs and metrics that [analysis](analysis.ipynb) looks at. LLSs currently supported can be found in [models](models/) folder.

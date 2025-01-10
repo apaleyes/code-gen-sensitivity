@@ -11,7 +11,7 @@
 import warnings
 warnings.filterwarnings("ignore")
 
-from TSED import TSED
+from ..TSED import TSED
 import yaml
 
 with open('dataset.yml', 'r') as dataset_file:
