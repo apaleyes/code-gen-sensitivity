@@ -63,6 +63,6 @@ class ModelCaller:
                 else:
                     print("Request failed, retrying")
         else:
-            raise ValueError(f"Failed to get valid code from {self.name}")
+            raise RuntimeError(f"Failed to get valid code from {self.model.name}")
 
         return code_string
