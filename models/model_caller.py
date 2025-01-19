@@ -1,4 +1,5 @@
 import time
+from typing import Callable
 
 from .base import BaseModel
 
@@ -31,7 +32,13 @@ def is_valid_python_code(code_string):
     return True
 
 class ModelCaller:
-    def __init__(self, model: BaseModel):
+    """A class to make calls the given LLM model.
+
+    Args:
+        n_retries: number of times to retry if model call fails for any reason
+        prompt_transform: a function that can apply some tranformation to the prompt
+    """
+    def __init__(self, model: BaseModel, n_retries: int = 10, prompt_transform: Callable = None):
         self.model = model
 
         # Sometimes requests to Gemini seem to fail with a reason completely beyond user's control.
@@ -41,9 +48,22 @@ class ModelCaller:
         # Also LLMs may occasionally output invalid code
         # To account for it, we want to retry a few times
         # it normally works fine on first retry, but sometimes multiple retries are necesasary
-        self.n_retries = 10
+        self.n_retries = n_retries
+
+        # This is necessary to apply static changes to prompts
+        # aka prompt engineering
+        # for example, say something like "output only Python code"
+        # which is important to keep the experiment clean
+        # but clearly not something we want to augment in the experiment
+        self.prompt_transform = prompt_transform
 
     def get_code(self, prompt):
+        """
+        Calls the wrapped model with the given prompt and returns the generated code.
+        """
+        if self.prompt_transform is not None:
+            prompt = self.prompt_transform(prompt)
+
         # see note in __init__ on retries
         for _ in range(self.n_retries):
             try:

@@ -6,22 +6,19 @@ import nlpaug.augmenter.word as naw
 from TSED import TSED
 
 from models import get_model, ModelCaller
+from utils import ensure_python_code_prompt
 
 model_name = "gemini" # possible values 'openai', 'gemini', 'dummy'
 augmentation_method = "synonym" # possible values 'keyboard', 'synonym'
 prompt_title = "calculator"
 original_prompt = "Write a Calculator class. It shall contain common operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry."
-def get_full_prompt(prompt):
-    prefix = "Write Python code."
-    postfix = "Output only Python code and nothing else. CRITICAL:Do not include any markdown _or_ code block indicators."
-    return prefix + prompt + postfix
 
 #########################
 # configuration
 #########################
 model = get_model(model_name)
-model_caller = ModelCaller(model)
-original_code = model_caller.get_code(get_full_prompt(original_prompt))
+model_caller = ModelCaller(model, prompt_transform=ensure_python_code_prompt)
+original_code = model_caller.get_code(original_prompt)
 all_aug_rates = [x / 100.0 for x in range(0, 105, 5)] 
 n_repeats = 1
 
@@ -50,7 +47,7 @@ for aug_rate in all_aug_rates:
     for i in range(n_repeats):
         augmented_prompt = augmenter.augment(original_prompt, n=1)[0]
 
-        new_code = model_caller.get_code(get_full_prompt(augmented_prompt))
+        new_code = model_caller.get_code(augmented_prompt)
 
         similarity_score = TSED.Calaulte("python", original_code, new_code, 1.0, 0.8, 1.0)
         print(f"Augmentation percentage: {aug_rate * 100}, similarity score: {similarity_score}")
