@@ -8,19 +8,22 @@ from TSED import TSED
 from models import get_model, ModelCaller
 from utils import ensure_python_code_prompt
 
-model_name = "gemini" # possible values 'openai', 'gemini', 'dummy'
+
+#########################
+# experiment configuration
+# TODO: this should probably be passed in as arguments or json file
+#########################
+model_name = "claude" # possible values 'openai', 'gemini', 'dummy', 'claude'
 augmentation_method = "synonym" # possible values 'keyboard', 'synonym'
 prompt_title = "calculator"
 original_prompt = "Write a Calculator class. It shall contain common operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry."
+n_repeats = 2
 
-#########################
-# configuration
-#########################
+
 model = get_model(model_name)
 model_caller = ModelCaller(model, prompt_transform=ensure_python_code_prompt)
 original_code = model_caller.get_code(original_prompt)
 all_aug_rates = [x / 100.0 for x in range(0, 105, 5)] 
-n_repeats = 1
 
 
 experiment_data = {}

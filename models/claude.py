@@ -30,12 +30,11 @@ class Claude(BaseModel):
             model="claude-3-haiku-20240307",
         )
 
-        return message.content
+        return message.content[0].text
 
     @property
     def call_timeout(self):
-        # This is to stay within free tier for Gemini
-        return 5
+        return 1
 
 
 if __name__ == "__main__":

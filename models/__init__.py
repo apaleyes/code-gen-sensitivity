@@ -14,4 +14,8 @@ def get_model(model_name):
         from .openai import OpenAI
         return OpenAI()
 
+    if model_name.lower() == "claude":
+        from .claude import Claude
+        return Claude()
+
     raise ValueError(f"Unknown model name {model_name}")
