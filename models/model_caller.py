@@ -1,7 +1,7 @@
 import time
 from typing import Callable
-
 from .base import BaseModel
+
 
 def sanitise_response(response_string):
     # annoyingly, some LLMs seems wrap responses in ```python ... ```
@@ -20,6 +20,7 @@ def sanitise_response(response_string):
     code_string = "\n".join(lines)
     return code_string
 
+
 def is_valid_python_code(code_string):
     # verify that response from LLM is a valid Python code
     import ast
@@ -30,6 +31,7 @@ def is_valid_python_code(code_string):
         return False
 
     return True
+
 
 class ModelCaller:
     """A class to make calls the given LLM model.

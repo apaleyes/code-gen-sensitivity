@@ -1,9 +1,9 @@
 # for access to Gemini, see https://ai.google.dev/gemini-api/docs/quickstart?lang=python
-
 import os
 import google.generativeai as genai
 
 from .base import BaseModel
+
 
 class Gemini(BaseModel):
     def __init__(self):

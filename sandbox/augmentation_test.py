@@ -28,8 +28,6 @@ for phrase in phrases:
     # print("Spelling aug:")
     # print(augmented_texts)
 
-
-
     aug = naw.SynonymAug(aug_p=0.5)
     augmented_texts = aug.augment(phrase, n=1)
     print("Spelling aug:")

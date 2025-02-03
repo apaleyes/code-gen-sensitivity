@@ -1,5 +1,6 @@
 from .base import BaseModel
 
+
 class Dummy(BaseModel):
     def __init__(self):
         super().__init__("Dummy")

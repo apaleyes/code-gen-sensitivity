@@ -1,4 +1,4 @@
-class BaseModel():
+class BaseModel:
     def __init__(self, name, temperature=0.0):
         self.name = name
         self.temperature = temperature
