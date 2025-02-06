@@ -5,6 +5,7 @@ from anthropic import Anthropic
 
 from .base import BaseModel
 
+
 class Claude(BaseModel):
     def __init__(self):
         super().__init__("Claude")

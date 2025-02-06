@@ -1,6 +1,7 @@
+# renamed this file because it used to be same as import below, and that confused python
 from openai import OpenAI as OpenAIClient
-
 from .base import BaseModel
+
 
 class OpenAI(BaseModel):
     def __init__(self):

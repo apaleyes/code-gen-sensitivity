@@ -8,9 +8,10 @@ git+https://github.com/PrithivirajDamodaran/Parrot_Paraphraser.git@main#egg=parr
 transformers
 sentencepiece
 nltk
-spacy 
-rouge-score 
+spacy
+rouge-score
 numpy
+torch
 
 # code distance
 apted
@@ -21,4 +22,7 @@ pyyaml
 # Google Gemini
 google-generativeai
 
-
+# models
+anthropic
+openai
+ollama
