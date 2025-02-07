@@ -1,15 +1,22 @@
+import json
+import os
+import warnings
+from datetime import datetime
+from itertools import product
+from typing import Dict, List
+
+import matplotlib.pyplot as plt
+import nltk
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import spacy
+from nltk.tokenize import word_tokenize
 from nltk.translate.bleu_score import sentence_bleu
 from nltk.translate.meteor_score import meteor_score
-from nltk.tokenize import word_tokenize
 from rouge_score import rouge_scorer
-import spacy
-import numpy as np
-from typing import List, Dict
-import nltk
-import warnings
 
-
-nltk.download('punkt_tab')
+nltk.download("punkt_tab")
 
 
 class ParaphraseEvaluator:
@@ -17,38 +24,38 @@ class ParaphraseEvaluator:
         """Initialize the evaluator with necessary models and scorers"""
         # Suppress warnings
         warnings.filterwarnings("ignore")
-        
+
         # Download required NLTK data
         try:
-            nltk.download('punkt', quiet=True)
-            nltk.download('wordnet', quiet=True)
-            nltk.download('omw-1.4', quiet=True)
+            nltk.download("punkt", quiet=True)
+            nltk.download("wordnet", quiet=True)
+            nltk.download("omw-1.4", quiet=True)
         except Exception as e:
             print(f"Warning: NLTK download failed: {e}")
-        
+
         # Initialize spaCy
         try:
-            self.nlp = spacy.load('en_core_web_sm')
+            self.nlp = spacy.load("en_core_web_sm")
         except OSError:
             print("Downloading spaCy model...")
             import os
-            os.system('python -m spacy download en_core_web_sm')
-            self.nlp = spacy.load('en_core_web_sm')
-        
+
+            os.system("python -m spacy download en_core_web_sm")
+            self.nlp = spacy.load("en_core_web_sm")
+
         # Initialize ROUGE scorer
         self.rouge_scorer = rouge_scorer.RougeScorer(
-            ['rouge1', 'rouge2', 'rougeL'], 
-            use_stemmer=True
+            ["rouge1", "rouge2", "rougeL"], use_stemmer=True
         )
 
     def evaluate_single_paraphrase(self, original: str, paraphrase: str) -> Dict:
         """
         Evaluate a single paraphrase using multiple metrics
-        
+
         Args:
             original (str): Original text
             paraphrase (str): Paraphrased text
-            
+
         Returns:
             Dict: Dictionary containing various evaluation metrics
         """
@@ -85,140 +92,145 @@ class ParaphraseEvaluator:
         lexical_diversity = len(set(paraphrase_tokens)) / len(paraphrase_tokens)
 
         return {
-            'bleu': bleu,
-            'rouge1': rouge_scores['rouge1'].fmeasure,
-            'rouge2': rouge_scores['rouge2'].fmeasure,
-            'rougeL': rouge_scores['rougeL'].fmeasure,
-            'semantic_similarity': semantic_similarity,
-            'length_ratio': length_ratio,
-            'lexical_diversity': lexical_diversity
+            "bleu": bleu,
+            "rouge1": rouge_scores["rouge1"].fmeasure,
+            "rouge2": rouge_scores["rouge2"].fmeasure,
+            "rougeL": rouge_scores["rougeL"].fmeasure,
+            "semantic_similarity": semantic_similarity,
+            "length_ratio": length_ratio,
+            "lexical_diversity": lexical_diversity,
         }
 
     def evaluate_readability(self, text: str) -> Dict:
         """
         Calculate readability metrics for the text
-        
+
         Args:
             text (str): Text to evaluate
-            
+
         Returns:
             Dict: Dictionary containing readability metrics
         """
         doc = self.nlp(text)
-        
+
         # Count sentences and words
         sentences = list(doc.sents)
         num_sentences = len(sentences)
         num_words = len([token for token in doc if not token.is_punct])
-        
+
         # Calculate words per sentence
         words_per_sentence = num_words / num_sentences if num_sentences > 0 else 0
-        
+
         # Calculate average word length
-        avg_word_length = np.mean([len(token.text) for token in doc if not token.is_punct]) if num_words > 0 else 0
-        
+        avg_word_length = (
+            np.mean([len(token.text) for token in doc if not token.is_punct])
+            if num_words > 0
+            else 0
+        )
+
         return {
-            'num_sentences': num_sentences,
-            'num_words': num_words,
-            'words_per_sentence': words_per_sentence,
-            'avg_word_length': avg_word_length
+            "num_sentences": num_sentences,
+            "num_words": num_words,
+            "words_per_sentence": words_per_sentence,
+            "avg_word_length": avg_word_length,
         }
 
     def evaluate_grammar(self, text: str) -> Dict:
         """
         Perform basic grammar checking using spaCy
-        
+
         Args:
             text (str): Text to evaluate
-            
+
         Returns:
             Dict: Dictionary containing grammar check results
         """
         doc = self.nlp(text)
-        
+
         # Check for basic subject-verb agreement
         has_subject = False
         has_verb = False
         has_object = False
-        
+
         for token in doc:
-            if token.dep_ in ['nsubj', 'nsubjpass']:
+            if token.dep_ in ["nsubj", "nsubjpass"]:
                 has_subject = True
-            if token.pos_ == 'VERB':
+            if token.pos_ == "VERB":
                 has_verb = True
-            if token.dep_ in ['dobj', 'pobj']:
+            if token.dep_ in ["dobj", "pobj"]:
                 has_object = True
-        
+
         return {
-            'has_subject': has_subject,
-            'has_verb': has_verb,
-            'has_object': has_object,
-            'is_complete': has_subject and has_verb
+            "has_subject": has_subject,
+            "has_verb": has_verb,
+            "has_object": has_object,
+            "is_complete": has_subject and has_verb,
         }
 
     def evaluate_paraphrases(self, original: str, paraphrases: List[Dict]) -> Dict:
         """
         Evaluate a list of paraphrases and provide comprehensive metrics
-        
+
         Args:
             original (str): Original text
             paraphrases (List[Dict]): List of dictionaries containing paraphrases
-            
+
         Returns:
             Dict: Dictionary containing evaluation results
         """
         results = []
-        
+
         for idx, paraphrase_dict in enumerate(paraphrases, 1):
-            paraphrase_text = paraphrase_dict['phrase']
-            approach = paraphrase_dict.get('approach', 'unknown')
-            model = paraphrase_dict.get('model', 'unknown')
-            
+            paraphrase_text = paraphrase_dict["phrase"]
+            approach = paraphrase_dict.get("approach", "unknown")
+            model = paraphrase_dict.get("model", "unknown")
+
             # Get all metrics
             metrics = self.evaluate_single_paraphrase(original, paraphrase_text)
             readability = self.evaluate_readability(paraphrase_text)
             grammar = self.evaluate_grammar(paraphrase_text)
-            
+
             # Combine all metrics
             result = {
-                'paraphrase_id': idx,
-                'original': original,
-                'text': paraphrase_text,
-                'approach': approach,
-                'model': model,
+                "paraphrase_id": idx,
+                "original": original,
+                "text": paraphrase_text,
+                "approach": approach,
+                "model": model,
                 **metrics,
-                'readability': readability,
-                'grammar': grammar
+                "readability": readability,
+                "grammar": grammar,
             }
-            
+
             results.append(result)
-        
+
         # Calculate aggregate metrics
         avg_metrics = {
-            'avg_bleu': np.mean([r['bleu'] for r in results]),
-            'avg_rouge1': np.mean([r['rouge1'] for r in results]),
-            'avg_semantic_similarity': np.mean([r['semantic_similarity'] for r in results]),
-            'diversity_between_paraphrases': self.calculate_diversity([r['text'] for r in results])
+            "avg_bleu": np.mean([r["bleu"] for r in results]),
+            "avg_rouge1": np.mean([r["rouge1"] for r in results]),
+            "avg_semantic_similarity": np.mean(
+                [r["semantic_similarity"] for r in results]
+            ),
+            "diversity_between_paraphrases": self.calculate_diversity(
+                [r["text"] for r in results]
+            ),
         }
-        
-        return {
-            'individual_results': results,
-            'aggregate_metrics': avg_metrics
-        }
+
+        return {"individual_results": results, "aggregate_metrics": avg_metrics}
 
     def calculate_diversity(self, paraphrases: List[str]) -> float:
         """
         Calculate diversity between paraphrases using average pairwise BLEU score
-        
+
         Args:
             paraphrases (List[str]): List of paraphrased texts
-            
+
         Returns:
             float: Diversity score (lower score means more diverse paraphrases)
         """
         if len(paraphrases) < 2:
             return 0.0
-        
+
         scores = []
         for i in range(len(paraphrases)):
             for j in range(i + 1, len(paraphrases)):
@@ -226,21 +238,99 @@ class ParaphraseEvaluator:
                 hyp_tokens = word_tokenize(paraphrases[j].lower())
                 score = sentence_bleu([ref_tokens], hyp_tokens)
                 scores.append(score)
-        
+
         return np.mean(scores)
+
+    def run_experiments(
+        self,
+        phrases: List[str],
+        models: List[str],
+        param_grid: Dict[str, List[float]],
+        output_dir: str = "experiment_results",
+    ):
+        """
+        Run experiments with different parameter combinations and collect results
+
+        Args:
+            phrases: List of phrases to paraphrase
+            models: List of model names to test
+            param_grid: Dictionary of parameters and their values to test
+                e.g., {'temperature': [0.3, 0.7, 0.9],
+                       'repetition_penalty': [1.0, 2.0, 3.0]}
+            output_dir: Directory to save results
+
+        Returns:
+            pd.DataFrame: DataFrame containing all experimental results
+        """
+        # Create output directory if it doesn't exist
+        os.makedirs(output_dir, exist_ok=True)
+
+        # Generate all parameter combinations
+        param_combinations = [
+            dict(zip(param_grid.keys(), v)) for v in product(*param_grid.values())
+        ]
+
+        results = []
+
+        for phrase in phrases:
+            for model in models:
+                for params in param_combinations:
+                    print(f"\nTesting model: {model}")
+                    print(f"Parameters: {params}")
+                    print(f"Phrase: {phrase[:50]}...")
+
+                    try:
+                        # Get paraphrases with current parameters
+                        paraphrased_phrases = self.get_paraphrases(
+                            phrase, model, params
+                        )
+
+                        # Evaluate paraphrases
+                        eval_results = self.evaluate_paraphrases(
+                            phrase, paraphrased_phrases
+                        )
+
+                        # Store results
+                        result = {
+                            "phrase": phrase,
+                            "model": model,
+                            **params,
+                            **eval_results["aggregate_metrics"],
+                            "success": True,
+                        }
+                    except Exception as e:
+                        print(f"Error: {str(e)}")
+                        result = {
+                            "phrase": phrase,
+                            "model": model,
+                            **params,
+                            "success": False,
+                            "error": str(e),
+                        }
+
+                    results.append(result)
+
+        # Convert results to DataFrame
+        df = pd.DataFrame(results)
+
+        # Save results
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        df.to_csv(f"{output_dir}/results_{timestamp}.csv", index=False)
+
+        return df
 
     def print_evaluation_results(self, evaluation_results: Dict):
         """
         Print evaluation results in a formatted way
-        
+
         Args:
             evaluation_results (Dict): Dictionary containing evaluation results
         """
         print("\nEvaluation Results:")
         print("=" * 80)
-        
+
         # Print individual results
-        for result in evaluation_results['individual_results']:
+        for result in evaluation_results["individual_results"]:
             print(f"\nParaphrase {result['paraphrase_id']}:")
             print(f"   Original Text: {result['original']}")
             print(f"Paraphrased Text: {result['text']}")
@@ -251,14 +341,101 @@ class ParaphraseEvaluator:
             print(f"Semantic Similarity: {result['semantic_similarity']:.3f}")
             print(f"Length Ratio: {result['length_ratio']:.3f}")
             print(f"Lexical Diversity: {result['lexical_diversity']:.3f}")
-            print(f"Words per Sentence: {result['readability']['words_per_sentence']:.1f}")
-            print(f"Grammar Complete: {'Yes' if result['grammar']['is_complete'] else 'No'}")
-        
+            print(
+                f"Words per Sentence: {result['readability']['words_per_sentence']:.1f}"
+            )
+            print(
+                f"Grammar Complete: {'Yes' if result['grammar']['is_complete'] else 'No'}"
+            )
+
         # Print aggregate metrics
         print("\nAggregate Metrics:")
         print("-" * 80)
-        agg = evaluation_results['aggregate_metrics']
+        agg = evaluation_results["aggregate_metrics"]
         print(f"Average BLEU Score: {agg['avg_bleu']:.3f}")
         print(f"Average ROUGE-1: {agg['avg_rouge1']:.3f}")
         print(f"Average Semantic Similarity: {agg['avg_semantic_similarity']:.3f}")
-        print(f"Diversity Between Paraphrases: {agg['diversity_between_paraphrases']:.3f}")
+        print(
+            f"Diversity Between Paraphrases: {agg['diversity_between_paraphrases']:.3f}"
+        )
+
+    def plot_results(self, df: pd.DataFrame, output_dir: str = "paraphrasing_results"):
+        """
+        Create various plots to visualize experimental results
+
+        Args:
+            df: DataFrame containing experimental results
+            output_dir: Directory to save plots
+        """
+        # Filter successful experiments
+        df_success = df[df["success"]]
+
+        # Create plots directory
+        plots_dir = f"{output_dir}/plots"
+        os.makedirs(plots_dir, exist_ok=True)
+
+        # 1. Semantic Similarity vs Lexical Diversity by Model
+        plt.figure(figsize=(12, 8))
+        sns.scatterplot(
+            data=df_success,
+            x="avg_semantic_similarity",
+            y="diversity_between_paraphrases",
+            hue="model",
+            style="model",
+            s=100,
+        )
+        plt.title("Semantic Similarity vs Lexical Diversity by Model")
+        plt.savefig(f"{plots_dir}/semantic_vs_lexical.png")
+        plt.close()
+
+        # 2. Temperature Effect on Semantic Similarity
+        plt.figure(figsize=(12, 8))
+        sns.lineplot(
+            data=df_success, x="temperature", y="avg_semantic_similarity", hue="model"
+        )
+        plt.title("Temperature Effect on Semantic Similarity")
+        plt.savefig(f"{plots_dir}/temperature_effect.png")
+        plt.close()
+
+        # 3. Repetition Penalty Effect on Lexical Diversity
+        plt.figure(figsize=(12, 8))
+        sns.lineplot(
+            data=df_success,
+            x="repetition_penalty",
+            y="diversity_between_paraphrases",
+            hue="model",
+        )
+        plt.title("Repetition Penalty Effect on Lexical Diversity")
+        plt.savefig(f"{plots_dir}/repetition_effect.png")
+        plt.close()
+
+        # 4. Model Performance Comparison (boxplot)
+        metrics = [
+            "avg_semantic_similarity",
+            "diversity_between_paraphrases",
+            "avg_bleu",
+            "avg_rouge1",
+        ]
+        fig, axes = plt.subplots(2, 2, figsize=(15, 15))
+        fig.suptitle("Model Performance Comparison")
+
+        for ax, metric in zip(axes.flat, metrics):
+            sns.boxplot(data=df_success, x="model", y=metric, ax=ax)
+            ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+
+        plt.tight_layout()
+        plt.savefig(f"{plots_dir}/model_comparison.png")
+        plt.close()
+
+        # Generate summary statistics
+        summary = df_success.groupby("model")[
+            [
+                "avg_semantic_similarity",
+                "diversity_between_paraphrases",
+                "avg_bleu",
+                "avg_rouge1",
+            ]
+        ].describe()
+        summary.to_csv(f"{output_dir}/summary_statistics.csv")
+
+        return summary

@@ -2,6 +2,7 @@ import nlpaug.augmenter.char as nac
 
 from .base import BaseAugmenter
 
+
 class KeyboardAugmenter(BaseAugmenter):
     def __init__(self, rate):
         super().__init__("Keyboard", rate)
@@ -9,9 +10,12 @@ class KeyboardAugmenter(BaseAugmenter):
         # TODO: work out a proper way to calculate these rates
         # aug_char_p and aug_word_p in combination should give aug_rate
         self.augmenter = nac.KeyboardAug(
-            aug_char_p=rate, aug_word_p=rate,
-            aug_char_min=0, aug_word_min=0,
-            aug_char_max=None, aug_word_max=None
+            aug_char_p=rate,
+            aug_word_p=rate,
+            aug_char_min=0,
+            aug_word_min=0,
+            aug_char_max=None,
+            aug_word_max=None,
         )
 
     def augment(self, text):

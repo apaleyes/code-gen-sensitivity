@@ -5,7 +5,7 @@ import nlpaug.augmenter.word as naw
 
 phrases = [
     "Write Python code for addition, subtraction, division, multiplication, and other similar operations, all a part of one class",
-    "Given the business logic code below, implement Flask backend. Do not include example of usage or the business logic, do not repeat any code from this prompt. Only write the Flask API code."
+    "Given the business logic code below, implement Flask backend. Do not include example of usage or the business logic, do not repeat any code from this prompt. Only write the Flask API code.",
 ]
 
 

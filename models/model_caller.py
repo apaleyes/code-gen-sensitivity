@@ -1,5 +1,6 @@
 import time
 from typing import Callable
+
 from .base import BaseModel
 
 
@@ -13,7 +14,7 @@ def sanitise_response(response_string):
 
     if "```" in lines[0]:
         lines = lines[1:]
-    
+
     if "```" in lines[-1]:
         lines = lines[:-1]
 
@@ -26,7 +27,7 @@ def is_valid_python_code(code_string):
     import ast
 
     try:
-        ast.parse(code_string, filename='<unknown>', mode='exec')
+        ast.parse(code_string, filename="<unknown>", mode="exec")
     except (SyntaxError, ValueError) as _:
         return False
 
@@ -40,7 +41,10 @@ class ModelCaller:
         n_retries: number of times to retry if model call fails for any reason
         prompt_transform: a function that can apply some tranformation to the prompt
     """
-    def __init__(self, model: BaseModel, n_retries: int = 10, prompt_transform: Callable = None):
+
+    def __init__(
+        self, model: BaseModel, n_retries: int = 10, prompt_transform: Callable = None
+    ):
         self.model = model
 
         # Sometimes requests to Gemini seem to fail with a reason completely beyond user's control.

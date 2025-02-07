@@ -9,12 +9,14 @@
 # > python test.py
 
 import warnings
+
 warnings.filterwarnings("ignore")
 
-from ..TSED import TSED
 import yaml
 
-with open('dataset.yml', 'r') as dataset_file:
+from ..TSED import TSED
+
+with open("dataset.yml", "r") as dataset_file:
     dataset = yaml.safe_load(dataset_file)
 
 original_example = next(x for x in dataset if x["is_original"])
@@ -22,6 +24,10 @@ for example in dataset:
     if example["is_original"]:
         continue
 
-    similarity_score = TSED.Calaulte("python", original_example["answer"], example["answer"], 1.0, 0.8, 1.0)
+    similarity_score = TSED.Calaulte(
+        "python", original_example["answer"], example["answer"], 1.0, 0.8, 1.0
+    )
 
-    print(f"Score: {similarity_score:.2};\t\tChange description: {example['how_changed']}")
+    print(
+        f"Score: {similarity_score:.2};\t\tChange description: {example['how_changed']}"
+    )

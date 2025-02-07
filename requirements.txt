@@ -12,6 +12,8 @@ spacy
 rouge-score
 numpy
 torch
+seaborn
+matplotlib
 
 # code distance
 apted

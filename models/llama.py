@@ -1,7 +1,9 @@
 import os
-import openai  # OpenRouter uses OpenAI's API format
-import ollama  # For local inference
 import subprocess
+
+import ollama  # For local inference
+import openai  # OpenRouter uses OpenAI's API format
+
 from .base import BaseModel
 
 
@@ -10,7 +12,7 @@ class Llama(BaseModel):
         super().__init__("Llama")
         self.client = openai.OpenAI(
             api_key=os.environ["OPENROUTER_API_KEY"],
-            base_url="https://openrouter.ai/api/v1"  # Explicitly route to OpenRouter
+            base_url="https://openrouter.ai/api/v1",  # Explicitly route to OpenRouter
         )
         self.model = "meta-llama/llama-3.3-70b-instruct"
 
@@ -58,8 +60,7 @@ class LocalLlama(BaseModel):
     def __call__(self, prompt):
         """Generate a response from the Llama model."""
         response = ollama.chat(
-            model=self.model,
-            messages=[{"role": "user", "content": prompt}]
+            model=self.model, messages=[{"role": "user", "content": prompt}]
         )
         return response["message"]["content"]
 
@@ -72,7 +73,11 @@ def install_ollama():
     # this is only designed for Linux/macOS
     # alternatively https://ollama.ai/download
     try:
-        subprocess.run(["curl", "-fsSL", "https://ollama.ai/install.sh", "|", "sh"], check=True, shell=True)
+        subprocess.run(
+            ["curl", "-fsSL", "https://ollama.ai/install.sh", "|", "sh"],
+            check=True,
+            shell=True,
+        )
         print("Ollama installed successfully.")
     except subprocess.CalledProcessError as e:
         print("Failed to install Ollama:", e)
