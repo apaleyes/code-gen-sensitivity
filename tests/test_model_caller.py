@@ -13,7 +13,7 @@ def test_correct_model():
     assert len(result) > 0
 
 
-def test_model_returns_invalid_python_code():
+def test_backticks_are_removed():
     code = "a = 1 + 2"
 
     class WrappedCodeModel(BaseModel):

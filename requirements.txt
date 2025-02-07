@@ -1,5 +1,8 @@
 pandas
 
+# linting
+ruff
+
 # prompt augmentation
 nlpaug
 

@@ -1,0 +1,23 @@
+[tool.ruff]
+exclude = [
+    "sandbox"
+]
+line-length = 120
+
+[tool.ruff.lint]
+# Read more here https://docs.astral.sh/ruff/rules/
+# By default, Ruff enables Flake8's E and F rules
+# Pyflakes - F, pycodestyle - E, W
+# flake8-builtins - A
+# Pylint - PLC, PLE, PLW
+# isort - I
+select = ["A", "E", "F", "I", "PLC", "PLW", "PLE"]
+ignore = [
+    "E501", # line too long
+    "E703", # unnecesary semicolons
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+    "F401" # ignore unused imports
+]

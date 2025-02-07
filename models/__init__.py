@@ -14,7 +14,7 @@ def get_model(model_name):
         return Gemini()
 
     if model_name.lower() == "openai":
-        from .openai import OpenAI
+        from .chatgpt import OpenAI
 
         return OpenAI()
 
