@@ -40,7 +40,7 @@ models = [
 param_grid = {
     "temperature": [0.25, 0.5, 0.75, 1.0],
     "repetition_penalty": [1.0, 2.0, 3.0, 4.0],
-    "top_p": [0.75, 0.85, 0.95],
+    "top_p": [0.75, 0.85, 0.95]
 }
 
 

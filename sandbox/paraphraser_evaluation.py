@@ -261,7 +261,7 @@ class ParaphraseEvaluator:
             print(f"Approach: {result['approach']}")
             print(f"Model: {result['model']}")
             print(f"BLEU Score: {result['bleu']:.3f}")
-            print(f"ROUGE-1 F1: {result['rouge1']:.3f}")
+            print(f"ROUGE-L F1: {result['rougel']:.3f}")
             print(f"Semantic Similarity: {result['semantic_similarity']:.3f}")
             print(f"Length Ratio: {result['length_ratio']:.3f}")
             print(f"Lexical Diversity: {result['lexical_diversity']:.3f}")
@@ -273,7 +273,7 @@ class ParaphraseEvaluator:
         print("-" * 80)
         agg = evaluation_results['aggregate_metrics']
         print(f"Average BLEU Score: {agg['avg_bleu']:.3f}")
-        print(f"Average ROUGE-1: {agg['avg_rouge1']:.3f}")
+        print(f"Average ROUGE-L: {agg['avg_rougel']:.3f}")
         print(f"Average Semantic Similarity: {agg['avg_semantic_similarity']:.3f}")
         print(f"Diversity Between Paraphrases: {agg['diversity_between_paraphrases']:.3f}")
 
@@ -331,7 +331,7 @@ class ParaphraseEvaluator:
         
         # 4. Model Performance Comparison (boxplot)
         metrics = ['avg_semantic_similarity', 'diversity_between_paraphrases', 
-                  'avg_bleu', 'avg_rouge1']
+                  'avg_bleu', 'avg_rougel']
         fig, axes = plt.subplots(2, 2, figsize=(15, 15))
         fig.suptitle('Model Performance Comparison')
         
@@ -346,12 +346,12 @@ class ParaphraseEvaluator:
         # Generate summary statistics
         summary = df_success.groupby('model')[
             ['avg_semantic_similarity', 'diversity_between_paraphrases', 
-             'avg_bleu', 'avg_rouge1']].describe()
+             'avg_bleu', 'avg_rougel']].describe()
         summary.to_csv(f"{output_dir}/summary_statistics.csv")
         
         # Add call to analyze best parameters
-        best_params = self.analyze_best_parameters(df, output_dir)
-        return best_params
+        self.analyze_best_parameters(df, output_dir)
+        return summary
 
     def analyze_best_parameters(self, df: pd.DataFrame, output_dir: str = "experiment_results"):
         """
@@ -366,17 +366,17 @@ class ParaphraseEvaluator:
         
         # Define metrics to optimize
         metrics = {
-            'semantic_similarity': 'max',     # Higher is better (preserve meaning)
-            'lexical_diversity': 'moderate',  # Moderate is better (balanced rewording)
+            'avg_semantic_similarity': 'max',     # Higher is better (preserve meaning)
+            'diversity_between_paraphrases': 'moderate',  # Moderate is better (balanced rewording)
             'avg_bleu': 'moderate',          # Moderate is better (balanced similarity)
-            'avg_rouge1': 'moderate'         # Moderate is better (balanced overlap)
+            'avg_rougel': 'moderate'         # Moderate is better (balanced overlap)
         }
         
         # Define target values for 'moderate' metrics
         moderate_targets = {
-            'lexical_diversity': 0.6,  # Aim for 60% unique words
+            'diversity_between_paraphrases': 0.6,  # Aim for 60% unique words
             'avg_bleu': 0.5,          # Aim for 50% BLEU score
-            'avg_rouge1': 0.5         # Aim for 50% ROUGE score
+            'avg_rougel': 0.5         # Aim for 50% ROUGE score
         }
         
         results = []
@@ -476,4 +476,3 @@ class ParaphraseEvaluator:
             print(f"Target: {value['target']}")
             print(f"Composite Score: {result['composite_score']:.3f}")
         
-        return results
