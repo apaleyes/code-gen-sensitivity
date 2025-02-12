@@ -9,11 +9,16 @@ import nltk
 import pandas as pd
 import torch
 from paraphraser_evaluation import ParaphraseEvaluator
+from llm_paraphraser import LLMParaphraser
 from parrot import Parrot
 from transformers import (AutoModelForSeq2SeqLM, AutoTokenizer,
                           BartForConditionalGeneration, BartTokenizer,
                           PegasusForConditionalGeneration, PegasusTokenizer,
-                          T5ForConditionalGeneration, T5Tokenizer)
+                          T5ForConditionalGeneration, T5Tokenizer,
+                          BartForConditionalGeneration, BartTokenizer)
+from dotenv import load_dotenv
+load_dotenv()
+
 
 warnings.filterwarnings("ignore")
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -27,12 +32,17 @@ test_phrases = [
 ]
 
 # Approaches and models for parapharsing
-approaches = ["transformers"]
+approaches = ["llms"]
 models = [
-    "Vamsi/T5_Paraphrase_Paws",
-    "facebook/bart-base",
-    "t5-base",
-    "tuner007/pegasus_paraphrase",
+    #"Vamsi/T5_Paraphrase_Paws",
+    #"facebook/bart-base",
+    #"t5-base",
+    #"tuner007/pegasus_paraphrase",
+    #"claude",                       # LLM models
+    #"openai",
+    "gemini",
+    #"llama",
+    #"deepseek"
 ]
 
 
@@ -63,6 +73,9 @@ def paraphrasing_factory(model_name):
     elif model_name == "tuner007/pegasus_paraphrase":
         tokenizer = PegasusTokenizer.from_pretrained(model_name)
         model = PegasusForConditionalGeneration.from_pretrained(model_name)
+    elif model_name == "eugenesiow/bart-paraphrase":
+        tokenizer = BartTokenizer.from_pretrained(model_name)
+        model = BartForConditionalGeneration.from_pretrained(model_name)
     else:
         raise Exception("We don't have that model")
 
@@ -226,15 +239,62 @@ def paraphrase(phrases, approaches, models, param_grid, output_dir, evaluator):
                                 "error": str(e),
                             }
                         results.append(result)
-            # Convert results to DataFrame
-            df = pd.DataFrame(results)
-
-            # Save results
-            df.to_csv(f"{output_dir}/{timestamp}/results.csv", index=False)
-
-            return df, timestamp
+        elif approach == "llms":
+            # Initialize LLM paraphrasers
+            paraphrasers = {
+                model_name: LLMParaphraser(model_name) 
+                for model_name in models if model_name in 
+                ['claude', 'openai', 'gemini', 'llama', 'deepseek']
+            }
+            
+            for phrase in phrases:
+                for model_name, paraphraser in paraphrasers.items():
+                    for params in param_combinations:
+                        try:
+                            # Generate paraphrases using LLM
+                            paraphrased_phrases = paraphraser.paraphrase(phrase, 10)
+                        
+                            # Evaluate paraphrases
+                            if paraphrased_phrases:
+                                eval_results = evaluator.evaluate_paraphrases(
+                                    phrase, paraphrased_phrases
+                                )
+                            
+                                # Store results
+                                result = {
+                                    'phrase': phrase,
+                                    'model': model_name,
+                                    **params,
+                                    **eval_results['aggregate_metrics'],
+                                    'success': True
+                                }
+                            else:
+                                result = {
+                                    'phrase': phrase,
+                                    'model': model_name,
+                                    'success': False,
+                                    'error': 'No paraphrases generated'
+                                }
+                            
+                            results.append(result)
+                        
+                        except Exception as e:
+                            print(f"Error with {model_name}: {str(e)}")
+                            results.append({
+                                'phrase': phrase,
+                                'model': model_name,
+                                'success': False,
+                                'error': str(e)
+                            })
         else:
             raise Exception("We don't have that approach")
+        # Convert results to DataFrame
+        df = pd.DataFrame(results)
+
+        # Save results
+        df.to_csv(f"{output_dir}/{timestamp}/results.csv", index=False)
+
+        return df, timestamp
 
 
 def run_experiments():

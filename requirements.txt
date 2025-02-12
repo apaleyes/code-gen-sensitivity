@@ -17,6 +17,7 @@ numpy
 torch
 seaborn
 matplotlib
+python-dotenv
 
 # code distance
 apted

@@ -1,0 +1,4 @@
+phrase,model,avg_bleu,avg_rougel,avg_semantic_similarity,diversity_between_paraphrases,success
+"Write Python code for addition, subtraction, division, multiplication, and other similar operations, all a part of one class",gemini,0.42213515378630095,0.4645812993710726,0.8482002317905426,0.43390202499802466,True
+"Given the business logic code below, implement Flask backend. Do not include example of usage or the business logic, do not repeat any code from this prompt. Only write the Flask API code.",gemini,0.12343372099039045,0.3456487048868903,0.7943280816078186,0.0676330863020033,True
+"Write a Calculator class. It shall contain common operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry.",gemini,0.03452391858266462,0.4122721978174792,0.768923544883728,0.22449757154572755,True
