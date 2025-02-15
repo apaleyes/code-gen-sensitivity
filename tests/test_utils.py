@@ -1,5 +1,5 @@
 def test_ensure_python_code_prompt():
-    from utils import ensure_python_code_prompt
+    from prompt_utils import ensure_python_code_prompt
 
     prompt = "some random prompt"
 
