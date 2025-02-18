@@ -32,27 +32,32 @@ test_phrases = [
 ]
 
 # Approaches and models for parapharsing
-approaches = ["llms"]
+approaches = ["transformers", "llms"]
 models = [
-    #"Vamsi/T5_Paraphrase_Paws",
-    #"facebook/bart-base",
-    #"t5-base",
-    #"tuner007/pegasus_paraphrase",
+    "Vamsi/T5_Paraphrase_Paws",    # Transformers models
+    "facebook/bart-base",
+    "t5-base",
+    "tuner007/pegasus_paraphrase",
     #"claude",                       # LLM models
     #"openai",
     "gemini",
-    #"llama",
-    #"deepseek"
+    "llama",
+    "deepseek"
 ]
 
 
-# Define parameter grid for experiments
-param_grid = {
-    "temperature": [0.25, 0.5, 0.75, 1.0],
-    "repetition_penalty": [1.0, 2.0, 3.0, 4.0],
-    "top_p": [0.75, 0.85, 0.95]
+# Define parameter grid for experiments with transformers
+param_grid_transformers = {
+    "temperature": [0.0, 0.5, 1.0],
+    "repetition_penalty": [1.5],
+    "top_p": [0.95]
 }
 
+
+# Define parameter grid for experiments with LLMs
+param_grid_llms = {
+    "temperature": [0.0, 0.5, 1.0, 1.5, 2.0],
+}
 
 # Creates tokenizers and models for paraphrasing
 def paraphrasing_factory(model_name):
@@ -92,7 +97,7 @@ def estimate_tokens_for_words(text, tokenizer):
     return len(tokens)
 
 
-def paraphrase(phrases, approaches, models, param_grid, output_dir, evaluator):
+def paraphrase(phrases, approaches, models, param_grid_transformers, param_grid_llms, output_dir, evaluator):
     """
     This function paraphrases a list of phrases using different approaches and models.
     It generates all possible parameter combinations, paraphrases each phrase, evaluates the results,
@@ -108,10 +113,6 @@ def paraphrase(phrases, approaches, models, param_grid, output_dir, evaluator):
     """
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     os.makedirs(f"{output_dir}/{timestamp}/", exist_ok=True)
-    # Generate all parameter combinations
-    param_combinations = [
-        dict(zip(param_grid.keys(), v)) for v in product(*param_grid.values())
-    ]
     results = []
     for approach in approaches:
         if approach == "parrot":
@@ -146,9 +147,7 @@ def paraphrase(phrases, approaches, models, param_grid, output_dir, evaluator):
                         }
                         paraphrased_phrases.append(paraphrased_phrase)
                     # Evaluate paraphrases
-                    eval_results = evaluator.evaluate_paraphrases(
-                        phrase, paraphrased_phrases
-                    )
+                    eval_results = evaluator.evaluate_paraphrases(phrase, paraphrased_phrases)
                     # Store results
                     result = {
                         "phrase": phrase,
@@ -168,8 +167,12 @@ def paraphrase(phrases, approaches, models, param_grid, output_dir, evaluator):
                     }
                 results.append(result)
         elif approach == "transformers":
+            # Initialize Transformers paraphrasers
+            paraphrasers = [model_name for model_name in models if model_name in ['Vamsi/T5_Paraphrase_Paws', 'facebook/bart-base', 't5-base', 'tuner007/pegasus_paraphrase']]
+            # Generate all parameter combinations
+            param_combinations = [dict(zip(param_grid_transformers.keys(), v)) for v in product(*param_grid_transformers.values())]
             for phrase in phrases:
-                for model_name in models:
+                for model_name in paraphrasers:
                     tokenizer, model = paraphrasing_factory(model_name)
                     # Tokenise the input sentence
                     input_ids = tokenizer.encode(phrase, return_tensors="pt")
@@ -218,9 +221,7 @@ def paraphrase(phrases, approaches, models, param_grid, output_dir, evaluator):
                                 }
                                 paraphrased_phrases.append(paraphrased_phrase)
                             # Evaluate paraphrases
-                            eval_results = evaluator.evaluate_paraphrases(
-                                phrase, paraphrased_phrases
-                            )
+                            eval_results = evaluator.evaluate_paraphrases(phrase, paraphrased_phrases)
                             # Store results
                             result = {
                                 "phrase": phrase,
@@ -246,25 +247,30 @@ def paraphrase(phrases, approaches, models, param_grid, output_dir, evaluator):
                 for model_name in models if model_name in 
                 ['claude', 'openai', 'gemini', 'llama', 'deepseek']
             }
-            
+            # Generate all parameter combinations
+            param_combinations = [dict(zip(param_grid_llms.keys(), v)) for v in product(*param_grid_llms.values())]            
             for phrase in phrases:
                 for model_name, paraphraser in paraphrasers.items():
                     for params in param_combinations:
+                        print(f"\nTesting model: {model_name}")
+                        print(f"Parameters: {params}")
+                        print(f"Phrase: {phrase[:50]}...")
+                        paraphrased_phrases = []
                         try:
                             # Generate paraphrases using LLM
-                            paraphrased_phrases = paraphraser.paraphrase(phrase, 10)
+                            paraphrased_phrases = paraphraser.paraphrase(phrase, 10, params["temperature"])
                         
                             # Evaluate paraphrases
                             if paraphrased_phrases:
-                                eval_results = evaluator.evaluate_paraphrases(
-                                    phrase, paraphrased_phrases
-                                )
+                                eval_results = evaluator.evaluate_paraphrases(phrase, paraphrased_phrases)
                             
                                 # Store results
                                 result = {
                                     'phrase': phrase,
                                     'model': model_name,
                                     **params,
+                                    'repetition_penalty': None,
+                                    'top_p': None,
                                     **eval_results['aggregate_metrics'],
                                     'success': True
                                 }
@@ -272,6 +278,9 @@ def paraphrase(phrases, approaches, models, param_grid, output_dir, evaluator):
                                 result = {
                                     'phrase': phrase,
                                     'model': model_name,
+                                    **params,
+                                    'repetition_penalty': -1.0,
+                                    'top_p': -1.0,
                                     'success': False,
                                     'error': 'No paraphrases generated'
                                 }
@@ -283,18 +292,21 @@ def paraphrase(phrases, approaches, models, param_grid, output_dir, evaluator):
                             results.append({
                                 'phrase': phrase,
                                 'model': model_name,
+                                **params,
+                                'repetition_penalty': None,
+                                'top_p': None,
                                 'success': False,
                                 'error': str(e)
                             })
         else:
             raise Exception("We don't have that approach")
-        # Convert results to DataFrame
-        df = pd.DataFrame(results)
+    # Convert results to DataFrame
+    df = pd.DataFrame(results)
 
-        # Save results
-        df.to_csv(f"{output_dir}/{timestamp}/results.csv", index=False)
+    # Save results
+    df.to_csv(f"{output_dir}/{timestamp}/results.csv", index=False)
 
-        return df, timestamp
+    return df, timestamp
 
 
 def run_experiments():
@@ -308,7 +320,8 @@ def run_experiments():
         phrases=test_phrases,
         approaches=approaches,
         models=models,
-        param_grid=param_grid,
+        param_grid_transformers=param_grid_transformers,
+        param_grid_llms=param_grid_llms,
         output_dir="paraphrasing_results",
         evaluator=evaluator,
     )

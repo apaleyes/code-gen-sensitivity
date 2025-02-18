@@ -191,7 +191,7 @@ class ParaphraseEvaluator:
             metrics = self.evaluate_single_paraphrase(original, paraphrase_text)
             readability = self.evaluate_readability(paraphrase_text)
             grammar = self.evaluate_grammar(paraphrase_text)
-            
+
             # Combine all metrics
             result = {
                 'paraphrase_id': idx,
@@ -288,7 +288,7 @@ class ParaphraseEvaluator:
         """
         # Filter successful experiments
         df_success = df[df['success']]
-        
+
         # Create plots directory
         plots_dir = f"{output_dir}/plots"
         os.makedirs(plots_dir, exist_ok=True)
@@ -469,7 +469,10 @@ class ParaphraseEvaluator:
             print(f"\nModel: {result['model']}")
             print(f"Best Overall Parameters:")
             for param, value in result['best_overall_parameters'].items():
-                print(f"  {param}: {value:.2f}")
+                if value is None:
+                    print(f"  {param}: {value}")
+                else:
+                    print(f"  {param}: {value:.2f}")
             print(f"Resulting Scores:")
             for metric, value in result['best_overall_scores'].items():
                 print(f"  {metric}: {value['value']:.3f}")

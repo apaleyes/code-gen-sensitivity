@@ -34,6 +34,7 @@ class LLMParaphraser:
         
         Requirements:
         - Maintain the exact same meaning
+        - The paraphrases must be semantically similar to the input text
         - Use different wording where possible
         - Be clear and natural
         - Do not add or remove information
@@ -70,7 +71,7 @@ class LLMParaphraser:
         """Transform the input text into a proper prompt"""
         return text
     
-    def paraphrase(self, text: str, num_variations: int = 5) -> List[Dict]:
+    def paraphrase(self, text: str, num_variations: int = 5, temperature: float=1.0) -> List[Dict]:
         """
         Generate paraphrased versions of the input text
         
@@ -82,7 +83,7 @@ class LLMParaphraser:
             List of dictionaries containing paraphrased versions and metadata
         """
         prompt = self.base_prompt.format(text=text, num_variations=num_variations)
-        
+        self.model.temperature = temperature
         try:
             # Get response from the model using ModelCaller
             response = self.model_caller.get_code(prompt)
@@ -104,7 +105,7 @@ class LLMParaphraser:
                 if isinstance(paraphrase, str):  # Ensure we only include strings
                     results.append({
                         'phrase': paraphrase,
-                        'approach': 'llm',
+                        'approach': 'llms',
                         'model': self.model_name,
                         'paraphrase_id': i
                     })
