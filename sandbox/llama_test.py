@@ -1,3 +1,4 @@
+import sys
 import os
 from models.llama import Llama, install_ollama, LocalLlama
 from models.deepseek import DeepSeek

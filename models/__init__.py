@@ -1,6 +1,7 @@
 from .base import BaseModel
 from .model_caller import ModelCaller
 
+# are we sure we want this in init_py?
 def get_model(model_name):
     if model_name.lower() == "dummy":
         from .dummy import Dummy
@@ -11,11 +12,19 @@ def get_model(model_name):
         return Gemini()
 
     if model_name.lower() == "openai":
-        from .openai import OpenAI
+        from .chatgpt import OpenAI
         return OpenAI()
 
     if model_name.lower() == "claude":
         from .claude import Claude
         return Claude()
+
+    if model_name.lower() == "llama":
+        from .llama import Llama
+        return Llama()
+
+    if model_name.lower() == "deepseek":
+        from .deepseek import DeepSeek
+        return DeepSeek()
 
     raise ValueError(f"Unknown model name {model_name}")

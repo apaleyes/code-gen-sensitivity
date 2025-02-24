@@ -67,7 +67,8 @@ class ModelCaller:
             prompt = self.prompt_transform(prompt)
 
         # see note in __init__ on retries
-        for _ in range(self.n_retries):
+        for i in range(self.n_retries):
+            time.sleep(i**2/10)
             try:
                 # if model requires delay between calls,
                 # e.g. to stay under certain call rate,
