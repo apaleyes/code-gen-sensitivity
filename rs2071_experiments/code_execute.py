@@ -84,7 +84,6 @@ def evaluate_function(func_str_, test_cases_):
             return 0
 
         best_score = 0
-        best_func = None
 
         for func_name in func_names:
             if func_name in global_scope:
@@ -106,7 +105,6 @@ def evaluate_function(func_str_, test_cases_):
                 score = correct / len(test_cases_)
                 if score > best_score:
                     best_score = score
-                    best_func = func_name
 
         # print(f"Best function: {best_func} with score: {best_score}", flush=True)
         return best_score

@@ -11,7 +11,7 @@ def get_model(model_name):
         from .gemini import Gemini
         return Gemini()
 
-    if model_name.lower() == "openai":
+    if model_name.lower() == "openai" or model_name.lower() == "chatgpt": # we should standardise naming (company vs model etc)
         from .chatgpt import OpenAI
         return OpenAI()
 
