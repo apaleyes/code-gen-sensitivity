@@ -10,7 +10,7 @@ class Gemini(BaseModel):
     def __init__(self):
         super().__init__("Gemini")
         genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-        self.client = genai.GenerativeModel("gemini-1.5-flash")
+        self.client = genai.GenerativeModel("gemini-2.0-flash")
 
         # possible values for temperature range from 0 to 2
         # default is 1
