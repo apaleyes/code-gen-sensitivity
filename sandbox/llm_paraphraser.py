@@ -1,0 +1,117 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from models.model_caller import ModelCaller
+from models.chatgpt import OpenAI
+from models.claude import Claude
+from models.deepseek import DeepSeek
+from models.gemini import Gemini
+from models.llama import Llama
+from models import get_model
+from typing import List, Dict
+
+class LLMParaphraser:
+    """Class to handle paraphrasing using different LLM models"""
+    
+    def __init__(self, model_name: str):
+        """
+        Initialize the LLM paraphraser
+        
+        Args:
+            model_name: Name of the LLM model to use ('claude', 'openai', 'gemini', 'llama', 'deepseek')
+        """
+        self.model_name = model_name
+        self.model = self._initialize_model()
+        self.model_caller = ModelCaller(
+            model=self.model,
+            n_retries=3,
+            prompt_transform=self._transform_prompt
+        )
+        
+        # Base prompt template for paraphrasing
+        self.base_prompt = """
+        You are a paraphrasing assistant. Your task is to paraphrase the given text.
+        
+        Requirements:
+        - Maintain the exact same meaning
+        - The paraphrases must be semantically similar to the input text
+        - Use different wording where possible
+        - Be clear and natural
+        - Do not add or remove information
+        
+        Text to paraphrase:
+        "{text}"
+        
+        Generate {num_variations} different paraphrased versions.
+        Format your response as a Python list of strings, one paraphrase per string.
+        Example format:
+        [
+            "First paraphrase here",
+            "Second paraphrase here",
+            "Third paraphrase here"
+        ]
+        """
+    
+    def _initialize_model(self):
+        """Initialize the specified LLM model"""
+        if self.model_name.lower() == 'claude':
+            return Claude()
+        elif self.model_name.lower() == 'openai':
+            return OpenAI()
+        elif self.model_name.lower() == 'gemini':
+            return Gemini()
+        elif self.model_name.lower() == 'llama':
+            return Llama()
+        elif self.model_name.lower() == 'deepseek':
+            return DeepSeek()
+        else:
+            raise ValueError(f"Unsupported model: {self.model_name}")
+    
+    def _transform_prompt(self, text: str) -> str:
+        """Transform the input text into a proper prompt"""
+        return text
+    
+    def paraphrase(self, text: str, num_variations: int = 5, temperature: float=1.0) -> List[Dict]:
+        """
+        Generate paraphrased versions of the input text
+        
+        Args:
+            text: Text to paraphrase
+            num_variations: Number of paraphrased versions to generate
+            
+        Returns:
+            List of dictionaries containing paraphrased versions and metadata
+        """
+        prompt = self.base_prompt.format(text=text, num_variations=num_variations)
+        self.model.temperature = temperature
+        try:
+            # Get response from the model using ModelCaller
+            response = self.model_caller.get_code(prompt)
+            
+            # Since we asked for Python list format, we can safely eval it
+            # The response should be a valid Python list of strings
+            try:
+                paraphrases = eval(response)
+                if not isinstance(paraphrases, list):
+                    raise ValueError("Response is not a list")
+            except:
+                # If eval fails, try simple line splitting as fallback
+                paraphrases = [p.strip() for p in response.split('\n') 
+                             if p.strip() and not p.startswith('[') and not p.endswith(']')]
+            
+            # Format the results
+            results = []
+            for i, paraphrase in enumerate(paraphrases[:num_variations], 1):
+                if isinstance(paraphrase, str):  # Ensure we only include strings
+                    results.append({
+                        'phrase': paraphrase,
+                        'approach': 'llms',
+                        'model': self.model_name,
+                        'paraphrase_id': i
+                    })
+            
+            return results
+            
+        except Exception as e:
+            print(f"Error with {self.model_name}: {str(e)}")
+            return []

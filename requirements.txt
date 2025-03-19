@@ -1,5 +1,8 @@
 pandas
 
+# linting
+ruff
+
 # prompt augmentation
 nlpaug
 
@@ -12,6 +15,9 @@ spacy
 rouge-score
 numpy
 torch
+seaborn
+matplotlib
+python-dotenv
 
 # code distance
 apted

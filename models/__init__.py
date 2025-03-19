@@ -1,22 +1,25 @@
 from .base import BaseModel
 from .model_caller import ModelCaller
 
-# are we sure we want this in init_py?
 def get_model(model_name):
     if model_name.lower() == "dummy":
         from .dummy import Dummy
+
         return Dummy()
 
     if model_name.lower() == "gemini":
         from .gemini import Gemini
+
         return Gemini()
 
     if model_name.lower() == "openai" or model_name.lower() == "chatgpt": # we should standardise naming (company vs model etc)
         from .chatgpt import OpenAI
+
         return OpenAI()
 
     if model_name.lower() == "claude":
         from .claude import Claude
+
         return Claude()
 
     if model_name.lower() == "llama":

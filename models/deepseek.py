@@ -1,4 +1,5 @@
 import os
+
 import openai  # OpenRouter uses OpenAI's API format
 
 from .base import BaseModel
@@ -9,7 +10,7 @@ class DeepSeek(BaseModel):
         super().__init__("DeepSeek")
         self.client = openai.OpenAI(
             api_key=os.environ["OPENROUTER_API_KEY"],
-            base_url="https://openrouter.ai/api/v1"  # Explicitly route to OpenRouter
+            base_url="https://openrouter.ai/api/v1",  # Explicitly route to OpenRouter
         )
         self.model = "deepseek/deepseek-r1:free"
 

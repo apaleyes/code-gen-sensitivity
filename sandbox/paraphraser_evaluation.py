@@ -7,7 +7,13 @@ import numpy as np
 from typing import List, Dict
 import nltk
 import warnings
-
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from itertools import product
+import os
+import json
+from datetime import datetime
 
 nltk.download('punkt_tab')
 
@@ -59,11 +65,18 @@ class ParaphraseEvaluator:
         # Calculate BLEU Score
         # BLEU (Bilingual Evaluation Understudy) is a metric for evaluating a generated sentence to a reference sentence.
         # It is based on the precision of the n-grams (contiguous sequences of n items) in the generated sentence that match the reference sentence.
+        # A higher BLEU Score means lower diversity as the generated sentence has more words that appear in the original text.
+        # A lower BLEU Score means higher diversity but the meaning can be lost.
         bleu = sentence_bleu([original_tokens], paraphrase_tokens)
 
         # Calculate ROUGE Scores
         # ROUGE (Recall-Oriented Understudy for Gisting Evaluation) is a set of metrics used to evaluate the quality of text summarization and machine translation algorithms.
         # It measures the overlap between the generated summary and the reference summary based on n-grams.
+        # A higher ROUGE Score means lower diversity as the generated sentence overlaps with the original text.
+        # A lower ROUGE Score means higher diversity but the meaning can be lost.
+        # ROUGE1 - unigram
+        # ROUGE2 - bigram
+        # ROUGEL - longest matching sequence
         rouge_scores = self.rouge_scorer.score(original, paraphrase)
 
         # Calculate Semantic Similarity using spaCy
@@ -169,7 +182,7 @@ class ParaphraseEvaluator:
         """
         results = []
         
-        for idx, paraphrase_dict in enumerate(paraphrases, 1):
+        for idx, paraphrase_dict in enumerate(paraphrases):
             paraphrase_text = paraphrase_dict['phrase']
             approach = paraphrase_dict.get('approach', 'unknown')
             model = paraphrase_dict.get('model', 'unknown')
@@ -178,7 +191,7 @@ class ParaphraseEvaluator:
             metrics = self.evaluate_single_paraphrase(original, paraphrase_text)
             readability = self.evaluate_readability(paraphrase_text)
             grammar = self.evaluate_grammar(paraphrase_text)
-            
+
             # Combine all metrics
             result = {
                 'paraphrase_id': idx,
@@ -196,7 +209,7 @@ class ParaphraseEvaluator:
         # Calculate aggregate metrics
         avg_metrics = {
             'avg_bleu': np.mean([r['bleu'] for r in results]),
-            'avg_rouge1': np.mean([r['rouge1'] for r in results]),
+            'avg_rougel': np.mean([r['rougeL'] for r in results]),
             'avg_semantic_similarity': np.mean([r['semantic_similarity'] for r in results]),
             'diversity_between_paraphrases': self.calculate_diversity([r['text'] for r in results])
         }
@@ -229,6 +242,7 @@ class ParaphraseEvaluator:
         
         return np.mean(scores)
 
+      
     def print_evaluation_results(self, evaluation_results: Dict):
         """
         Print evaluation results in a formatted way
@@ -247,7 +261,7 @@ class ParaphraseEvaluator:
             print(f"Approach: {result['approach']}")
             print(f"Model: {result['model']}")
             print(f"BLEU Score: {result['bleu']:.3f}")
-            print(f"ROUGE-1 F1: {result['rouge1']:.3f}")
+            print(f"ROUGE-L F1: {result['rougel']:.3f}")
             print(f"Semantic Similarity: {result['semantic_similarity']:.3f}")
             print(f"Length Ratio: {result['length_ratio']:.3f}")
             print(f"Lexical Diversity: {result['lexical_diversity']:.3f}")
@@ -259,6 +273,209 @@ class ParaphraseEvaluator:
         print("-" * 80)
         agg = evaluation_results['aggregate_metrics']
         print(f"Average BLEU Score: {agg['avg_bleu']:.3f}")
-        print(f"Average ROUGE-1: {agg['avg_rouge1']:.3f}")
+        print(f"Average ROUGE-L: {agg['avg_rougel']:.3f}")
         print(f"Average Semantic Similarity: {agg['avg_semantic_similarity']:.3f}")
         print(f"Diversity Between Paraphrases: {agg['diversity_between_paraphrases']:.3f}")
+
+
+    def plot_results(self, df: pd.DataFrame, output_dir: str = "paraphrasing_results"):
+        """
+        Create various plots to visualize experimental results
+        
+        Args:
+            df: DataFrame containing experimental results
+            output_dir: Directory to save plots
+        """
+        # Filter successful experiments
+        df_success = df[df['success']]
+
+        # Create plots directory
+        plots_dir = f"{output_dir}/plots"
+        os.makedirs(plots_dir, exist_ok=True)
+        
+        # 1. Semantic Similarity vs Lexical Diversity by Model
+        plt.figure(figsize=(12, 8))
+        sns.scatterplot(data=df_success, 
+                       x='avg_semantic_similarity', 
+                       y='diversity_between_paraphrases',
+                       hue='model',
+                       style='model',
+                       s=100)
+        plt.title('Semantic Similarity vs Lexical Diversity by Model')
+        plt.savefig(f"{plots_dir}/semantic_vs_lexical.png")
+        plt.close()
+        
+        # 2. Semantic Similarity vs BLEU by Model
+        plt.figure(figsize=(12, 8))
+        sns.scatterplot(data=df_success, 
+                       x='avg_semantic_similarity', 
+                       y='avg_bleu',
+                       hue='model',
+                       style='model',
+                       s=100)
+        plt.title('Semantic Similarity vs BLEU by Model')
+        plt.savefig(f"{plots_dir}/semantic_vs_bleu.png")
+        plt.close()
+        
+        # 3. Semantic Similarity vs ROUGE-L by Model
+        plt.figure(figsize=(12, 8))
+        sns.scatterplot(data=df_success, 
+                       x='avg_semantic_similarity', 
+                       y='avg_rougel',
+                       hue='model',
+                       style='model',
+                       s=100)
+        plt.title('Semantic Similarity vs ROUGE-1 by Model')
+        plt.savefig(f"{plots_dir}/semantic_vs_rouge1.png")
+        plt.close()
+        
+        # 4. Model Performance Comparison (boxplot)
+        metrics = ['avg_semantic_similarity', 'diversity_between_paraphrases', 
+                  'avg_bleu', 'avg_rougel']
+        fig, axes = plt.subplots(2, 2, figsize=(15, 15))
+        fig.suptitle('Model Performance Comparison')
+        
+        for ax, metric in zip(axes.flat, metrics):
+            sns.boxplot(data=df_success, x='model', y=metric, ax=ax)
+            ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+        
+        plt.tight_layout()
+        plt.savefig(f"{plots_dir}/model_comparison.png")
+        plt.close()
+        
+        # Generate summary statistics
+        summary = df_success.groupby('model')[
+            ['avg_semantic_similarity', 'diversity_between_paraphrases', 
+             'avg_bleu', 'avg_rougel']].describe()
+        summary.to_csv(f"{output_dir}/summary_statistics.csv")
+        
+        # Add call to analyze best parameters
+        self.analyze_best_parameters(df, output_dir)
+        return summary
+
+    def analyze_best_parameters(self, df: pd.DataFrame, output_dir: str = "experiment_results"):
+        """
+        Analyze and identify the best parameter combinations for each model
+        
+        Args:
+            df: DataFrame containing experimental results
+            output_dir: Directory to save analysis results
+        """
+        # Filter successful experiments
+        df_success = df[df['success']]
+        
+        # Define metrics to optimize
+        metrics = {
+            'avg_semantic_similarity': 'max',     # Higher is better (preserve meaning)
+            'diversity_between_paraphrases': 'moderate',  # Moderate is better (balanced rewording)
+            'avg_bleu': 'moderate',          # Moderate is better (balanced similarity)
+            'avg_rougel': 'moderate'         # Moderate is better (balanced overlap)
+        }
+        
+        # Define target values for 'moderate' metrics
+        moderate_targets = {
+            'diversity_between_paraphrases': 0.6,  # Aim for 60% unique words
+            'avg_bleu': 0.5,          # Aim for 50% BLEU score
+            'avg_rougel': 0.5         # Aim for 50% ROUGE score
+        }
+        
+        results = []
+        
+        for model in df_success['model'].unique():
+            model_df = df_success[df_success['model'] == model]
+            
+            # Find best parameters for each metric
+            best_params = {}
+            
+            for metric, objective in metrics.items():
+                if objective == 'max':
+                    # For metrics where higher is better
+                    best_row = model_df.loc[model_df[metric].idxmax()]
+                elif objective == 'moderate':
+                    # For metrics where moderate values are better
+                    target = moderate_targets[metric]
+                    model_df['distance_from_target'] = abs(model_df[metric] - target)
+                    best_row = model_df.loc[model_df['distance_from_target'].idxmin()]
+                
+                best_params[metric] = {
+                    'value': best_row[metric],
+                    'target': moderate_targets.get(metric, 'maximize'),
+                    'parameters': {
+                        'temperature': best_row['temperature'],
+                        'repetition_penalty': best_row['repetition_penalty'],
+                        'top_p': best_row['top_p']
+                    }
+                }
+            
+            # Find overall best parameters (balanced approach)
+            normalized_df = model_df.copy()
+            for metric in metrics.keys():
+                if metrics[metric] == 'moderate':
+                    # For moderate metrics, closer to target is better
+                    target = moderate_targets[metric]
+                    normalized_df[f'{metric}_score'] = 1 - abs(normalized_df[metric] - target) / target
+                else:
+                    # For maximize metrics, higher is better
+                    normalized_df[f'{metric}_score'] = (normalized_df[metric] - normalized_df[metric].min()) / \
+                        (normalized_df[metric].max() - normalized_df[metric].min())
+            
+            # Calculate composite score
+            normalized_df['composite_score'] = normalized_df[[f'{m}_score' for m in metrics.keys()]].mean(axis=1)
+            
+            # Get best overall parameters
+            best_overall = normalized_df.loc[normalized_df['composite_score'].idxmax()]
+            
+            results.append({
+                'model': model,
+                'best_overall_parameters': {
+                    'temperature': best_overall['temperature'],
+                    'repetition_penalty': best_overall['repetition_penalty'],
+                    'top_p': best_overall['top_p']
+                },
+                'best_overall_scores': {
+                    metric: {
+                        'value': best_overall[metric],
+                        'target': moderate_targets.get(metric, 'maximize')
+                    } for metric in metrics.keys()
+                },
+                'composite_score': best_overall['composite_score'],
+                'best_by_metric': best_params
+            })
+        
+        # Save results
+        os.makedirs(output_dir, exist_ok=True)
+        with open(f"{output_dir}/best_parameters.json", 'w') as f:
+            json.dump(results, f, indent=2)
+        
+        # Create parameter analysis plots
+        plt.figure(figsize=(15, 10))
+        for i, metric in enumerate(metrics.keys(), 1):
+            plt.subplot(2, 2, i)
+            sns.scatterplot(data=df_success, 
+                           x='temperature', 
+                           y=metric, 
+                           hue='model',
+                           size='repetition_penalty',
+                           sizes=(50, 200))
+            plt.title(f'Temperature vs {metric}')
+        plt.tight_layout()
+        plt.savefig(f"{output_dir}/parameter_analysis.png")
+        plt.close()
+        
+        # Print summary
+        print("\nBest Parameters Summary:")
+        print("=" * 80)
+        for result in results:
+            print(f"\nModel: {result['model']}")
+            print(f"Best Overall Parameters:")
+            for param, value in result['best_overall_parameters'].items():
+                if value is None:
+                    print(f"  {param}: {value}")
+                else:
+                    print(f"  {param}: {value:.2f}")
+            print(f"Resulting Scores:")
+            for metric, value in result['best_overall_scores'].items():
+                print(f"  {metric}: {value['value']:.3f}")
+            print(f"Target: {value['target']}")
+            print(f"Composite Score: {result['composite_score']:.3f}")
+        

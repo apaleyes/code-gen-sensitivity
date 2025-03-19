@@ -1,5 +1,6 @@
 # renamed this file because it used to be same as import below, and that confused python
 from openai import OpenAI as OpenAIClient
+
 from .base import BaseModel
 
 
@@ -18,12 +19,9 @@ class OpenAI(BaseModel):
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are a coding assistant."},
-                {
-                    "role": "user",
-                    "content": prompt
-                }
+                {"role": "user", "content": prompt},
             ],
-            temperature=self.temperature
+            temperature=self.temperature,
         )
 
         response_message = completion.choices[0].message
