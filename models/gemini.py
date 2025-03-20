@@ -16,12 +16,18 @@ class Gemini(BaseModel):
         # default is 1
         # we use 0 to minimise variation
         self.temperature = 0.0
+        self.top_p = 0.95
+        self.top_k = 120
+        self.frequency_penalty = 0.0
 
     def __call__(self, prompt):
         response = self.client.generate_content(
             prompt,
             generation_config=genai.types.GenerationConfig(
                 temperature=self.temperature,
+                top_p=self.top_p,
+                top_k=self.top_k,
+                frequency_penalty=self.frequency_penalty,
             ),
         )
 

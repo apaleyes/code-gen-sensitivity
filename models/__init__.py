@@ -24,10 +24,12 @@ def get_model(model_name):
 
     if model_name.lower() == "llama":
         from .llama import Llama
+        
         return Llama()
 
     if model_name.lower() == "deepseek":
         from .deepseek import DeepSeek
+        
         return DeepSeek()
 
     raise ValueError(f"Unknown model name {model_name}")

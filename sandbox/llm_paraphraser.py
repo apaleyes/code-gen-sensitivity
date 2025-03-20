@@ -1,12 +1,8 @@
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from models import get_model
 from models.model_caller import ModelCaller
-from models.chatgpt import OpenAI
-from models.claude import Claude
-from models.deepseek import DeepSeek
-from models.gemini import Gemini
-from models.llama import Llama
 from models import get_model
 from typing import List, Dict
 
@@ -35,14 +31,15 @@ class LLMParaphraser:
         Requirements:
         - Maintain the exact same meaning
         - The paraphrases must be semantically similar to the input text
-        - Use different wording where possible
         - Be clear and natural
         - Do not add or remove information
         
         Text to paraphrase:
         "{text}"
         
-        Generate {num_variations} different paraphrased versions.
+        Generate {num_variations} different paraphrased versions. Following the next rule:
+        - The paraphrased versions should use the same words as the original text
+        
         Format your response as a Python list of strings, one paraphrase per string.
         Example format:
         [
@@ -54,24 +51,13 @@ class LLMParaphraser:
     
     def _initialize_model(self):
         """Initialize the specified LLM model"""
-        if self.model_name.lower() == 'claude':
-            return Claude()
-        elif self.model_name.lower() == 'openai':
-            return OpenAI()
-        elif self.model_name.lower() == 'gemini':
-            return Gemini()
-        elif self.model_name.lower() == 'llama':
-            return Llama()
-        elif self.model_name.lower() == 'deepseek':
-            return DeepSeek()
-        else:
-            raise ValueError(f"Unsupported model: {self.model_name}")
+        return get_model(self.model_name.lower())
     
     def _transform_prompt(self, text: str) -> str:
         """Transform the input text into a proper prompt"""
         return text
     
-    def paraphrase(self, text: str, num_variations: int = 5, temperature: float=1.0) -> List[Dict]:
+    def paraphrase(self, text: str, num_variations: int = 5, temperature: float=1.0, top_p: float=0.95, top_k: int=120, frequency_penalty: float=0.0) -> List[Dict]:
         """
         Generate paraphrased versions of the input text
         
@@ -84,6 +70,9 @@ class LLMParaphraser:
         """
         prompt = self.base_prompt.format(text=text, num_variations=num_variations)
         self.model.temperature = temperature
+        self.model.top_p = top_p
+        self.model.top_k = top_k
+        self.model.frequency_penalty = frequency_penalty
         try:
             # Get response from the model using ModelCaller
             response = self.model_caller.get_code(prompt)
