@@ -71,7 +71,9 @@ class ModelCaller:
             prompt = self.prompt_transform(prompt)
 
         # see note in __init__ on retries
-        for _ in range(self.n_retries):
+        for i in range(self.n_retries):
+            time.sleep(i**2/10)
+            # prompt = prompt + ' ' # in my experience hacks like this lowered the re-fail rate, but could be technically a reproducibility issue
             try:
                 # if model requires delay between calls,
                 # e.g. to stay under certain call rate,
