@@ -1,6 +1,7 @@
 # import nltk
 # nltk.download('averaged_perceptron_tagger_eng')
 
+import os
 import json
 import datetime
 import nlpaug.augmenter.char as nac
@@ -14,8 +15,11 @@ import concurrent.futures
 
 def run_experiment(i, model_name="openai", augmentation_method="keyboard", n_repeats=5):
     # LEETCODE DATASET
-    with open('leetcode-dataset.json', 'r') as f:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(script_dir, "..", "sandbox", "leetcode-dataset-new.json")
+    with open(file_path, "r") as f:
         leet_data = json.load(f)
+
     leet_item = leet_data[i]
     print(leet_item['slug'], flush=True)
     print(leet_item['question'], flush=True)
@@ -90,12 +94,12 @@ def run_experiment(i, model_name="openai", augmentation_method="keyboard", n_rep
     experiment_data["id"] = f"{experiment_data['llm_model']}-{experiment_data['prompt_title']}-{experiment_data['augmentation_method']}-{timestamp_now}"
 
     print(experiment_data, flush=True)
-    with open(f'experiments/{experiment_data["id"]}.json', 'w+', encoding='utf-8') as f:
+    with open(f'experiments-new/{experiment_data["id"]}.json', 'w+', encoding='utf-8') as f:
         json.dump(experiment_data, f, indent=4)
     print('done', flush=True)
 
 #
-# for k in range(10):
-#     run_experiment(k, 'openai', 'synonym')
-#     visualise.process_experiments('experiments')
-visualise.generate_combined_plots('experiments')
+for k in range(10):
+    run_experiment(k, 'openai', 'synonym')
+    visualise.process_experiments('experiments-new')
+# visualise.generate_combined_plots('experiments')
