@@ -75,14 +75,12 @@ class TransformerParaphraser(BaseParaphraser):
         if self._supported_models is None:
             # Import transformers only when needed
             from transformers import (
-                AutoModelForSeq2SeqGeneration, AutoTokenizer,
                 BartForConditionalGeneration, BartTokenizer,
                 T5ForConditionalGeneration, T5Tokenizer,
                 PegasusForConditionalGeneration, PegasusTokenizer
             )
             
             self._supported_models = {
-                "Vamsi/T5_Paraphrase_Paws": (AutoTokenizer, AutoModelForSeq2SeqGeneration),
                 "facebook/bart-base": (BartTokenizer, BartForConditionalGeneration),
                 "t5-base": (T5Tokenizer, T5ForConditionalGeneration),
                 "tuner007/pegasus_paraphrase": (PegasusTokenizer, PegasusForConditionalGeneration),

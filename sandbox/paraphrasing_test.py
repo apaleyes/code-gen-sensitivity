@@ -1,6 +1,7 @@
 import os
 import warnings
-import json
+import pandas as pd
+import matplotlib.pyplot as plt
 from datetime import datetime
 from itertools import product
 from typing import Dict, List, Tuple
@@ -21,22 +22,25 @@ class ParaphrasingExperiment:
             "Given the business logic code below, implement Flask backend. Do not include example of usage or the business logic, do not repeat any code from this prompt. Only write the Flask API code.",
             "Write a Calculator class. It shall contain common operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry."
         ]
-        
+
+        # Temperature is the only parameter that influences the BLEU score        
         self.param_grid = {
             "transformers": {
-                "temperature": [0.0, 0.5, 1.0],
-                "repetition_penalty": [1.5],
-                "top_p": [0.95]
+                "temperature": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+                #"top_p": [0.9, 0.99, 0.999],
+                #"top_k": [10, 15, 20]
+                #"repetition_penalty": [0.5, 1.0, 1.5, 2.0]
             },
             "llms": {
-                "temperature": [0.0],
-                "top_p": [0.95],
-                "top_k": [40],
-                "frequency_penalty": [-2.0]
+                "temperature": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+                #"top_p": [0.9, 0.99, 0.999],
+                #"top_k": [10, 15, 20]
+                #"frequency_penalty": [-2.0, 0.0, 1.9]
             }
         }
-        self.diversity_ranges = [(0.0, 0.4), (0.4, 0.8), (0.8, 1.0)]
-        self.paraphrases_range = 10
+        self.rules = ["Most of the words must be different between the paraphrases and the original phrase."
+            "The paraphrases must have some different words from the original phrase.", 
+            "The paraphrases must have the same words of the original phrase."]
         
         self.evaluator = ParaphraseEvaluator()
         self._approaches = {}  # Empty dict for lazy loading
@@ -69,12 +73,6 @@ class ParaphrasingExperiment:
         else:
             raise ValueError(f"Unsupported data source type: {source_type}")
         
-    def dataset_complete(self, dataset: List[Dict]) -> bool:
-        for range in dataset:
-            if len(range['paraphrases']) < self.paraphrases_range:
-                return False
-        return True
-
     def run_experiments(self, 
                        selected_approaches: List[str], 
                        selected_models: List[str], 
@@ -95,21 +93,14 @@ class ParaphrasingExperiment:
         data_source_kwargs = data_source_kwargs or {}
         data_source = self.create_data_source(data_source_type, **data_source_kwargs)
         
-        dataset = []
-        for range_start, range_end in self.diversity_ranges:
-            dataset.append({
-                "diversity_range": (range_start, range_end),
-                "paraphrases_range": self.paraphrases_range,
-                "paraphrases": []
-            })
-        
+        paraphrases = []
         for approach_name in selected_approaches:
             try:
                 approach = self.get_approach(approach_name)
             except ValueError as e:
                 print(f"Warning: {str(e)}")
                 continue
-                
+            #rule = 0
             param_grid = self.param_grid.get(approach_name, {})
             param_combinations = [dict(zip(param_grid.keys(), v)) for v in product(*param_grid.values())]
             
@@ -121,51 +112,61 @@ class ParaphrasingExperiment:
                 phrase = phrase_data['text']
                 for model_name in selected_models:
                     for params in param_combinations:
-                        if not self.dataset_complete(dataset):
-                            print(f"\nTesting {approach_name} with {model_name}")
-                            print(f"Parameters: {params}")
-                            print(f"Phrase: {phrase[:50]}...")
-                            try:
-                                paraphrased_phrases = approach.paraphrase(
-                                    phrase, 
-                                    num_variations=5,
-                                    model_name=model_name,
-                                    **params
-                                )
+                        print(f"\nTesting {approach_name} with {model_name}")
+                        print(f"Parameters: {params}")
+                        print(f"Phrase: {phrase[:50]}...")
+                        try:
+                            paraphrased_phrases = approach.paraphrase(
+                                phrase, 
+                                num_variations=5,
+                                model_name=model_name,
+                                **params
+                            )
                             
-                                if paraphrased_phrases:
-                                    eval_results = self.evaluator.evaluate_paraphrases(phrase, paraphrased_phrases)
-                                    individual_results = eval_results['individual_results']
-                                    for result in individual_results:
-                                        for range in dataset:
-                                            if len(range['paraphrases']) < self.paraphrases_range:
-                                                if range['diversity_range'][0] <= result['bleu'] <= range['diversity_range'][1]:
-                                                    paraphrase = {
-                                                        "original_phrase": phrase,
-                                                        "paraphrase": result['text'],
-                                                        "semantic_similarity": result['semantic_similarity'],
-                                                        "bleu": result['bleu']
-                                                    }
-                                                    range['paraphrases'].append(paraphrase)
-                                                    break
-                            except Exception as e:
-                                print(f"Error: {str(e)}")
-                        else:
-                            print(f"Dataset complete!")
-                            break
-        # Save dataset to a file
-        with open(f"{results_dir}/paraphrase_dataset.json", 'w') as f:
-            json.dump(dataset, f, indent=2)
+                            if paraphrased_phrases:
+                                eval_results = self.evaluator.evaluate_paraphrases(phrase, paraphrased_phrases)
+                                individual_results = eval_results['individual_results']
+                                for result in individual_results:
+                                    paraphrase = {
+                                        "original_phrase": phrase,
+                                        "paraphrase": result['text'],
+                                        "approach_name": approach_name,
+                                        "semantic_similarity": result['semantic_similarity'],
+                                        "bleu": result['bleu'],
+                                        **params
+                                    }
+                                    paraphrases.append(paraphrase)
+                        except Exception as e:
+                            print(f"Error: {str(e)}")
+                        
+               
+
+        # Save all paraphrases to a CSV file
+        paraphrases_df = pd.DataFrame(paraphrases)
+        paraphrases_df.to_csv(f"{results_dir}/paraphrases.csv", index=False)
+        print(f"All paraphrases saved to {results_dir}/paraphrases.csv")
         
-        return dataset
+        # Plot semantic_similarity vs BLEU with different colors for different approaches
+        plt.figure(figsize=(10, 6))
+        for approach_name in paraphrases_df['approach_name'].unique():
+            approach_data = paraphrases_df[paraphrases_df['approach_name'] == approach_name]
+            plt.scatter(approach_data['semantic_similarity'], approach_data['bleu'], alpha=0.5, label=approach_name)
+        plt.title('Semantic Similarity vs BLEU')
+        plt.xlabel('Semantic Similarity')
+        plt.ylabel('BLEU Score')
+        plt.grid(True)
+        plt.legend()
+        plt.savefig(f"{results_dir}/semantic_similarity_vs_bleu.png")        
+
+        return paraphrases
 
 if __name__ == "__main__":
     experiment = ParaphrasingExperiment()
     
     # Example using test phrases
     dataset = experiment.run_experiments(
-        selected_approaches=["llms"],
-        selected_models=["gemini"],
+        selected_approaches=["transformers", "llms"],
+        selected_models=["tuner007/pegasus_paraphrase", "gemini"],
         data_source_type="test_phrases"
     )
     

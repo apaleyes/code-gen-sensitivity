@@ -37,8 +37,7 @@ class LLMParaphraser:
         Text to paraphrase:
         "{text}"
         
-        Generate {num_variations} different paraphrased versions. Following the next rule:
-        - The paraphrased versions should use the same words as the original text
+        Generate {num_variations} different paraphrased versions. 
         
         Format your response as a Python list of strings, one paraphrase per string.
         Example format:
@@ -57,7 +56,7 @@ class LLMParaphraser:
         """Transform the input text into a proper prompt"""
         return text
     
-    def paraphrase(self, text: str, num_variations: int = 5, temperature: float=1.0, top_p: float=0.95, top_k: int=120, frequency_penalty: float=0.0) -> List[Dict]:
+    def paraphrase(self, text: str, rule: str, num_variations: int = 5, temperature: float=1.0, top_p: float=0.95, top_k: int=120, frequency_penalty: float=0.0) -> List[Dict]:
         """
         Generate paraphrased versions of the input text
         
@@ -68,7 +67,7 @@ class LLMParaphraser:
         Returns:
             List of dictionaries containing paraphrased versions and metadata
         """
-        prompt = self.base_prompt.format(text=text, num_variations=num_variations)
+        prompt = self.base_prompt.format(text=text, num_variations=num_variations, rule=rule)
         self.model.temperature = temperature
         self.model.top_p = top_p
         self.model.top_k = top_k
