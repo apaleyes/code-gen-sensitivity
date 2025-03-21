@@ -8,7 +8,7 @@ import nlpaug.augmenter.char as nac
 import nlpaug.augmenter.word as naw
 from TSED import TSED
 from models import get_model, ModelCaller
-from utils import ensure_python_code_prompt
+from prompt_utils import ensure_python_code_prompt
 import code_execute
 import visualise
 import concurrent.futures
@@ -99,7 +99,22 @@ def run_experiment(i, model_name="openai", augmentation_method="keyboard", n_rep
     print('done', flush=True)
 
 #
-for k in range(10):
+for k in range(4, 10):
     run_experiment(k, 'openai', 'synonym')
     visualise.process_experiments('experiments-new')
+visualise.generate_combined_plots('experiments')
+#
+# for k in range(10):
+#     run_experiment(k, 'llama', 'synonym')
+#     visualise.process_experiments('experiments-new')
+# visualise.generate_combined_plots('experiments')
+#
+# for k in range(10):
+#     run_experiment(k, 'openai', 'keyboard')
+#     visualise.process_experiments('experiments-new')
+# visualise.generate_combined_plots('experiments')
+#
+# for k in range(10):
+#     run_experiment(k, 'llama', 'keyboard')
+#     visualise.process_experiments('experiments-new')
 # visualise.generate_combined_plots('experiments')
