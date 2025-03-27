@@ -6,7 +6,7 @@
 import json
 
 from models import ModelCaller, get_model
-from prompt_utils import ensure_python_code_prompt
+from code_utils import ensure_python_code_prompt
 
 if __name__ == "__main__":
     with open("sandbox/leetcode-dataset.json", "r") as f:

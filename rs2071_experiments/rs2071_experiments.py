@@ -8,7 +8,7 @@ import nlpaug.augmenter.char as nac
 import nlpaug.augmenter.word as naw
 from TSED import TSED
 from models import get_model, ModelCaller
-from prompt_utils import ensure_python_code_prompt
+from code_utils import ensure_python_code_prompt
 import code_execute
 import visualise
 import concurrent.futures
