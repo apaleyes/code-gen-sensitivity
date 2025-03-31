@@ -8,7 +8,7 @@ from typing import Dict, List, Tuple
 import pandas as pd
 from paraphrasing_evaluation import ParaphraseEvaluator
 from paraphrasing_approaches import ParrotParaphraser, TransformerParaphraser, LLMParaphraserWrapper
-from paraphrasing_datasource import DataSource, TestPhrasesDataSource, LeetCodeDataSource, CSVDataSource
+from paraphrasing_datasource import DataSource, TestPhrasesDataSource, LeetCodeDataSource, TasksDataSetDataSource, CSVDataSource
 from dotenv import load_dotenv
 
 class ParaphrasingExperiment:
@@ -66,6 +66,9 @@ class ParaphrasingExperiment:
         elif source_type == "leetcode":
             file_path = kwargs.get('file_path', 'sandbox/leetcode-dataset.json')
             return LeetCodeDataSource(file_path)
+        elif source_type == "tasks_dataset":
+            file_path = kwargs.get('file_path', 'sandbox/tasks_dataset.json')
+            return TasksDataSetDataSource(file_path)
         elif source_type == "csv":
             file_path = kwargs.get('file_path')
             text_column = kwargs.get('text_column')
@@ -110,7 +113,7 @@ class ParaphrasingExperiment:
             
             for phrase_data in data_source.get_phrases():
                 phrase = phrase_data['text']
-                for model_name in selected_models:
+                for model_name in selected_models[approach_name]:
                     for params in param_combinations:
                         print(f"\nTesting {approach_name} with {model_name}")
                         print(f"Parameters: {params}")
@@ -141,22 +144,23 @@ class ParaphrasingExperiment:
                         
                
 
-        # Save all paraphrases to a CSV file
-        paraphrases_df = pd.DataFrame(paraphrases)
-        paraphrases_df.to_csv(f"{results_dir}/paraphrases.csv", index=False)
-        print(f"All paraphrases saved to {results_dir}/paraphrases.csv")
+                # Save paraphrases to a CSV file
+                paraphrases_df = pd.DataFrame(paraphrases)
+                paraphrases_df.to_csv(f"{results_dir}/paraphrases.csv", index=False)
+                print(f"All paraphrases saved to {results_dir}/paraphrases.csv")
         
-        # Plot semantic_similarity vs BLEU with different colors for different approaches
-        plt.figure(figsize=(10, 6))
-        for approach_name in paraphrases_df['approach_name'].unique():
-            approach_data = paraphrases_df[paraphrases_df['approach_name'] == approach_name]
-            plt.scatter(approach_data['semantic_similarity'], approach_data['bleu'], alpha=0.5, label=approach_name)
-        plt.title('Semantic Similarity vs BLEU')
-        plt.xlabel('Semantic Similarity')
-        plt.ylabel('BLEU Score')
-        plt.grid(True)
-        plt.legend()
-        plt.savefig(f"{results_dir}/semantic_similarity_vs_bleu.png")        
+                # Plot semantic_similarity vs BLEU with different colors for different approaches
+                plt.figure(figsize=(10, 6))
+                for approach_name in paraphrases_df['approach_name'].unique():
+                    approach_data = paraphrases_df[paraphrases_df['approach_name'] == approach_name]
+                    plt.scatter(approach_data['semantic_similarity'], approach_data['bleu'], alpha=0.5, label=approach_name)
+                plt.title('Semantic Similarity vs BLEU')
+                plt.xlabel('Semantic Similarity')
+                plt.ylabel('BLEU Score')
+                plt.grid(True)
+                plt.legend()
+                plt.savefig(f"{results_dir}/semantic_similarity_vs_bleu.png")
+                plt.close()
 
         return paraphrases
 
@@ -166,10 +170,10 @@ if __name__ == "__main__":
     # Example using test phrases
     dataset = experiment.run_experiments(
         selected_approaches=["transformers", "llms"],
-        selected_models=["tuner007/pegasus_paraphrase", "gemini"],
-        data_source_type="test_phrases"
+        selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
+        data_source_type="tasks_dataset"
     )
     
     # Print or process the dataset
-    for entry in dataset:
-        print(entry)
+    #for entry in dataset:
+    #    print(entry)

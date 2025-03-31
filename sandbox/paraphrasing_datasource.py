@@ -46,6 +46,21 @@ class LeetCodeDataSource(DataSource):
                 'source': 'leetcode',
                 'phrase_id': entry['number']
             }
+        
+class TasksDataSetDataSource(DataSource):
+    """Tasks dataset data source"""
+    
+    def __init__(self, file_path: str):
+        with open(file_path, 'r', encoding='utf-8') as f:
+            self.data = json.load(f)
+            
+    def get_phrases(self) -> Iterator[Dict[str, str]]:
+        for entry in self.data:
+            yield {
+                'text': entry['question'],
+                'source': 'tasks dataset',
+                'phrase_id': entry['id']
+            }
 
 class CSVDataSource(DataSource):
     """CSV file data source"""
