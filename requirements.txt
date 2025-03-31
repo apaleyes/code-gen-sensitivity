@@ -32,3 +32,6 @@ google-generativeai
 anthropic
 openai
 ollama
+
+# personas
+agents==0.0.6
