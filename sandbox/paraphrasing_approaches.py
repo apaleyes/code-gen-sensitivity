@@ -1,9 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Dict, List, Optional
-from itertools import product
 import torch
 from parrot import Parrot
-from paraphrasing_evaluation import ParaphraseEvaluator
 from llm_paraphraser import LLMParaphraser
 
 class BaseParaphraser(ABC):
@@ -75,14 +73,12 @@ class TransformerParaphraser(BaseParaphraser):
         if self._supported_models is None:
             # Import transformers only when needed
             from transformers import (
-                AutoModelForSeq2SeqGeneration, AutoTokenizer,
                 BartForConditionalGeneration, BartTokenizer,
                 T5ForConditionalGeneration, T5Tokenizer,
                 PegasusForConditionalGeneration, PegasusTokenizer
             )
             
             self._supported_models = {
-                "Vamsi/T5_Paraphrase_Paws": (AutoTokenizer, AutoModelForSeq2SeqGeneration),
                 "facebook/bart-base": (BartTokenizer, BartForConditionalGeneration),
                 "t5-base": (T5Tokenizer, T5ForConditionalGeneration),
                 "tuner007/pegasus_paraphrase": (PegasusTokenizer, PegasusForConditionalGeneration),
@@ -117,37 +113,45 @@ class TransformerParaphraser(BaseParaphraser):
 
         try:
             tokenizer, model = self.load_model(model_name)
-            
-            # Prepare input
-            input_ids = tokenizer.encode(phrase, return_tensors="pt")
-            if torch.cuda.is_available():
-                input_ids = input_ids.to('cuda')
-                
-            estimated_tokens = self.estimate_tokens(phrase, tokenizer)
-            
-            # Generate paraphrases
-            outputs = model.generate(
-                input_ids=input_ids,
-                max_length=estimated_tokens * 3,
-                min_length=estimated_tokens,
-                do_sample=True,
-                temperature=kwargs.get("temperature", 1.0),
-                top_k=120,
-                top_p=kwargs.get("top_p", 0.95),
-                repetition_penalty=kwargs.get("repetition_penalty", 1.5),
-                length_penalty=1.5,
-                no_repeat_ngram_size=2,
-                early_stopping=True,
-                num_return_sequences=num_variations,
-                num_beams=10,
-            )
 
-            # Decode outputs
+            paraphrases = [""] * num_variations
+            sentences = phrase.split(".")
+            sentences = [sentence for sentence in sentences if sentence.strip()]
+            for sentence in sentences:
+                # Prepare input
+                input_ids = tokenizer.encode(sentence, return_tensors="pt")
+                if torch.cuda.is_available():
+                    input_ids = input_ids.to('cuda')
+                
+                estimated_tokens = self.estimate_tokens(sentence, tokenizer)
+            
+                # Generate paraphrases
+                outputs = model.generate(
+                    input_ids=input_ids,
+                    max_length=estimated_tokens * 3,
+                    min_length=estimated_tokens,
+                    do_sample=True,
+                    temperature=kwargs.get("temperature", 1.0),
+                    top_k=120,
+                    top_p=kwargs.get("top_p", 0.95),
+                    repetition_penalty=kwargs.get("repetition_penalty", 1.5),
+                    length_penalty=1.5,
+                    no_repeat_ngram_size=2,
+                    early_stopping=True,
+                    num_return_sequences=num_variations,
+                    num_beams=10,
+                )
+                index = 0
+                for output in outputs:
+                    paraphrased_sentence = tokenizer.decode(output, skip_special_tokens=True, clean_up_tokenization_spaces=True),
+                    paraphrases[index] = paraphrases[index] + paraphrased_sentence[0] + " "
+                    index = index + 1
+
             return [{
-                "phrase": tokenizer.decode(output, skip_special_tokens=True, clean_up_tokenization_spaces=True),
+                "phrase": phrased_phrase,
                 "approach": self.approach_name,
                 "model": model_name
-            } for output in outputs]
+            } for phrased_phrase in paraphrases]
         except Exception as e:
             print(f"Transformer error: {str(e)}")
             return []

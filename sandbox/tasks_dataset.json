@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "type": "app_dev",
+    "question": "Write a Calculator class. It shall contain common arithmetic operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry, roots, exponents."
+  },
+  {
+    "id": 2,
+    "type": "app_dev",
+    "question": "Implement a REST API for a web application that implements a personal todo list using Flask. The API should allow a user to create, update and delete whole lists as well as individual items. It should also give users an idea of their progress, and give reminders of tasks due or overdue. You can assume the database layer was already implemented separately."
+  },
+  {
+    "id": 3,
+    "type": "app_dev",
+    "question": "Write code to create a database schema for an online bicycle shop that sells bicycles as well as their spare parts and accessories. Use SQAlchemy library to communicate with the database. The code should cover opening and closing of a new connection to the database, creation of necessary tables and their relations, common operations on items in the tables such as addition, deletion, updates, filtered selection and search."
+  },
+  {
+    "id": 4,
+    "type": "app_dev",
+    "question": "Design and implement back end of a video streaming web site. It should provide all operations for users to watch videos online. It should also be able to deal with videos of small and large size, support streaming in different resolutions, give users the ability to pause, restart, skip forwards and backwards. Take into account risks of variable connection quality, potentially very large upload and download sizes, and concurrency."
+  },
+  {
+    "id": 5,
+    "type": "app_dev",
+    "question": "Implement a script that generates accounting reports for a medium size retail business. It should be customizable to cover variable periods of time (month, quarter, year). You can assume data for the report is coming from one of the common accounting systems, such as QuickBooks or Sage. These reports are intended both for internal consumption (such as verification by accountants or management) and for external use (such as submission to tax authority)."
+  },
+  {
+    "id": 6,
+    "type": "app_dev",
+    "question": "Implement a backend engine that tracks user interactions across a website, in an appropriate and efficient data structure. Interactions can be of multiple types, with potential new ones to be added later, which the system must be able to accommodate without major changes. Interactions include likes, ratings, uploads, settings changes. The system should adhere to privacy regulations, and not store any illegal information, and use hashing and anonymisation where possible without losing functionality."
+  },
+  {
+    "id": 7,
+    "type": "app_dev",
+    "question": "Write an app to generate summaries of papers. It should have a button for the user to input the paper that they would like to summarise, an API call to Claude to generate the summary and an input field for the user to ask questions about the final summarised paper."
+  },
+  {
+    "id": 8,
+    "type": "app_dev",
+    "question": "Write a workout tracking app that can import from several fitness apps including Strava, Polar Flow, MyFitnessPal to put together a dashboard of workouts and nutrition information. The user should be able to customise the views by sport as well as by overall mileage or other stats that transfer across sports such as heart rate or total time. Heart rate data should be aggregated to display the total amount of time at different intensity zones. The user should be able to see a graph of their overall progress by pace or by mileage using a dropdown to switch between them."
+  },
+  {
+    "id": 9,
+    "type": "sims_games",
+    "question": "Implement a simulation of multiple lifts operating in a skyscraper that is used as an office building. The number of lifts should be a tunable parameter, as well as the number of floors in the building. It should also be possible to run the simulation for different crowd sizes. The simulation should clearly display expected behavior, e.g. lifts being busier during the morning and evening hours, used sparingly during the day and barely used at night."
+  },
+  {
+    "id": 10,
+    "type": "sims_games",
+    "question": "Implement a controller system for a network of automated teller machines (ATM). As ATMs operate in a highly sensitive financial setting, the system should have extra measures in place to prevent problems with distributed operations, such as failed transactions, concurrent operations, race conditions. Additionally it should have protection measures in place to prevent fraud."
+  },
+  {
+    "id": 11,
+    "type": "sims_games",
+    "question": "Write a game of Tetris for three players who are playing in collaboration. The implementation should include all necessary classes, as well as code responsible for rendering the graphic user interface. The code should also include necessary mechanics to allow three players to play, keep separate scores, and to determine the contributions of each player to the overall score in a fair manner."
+  },
+  {
+    "id": 12,
+    "type": "sims_games",
+    "question": "Write code to evaluate a chess position. It can accept chess position as an input in any convenient format, and output evaluation to clearly indicate which side (white or black) has an advantage, and numerically measure this advantage. Adhere to common values of pieces (pawn - 1, knight and bishop - 3, rook - 5, queen - 9), as well as other useful metrics, e.g. number of controlled squares, number of active moves, check and mate possibilities, and so on."
+  },
+  {
+    "id": 13,
+    "type": "sims_games",
+    "question": "The game of Blokus Duo has two players placing pieces in order on a board. The pieces are all the possible combinations of 1x1 square blocks joined together, up to 5 pieces, but cancelling out any symmetries, as the pieces can be flipped and rotated by the players. There is 1 piece that has 1 square (simple 1x1), 1 piece that has 2 squares (simple 1x2), 2 pieces that have 3 squares (1x3 rectangle, and a corner), etc. Write code that finds the number of possible n-square pieces, and lists the possibilities."
+  },
+  {
+    "id": 14,
+    "type": "sims_games",
+    "question": "LEGO claims that 6 standard 2X4 bricks can be connected in 915,103,765 combinations. Write code that verifies this claim, and design a heuristic to decide which combinations are trivial, and which are complicated, giving each a class rating."
+  },
+  {
+    "id": 15,
+    "type": "sims_games",
+    "question": "Write a game of snake like that on the Nokia phones in 1997 that can be played on a laptop while a software update runs. The user should be able to maneuver the snake with the arrow keys. If the snake’s head runs into any part of its body or edge of the game boundary, the game is over. The snake grows by moving around the screen grid and finding “food” in different blocks, getting longer as it eats."
+  },
+  {
+    "id": 16,
+    "type": "algs",
+    "question": "Implement gradient ascent algorithm using pure Python. Note that unlike the traditional 'gradient descent' algorithm, gradient ascent looks for the global maximum of a function. Do not use any advanced mathematical packages, such as NumPy or SciPy. The algorithm implementation can make reasonable assumptions about smoothness of the function being optimised, but should be able to handle functions that have multiple local maxima."
+  },
+  {
+    "id": 17,
+    "type": "algs",
+    "question": "Implement a deep neural network using pure Python. Do not use any deep learning frameworks such as Tensorflow or PyTorch. The network should support fully connected layers, activations, and allow for forwards and backwards passes. It should also allow for a variable number of hidden layers, input and output layers. Include an example of how this network can be trained for regression and classification problems."
+  },
+  {
+    "id": 18,
+    "type": "algs",
+    "question": "Implement a convex hull algorithm for 4D points. It should be able to take in a list of points, validate that all of them are of four dimensions, and calculate the minimal convex hull of the given list of points. It should be able to cover edge cases, such as a set of one point, points on a single plane, and more. Define the data structure that is most sensible for output of this problem, and make sure the algorithm returns data in that structure."
+  },
+  {
+    "id": 19,
+    "type": "algs",
+    "question": "Given a set of 2n coins, each biased with a different p(heads) value, pick a set of coins that gives the highest probability that when tossed, the number of heads will be n. Note that this is not necessarily the same as expected value. Pick the sets using different methods, and compare their computational complexities."
+  },
+  {
+    "id": 20,
+    "type": "algs",
+    "question": "Collect the classifications of an image given by n different neural networks. Knowing the accuracy of each of these networks’ predictions, design an ensemble method that will output the most likely classification given the individual guesses. Also state the confidence level of your guess."
+  },
+  {
+    "id": 21,
+    "type": "ds",
+    "question": "Given a pandas dataframe with the columns: Patient ID, age, sex, procedure type, and a column each for the hours 1-10, write code to reorganise this dataframe to transform it from having one row for each Patient ID to having multiple rows for each Patient ID, organised by hour with the first column being 'Time since surgery'. Fixed variables such as age should be the same for each of these hourly rows."
+  },
+  {
+    "id": 22,
+    "type": "ds",
+    "question": "Write a sorting function that sorts strings according to underlying ordering. So 8 9 10 should be sorted 8 9 10, not alphabetically 10 8 9. Also take into consideration cases like worded Nine Ten Eleven, or months 31 January - 1 February, etc. It’s one function, and the methods used have to be decided automatically. Default back to alphabetical order if no pattern is found. Partial matching patterns should also be used (eg. iPhone 9, iPhone X, iPhone 11)."
+  }
+]

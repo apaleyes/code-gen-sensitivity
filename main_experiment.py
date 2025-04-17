@@ -4,7 +4,7 @@ import json
 from augmenters import get_augmenter
 from models import ModelCaller, get_model
 from TSED import TSED
-from prompt_utils import ensure_python_code_prompt
+from code_utils import ensure_python_code_prompt
 
 #########################
 # experiment configuration
