@@ -70,6 +70,8 @@ class ModelCaller:
         if self.prompt_transform is not None:
             prompt = self.prompt_transform(prompt)
 
+        no_codes = 0
+
         # see note in __init__ on retries
         for i in range(self.n_retries):
             time.sleep(i**2/10)
@@ -88,7 +90,10 @@ class ModelCaller:
                     # no more retries necessary
                     # break out of the retry loop
                     break
+                if no_codes > 1:
+                    break
                 else:
+                    no_codes += 1
                     print("Request failed, retrying")
         else:
             raise RuntimeError(f"Failed to get valid code from {self.model.name}")

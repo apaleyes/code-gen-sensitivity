@@ -4,6 +4,9 @@
 import os
 import json
 import datetime
+import random
+import time
+
 import nlpaug.augmenter.char as nac
 import nlpaug.augmenter.word as naw
 from TSED import TSED
@@ -55,13 +58,27 @@ def run_experiment(i, model_name="openai", augmentation_method="keyboard", n_rep
         else:
             raise ValueError(f"Unknown augmentation method {experiment_data['augmentation_method']}")
 
-        augmented_prompts = [augmenter.augment(original_prompt, n=1)[0] for _ in range(n_repeats)]
+        augmented_prompts = [augmenter.augment(original_prompt, n=1)[0] for _ in range(n_repeats+1)]
+
+        def call_with_retry(prompt, retries=3, timeout=30):
+            time.sleep(random.randint(0, 10))
+            for attempt in range(retries):
+                try:
+                    with concurrent.futures.ThreadPoolExecutor() as executor:
+                        future_ = executor.submit(model_caller.get_code, prompt)
+                        return future_.result(timeout=timeout)
+                except concurrent.futures.TimeoutError:
+                    print('retry', attempt)
+                    if attempt == retries - 1:
+                        raise
+                    time.sleep(1)
 
         # **Parallelize only model_caller.get_code(augmented_prompt)**
         with concurrent.futures.ThreadPoolExecutor() as executor:
-            future_to_augmented_prompt = {executor.submit(model_caller.get_code, prompt): prompt for prompt in augmented_prompts}
-
+            future_to_augmented_prompt = {executor.submit(call_with_retry, prompt): prompt for prompt in augmented_prompts}
             for repeat_index, future in enumerate(concurrent.futures.as_completed(future_to_augmented_prompt)):
+                if repeat_index >= 5:
+                    break
                 try:
                     new_code = future.result()
                     # print(new_code)
@@ -99,22 +116,22 @@ def run_experiment(i, model_name="openai", augmentation_method="keyboard", n_rep
     print('done', flush=True)
 
 #
-for k in range(4, 10):
-    run_experiment(k, 'openai', 'synonym')
-    visualise.process_experiments('experiments-new')
-visualise.generate_combined_plots('experiments')
+# for k in range(4, 5):
+#     run_experiment(k, 'openai', 'synonym')
+#     visualise.process_experiments('experiments-new')
+# visualise.generate_combined_plots('experiments-new')
 #
 # for k in range(10):
 #     run_experiment(k, 'llama', 'synonym')
 #     visualise.process_experiments('experiments-new')
-# visualise.generate_combined_plots('experiments')
+# visualise.generate_combined_plots('experiments-new')
 #
-# for k in range(10):
+# for k in range(7, 10):
 #     run_experiment(k, 'openai', 'keyboard')
 #     visualise.process_experiments('experiments-new')
-# visualise.generate_combined_plots('experiments')
-#
-# for k in range(10):
+# visualise.generate_combined_plots('experiments-new')
+
+# for k in range(7, 10):
 #     run_experiment(k, 'llama', 'keyboard')
 #     visualise.process_experiments('experiments-new')
-# visualise.generate_combined_plots('experiments')
+visualise.generate_combined_plots('experiments-new')
