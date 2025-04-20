@@ -18,6 +18,7 @@ torch
 seaborn
 matplotlib
 python-dotenv
+torchmetrics
 
 # code distance
 apted
@@ -34,4 +35,4 @@ openai
 ollama
 
 # personas
-agents==0.0.6
+agents

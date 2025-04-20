@@ -1,4 +1,4 @@
-def get_augmenter(augmenter_name, rate):
+def get_augmenter(augmenter_name, rate, paraphrases_file=None):
     if augmenter_name.lower() == "keyboard":
         from .keyboard import KeyboardAugmenter
 
@@ -8,5 +8,10 @@ def get_augmenter(augmenter_name, rate):
         from .synonym import SynonymAugmenter
 
         return SynonymAugmenter(rate)
+
+    if augmenter_name.lower() == "paraphraser":
+        from .paraphraser import ParaphraserAugmenter
+
+        return ParaphraserAugmenter(rate, paraphrases_file)
 
     raise ValueError(f"Unknown augmenter name {augmenter_name}")

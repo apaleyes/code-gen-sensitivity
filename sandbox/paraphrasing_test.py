@@ -38,9 +38,6 @@ class ParaphrasingExperiment:
                 #"frequency_penalty": [-2.0, 0.0, 1.9]
             }
         }
-        self.rules = ["Most of the words must be different between the paraphrases and the original phrase."
-            "The paraphrases must have some different words from the original phrase.", 
-            "The paraphrases must have the same words of the original phrase."]
         
         self.evaluator = ParaphraseEvaluator()
         self._approaches = {}  # Empty dict for lazy loading
@@ -136,6 +133,8 @@ class ParaphrasingExperiment:
                                         "approach_name": approach_name,
                                         "semantic_similarity": result['semantic_similarity'],
                                         "bleu": result['bleu'],
+                                        "bert_score": result['bert_score'],
+                                        "sacre_bleu": result['sacre_bleu'],
                                         **params
                                     }
                                     paraphrases.append(paraphrase)
@@ -149,7 +148,7 @@ class ParaphrasingExperiment:
                 paraphrases_df.to_csv(f"{results_dir}/paraphrases.csv", index=False)
                 print(f"All paraphrases saved to {results_dir}/paraphrases.csv")
         
-                # Plot semantic_similarity vs BLEU with different colors for different approaches
+                # Plot semantic_similarity vs BLEU
                 plt.figure(figsize=(10, 6))
                 for approach_name in paraphrases_df['approach_name'].unique():
                     approach_data = paraphrases_df[paraphrases_df['approach_name'] == approach_name]
@@ -160,6 +159,19 @@ class ParaphrasingExperiment:
                 plt.grid(True)
                 plt.legend()
                 plt.savefig(f"{results_dir}/semantic_similarity_vs_bleu.png")
+                plt.close()
+
+                # Plot BERT score vs Sacre BLEU
+                plt.figure(figsize=(10, 6))
+                for approach_name in paraphrases_df['approach_name'].unique():
+                    approach_data = paraphrases_df[paraphrases_df['approach_name'] == approach_name]
+                    plt.scatter(approach_data['bert_score'], approach_data['sacre_bleu'], alpha=0.5, label=approach_name)
+                plt.title('BERT Score vs Sacre BLEU')
+                plt.xlabel('BERT Score')
+                plt.ylabel('Sacre BLEU')
+                plt.grid(True)
+                plt.legend()
+                plt.savefig(f"{results_dir}/bert_score_vs_sacre_bleu.png")
                 plt.close()
 
         return paraphrases

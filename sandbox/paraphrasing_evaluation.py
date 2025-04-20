@@ -1,10 +1,10 @@
 from nltk.translate.bleu_score import sentence_bleu
-from nltk.translate.meteor_score import meteor_score
 from nltk.tokenize import word_tokenize
 from rouge_score import rouge_scorer
 import spacy
 import numpy as np
 from typing import List, Dict
+import torchmetrics
 import nltk
 import warnings
 import pandas as pd
@@ -69,6 +69,13 @@ class ParaphraseEvaluator:
         # A lower BLEU Score means higher diversity but the meaning can be lost.
         bleu = sentence_bleu([original_tokens], paraphrase_tokens)
 
+        # Calculate SacreBLEU Score
+        # SacreBLEU is a metric for evaluating the quality of machine translation outputs.
+        # It is based on the BLEU score but with some improvements to make it more accurate and robust.
+        # A higher SacreBLEU Score means better translation quality.
+        sacre_bleu_metric = torchmetrics.text.SacreBLEUScore()
+        sacre_bleu = sacre_bleu_metric([paraphrase], [[original]]).item()
+
         # Calculate ROUGE Scores
         # ROUGE (Recall-Oriented Understudy for Gisting Evaluation) is a set of metrics used to evaluate the quality of text summarization and machine translation algorithms.
         # It measures the overlap between the generated summary and the reference summary based on n-grams.
@@ -86,6 +93,14 @@ class ParaphraseEvaluator:
         doc2 = self.nlp(paraphrase)
         semantic_similarity = doc1.similarity(doc2)
 
+        # Calculate Semantic Similarity using BERTScore
+        # BERTScore is a metric that measures the similarity between two sentences based on their semantic meaning.
+        # It uses a pre-trained BERT model to generate contextualized embeddings for each sentence and then computes the similarity between these embeddings.
+        # A higher BERTScore indicates higher semantic similarity between the two sentences.
+        bert_score_metric = torchmetrics.text.bert.BERTScore(model_name_or_path="roberta-large")
+        bert_score = bert_score_metric([paraphrase],[original])
+        bert_score_f1 = bert_score['f1'].item()
+        
         # Calculate Length Ratio
         # Length ratio measures the proportion of the length of the paraphrased text to the original text.
         # It can indicate if the paraphrased text is more concise or verbose than the original.
@@ -99,10 +114,12 @@ class ParaphraseEvaluator:
 
         return {
             'bleu': bleu,
+            'sacre_bleu': sacre_bleu,
             'rouge1': rouge_scores['rouge1'].fmeasure,
             'rouge2': rouge_scores['rouge2'].fmeasure,
             'rougeL': rouge_scores['rougeL'].fmeasure,
             'semantic_similarity': semantic_similarity,
+            'bert_score': bert_score_f1,
             'length_ratio': length_ratio,
             'lexical_diversity': lexical_diversity
         }
