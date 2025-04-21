@@ -56,11 +56,12 @@ def save_response(output_path, original_item, model, method, rate_str, responses
 
 
 def main():
-    input_dir = "augmented_datasets"
-    output_base = "augmented_datasets_split"
+    input_dir = "experimental_setup/augmented_datasets"
+    output_base = "experimental_setup/augmented_datasets_split"
     os.makedirs(output_base, exist_ok=True)
 
-    model_names = ["openai", "llama"]#, "gemini", "claude", "deepseek"]
+    # model_names = ["openai", "llama"]#, "gemini", "claude", "deepseek"]
+    model_names = ["claude", "gemini"]
     n_repeats = 5
     request_buffer = 6
 
@@ -75,6 +76,11 @@ def main():
         for model_name in model_names:
             model = get_model(model_name)
             model_caller = ModelCaller(model, prompt_transform=ensure_python_code_prompt)
+
+            if model_name == "gemini":
+                request_buffer = 1
+            elif model_name == "claude":
+                request_buffer = 6
 
             for item_idx, item in enumerate(data):
                 augmented = item.get("augmented_questions", {})
@@ -94,18 +100,20 @@ def main():
 
                         try:
                             with concurrent.futures.ThreadPoolExecutor() as executor:
-                                futures = [executor.submit(call_with_retry, model_caller, p) for p in prompts]
-                                for future in concurrent.futures.as_completed(futures):
-                                    if len(responses) >= n_repeats:
-                                        for f in futures:
-                                            if not f.done():
-                                                f.cancel()
-                                        break
-                                    try:
-                                        result = future.result()
-                                    except Exception as e:
-                                        result = f"ERROR: {str(e)}"
-                                    responses.append(result)
+                                from math import ceil
+                                for _ in range(ceil(n_repeats / request_buffer)):
+                                    futures = [executor.submit(call_with_retry, model_caller, p) for p in prompts]
+                                    for future in concurrent.futures.as_completed(futures):
+                                        if len(responses) >= n_repeats:
+                                            for f in futures:
+                                                if not f.done():
+                                                    f.cancel()
+                                            break
+                                        try:
+                                            result = future.result()
+                                        except Exception as e:
+                                            result = f"ERROR: {str(e)}"
+                                        responses.append(result)
 
                             if len(responses) < n_repeats:
                                 tqdm.write(f"[WARN] {filename} Q{item_idx} {model_name} {method} {rate_str} – only got {len(responses)}")
