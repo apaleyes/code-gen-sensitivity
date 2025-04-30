@@ -10,11 +10,11 @@ class DeepSeek(BaseModel):
         super().__init__("DeepSeek")
         self.client = openai.OpenAI(
             api_key=os.environ["OPENROUTER_API_KEY"],
-            base_url="https://openrouter.ai/api/v1",  # Explicitly route to OpenRouter
+            base_url="https://openrouter.ai/api/v1",
         )
-        self.model = "deepseek/deepseek-r1:free"
+        # self.model = "deepseek/deepseek-chat-v3-0324:free"
+        self.model = "deepseek/deepseek-chat-v3-0324"
 
-        # Set temperature similar to Gemini
         self.temperature = 0.0
 
     def __call__(self, prompt):

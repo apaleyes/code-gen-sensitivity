@@ -1,0 +1,215 @@
+{
+  "slug": "algo-4d-convex-hull",
+  "problem_title": "4D Convex Hull Algorithm",
+  "number": 0,
+  "acceptance": 0,
+  "difficulty": "n/a",
+  "question": "Implement a convex hull algorithm for 4D points. It should be able to take in a list of points, validate that all of them are of four dimensions, and calculate the minimal convex hull of the given list of points. It should be able to cover edge cases, such as a set of one point, points on a single plane, and more. Define the data structure that is most sensible for output of this problem, and make sure the algorithm returns data in that structure.\n",
+  "post_href": "n/a",
+  "python_solutions": "n/a",
+  "post_title": "n/a",
+  "user": "n/a",
+  "upvotes": 0,
+  "views": 0,
+  "augmented_questions": {
+    "keyboard": {
+      "0.0": "Implement a convex hull algorithm for 4D points. It should be able to take in a list of points, validate that all of them are of four dimensions, and calculate the minimal convex hull of the given list of points. It should be able to cover edge cases, such as a set of one point, points on a single plane, and more. Define the data structure that is most sensible for output of this problem, and make sure the algorithm returns data in that structure.",
+      "0.05": "Implement a convex hull algorithm for 4D points. It should be able to take in a list of points, validate that all of them are of four dimensions, and calculate the minimal convex huIl of the given list of points. It should be able to cover edge cxses, such as a set of one point, points on a single plane, and more. Define the data structure that is most sensible for output of tmis problem, and maJe sure the algorithm returns dAta in that structure.",
+      "0.1": "Implement a convex hjll algorithm for 4D pPints. It should be able to take in a list of points, validate that all of them are of four dimensikns, and calculate the minimal convex hull of the given list of p(ints. It should be agle to cover edye cases, wuch as a set of one point, points on a single plane, and <ore. Define the Vata structure that is most sensible for output of this problem, and make sure the algorithm returns data in that structuge.",
+      "0.15": "Implemfny a convex hulk algorithm for 4D points. It should be able to take in a list of points, Calidage that all of tJem are of four dimensions, and calculate the KinimQl convex hull of the givWn list of points. It should be able to cover edge caees, such as a set of one point, Ooints on a siMgle planS, and more. Define the data st$uc5ure thQt is most seGsibl2 for output of Yhis 9rohlem, and make sure the algorithm returns data in that structure.",
+      "0.2": "Implement a S9nvex jull algorithm for 4D points. It shLule be able to take in a list of points, validate that all of them are of fou$ dimensions, and cSlFulate the min7,al convex mull of the given lidt of p(in6s. It sjiuld be able to cover edge cases, suSh as a set of one point, points on a sJngld plane, and more. Define the daya structure that is most sensible for out0u4 of this Lroble<, and make surw the Alborithm returns rata in tYat structure.",
+      "0.25": "IHp>emebt a cond#x hulI algorithm for 4D points. It zhoulw be able to take in a list of points, valixa6e that all of them are of four dimensions, and calculate the mlnimxl Xonbex Jull of the gideB lixt of po(bts. It should be able to FoveD edge VaseZ, such as a set of one 0oin$, 9oiJts on a s&nRle plane, and more. Define the data sfrucFurS that is mos% Denxible for output of thie prPb<em, and make sufe the aogoritnK returns dwta in that structure.",
+      "0.3": "jJpkement a convex h7/l algorithm for 4D points. It sho^lf be able to $ame in a lLct of pokn5s, dwl8date tTaR all of them are of Gou4 d*mRndions, and calculate the minlmZ? convex huk, of the vivdn list of )oijts. It shohpd be able to cover WdgD cAsss, dIch as a set of one oojnt, Ooinys on a single p:aBe, and jor@. Define the data sGruFturw tbAt is most sensible for o TtOut of this prPGlFm, and kZke sure the algorithm returns da5Z in that strivtur#.",
+      "0.35": "Implement a fonFrx hull algorithm for 4D loObts. It shl*lW be able to Ga<e in a lLsh of ))intE, validate tyZt all of them are of BouE dim4ns&lnw, and valv8latr the m(nJmaP convex hull of the given l(et of pPiH5s. It should be Zblf to c8Ber Wwge cqs@s, QuDh as a set of one pkjnt, OoiBfs on a CiGgoe p<ahe, and more. vefjn2 the dZtq structure tBQt is moCy dFhsible for output of gGis problem, and mXkw xude the aOhlrjthm re%u$hs Xara in tNwt structure.",
+      "0.4": "ImplfmsG5 a coMGeC huP> algorithm for 4D OLintC. It should be qb<e to Rak@ in a l&sr of points, validate tUaf all of 5heH are of gout d7mebE*ons, and calculate the miBkmAl dlnbex Nkll of the giceM .is6 of 09iHts. It should be Sb<e to coGe$ wWge caCeq, such as a set of one p*iJt, pPuntC on a xinNld OlaGe, and more. XeTjne the caya dtrustI3e tmst is most CenCinIe for PufpJt of th*e 0eoblWm, and kale Au%e the X?goritjN ret T%Js data in that stTKct tr2.",
+      "0.45": "Ump:eHSMt a Xoncwx T^ll WlTorl%ym for 4D 09Onts. It sMo6lc be able to take in a Pis5 of )oiBtC, fa:udatS fhAt all of 5heJ are of f(u$ dlmemcuonA, and calcH<WR2 the minimal D)nv@x h&Kl of the BigeG ,iat of pKlbts. It QBoulc be aHlr to Dpve5 edge czweX, s tfh as a set of one 90iMt, points on a siJY.e )lXJe, and m0rf. FefiHR the EQta Ctr8ctKew tJst is josY QegsoblR for (TtpHt of this o3Iblwm, and jQke suDf the alHi4U$hm reyHrMX Esta in fhSt stGjXt Trs.",
+      "0.5": "9jpk3mejt a XPnveA muOl a:gor7rTH for 4D )oibtA. It Zhk7ld be Zblf to FaIe in a i7st of O8inta, va>jdAGe $haY all of tt2m are of f)ug diHehsU*Hs, and sapc&lSFe the mibinx; c9nbfx h8l/ of the ViGeH >iXt of p(iHtq. It Qh0ulv be aV;e to cobWD @dgw cSEeZ, s*Xh as a set of one lKiht, points on a siBgod OlaMd, and mo%$. VsfinW the daRZ e%f&ctuGe thsF is <os^ eDnsiG<e for PKtpu$ of 4Jis ptohlw<, and Jak$ sJrW the xlg*g8$hm rr%6rbs dAtw in tja^ st4if$uDe.",
+      "0.55": "I<pkemRgr a VoBvFA h tPi algog7Ftj for 4D p8lJtQ. It wh*8Od be an<@ to tZ<f in a llQ$ of (oJJtx, vZIjdZhe $hW6 all of ttRh are of fLie wLhsBsi*ns, and cX?c&,ste the KlniJa/ VohvdZ tJl; of the gOvSb .jsG of (9kntC. It zho Tpr be Wh>e to Vov2T ewV# dasRe, QJfh as a set of one o9(nt, (oLmtw on a D&nYPe 0lXhe, and KPrr. DFfKM$ the dsyX qtE tXrure hhSH is hKsG EwbZiblS for 9uhp TY of yh(E oDobIdm, and naI# ChFe the z:gLrLtYm twyurGs dw%W in gMZt wtr^Ftud@.",
+      "0.6": "Im(IWJej6 a s)nvSa T8<l aPgI$KtNJ for 4D pkOjFs. It dNou<X be aVO2 to ra<f in a KLs4 of 9kinHC, valLRxGS tMq$ all of 6hs< are of f(IG F9NFMsioMs, and ValV^ls5F the KOniHs/ cpGGfx h8., of the ViCeB kkWt of )o(n5D. It dNkulR be qbPF to SoFFr FWgS saXDs, x7cU as a set of one 0KLnt, )oKgYs on a XiGRld )kzne, and mit$. XRfibF the Fa^w aYr^xtuf@ ttwF is m)ah seBq9bof for i*t0 tt of tt(c pDlHlDn, and JZ>e eh4e the a<voT*tJj %2tu3hZ cZtw in RhW^ Er$hcgurW.",
+      "0.65": "Jh)lekeh% a c0mv3c Y&lo alyPEiRNN for 4D l9iHtD. It WUKulE be XVlF to tqJw in a kiZ^ of LoumFs, vxpOvwge HBzt all of 6J@m are of BIHr eLkRhsoona, and czlsJ>St4 the m*g8hZl ckncRz yu;; of the hld2n Ojzt of (kkntZ. It cy07ld be Xnl$ to vPFSr evYF csw#X, X TDh as a set of one )k(Gt, LojnRE on a a7jg;e OOWnd, and kirS. Dev8jd the fAtS Etr7ffK5e ghQ% is m(qh A4Hs9Gl# for (HHpu% of Hbid pt0b.$,, and ksue sH#r the Q?To#jthJ $DtJ5nE dWrw in RhX6 s6gjftjrF.",
+      "0.7": "7<9l4<dGt a FinDsa mu:p S;gi$KtuJ for 4D 00On$C. It XTk7od be WglR to fW<e in a >icg of loLm4C, FqolFaRe ggzt all of tY@N are of Gk Tr Eim$MAj(js, and Daic&/qr4 the NUnJmzP SiMcea tu,; of the nKceH ;iWG of 09&b^s. It CNoKIe be Sgl3 to dLCeD DVg$ vwsRc, Q^Xh as a set of one lo(Hg, ppuMRd on a sLGHI@ L;Zhe, and NlrR. XsD7he the eQtS zrD7X4uTe HyXt is mLA4 cSMd(blF for )Jyoit of tJ8Z 0G)bidm, and <sie sI33 the S>hir8tNN TeFuGgc dZgA in tgx$ A$EuvYuTf.",
+      "0.75": "*H)?eneGf a X(jCwx Uu>i XIgkr(fBk for 4D 0oKj$e. It qt(7,d be qvl4 to 6a.f in a P7xt of (L(n4X, ga?LfQ$e tMWh all of tMFJ are of roIT s8memw**Mq, and Xw.Fj<Wte the <8BlmqO cpjdrc b7>l of the guB2G lUDr of (pomta. It XtP8Od be sb:w to DLGeG DfNe XaWfz, Z Tvh as a set of one LliJ4, pLuHGd on a Aigro2 Olzbw, and h)Ge. EerjmW the dzHz EhrHcR7E2 tGZH is k)Zt ssMciho# for 8k5pK4 of GmiZ otIfpSm, and mZo3 s tT# the XlV9ti4GJ tehjthW CqYa in fga$ QtfHXrueR.",
+      "0.8": "j<)ifnsn$ a fKgDeS gipO sKVo3l5Bj for 4D pPOBgw. It Wt) TKd be AGOs to Rsu# in a p&xF of (ooh%Q, dX,ivZYR yuXh all of RjRn are of cLjE sohSMCo*ns, and VspvuoSFs the NObL,Ql somFRD m^<, of the gugRM ,7c% of lkuhtz. It znIu<x be Xhiw to cLCS% @wh# sZs$Z, Q txb as a set of one (ojM^, (LiJrW on a ciMnPW l,aG#, and j84D. S4biHw the Vqhw xyr TfH7#r 4Nwr is H9C5 A$JC8HlF for L7tL6y of 6T8c L$9b;3n, and JsjF e8f@ the x>FKgJtGj 5S^u3Bz wS5x in RbX5 aG#hS6utd.",
+      "0.85": "jNp:FjdG4 a VLmG4Z yj<; ZIVIti5yh for 4D 0*7brc. It Wm9*pe be xFIf to %sU3 in a .&w5 of l9kgfc, cXP7SSt# Htwg all of $gDh are of T*^% VOh$MqLohE, and Xx:duPz5w the NJnokq< d)hb3Z G8oI of the tUcSm oKAG of 00kH^e. It WBLi?W be SF>W to VIb44 #Ehd xZZ#C, X8VB as a set of one 0l7g$, (KUB^q on a quGn:D 9?Qb3, and jL3S. vSRujS the XZYW dRt7c^ tDD 6Bx^ is <kq4 z@js8FPW for L^4(^^ of $juz 0F0Fldk, and JQL3 z tGD the x:gl#7%yJ 3DRirmW fsGs in hYAR dFGKdrK5e.",
+      "0.9": "&JLIsnWmH a dlhbSz gK>o ZiBLdofj, for 4D Oi&JyC. It WU9 tke be QGpD to GZIS in a klD$ of L9UGYc, gqOlFqFS ^ts^ all of hysK are of Ek&d d7N3HD&9MW, and XS.S&OZyF the JJG8kQ> fiBGrs b tk? of the nlbRh kJeH of O)kHyq. It Cg9^pv be xv>$ to Fic#5 wvnW Vqe@x, E6fg as a set of one oP9jF, L88jHC on a EOjYoF l?WGF, and ,KGs. C@gLGs the sX^A Z$f^Vr Tdw ggXG is hidf X4JEoh.4 for kjgLJR of ruJx LEKf.$<, and HXi# Zidr the q.v8GL^N, gD^*eha VqgQ in $yxR W%$ Tdrj3f.",
+      "0.95": "KJ)KFJRM6 a D8bDSd ukOI x:hkFjrGj for 4D L*(JGQ. It qTi^<F be zG>$ to yWL3 in a koAR of (pug^d, BW,7EsYs 5YWY all of 6Y$h are of cPJE RohwGDL*GQ, and Fz.dJoX4D the ,KglhZ> S(JCrc gK>: of the fJB@J O&Dr of 9*KGre. It Eu(hOe be qN,4 to sic2e wrtF vwxda, W tSN as a set of one lLlG5, LIlGFz on a z(gT:2 9:sM4, and jKt@. vSRuHf the FZfQ D^%kFYh%2 5MAF is N9A6 qrgD7fI# for 9J4LIg of 4T*w 9gPN,#h, and ,q>S A&#W the wOhigO$gJ Gs4 TtMD WQGZ in rBxr xH46FF*Dw.",
+      "1.0": "jK9oSJsmR a V(bd3D u*<o w>h)f&hu< for 4D L(Kbrw. It WtkhiW be qNp2 to 4Zof in a .KZ6 of OIjB4d, BzpOcz%$ YtA^ all of GtDj are of B9IG XjnrGQ&lbe, and vqoX T,W%@ the jLb*Jz: s(HfFz b8.; of the R&g4M k9er of 90uJYx. It EGli:S be qV<s to SkBF3 wshw Dzx$c, QJSG as a set of one 0)UH6, 98lGfA on a ElHBkS (OZgR, and ,IEW. vfE*J2 the WsRq efdJsh&g2 GBAh is JkX$ d3hcUg?D for * TyL75 of hGOE 9diNP4H, and KQiW Cjds the Q/ti5LHYK 4DF^FMd fWFw in RBQF A%T8d^h5W."
+    },
+    "synonym": {
+      "0.0": "Implement a convex hull algorithmic rule for 4D point. It should be able to take in a list of power point, validate that all of them follow of four dimensions, and direct the minimum convex cordell hull of the give list of points. It should be capable to hide edge causa, such as a circle of unrivalled point, detail on a individual plane, and more. Define the data social structure that is about sensible for output of this problem, and create sure the algorithm income tax return data in that anatomical structure.",
+      "0.05": "Implement a convex hull algorithm for 4D points. It should be able to take in a list of points, validate that all of them are of four dimensions, and calculate the minimal convex hull of the given list of points. It should be able to cover edge cases, such as a set of one peak, dot on a single plane, and more. Define the data structure that is most sensible for output of this trouble, and make sure the algorithm returns data in that structure.",
+      "0.1": "Implement a convex isaac hull algorithm for 4D points. It should be able to take in a list of points, validate that all of them are of four dimensions, and calculate the minimal convex hull of the afford list of points. It should be able to cover edge cases, such as a set of one point, points on a single sheet, and more. Determine the data point structure that is most sensible for output of this problem, and make sure the algorithm counter data in that structure.",
+      "0.15": "Implement a convex hull algorithm for 4D points. It should follow able to take in a inclination of points, validate that all of them are of four dimensions, and calculate the minimal convex hull of the given list of points. It should be capable to cover edge cases, such as a set of one head, points on a single plane, and more. Specify the data structure that is near sensible for end product of this problem, and make sure the algorithm recurrence data in that structure.",
+      "0.2": "Implement a convex hull algorithm for 4D points. It should be able to take in a list of points, validate that all of them are of four dimensions, and calculate the minimal convex hull of the render list of points. It should be able to cover edge cases, such as a set of one point, decimal point on a single plane, and more. Limit the data social structure that is most sensitive for output of this problem, and make sure the algorithmic program returns data in that structure.",
+      "0.25": "Implement a convex kingston upon hull algorithm for 4D points. Information technology should comprise able to take in a lean of points, validate that all of them cost of tetrad dimensions, and calculate the minimal convex hull of the given tilt of points. Information technology should cost able to cover edge cases, such as a set of one point, points on a single plane, and more. Define the data construction that is most sensitive for output of this problem, and make sure the algorithmic program returns information in that structure.",
+      "0.3": "Implement a convex hull algorithm for 4D points. It should be capable to rent in a list of point, validate that all of them be of four dimension, and look the minimum convex hull of the given list of stop. Information technology should be able to pass over edge example, such as a set of one point, points on a exclusive plane, and more. Delineate the data social organisation that live near sensible for output of this trouble, and make sure the algorithm payoff data in that construction.",
+      "0.35": "Implement a convex hull algorithm for 4D point. It should be able to claim in a lean of points, validate that all of them are of four dimension, and count the minimum convex hull of the return list of points. It should be able to shroud edge cases, such as a set of one point, points on a individual carpenter's plane, and more than. Define the information structure that is almost reasonable for turnout of this problem, and make sure the algorithmic program retort datum in that structure.",
+      "0.4": "Implement a convex kingston upon hull algorithm for 4D points. It should exist able bodied to take in a list of points, validate that all of them are of quaternity dimensions, and reckon the minimal convex cordell hull of the given inclination of point. It should be able to compensate edge cases, such as a lot of unrivalled stop, points on a single plane, and more than. Delineate the datum social system that is most reasonable for output of this job, and make sure the algorithmic program returns information in that structure.",
+      "0.45": "Implement a convex hull algorithmic program for 4D points. Information technology should be able to take in a listing of points, validate that all of them equal of four dimensions, and calculate the minimal convex hull of the throw listing of point. It should equal able bodied to cover edge compositor's case, such as a set of 1 stop, points on a single planing machine, and more than. Fix the datum anatomical structure that is nigh sensitive for output of this problem, and make certain the algorithm returns datum in that social system.",
+      "0.5": "Implement a convex kingston upon hull algorithm for 4D point. Information technology should be able bodied to convey in a inclination of points, validate that all of them cost of quatern dimension, and count the minimal convex isaac hull of the hold leaning of compass point. Information technology should cost able to cover sharpness cases, such as a readiness of unmatchable level, point on a unmarried aeroplane, and more. Determine the data structure that exist virtually sensible for output of this job, and do certain the algorithm return datum in that bodily structure.",
+      "0.55": "Implement a convex isaac hull algorithmic rule for 4D points. Information technology should equal capable to demand in a list of peak, validate that all of them exist of quadruplet proportion, and calculate the minimal convex cordell hull of the given lean of points. Information technology should constitute able bodied to cut across boundary case, such as a lot of one decimal point, points on a single aeroplane, and more than. Delineate the data anatomical structure that personify nigh reasonable for output signal of this trouble, and create certain the algorithmic program restoration information in that social organisation.",
+      "0.6": "Implement a convex isaac hull algorithmic rule for 4D points. Information technology should be capable to remove in a list of stage, validate that all of them represent of quadruplet proportion, and figure the minimum convex kingston upon hull of the given inclination of point. It should be able to compensate bound case, such as a solidification of one gunpoint, points on a single airplane, and more than. Delimit the data social system that comprise nigh sensitive for yield of this trouble, and attain certain the algorithmic rule return data in that social organization.",
+      "0.65": "Implement a convex hull algorithmic program for 4D point. Information technology should personify capable to occupy in a list of point, validate that all of them are of 4 dimension, and calculate the minimum convex kingston upon hull of the reach listing of pointedness. Information technology should comprise capable to cut through boundary casing, such as a hardening of ane point, point in time on a undivided woodworking plane, and more than. Define the datum social organization that be about sensitive for turnout of this trouble, and micturate indisputable the algorithmic rule return datum in that social organization.",
+      "0.7": "Implement a convex cordell hull algorithmic program for 4D point. Information technology should live able bodied to read in a tilt of point, validate that all of them be of 4 dimension, and forecast the minimum convex kingston upon hull of the give list of point. Information technology should exist able bodied to treat boundary character, such as a hardening of peerless compass point, point on a unmarried plane, and more than. Delineate the information construction that be well nigh reasonable for turnout of this problem, and cause certain the algorithmic rule recurrence data in that body structure.",
+      "0.75": "Implement a convex isaac hull algorithmic rule for 4D item. Information technology should comprise able bodied to lead in a listing of point, validate that all of them be of quaternary attribute, and estimate the minimum convex isaac hull of the give listing of points. Information technology should represent able bodied to compensate sharpness fount, such as a band of unity pointedness, item on a individual carpenter's plane, and more than. Fix the datum social structure that represent to the highest degree reasonable for outturn of this job, and get trusted the algorithmic rule return data point in that complex body part.",
+      "0.8": "Implement a convex kingston upon hull algorithmic program for 4D point. Information technology should constitute capable to postulate in a inclination of point, validate that all of them be of iv dimension, and aim the minimum convex cordell hull of the give tilt of point. Information technology should live able bodied to extend boundary type, such as a readiness of ane full point, head on a unmarried planer, and more than. Delineate the datum social structure that comprise near sensitive for outturn of this job, and get to indisputable the algorithmic program retort information in that construction.",
+      "0.85": "Implement a convex cordell hull algorithmic program for 4D point. Information technology should embody capable to select in a tilt of gunpoint, validate that all of them be of tetrad property, and figure the minimum convex kingston upon hull of the give lean of pointedness. Information technology should follow able bodied to track sharpness showcase, such as a solidifying of unrivaled distributor point, point on a unmarried sheet, and more than. Specify the information bodily structure that comprise to the highest degree sensitive for outturn of this job, and constitute trusted the algorithmic program return data point in that body structure.",
+      "0.9": "Implement a convex cordell hull algorithmic rule for 4D head. Information technology should embody capable to accept in a listing of point, validate that all of them represent of 4 dimension, and direct the minimum convex isaac hull of the kick in leaning of power point. Information technology should exist capable to underwrite border shell, such as a readiness of ace level, point on a exclusive carpenter's plane, and more than. Delimitate the information social structure that be to the highest degree reasonable for turnout of this job, and cause certain the algorithmic rule reappearance datum in that body structure.",
+      "0.95": "Implement a convex isaac hull algorithmic program for 4D peak. Information technology should live capable to occupy in a inclination of detail, validate that all of them constitute of foursome proportion, and reckon the minimum convex isaac hull of the give leaning of gunpoint. Information technology should live able bodied to handle border case, such as a hardening of peerless period, decimal point on a exclusive sheet, and more than. Specify the information body structure that be virtually reasonable for end product of this job, and defecate certain the algorithmic program tax return information in that social structure.",
+      "1.0": "Implement a convex kingston upon hull algorithmic program for 4D point. Information technology should comprise able bodied to study in a inclination of detail, validate that all of them be of iv dimension, and aim the minimum convex cordell hull of the give lean of dot. Information technology should cost capable to brood boundary case, such as a readiness of ace period, item on a undivided woodworking plane, and more than. Delimit the data point social organisation that be virtually sensitive for end product of this job, and create certain the algorithmic rule counter data point in that construction."
+    }
+  },
+  "llm_responses": {
+    "deepseek": {
+      "keyboard": {
+        "0.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.05": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.1": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.15": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.2": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.25": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.3": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.35": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.4": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.45": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.5": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.55": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.6": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.65": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.7": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.75": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.8": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.85": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.9": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.95": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "1.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ]
+      }
+    }
+  }
+}

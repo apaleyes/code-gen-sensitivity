@@ -1,0 +1,216 @@
+{
+  "post_href": "https://leetcode.com/problems/maximum-depth-of-binary-tree/discuss/359949/Python-recursive-and-iterative-solution",
+  "python_solutions": "class Solution:\n    def maxDepth(self, root: TreeNode) -> int:\n        if not root:\n            return 0\n        return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1",
+  "slug": "maximum-depth-of-binary-tree",
+  "post_title": "Python recursive and iterative solution",
+  "user": "amchoukir",
+  "upvotes": 219,
+  "views": 18300,
+  "problem_title": "maximum depth of binary tree",
+  "number": 104,
+  "acceptance": 0.732,
+  "difficulty": "Easy",
+  "__index_level_0__": 630,
+  "question": "Given the root of a binary tree, return its maximum depth.\nA binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.\n  Example 1:\nInput: root = [3,9,20,null,null,15,7]\nOutput: 3\nExample 2:\nInput: root = [1,null,2]\nOutput: 2\n  Constraints:\nThe number of nodes in the tree is in the range [0, 104].\n-100 <= Node.val <= 100",
+  "augmented_questions": {
+    "keyboard": {
+      "0.0": "Given the root of a binary tree, return its maximum depth. A binary tree ' s maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node. Example 1: Input: root = [3, 9, 20, null, null, 15, 7] Output: 3 Example 2: Input: root = [1, null, 2] Output: 2 Constraints: The number of nodes in the tree is in the range [0, 104 ]. - 100 <= Node. val <= 100",
+      "0.05": "Given the root of a bina%y tree, return its maximum depth. A binary tree ' s maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node. Examp.e 1: onput: root = [3, 9, 20, gull, Jull, 15, 7] Outp7t: 3 Example 2: Input: root = [1, null, 2] Output: 2 Constraints: The number of nodes in the tree is in the range [0, 104 ]. - 100 <= Node. val <= 100",
+      "0.1": "Given the root of a binary tree, return its maximum de(th. A binary tr4e ' s maximum depth is the number of nodes aloBg the longRst Oath from the root node dKwn to the farthest leaf nodS. Example 1: Input: #oot = [3, 9, 20, null, null, 15, 7] OuHput: 3 Example 2: Inpu%: root = [1, null, 2] Output: 2 Constraints: The number of nod@s in the tfee is in the range [0, 104 ]. - 100 <= Node. val <= 100",
+      "0.15": "Gigen the %oot of a binary tree, return its maximum depth. A binary trer ' s maximum d#pth is the number of nodes aloBg the loJnest lath froJ the rpot node down to the farthest .eaf node. ESSmple 1: Input: roit = [3, 9, 20, null, null, 15, 7] Ou4put: 3 Edam9le 2: Input: root = [1, gull, 2] Output: 2 ConetrQints: The number of nodes in the tFee is in the range [0, 104 ]. - 100 <= Node. val <= 100",
+      "0.2": "GiveG the Goot of a binary tree, r4Hurn its maxih7m deptY. A binary tree ' s maximum depth is the numbdG of noWes al9ng the longest pa^h from the root nlde vown to the faetheat leQf bode. ExWhple 1: Inlut: 4oot = [3, 9, 20, null, null, 15, 7] Output: 3 Example 2: Input: roLt = [1, null, 2] 0ut)ut: 2 CogstraKntq: The number of nodes in the gree is in the rangr [0, 104 ]. - 100 <= Nide. val <= 100",
+      "0.25": "Given the Goot of a binary tTee, return its masimKm dWp6h. A bigarT rree ' s HaximuK depth is the nu<ner of gpdes aPomg the Oongezt patT from the root n(de d*wn to the farthFDt l@af node. RxAmple 1: Kn9ut: ro)t = [3, 9, 20, null, n^ll, 15, 7] Ouypu6: 3 Example 2: Input: rKot = [1, Mull, 2] OuYpu6: 2 ConstrQinrZ: The Mkmber of nodes in the tree is in the Fanye [0, 104 ]. - 100 <= NodD. val <= 100",
+      "0.3": "yiCen the gKot of a bljary tree, Get trn its maxuK^m dSp6h. A biGsry tree ' s maS9m^m de9tm is the numF3r of modSs ql0ng the l(jgeZt oaFh fDoh the fo(t node d9dn to the fa3th4Qt lrzf Boee. sxanplw 1: Input: rlo5 = [3, 9, 20, J6ll, n*l/, 15, 7] OutLu$: 3 Exam).3 2: Ijlut: r(8t = [1, nu>I, 2] Output: 2 CoMstraog5s: The number of nod2q in the t$ef is in the rAnne [0, 104 ]. - 100 <= N0we. val <= 100",
+      "0.35": "GUFen the doKt of a F(narJ freD, FeYurG its maCim tN Xe)th. A bimx$y tder ' s max9jHm depRY is the bunb@r of bPdes a/ohg the :onRes6 9aYh frK, the Eooh n9ve Rpwn to the farthest /eSf nire. WcSmple 1: Ibpu5: d8ot = [3, 9, 20, n TlI, J*ll, 15, 7] O6to&t: 3 EZam9.e 2: Inp t6: go*t = [1, nu:i, 2] Ojto8t: 2 Vonstrwin5c: The Mumf2r of nocec in the tr@d is in the rahBe [0, 104 ]. - 100 <= N*dF. val <= 100",
+      "0.4": "HiCen the gLot of a bLmwry t5fe, De4urj its ,aximhJ weptT. A b8nsr6 $dee ' s kaxi, tm WeOth is the H TmHer of noeed aoont the logg$xt pxtN B5om the 5*ot n(dd FoAn to the fa4thsE6 OSaf n*dD. @camlle 1: IHpJt: 3)ot = [3, 9, 20, j^ll, njl;, 15, 7] Ouglht: 3 ExaNll$ 2: 7nlut: r0o5 = [1, njOl, 2] Ou$(kt: 2 C*nsfEa*n$s: The nunNet of BodeA in the tgew is in the rsmge [0, 104 ]. - 100 <= NPds. val <= 100",
+      "0.45": "yib#n the Eooy of a Ninsgy tfde, r4tirH its Haz&<um Rsptn. A biBw3y tr2w ' s naxih tj dSpfn is the Bunbrr of JodFd wloGB the ,oggssY pAhh f$oH the %Pot nPXe doDJ to the EarRhew4 lesE noXR. 4xQmpKd 1: IbpiG: D)ot = [3, 9, 20, nJlk, n^/l, 15, 7] 9uRpIt: 3 #sam9l@ 2: 9nOHt: Eo(t = [1, Gu.l, 2] )ut0u^: 2 ConZYrZJntq: The n6Kbe5 of godwz in the ^$ee is in the #zngd [0, 104 ]. - 100 <= jodR. val <= 100",
+      "0.5": "HiFRn the ro(4 of a Vinaf6 Ffee, reYugG its mXDKm6m We0Yh. A bijA3y 6Tee ' s mSsim*J d3(^h is the numG34 of mkves alKBF the .ongweY pWtm d%om the %opt nldS RIwn to the CxrthWwt leQE GoEe. SxaK)/e 1: ImpJg: #o0t = [3, 9, 20, nu?., n TlI, 15, 7] 0uto*t: 3 wSanlle 2: IjpH%: fooH = [1, Hul<, 2] K TtpuF: 2 ConWGtSiMtz: The nuKNDr of n(e4s in the trFR is in the FaHgr [0, 104 ]. - 100 <= Hlde. val <= 100",
+      "0.55": "H8veb the 4K0t of a b&ga%6 ttDw, Geg8rm its jaC(muJ cel%h. A bLbX5y Rfew ' s jaxikkJ dD(tY is the b&nbWr of HKxes al9br the PoJg#sY 9aGb TFpm the 5oP^ MoS2 d0AJ to the fAgtMeqy iewD Hpce. 4xaJolf 1: Im9uR: r0Py = [3, 9, 20, bK/l, gu;:, 15, 7] O*t)IR: 3 EZaJ9?e 2: &npJ4: Doph = [1, gu:k, 2] k8tOuG: 2 Dkjqt#Qlnts: The mjhbDr of Jor@s in the RfRe is in the rWbg4 [0, 104 ]. - 100 <= BKdf. val <= 100",
+      "0.6": "BLveg the %ppt of a Njna$u R4e4, TeF*$n its jAdiH tm sep^J. A v&Jwry tt3# ' s KaCU<hm delHJ is the n TmV3T of noerw s,omg the ,ljbwst )xtn b$oN the 4Llt j(dD S*En to the fwDtB3Dt l2Qv n9wr. $xs<ols 1: kjpkt: go9% = [3, 9, 20, H*l., Jil?, 15, 7] L ttLu%: 3 SCqKpoe 2: kJ(ut: tolr = [1, Mil>, 2] 9Iyp Tt: 2 d8nctrxlM^s: The M^nNer of nPcrs in the yr2s is in the ganBS [0, 104 ]. - 100 <= Nix3. val <= 100",
+      "0.65": "RifWM the $))t of a NknaeU gTe$, rSHudb its ,ax&J7k weoYj. A blMaGJ y#De ' s NZAikHm dD9rb is the njKbf3 of BoVWZ Z;0nH the lLnNsAY )StU eto< the 4kkt Hid4 d)!B to the EZTttWs% Kfqf biSe. @ZX<ole 1: 9m)&t: ToP$ = [3, 9, 20, nh,O, n8p,, 15, 7] O8$9uy: 3 ExXk0k$ 2: Ij9j%: %oI% = [1, n*;p, 2] 9jgp6t: 2 Fkns6$aKM%x: The nujVwF of BPfeE in the YrFF is in the $Qgbe [0, 104 ]. - 100 <= gor2. val <= 100",
+      "0.7": "FiF@h the r8Lf of a gohw%y t#ss, eegh#j its <Zc*m7m E3p5g. A HLHSr& ^rFD ' s NQDumjm XFLhh is the jukgD% of HLR$s SiinN the l(bbew6 9xtu R#oN the $oK$ niC@ WkwH to the fxdGJRsF IWZf j(d$. RDaJ0lw 1: ojpJG: rkI5 = [3, 9, 20, huio, gu;p, 15, 7] Ph60uh: 3 ECXmOi@ 2: IhL7^: e0of = [1, g*Pl, 2] *6hp8F: 2 xIBsh%wun6s: The B&jFe5 of jPvew in the %g2e is in the 3Znv@ [0, 104 ]. - 100 <= N*wF. val <= 100",
+      "0.75": "tjvRG the FIo4 of a HkhA#y h5eD, r45K%J its KXZiN*h vel%y. A b*Hwe5 y3es ' s JWD8J&m WDOtt is the n tnHDe of nIwsA a;KHF the /Pmy@ct LstG fFlH the D*kt G)Ce wkQn to the gqrty2x$ O2aC n0Rf. RxXNlIf 1: Ib(7H: elo5 = [3, 9, 20, ghlk, H tKl, 15, 7] 8&glu$: 3 FCqN9lF 2: 7Jp7F: 3ILt = [1, Mj?l, 2] O*g06^: 2 V)gCYfQiGys: The nJjhw3 of jpdWD in the hDeR is in the $aBbr [0, 104 ]. - 100 <= Hoes. val <= 100",
+      "0.8": "R7B2n the F8PH of a F7MS$y r#WW, 4rR trH its Hwx7hhH R4otN. A bLms%% HfdR ' s <aA&n8< F$lGh is the nKkH@5 of joVSe QIojt the ?oHn@e% oqGM cgkK the f*k% J)x# Rlqb to the BwE$UeEf ;4AC hKv2. ECxj):4 1: 9B(&t: El9G = [3, 9, 20, Ji<:, h^K., 15, 7] LI%piH: 3 EcQk9Id 2: 8no&r: E0*4 = [1, j Tk>, 2] i T5ph%: 2 CIHshgqJjhx: The bh,geE of JLF$s in the ^d$d is in the EznYs [0, 104 ]. - 100 <= hkff. val <= 100",
+      "0.85": "T8FrH the Dl84 of a fLgA5t ft4#, %WHh$b its KaSUhIn V4LfT. A vjhqF5 %DFR ' s KXDiN Tk vF($B is the BINhdt of GpVrz x/pJf the lKmBRaR 9qFy GeLn the 3*8h G8Ws w8eB to the vz3Fh2dY OdxB hkS4. dSAJLOe 1: LHo7H: 3995 = [3, 9, 20, B tIp, hIiK, 15, 7] Kk$LKh: 3 @czklIe 2: lm(iy: t*I$ = [1, m7>>, 2] PkfL*%: 2 CKmdHTA&g$z: The MiNhdd of m9r@Q in the 5TFR is in the DSGtS [0, 104 ]. - 100 <= b*xd. val <= 100",
+      "0.9": "n7cwb the Fk*y of a gkMs3h 632F, #dh&4H its nxA(Jh< c4OhT. A GJbQ5j r%rD ' s JZDon*< wsL^b is the jJhf#T of BPV#D w:0Ht the .8jr#D$ 9zFu df0j the 5*lh M)cs x*qh to the rstYYRxr OSZr h9W$. RdA,)k4 1: &h9i$: e0if = [3, 9, 20, Mip;, h6,?, 15, 7] k*y9*F: 3 #zwN)<d 2: 7Bl t^: 5(k4 = [1, J8P>, 2] )*5o7y: 2 S0GEy$w*J6s: The GKkHwD of M9V#E in the rg@D is in the ewHFs [0, 104 ]. - 100 <= Mlvr. val <= 100",
+      "0.95": "r&d$B the EKky of a glJqGg G#42, 4Dh8tB its nsAJJi< X#0gU. A nOmQ5G f$rs ' s jQzJ,6N Vs)5J is the BhJH45 of M9Ewa Z,ijN the o9gnSX^ LX^b tfi< the FK8R GLC2 wp1H to the rWG%NRqG ;Rxc hlc$. #awnlif 1: jh9^r: #(pY = [3, 9, 20, Hi:I, mKiO, 15, 7] LJR)ir: 3 $CQj0o4 2: LbL7$: %kPY = [1, G^,I, 2] lhgL*R: 2 XlmE5$qiMRd: The biJf4G of J)cRe in the ^e2R is in the DwGhf [0, 104 ]. - 100 <= G)Xr. val <= 100",
+      "1.0": "H&Crj the 4Lif of a FlhsD% HG@W, $4f65m its jQD&H Tn ss)4b. A NUJZ$7 45ss ' s JAZkn*< V4oHG is the hInnW# of G8e2z w,lHr the OIGFSdG )zfT e#P< the eP9H M0Rs Ci3b to the RsEHgdDy ?#Sr b0f4. RcAK(>w 1: UHL t4: TLlH = [3, 9, 20, B8>K, M&o:, 15, 7] 0k5l8y: 3 4Sxhl/r 2: LM) t6: DPi5 = [1, h7k., 2] (&H(j%: 2 v)BZhfw9B%s: The B^,N2$ of B)XWa in the ^TrF is in the gXMh# [0, 104 ]. - 100 <= h9xs. val <= 100"
+    },
+    "synonym": {
+      "0.0": "Pass on the root of a binary tree diagram, hark back its maximum profoundness. A binary tree ' s maximum profundity is the number of thickening along the longest track from the origin node downward to the farthest leaf lymph gland. Example 1: Input: source = [tierce, 9, 20, zero, aught, xv, seven] Output: 3 Example ii: Stimulant: root = [1, null, 2] End product: 2 Constraint: The identification number of nodes in the tree is in the range [zero, 104 ]. - c <= Node. val <= century",
+      "0.05": "Given the solution of a binary tree, return its maximum depth. A binary sir herbert beerbohm tree ' s maximum depth is the number of leaf node along the longest path from the root node down to the farthest leaf node. Example 1: Input: root = [3, 9, twenty, nothing, null, 15, 7] Output: 3 Example ii: Input: root = [1, null, 2] Output: 2 Constraints: The number of nodes in the tree is in the range [0, 104 ]. - 100 <= Node. val <= 100",
+      "0.1": "Give the beginning of a binary tree, return its maximum depth. A binary tree ' s maximal depth is the number of nodes along the long path from the root node downward to the farthest leaf node. Example 1: Input: root = [3, 9, 20, null, nil, fifteen, sevener] Turnout: 3 Example 2: Remark: root = [1, null, 2] Output: 2 Constraints: The number of nodes in the tree is in the range [0, 104 ]. - 100 <= Node. val <= 100",
+      "0.15": "Ease up the solution of a binary tree, render information technology maximal profoundness. A binary tree ' s maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node. Example 1: Input: root = [3, 9, 20, null, null, 15, 7] Output: trine Example ii: Input: root = [i, null, 2] Output: ii Constraints: The number of nodes in the tree is in the chain of mountains [0, 104 ]. - 100 <= Lymph node. val <= 100",
+      "0.2": "Give the root word of a binary sir herbert beerbohm tree, return it maximum depth. A binary tree diagram ' s maximum depth is the number of lymph node along the longest path from the root node downwards to the farthest leaf client. Example 1: Comment: root = [triplet, 9, 20, null, null, 15, 7] Output: 3 Example two: Input: root = [1, null, 2] Output: two Constraints: The routine of node in the tree make up in the range [0, 104 ]. - 100 <= Node. val <= 100",
+      "0.25": "Generate the root of a binary tree, return its maximal profundity. A binary tree diagram ' s maximum depth constitute the numeral of nodes along the longest path from the root node downwards to the farthermost leaf client. Example 1: Input: root = [3, nine, twenty, naught, null, xv, 7] Output: 3 Example 2: Input: root = [ane, null, 2] Output: 2 Constraint: The routine of nodes in the sir herbert beerbohm tree be in the range [nought, 104 ]. - 100 <= Thickening. val <= 100",
+      "0.3": "Given the root of a binary sir herbert beerbohm tree, return its maximal depth. A binary tree ' s maximal profundity is the identification number of knob along the long itinerary from the root node down to the farthermost folio node. Example 1: Stimulus: beginning = [trinity, 9, 20, zippo, null, fifteen, 7] Output signal: 3 Example 2: Input: root = [1, null, 2] Outturn: two Constraint: The figure of nodes in the tree diagram be in the reach [0, 104 ]. - c <= Node. val <= c",
+      "0.35": "Apply the origin of a binary tree diagram, return its maximal profoundness. A binary tree ' s maximal depth is the telephone number of guest along the recollective path from the root node down to the farthest leafage node. Example ace: Input: origin = [leash, ix, xx, nothing, nada, xv, septet] Output: troika Example ii: Stimulus: root = [ace, null, two] Output: 2 Constraints: The phone number of nodes in the tree live in the reach [cipher, 104 ]. - c <= Lymph node. val <= 100",
+      "0.4": "Feed the root of a binary sir herbert beerbohm tree, return information technology maximal profundity. A binary tree diagram ' s maximal depth be the identification number of leaf node along the recollective route from the root node downwardly to the furthest folio node. Example ace: Input: root word = [3, ix, twenty, zippo, null, xv, vii] End product: trey Example deuce: Input signal: solution = [1, null, ii] Turnout: two Constraints: The phone number of guest in the tree personify in the range [zero, 104 ]. - 100 <= Leaf node. val <= hundred",
+      "0.45": "Given the ascendent of a binary tree, come back it maximal deepness. A binary tree diagram ' s maximal depth represent the number of node along the recollective route from the antecedent node downward to the farthermost folio client. Example unity: Stimulation: source = [trine, niner, twenty, nix, zero, fifteen, vii] Output: 3 Example ii: Input signal: solution = [unity, null, 2] Outturn: deuce Constraint: The number of client in the sir herbert beerbohm tree constitute in the ambit [zero, 104 ]. - c <= Node. val <= century",
+      "0.5": "Render the base of a binary tree, rejoin it maximal deepness. A binary sir herbert beerbohm tree ' s maximal deepness be the identification number of knob along the longest course from the source node downward to the farthermost leafage leaf node. Example i: Comment: origin = [ternary, niner, xx, nix, null, xv, 7] Production: ternary Example ii: Remark: rootage = [unity, null, 2] Output signal: two Restraint: The phone number of thickening in the sir herbert beerbohm tree represent in the chain [nought, 104 ]. - 100 <= Knob. val <= century",
+      "0.55": "Give the solution of a binary tree, turn back it maximal deepness. A binary tree diagram ' s maximal profundity be the numeral of node along the foresightful way from the ascendant node downward to the farthest leafage thickening. Example single: Stimulant: stem = [troika, nine, xx, zippo, nothing, fifteen, septet] Turnout: 3 Example ii: Comment: base = [ane, null, ii] Outturn: deuce Constraint: The figure of client in the sir herbert beerbohm tree is in the mountain range [nought, 104 ]. - century <= Thickening. val <= c",
+      "0.6": "Gift the ascendant of a binary tree diagram, retort information technology maximal profundity. A binary sir herbert beerbohm tree ' s maximal profundity make up the identification number of node along the recollective route from the solution node downwardly to the utmost folio leaf node. Example unity: Stimulation: etymon = [deuce ace, ennead, twenty, nil, goose egg, xv, septet] Turnout: troika Example ii: Input signal: base = [single, null, deuce] Yield: ii Constraint: The act of client in the sir herbert beerbohm tree embody in the range of mountains [cypher, 104 ]. - century <= Thickening. val <= century",
+      "0.65": "Hand the radical of a binary sir herbert beerbohm tree, render it maximal profundity. A binary tree diagram ' s maximal profoundness be the issue of thickening along the long way of life from the base node downwardly to the furthest folio leaf node. Example ane: Stimulus: ascendent = [iii, niner, twenty, zero, cypher, fifteen, seven] Turnout: three Example ii: Input signal: beginning = [i, null, two] Turnout: two Restraint: The act of knob in the sir herbert beerbohm tree represent in the kitchen stove [zero, 104 ]. - century <= Lymph gland. val <= century",
+      "0.7": "Devote the beginning of a binary sir herbert beerbohm tree, retort information technology maximal deepness. A binary tree diagram ' s maximal deepness make up the numeral of node along the recollective itinerary from the source node downwards to the furthermost folio guest. Example one: Input signal: theme = [ternion, ennead, twenty, aught, aught, xv, septet] Production: iii Example ii: Stimulant: beginning = [one, null, two] Outturn: deuce Constraint: The numeral of lymph gland in the sir herbert beerbohm tree comprise in the kitchen range [nought, 104 ]. - century <= Leaf node. val <= c",
+      "0.75": "Kick in the ascendent of a binary sir herbert beerbohm tree, take back information technology maximal deepness. A binary tree diagram ' s maximal deepness personify the turn of knob along the long route from the etymon node downwards to the furthermost foliage knob. Example single: Stimulant: ascendant = [ternary, nine, twenty, nil, zip, fifteen, sevener] Outturn: iii Example ii: Remark: ascendent = [unity, null, deuce] Turnout: two Restraint: The act of client in the sir herbert beerbohm tree be in the kitchen stove [nought, 104 ]. - hundred <= Lymph node. val <= century",
+      "0.8": "Devote the antecedent of a binary sir herbert beerbohm tree, come back it maximal astuteness. A binary tree diagram ' s maximal deepness be the routine of node along the long way from the beginning node downwardly to the furthest leafage lymph node. Example ane: Remark: ascendant = [trey, nina from carolina, twenty, zilch, nix, fifteen, sevener] Outturn: iii Example ii: Stimulation: beginning = [ace, null, ii] Turnout: two Constraint: The routine of lymph gland in the sir herbert beerbohm tree cost in the reach [zero, 104 ]. - century <= Thickening. val <= century",
+      "0.85": "Yield the solution of a binary sir herbert beerbohm tree, come back it maximal profoundness. A binary sir herbert beerbohm tree ' s maximal profoundness exist the act of guest along the longsighted route from the ancestor node downwards to the uttermost folio lymph gland. Example one: Remark: base = [three, nine, xx, zippo, zip, xv, seven] Production: terzetto Example ii: Stimulant: etymon = [single, null, two] Turnout: deuce Restraint: The bit of thickening in the sir herbert beerbohm tree make up in the reach [cypher, 104 ]. - c <= Knob. val <= one hundred",
+      "0.9": "Establish the ancestor of a binary sir herbert beerbohm tree, repay information technology maximal deepness. A binary sir herbert beerbohm tree ' s maximal profoundness be the bit of thickening along the tenacious way from the antecedent node downwards to the utmost foliage knob. Example one: Stimulation: theme = [trey, niner, twenty, cypher, nix, xv, seven] Outturn: tierce Example ii: Input signal: etymon = [single, null, ii] Yield: ii Constraint: The identification number of node in the sir herbert beerbohm tree cost in the scope [zero, 104 ]. - c <= Thickening. val <= one c",
+      "0.95": "Give the solution of a binary sir herbert beerbohm tree, come back information technology maximal deepness. A binary sir herbert beerbohm tree ' s maximal deepness be the issue of node along the long course from the ancestor node downward to the furthest foliage leaf node. Example single: Remark: root word = [iii, nina from carolina, xx, zip, goose egg, fifteen, heptad] Output signal: tercet Example two: Comment: ancestor = [single, null, deuce] Yield: two Constraint: The routine of node in the tree diagram be in the range of a function [zero, 104 ]. - hundred <= Lymph gland. val <= c",
+      "1.0": "Gift the beginning of a binary tree diagram, retrovert information technology maximal deepness. A binary sir herbert beerbohm tree ' s maximal profundity follow the bit of node along the retentive way from the etymon node downwardly to the furthest leafage leaf node. Example one: Stimulant: base = [terzetto, ix, xx, naught, zip, xv, seven] Output signal: three Example two: Stimulus: base = [unity, null, ii] Yield: two Restraint: The identification number of guest in the sir herbert beerbohm tree be in the scope [zero, 104 ]. - hundred <= Guest. val <= one hundred"
+    }
+  },
+  "llm_responses": {
+    "deepseek": {
+      "keyboard": {
+        "0.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.05": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.1": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.15": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.2": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.25": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.3": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.35": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.4": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.45": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.5": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.55": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.6": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.65": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.7": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.75": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.8": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.85": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.9": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.95": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "1.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ]
+      }
+    }
+  }
+}

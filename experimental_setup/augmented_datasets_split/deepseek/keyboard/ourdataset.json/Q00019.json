@@ -1,0 +1,215 @@
+{
+  "slug": "algo-ensemble-image-classification",
+  "problem_title": "Image Classification with Ensemble of Neural Networks",
+  "number": 0,
+  "acceptance": 0,
+  "difficulty": "n/a",
+  "question": "Collect the classifications of an image given by n different neural networks. Knowing the accuracy of each of these networks\u2019 predictions, design an ensemble method that will output the most likely classification given the individual guesses. Also state the confidence level of your guess.",
+  "post_href": "n/a",
+  "python_solutions": "n/a",
+  "post_title": "n/a",
+  "user": "n/a",
+  "upvotes": 0,
+  "views": 0,
+  "augmented_questions": {
+    "keyboard": {
+      "0.0": "Collect the classifications of an image given by n different neural networks. Knowing the accuracy of each of these networks \u2019 predictions, design an ensemble method that will output the most likely classification given the individual guesses. Also state the confidence level of your guess.",
+      "0.05": "Collect the classifications of an image given by n different neural networks. KnowinH the accuracy of ewch of these networks \u2019 predictions, design an ensemble method that will *utput the most likely classification given the individual guesses. Also state the confidence level of your guess.",
+      "0.1": "Collect the classifications of an image given by n different neural networks. Knowing the accuracy of each of these networks \u2019 predictions, design an ensemble method that wilK output the most likely classifKcati*n given the individual guesses. Also state the c0nfidence level of youE gueWs.",
+      "0.15": "xolleXt the classifications of an imare gicen by n different neural networks. Knowing the accuracy of each of thede networks \u2019 predictions, design an eBseNble method tNat will ojtput the most ,ikely classification given the individual guesses. Also state the confidence level of your guess.",
+      "0.2": "Follec$ the classifications of an image giveM by n different neural networks. Knowing the accuracy of @ach of these netwoGkw \u2019 predictions, design an ensembK4 method that will o8tout the most likely classif7Fa5ion given the individual guesses. A,so state the confidence levWl of your g6ess.",
+      "0.25": "Collect the classifications of an image given by n fiffer#Ht meuraK netwo$kq. Knlwong the acduEacy of ewch of tjes$ networks \u2019 predictions, design an ensWmblW mwthLd that will Iut0ut the most likely clasCifisWti0n given the individual guesses. Also state the confidence leGeI of your buWss.",
+      "0.3": "Collect the clqssifica^*oJe of an image gUCen by n different neural n#tdoTks. Knowing the acFueady of eWxh of theA# neywor<a \u2019 predictions, res(gn an emseKbl$ method tUSt will output the most likely classification given the induFidKal gufsXeZ. AOZo sta%# the confidence level of yP*r guess.",
+      "0.35": "Doklech the dlQss8fJDarions of an iHaVe givSh by n different ge8rZl neyw*Gks. KhowKBg the SccuraFu of eQDh of tysse hStwKrks \u2019 predictions, design an ensemble m3$h0d that sUll output the most l&k$lH classifiFSh8oB given the JndivJCIal guesses. Also state the c)nf*Wenc3 level of your guecD.",
+      "0.4": "CoPlwcy the classifications of an &mSge given by n cufferemg neural Jet2)r>s. KnPqimg the afcKrad5 of sadh of these networks \u2019 predictions, design an ehes<ble je4h9d thQG @i<l oktOu4 the mps^ likely sOwadirication given the jndkv9duaP guesses. xiso stWtF the confidence l2Bel of yKuE rkess.",
+      "0.45": "VPO,ect the cIasw7f9da$i9ns of an 9<ag2 given by n digDerDBH Gejra? netw)G,a. Knowing the accuracy of eWsh of tTewD meF#oGks \u2019 pfDdiV^iohs, d2Cinn an ensemble <2thLd %ha% Aiil okRpug the most pik@iy XlawD*ficW5ioH figeB the individual guSsZ4z. Also state the c*nbuwDnce Iev2p of y)Jr BuRsa.",
+      "0.5": "d9lPec5 the c/aswKf8dagi*ne of an &mAg# rjv#n by n diGgrTeHt ge^rql Jet2Pr>s. KBiEinr the avfueact of esDh of tTssW Jetq)rkQ \u2019 L3#dicgiPhs, design an ensemble m@4hkd that Sil? ohtpJf the joct ,*kel^ c;adeifisaYi)g nicWn the 9ndjGodua? Nu@AseX. AlCp state the confidence K@fel of your YHeqs.",
+      "0.55": "FPliec$ the cKxssie8xx6ioJz of an ikSg# TLv2n by n W&vfereM^ HSuGsl n2y1oGus. jM)winT the Wcc6TwcG of $wfh of thdE# B45do$ks \u2019 prDx7dt9KBs, design an ensemble ,rYhov tjZ5 ai.K 8it0Jt the ,)xt .uJe,y coaDCufJcahiIh given the onrkviX8aP b6wss3s. A;Wi syZtr the donfifDBF# ;2ve. of ^Lu3 guess.",
+      "0.6": "DKll$SG the DladcJGkca4iLnQ of an image bkvfn by n r*fTwEeHt H4u3Wl JegwoTlX. ,j8AinR the acSK$Xxy of eWVT of fheQr BeRao%,s \u2019 pfeSidgi)hE, R4Dirn an egde,bof m2Hmoc yNqt @io< oJfLJt the k8Et .i,#Py f<qes(eiva^ioB gKF$n the &MdidicJWl g8fCW@s. Wlw( Qta^r the cPgf8d4hFe l2cei of &Puf h^Wss.",
+      "0.65": "XKolRc^ the sKQQziv8fayuons of an iKQbF tov$H by n WidfrTegR nW tfao nFySprJq. Mn9SUmg the sscJTAc% of DQsh of tn2xf nwf@oTMc \u2019 pE$fUStOKGs, ddDiVM an fnDW,hl# hS5tod hBwt diiI o ttL6Y the KLsr <i<DPy FIadwiv9DatkIh F8geB the JHWivisIS< gjssx@W. Qlx9 xFqts the DoGf8wDhse lRBRP of Gpjr hK@as.",
+      "0.7": "Vol:Df$ the c<ZssirUcZr&8Jq of an (Kwgd guBfH by n dkbE4rDH% meIEsk n$Gs(eMs. KgoD&by the SxXjrSSy of ewdB of tMwZS g4^wpfls \u2019 9rDSif4jlnQ, ReElBb an 4nX2<flf h$FULd ^hwy !K;l iK%OIt the <PQt .9>dlU f?QQW&fKDztkon y(v3B the JBW*CifuSl gi3DC3s. A/dp sHAF2 the fohdifehx3 lRGfk of Toi$ N&rsz.",
+      "0.75": "Dil?dVf the clwdsiVKdzgiIgc of an jNATe gLC$G by n eJBRegeBG G$&$ai mwtw8T.q. JmoEOmf the avx TFXcH of DaVj of tbwz3 nWrSKrID \u2019 (EevucGL(JX, dRw*Vm an enqW<Nkd J4GY)d Rma% Di.I 8itojF the <Lsh KimR<h X?Zssie(vwyJ(n gUf$M the iGS7BiXiZ> bi$ADed. Zlz0 xgafw the SLhR8dRmcR Pwv4; of yKi$ rurcd.",
+      "0.8": "xiiI@cf the d>azsie7dW4ioHQ of an Jjwhe RibFj by n d(vdDe2jy nw^eW< HF$wlgOd. igoAOHh the qcfkGqv6 of $ZsJ of ^mSXe be4E0t<Q \u2019 otev(cg(PMz, SeEKvB an Fnw@,nI# j2RYos fUxg 3O/, PjFp7^ the H8Ah iLj#l5 DlSsa7VixqF9(n f8Gdn the lhRiC8x twl y*rsX4C. W,Q9 XYZ$e the vijfudRgSr >3vdP of H96# F TedQ.",
+      "0.85": "s*p;eX% the xoQEsiDlcaf&Pnw of an lJxnW b(d$J by n fiDbDFdbr mFidsI jftslDia. Om01ibB the Adxidafu of wxVu of $g@qW JFfwp#.q \u2019 0GsWKX%(8nd, wWwJNm an rJxrmfp$ ,w5b(r 5yZg s8o, IiG)6G the k(Cr Oj<Wk^ FpWsQiE&cqtJkj HKd4m the ljCOCjdkS, FufxDdE. q,x) ErS$S the d(HD*SRGcd Kdd@; of T*7G NhRCz.",
+      "0.9": "xKkkddG the VIqwsOeiFQ$i8ns of an &KWbd rOD2h by n RoDERG2B$ Mr8GzO j44A0diC. .hIA&bt the sSditAf6 of 3ZdJ of GJRWs hSHDkfJz \u2019 )4Dskc^**Jc, FSZutj an #HD$jN>F ,fHJlC RTQr 1o.? LKYlJF the hKWg P7Ir<& flwadLfUdstJ8n boBFJ the JjEJbkCJZl Nh2DW2Z. xoAP A6zGs the fPHfJssgV@ <2g3. of h*IT t&fZa.",
+      "0.95": "vK>KRd6 the vlaZsUBUdZ%iLbs of an (,wTD H7cRb by n rKVV3e3my H28gz; j44S9eUZ. Lbl1Kjt the QffK$Qx& of dqSj of Gt2dS gwh!9%LC \u2019 p5Dc8F67IbE, VrZoHH an 4JzD,HiD <S^bIx $bwg @*/< 0JRO&5 the niQf P*IsPJ D?SsDirOcwt(pH vOCDH the 9MeJFlvhZ; VJWDe3C. wPwK xfx6r the D*gvlE$BS$ >4d$. of 7iId HJ3qq.",
+      "1.0": "F*ipfd4 the XpzXzifosaR90ns of an (Hzb4 B8DSb by n w*RD25$Jg Gwjes. Bf43P$JC. Mh)dUGT the xvDJgsFG of DQVN of gB4aw g3He9EmD \u2019 o%sx&Stj)hw, fRd*yb an @ha#,np3 jW%N0F 6Tsh Ej<> Lh6(If the K0WR ;9U3<6 d>xCCiRivzt9oJ RLB#H the Ume&G9wkQo vJDDdfC. S.wl cFqGd the f)JcOCFhxw :SG#? of jkH5 y tdCE."
+    },
+    "synonym": {
+      "0.0": "Collect the classifications of an paradigm given by n different nervous web. Sleep with the accuracy of each of these networks \u2019 foretelling, design an ensemble method that bequeath output the most likely classification give the single supposition. Also state the confidence storey of your guessing.",
+      "0.05": "Collect the classifications of an image given by n different neural electronic network. Knowing the accuracy of each of these networks \u2019 predictions, design an ensemble method that will output the most likely classification given the case by case guesses. Also state the confidence level of your guess.",
+      "0.1": "Collect the classifications of an image given by n different neural mesh. Knowing the accuracy of each of these networks \u2019 predictions, design an ensemble method that will output the most likely categorisation grant the individual surmise. Also state the confidence level of your guess.",
+      "0.15": "Gather up the classification of an image given by n different neuronal networks. Knowing the accuracy of each of these networks \u2019 predictions, design an ensemble method that will output the most likely compartmentalisation given the individual guesses. Likewise state the confidence level of your guess.",
+      "0.2": "Hoard the classifications of an image given by n different neuronal networks. Eff the accuracy of each of these networks \u2019 predictions, design an ensemble method acting that will turnout the most probable classification given the individual guesses. Also state the confidence horizontal surface of your guess.",
+      "0.25": "Collect the classifications of an image commit by n different neuronal networks. Acknowledge the accuracy of each of these networks \u2019 predictions, invention an ensemble method that will end product the most probable categorisation yield the individual hypothesis. Also state the self assurance level of your guessing.",
+      "0.3": "Collect the classification of an persona render by n dissimilar neuronal networks. Screw the accuracy of each of these network \u2019 predictions, design an ensemble method that bequeath output the most probable classification given the individual guesses. Also state the self assurance level of your guess.",
+      "0.35": "Collect the classifications of an image give by n different neuronal network. Make out the truth of each of these networks \u2019 foretelling, design an ensemble method that volition output the near potential classification given the individual guesses. Likewise res publica the authority storey of your conjecture.",
+      "0.4": "Collect the assortment of an simulacrum hand by n unlike neural meshwork. Knowing the accuracy of each of these networks \u2019 predictions, pattern an ensemble method that volition outturn the to the highest degree potential classification given the single guess. Also state the sureness level of your surmise.",
+      "0.45": "Collect the classification of an image given by n unlike neural networks. Know the accuracy of each of these meshwork \u2019 prognostication, pattern an ensemble method acting that will yield the most potential assortment dedicate the individual speculation. Also country the authority storey of your guess.",
+      "0.5": "Collect the classification of an figure of speech pay by n different neuronic networks. Know the accuracy of each of these network \u2019 forecasting, innovation an ensemble method acting that testament yield the almost potential classification give the individual guesses. Likewise land the authority stage of your guess.",
+      "0.55": "Collect the classifications of an simulacrum give by n unlike neuronal web. Know the truth of each of these network \u2019 forecasting, figure an ensemble method acting that volition end product the nigh likely assortment give the private supposition. Also state the trust grade of your guessing.",
+      "0.6": "Pull in the classifications of an ikon consecrate by n dissimilar nervous network. Know the truth of each of these electronic network \u2019 prognostication, design an ensemble method acting that will outturn the nearly potential categorisation give the individual guess. Too commonwealth the self confidence horizontal surface of your guess.",
+      "0.65": "Gather the categorisation of an icon given by n unlike neuronic network. Knowing the truth of each of these network \u2019 forecasting, pattern an ensemble method acting that leave outturn the near potential categorization yield the case by case hypothesis. Likewise province the confidence tier of your shot.",
+      "0.7": "Hoard the categorization of an persona generate by n dissimilar neuronal electronic network. Live the truth of each of these network \u2019 prevision, figure an ensemble method acting that bequeath yield the virtually probable assortment return the case by case guess. Likewise state the sureness horizontal surface of your conjecture.",
+      "0.75": "Gather up the categorization of an figure give by n dissimilar neuronic network. Know the truth of each of these meshwork \u2019 foretelling, blueprint an ensemble method acting that bequeath output signal the near potential categorisation give the case by case speculation. Too department of state the assurance stage of your supposition.",
+      "0.8": "Pile up the classification of an figure turn over by n dissimilar neuronal net. Experience the truth of each of these network \u2019 forecasting, purpose an ensemble method acting that bequeath end product the near potential categorisation give the case by case speculation. As well nation the trust tier of your surmise.",
+      "0.85": "Pile up the classification of an epitome give by n unlike nervous network. Have it away the truth of each of these electronic network \u2019 prediction, conception an ensemble method acting that leave end product the near probable compartmentalization give the private hypothesis. Besides province the assurance storey of your hypothesis.",
+      "0.9": "Call for the categorisation of an look alike give by n dissimilar nervous network. Have intercourse the truth of each of these net \u2019 prognostication, purpose an ensemble method acting that volition outturn the near probable categorization pass on the case by case guess. Besides land the assurance layer of your surmise.",
+      "0.95": "Accumulate the categorization of an persona give by n dissimilar neuronic web. Recognise the truth of each of these network \u2019 forecasting, blueprint an ensemble method acting that testament yield the virtually potential categorisation devote the single hypothesis. Too united states department of state the sureness grade of your hypothesis.",
+      "1.0": "Roll up the categorisation of an figure pay by n unlike nervous network. Have sex the truth of each of these net \u2019 forecasting, aim an ensemble method acting that leave yield the well nigh probable categorisation give the private guess. Too nation the self confidence horizontal surface of your hypothesis."
+    }
+  },
+  "llm_responses": {
+    "deepseek": {
+      "keyboard": {
+        "0.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.05": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.1": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.15": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.2": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.25": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.3": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.35": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.4": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.45": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.5": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.55": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.6": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.65": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.7": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.75": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.8": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.85": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.9": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.95": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "1.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ]
+      }
+    }
+  }
+}

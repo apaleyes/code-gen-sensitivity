@@ -1,0 +1,215 @@
+{
+  "slug": "sims-chess-position-evaluation",
+  "problem_title": "Evaluate Chess Position",
+  "number": 0,
+  "acceptance": 0,
+  "difficulty": "n/a",
+  "question": "Write code to evaluate a chess position. It can accept chess position as an input in any convenient format, and output evaluation to clearly indicate which side (white or black) has an advantage, and numerically measure this advantage. Adhere to common values of pieces (pawn - 1, knight and bishop - 3, rook - 5, queen - 9), as well as other useful metrics, e.g. number of controlled squares, number of active moves, check and mate possibilities, and so on.",
+  "post_href": "n/a",
+  "python_solutions": "n/a",
+  "post_title": "n/a",
+  "user": "n/a",
+  "upvotes": 0,
+  "views": 0,
+  "augmented_questions": {
+    "keyboard": {
+      "0.0": "Write code to evaluate a chess position. It can accept chess position as an input in any convenient format, and output evaluation to clearly indicate which side (white or black) has an advantage, and numerically measure this advantage. Adhere to common values of pieces (pawn - 1, knight and bishop - 3, rook - 5, queen - 9 ), as well as other useful metrics, e. g. number of controlled squares, number of active moves, check and mate possibilities, and so on.",
+      "0.05": "Write code to evaluate a chess position. It can accept chess positiob as an input in any convenient format, and output evaluation to clearly indicafe which side (white or black) has an advantage, and numerically measure this advantage. Adhere to common values of pieces (pawn - 1, knight and bishlp - 3, rook - 5, wueen - 9 ), as well as other useful metrics, e. g. numfer of controlled squares, number of active moves, check and mate possibilities, and so on.",
+      "0.1": "Write code to evaluats a chess position. It can accept chess position as an inpKt in any conveniebt format, and output evaluation to clearly indicate which side (white or black) has an advantag$, and numerically measure this advantag$. Adhere to common valHes of pieces (pawn - 1, knlght and biQhop - 3, rook - 5, queen - 9 ), as well as other useful met%ics, e. g. number of controlled squares, numbe$ of active moves, check and mate possibilities, and so on.",
+      "0.15": "Write code to evaluate a chess p(Wition. It can accept chess poEjtion as an input in any convenient format, and output evaluation to clearly (ndicSte whOch side (white or Nlack) has an adFAntage, and numerically measure thiX advantage. AdhWre to common valu2s of pieces (pawn - 1, knight and bisGop - 3, rKok - 5, queen - 9 ), as well as othet usefhl metrics, e. g. numb4r of controlled squares, number of aFtive moves, check and mate possibilities, and so on.",
+      "0.2": "Write code to evaluate a cheAs position. It can accept chdss poQotion as an input in any conveGiwnt formXG, and output evaluation to cleaT,y indicate which side (white or black) has an advantage, and numerically meaqurr $his advantage. Zdhe$e to common vqPues of pieces (pSwn - 1, knigyf and bishop - 3, ro8k - 5, qieen - 9 ), as wWll as othee useful metrics, e. g. number of controliWd squares, nu,beT of Sctiv4 moves, cheFk and mate possibilities, and so on.",
+      "0.25": "WrLt# cods to RvWluate a chess position. It can accept ch@sZ pPsirion as an input in any convenient for<Zt, and output eFalustuon to c,ewrly indicate Atich side (ShUte or bKqck) has an advxn$ags, and numerically measure tUis swvantags. Adhere to comjLn values of pJecFs (pawn - 1, knight and bishop - 3, ro*k - 5, qusem - 9 ), as wSll as o4hdr usedu/ kDtrics, e. g. number of vontroloeX s2uqres, number of ac4Kve moves, check and mate possibilities, and so on.",
+      "0.3": "3riye vod@ to evaluate a dhsss position. It can avxept Shesd position as an in0uG in any convenient BormaY, and o^fput evalHzti0n to slDarl6 indlsste which side (white or blAdk) has an advantage, and numerically NsAsure thUX advaJfAge. adhete to Sommom Cal*es of pieces (paqJ - 1, knight and bishop - 3, rPkk - 5, qke#n - 9 ), as weIK as oyheD uXefhl mDgricq, e. g. number of c8Mtr8lled squares, number of acRivs hovew, ch#dk and Jatw possibilities, and so on.",
+      "0.35": "dritw X9de to evalHxHe a chess (osutioM. It can aDce(6 cY4ss position as an in(Ht in any cobveM(eng format, and output eva/IWt(on to c<#ar<y indiVA$e Qhoch s9dR (whJt@ or black) has an advantage, and nume4jFa<ly Keasjte thJc adBam^Qge. Ady3te to Fom<0n va.*ds of OKedes ((awg - 1, kGigyg and bishop - 3, t)ok - 5, qK#en - 9 ), as 3el; as ofhfr ud#f&l metrics, e. g. nhKFer of controlled sqiarre, nunfeE of active moves, VMeck and Ka%e 9oXsib8liRieX, and so on.",
+      "0.4": "WDire xkde to eczluaHR a Dgess )oxitoom. It can acse0$ Xhesa losJRioH as an ihpug in any vknbemient f(Fhat, and ouR0kt evsl^Xrion to fPWarly OnX9ca5e which QiWe (wUi$e or blqcl) has an adfSnhave, and mumetjcqPly mfawu4e this aSvAbtane. Adhere to common vAl*2s of 0iecfd (pW2n - 1, Lhivht and FiaTop - 3, Dlok - 5, Wue2n - 9 ), as well as o5heE Ksdfu: Je$riSs, e. g. hjmbRr of cintrool@f cquQrFs, n*mb@# of AVtKve moves, vh3ck and mahF poesigjPKti3s, and so on.",
+      "0.45": "3rOtW ckdS to ecA>uxte a cbDsZ plwi4Uon. It can aDcD9t fhezD poa(GUon as an UnL&t in any FKnddni4nt bPrmay, and *utpH4 eBX.uwtlon to Xl2wr?y onducaGw Egicn sif3 (#miYe or bKQfk) has an QdvqnFsgD, and jumD%ucal>y keZdu4e Fhic zSCantQVe. Qegere to soj,on Cal6@s of o9ec@s ((a@n - 1, <biVht and bishop - 3, TPok - 5, !KeRn - 9 ), as wspl as ithwf uDedjl N3tFiVs, e. g. b8mb$r of c)MtrIIIed s@Ixrew, huhbeD of WchiDe ,oFeE, vhefM and jXte 9ossibilJhLRZ, and so on.",
+      "0.5": "a%itw Voce to rvZliwte a chrqx o8sUGion. It can acVeL% chWdQ 9osiGooG as an ln)uF in any doncdn&ebt Vlrjat, and okt)u% Svwi tatlon to d>eariT &mficatD dbiVh CidF (whlFr or Glaf>) has an Adfsn5zge, and mu<ee*salpy j#ss Tre tBic qdvxB$wge. ARh3rS to DommLg FalkDs of Olecec (paAm - 1, kJLghR and HiXMop - 3, rI9k - 5, 2h4en - 9 ), as wfl? as 0fhSr uAwf*l mDgGicE, e. g. nImGeE of XontroKi2F wWuArFs, nuHFe4 of Ac%ivR m*G2s, Shev. and ,a6e )osc9nJliH*es, and so on.",
+      "0.55": "WrOH@ S0re to dGSlHQte a cUdsA 0Ks(t&oG. It can ZcVe9r cueZZ LoA8tikH as an imOuH in any v8nvSjUDnt E8%mSt, and 8i%pkt WGx,uwtOon to c,2aEKy ugdiDaY2 whkSY s*Fr (wyi%3 or vlaV>) has an zdvXntsnS, and njn4GiXZllt nWssurd tGJD advzn5SrR. ZdGeT4 to cl<,ob vq/*Fs of OiRdeW (LaQb - 1, Inohh^ and bJsy*l - 3, r(8U - 5, qIeWg - 9 ), as s4l/ as otTs# *s#bu? m2t$Jce, e. g. ni<b4# of soj5roklRw sa tq5es, n8hbWd of xfGove <8vds, XteFk and ja5f 9osq&g&l*F(es, and so on.",
+      "0.6": "3$it4 D*ce to #vZlja^d a sMesQ OosihOlH. It can aVXspf cNeXw ppQJt8oM as an *Bpuf in any c*nBeH7eJh foGKSy, and 8JG9ut 4Ca;uag&oM to SleQDOu UnFiXXtw Ey7ch s9Rd (!JiFe or b?wcJ) has an addQB^aTD, and B8<erucsKpy meAz6$3 $hlA QdFaMrSgs. SShSde to d9Khon Dai TeW of pjscWa (psEb - 1, ,MiYhr and bOsm8o - 3, rP(o - 5, WuSem - 9 ), as efol as *tyeF &d$fuO KR5G8cs, e. g. M7mfet of sLMRr9kled xqIa%sC, nhmVRE of adt*cf nPDes, dh@cU and JzRe OossiN9?UtusA, and so on.",
+      "0.65": "W59h$ XoCw to SDskuagF a cudQE O8cohkon. It can QcDSlt dgFsq oodiRlpJ as an uno&r in any flMCegiFn5 glrhSt, and o^$)&t 2fSI tShion to SOeX4l^ iHfLcz$f @Gucn djCe (dB(t4 or bPZso) has an QCvXGtafW, and g TjF%OVallj nrZs*5e FGls WfvwGYaYe. WeGefe to sLmmlj Cw, Tes of po@dSs (LQan - 1, knUrmG and Nisui9 - 3, 3oiU - 5, W T3wn - 9 ), as DWl: as k^GWr ksdfjo J4tDiVe, e. g. JHnbdr of V8ntf0;i$d sqhsewx, nkmgFE of aFHlbe jkvRd, Shfv. and mW$r ))zs&V*l*t*eC, and so on.",
+      "0.7": "@di6f X)We to RfZ:7atR a cu3AE ooXltUIb. It can adF#(G xjFsx piq*t7*J as an uJluY in any c(ngFgifBH DPGmZF, and 9j%ou6 eBXp8X6i0n to D.ea%o5 ObSiVXYe wGLSN AudW (wM8Fd or G;zXk) has an SdbZnHwHw, and h7<d$icZ<Oy meAC tD3 rh(A aXbAmtSB4. srJ3fe to cLJHKG fQlI@z of p&DddA (pSDG - 1, kb*vmy and giWUPO - 3, r89O - 5, @KWwn - 9 ), as #rlk as LYBDr KCfDu: mWtgKSz, e. g. n8JHFG of xKJhfpllfd q@IWrew, m8nVSr of Qv5Oce kpb3s, dtdsk and mzHS 9Kqc*H*l8$i4s, and so on.",
+      "0.75": "edU%e voVD to wCz;7qte a DNeAC oksO4i9B. It can zSV$lt DNwxs LosuYuKg as an KmouH in any c(BCwBu#nF rKDkxt, and *7yp t^ 3GZO ts$ioG to f/4af:h lje9vat2 3h9Fg skFs (3hOHd or hlAxM) has an ZdCxMtXTS, and J6me#oVZ.,J j2QCugd %hKA qRFZntAR2. AxY@3s to Dp<m0M Fa>J4W of (J$VeA (pz!m - 1, unLvuG and GicyiO - 3, Go0O - 5, A Tfsn - 9 ), as QwlO as KrmWr kCerH/ ks44(vs, e. g. Gung@E of x9nGrP;?de eAuXT#e, m TNFsr of XxhOvW ,(deZ, xhSD, and Nwtf 9Psx9fiOJ67eA, and so on.",
+      "0.8": "!E95e dlC# to @CAO TxtD a SY@sC 09s7RL*M. It can Wscf0g FJwXs (oXohk8M as an 7nO Tr in any xoGgdnJSBg gP3mS5, and PKrpk^ scZl TZylob to c<DXgPh ugFkcwHS wy*DY cJSr (wJLRs or b>ZsL) has an ZfCzHfarF, and Mu,FeKVQK<y Jwxau$2 rN(c XWcZmfaBS. scy#r2 to c(J,(j bZk^3s of 0USxeq ((w@M - 1, kHKYnF and NjsNll - 3, #Kl. - 5, A7seH - 9 ), as S2.i as kFY@r 6ASEup KS$Tivx, e. g. mImH2$ of cPHyfoi;3x C2 tWrfq, nkhNW5 of aDRjFd m8g@A, cTDfm and <xg4 lLExiVLIitowC, and so on.",
+      "0.85": "2#J63 SlR# to @fZ.HaHD a XN4zW 0*Ci4opm. It can zVfSo^ VNFDc l(ZKHi8m as an oH)8R in any X)Bv@m*wHr CpF,s5, and Lj%oHG @gA;jafuLJ to cosq4>J 7BxkcAH# 1G(fb e7C$ (Stl6$ or GoZF.) has an zdfZmyxND, and Gu,SdKsw;o% hdwcu3$ hm8c sCbqB^Xgr. ssGwE3 to f*KN8h bAPksE of ok2SrE ()QEg - 1, Uj7NTF and H(eYL( - 3, T9L, - 5, a8DsB - 9 ), as !d:o as 8HG4d  TXddi; n@4EJFs, e. g. b t,n$% of D0btf0iI$R w2ia$Fw, Mh<hF$ of SsR9BS <9Fsw, vJ3SU and KS6$ ()ZsKbL/i4&4D, and so on.",
+      "0.9": "1To6F fPs@ to 3gxikxhs a dJRaA l8q7H98M. It can qxFD(% fYfad )8w&hj0J as an Jboi% in any DKnc3gO$Hf vK$KX4, and p8go^^ DCaKJX$L0j to F,$qGi5 oGVkFzH2 DYkDM DocW (#mO4D or G;AVm) has an zSFZGgqNW, and jIn3F7fakIu <dQZKd3 RjKA SwgqgYsNR. ZEt@$W to XLhKim dq;K4C of lOfvRd (0SDH - 1, MhOtM% and nuQNi( - 3, e()I - 5, 18@rB - 9 ), as AD>I as phBwE 7eWG&i ,WhELFw, e. g. MiNhre of vkhhfKlKFW X28Z%re, HiNF33 of XdFkd4 j(d#z, vJsd. and <S^f LoawJhiojtUsd, and so on.",
+      "0.95": "D$ur2 DIwS to DCSi*X4S a fmDeQ L0AKgO0M. It can Xsd#9H FG$qZ )lw*YkLH as an (H0J% in any sLhGDg9dmh C03kxF, and (^r(hg rdsP*A5(Lg to x<WZdkh kGXlFwG3 Ab8sn xKSF (Qjkrd or fPqDi) has an XEdXHHwfr, and h t,$T*cXo/J hsqW*54 5YOE ArbSGGzbw. ZFN$g4 to XLjkKh CS;iFa of 09#dRD (LWEh - 1, mbjnbh and VUAyp9 - 3, fl). - 5, s T@Sg - 9 ), as qDp/ as IFbwf &D@v&: n@64&dZ, e. g. m8NHD$ of XiB4#pk.fv cA&qG2E, j6,V2% of xxf8ds h9fSQ, DgFSL and JS^S o8dsiH7l7h8Rz, and so on.",
+      "1.0": "AT9%# vIX3 to dbWOHq%$ a SN$QE (8w7h*)B. It can AVx$)R FUDqd 0lcufJ8J as an jj9 T4 in any FLmFdML$bR Gk$jSR, and) TRl^g #GQ<^Wfk9j to X:$x%?G UgClFQHf Anksj WJf$ (QM9h2 or GIsv<) has an xWcqB%WBw, and G6nFr9XSP,H j3Qqjf3 5Bkq qwFsmHWy3. sxm@eD to vpjNPH Fz;K4w of OJ$xsq (LASb - 1, jgKNgg and H&qUK9 - 3, Dpp< - 5, AJFwG - 9 ), as sS,I as *yJ3# *DWCi> nW^3usD, e. g. m&JG$T of F*GRTi>pWS X@KsT4d, MHNg3e of SS59Cd klDWQ, sg2Vu and jZ%s poZClnlk*5i$D, and so on."
+    },
+    "synonym": {
+      "0.0": "Write code to assess a chess position. It can admit chess view as an remark in any commodious format, and output evaluation to clearly point which side of meat (white or opprobrious) get an vantage, and numerically measure this advantage. Adhere to rough cut values of pieces (instrument - 1, horse and bishop - trio, rook - 5, queen - 9 ), as comfortably as early utilitarian metrics, e. g. number of controlled square, number of dynamic moves, hinderance and mate possibilities, and and so on.",
+      "0.05": "Write code to evaluate a chess position. It can accept chess position as an comment in any convenient format, and output evaluation to intelligibly indicate which side (white or black) has an advantage, and numerically measure this advantage. Adhere to common values of pieces (pawn - 1, knight and bishop - 3, rook - 5, queen - 9 ), as well as other useful metrics, e. g. number of controlled squares, number of active moves, check and mate possibilities, and so on.",
+      "0.1": "Write codification to assess a chess position. It pot accept chess position as an input in any convenient format, and output evaluation to clearly indicate which side (white or black) give birth an advantage, and numerically measure this advantage. Adhere to mutual values of piece (pawn - 1, knight and bishop - 3, rook - 5, queen - 9 ), as well as other useful metrics, e. g. number of controlled squares, number of active moves, check and mate possibilities, and so on.",
+      "0.15": "Write code to evaluate a chess position. It can accept chess placement as an input in any convenient format, and output evaluation to clearly indicate which side of meat (white or black) has an advantage, and numerically measure this advantage. Adhere to mutual value of pieces (soak - 1, knight and bishop - iii, rook - 5, queen - 9 ), equally well as former utilitarian metrics, e. g. numeral of controlled squares, number of active moves, check and mate possibilities, and so on.",
+      "0.2": "Write code to evaluate a chess position. It can take over chess position as an input in any convenient formatting, and output evaluation to intelligibly indicate which side (white or black) has an vantage, and numerically measure this advantage. Adhere to vernacular values of pieces (pawn - ace, horse and bishop - triad, gip - 5, queen - nine ), equally well as early useful metrics, east. g. number of controlled squares, identification number of active moves, check and mate possibilities, and so on.",
+      "0.25": "Write code to evaluate a chess position. It can accept chess position as an stimulant in any convenient format, and output evaluation to clearly point which english (white or sinister) has an advantage, and numerically appraise this reward. Adhere to common value of slice (pawn - 1, knight and bishop - 3, rook - 5, queen - 9 ), equally well as early utilitarian metrics, e. g. number of controlled square, turn of active moves, curb and mate possibilities, and so on.",
+      "0.3": "Write code to value a chess spot. It stern accept chess position as an input in any commodious data format, and output evaluation to understandably signal which slope (whitened or black) has an advantage, and numerically measure this advantage. Adhere to common values of piece (hock - ane, horse and bishop - 3, rook - 5, queen - niner ), every bit well as former useful metric, e. g. telephone number of controlled square, number of active moves, check and mate possibilities, and therefore on.",
+      "0.35": "Write code to evaluate a chess position. Information technology can take chess situation as an stimulant in any convenient format, and output valuation to intelligibly indicate which side of meat (white hot or black) feature an advantage, and numerically appraise this reward. Adhere to common values of pieces (instrument - one, horse and bishop - tercet, rook - 5, queen - 9 ), equally easily as early utile metric, e. gigabyte. phone number of controlled squares, phone number of dynamic move, check and first mate possibilities, and so on.",
+      "0.4": "Write codification to valuate a chess position. It buns take on chess place as an stimulant in any convenient data formatting, and output rating to understandably argue which side of meat (white or black) has an vantage, and numerically assess this reward. Adhere to common values of small arm (instrument - 1, horse and bishop - 3, nobble - phoebe, queen - ennead ), every bit good as early utilitarian system of measurement, eastward. g. act of controlled squares, number of active moves, impediment and fellow possibilities, and so on.",
+      "0.45": "Write code to evaluate a chess posture. It can take on chess place as an stimulation in any commodious format, and end product evaluation to clearly indicate which side (ashen or sinister) have an advantage, and numerically assess this reward. Adhere to common value of bit (soak - unity, knight and bishop - trine, gip - fivesome, queen - ennead ), every bit well as early utilitarian metric, es. g. number of controlled lame, routine of participating moves, bank check and mate possibility, and thusly on.",
+      "0.5": "Write codification to value a chess place. It lav accept chess position as an remark in any commodious formatting, and output rating to intelligibly indicate which face (ashen surgery ignominious) have an vantage, and numerically measure this reward. Adhere to mutual value of pieces (soak - 1, horse and bishop - iii, mulct - fin, queen - nine ), as easily as former utile metric, e. g. figure of controlled square, telephone number of active moves, bridle and mate possibleness, and so on.",
+      "0.55": "Write codification to evaluate a chess status. Information technology stern assume chess spatial relation as an input in any commodious data formatting, and production rating to clear betoken which english (snowy operating theatre dark) get an advantage, and numerically value this vantage. Adhere to coarse value of slice (instrument - one, horse and bishop - threesome, scam - 5, queen - nine ), as good as former utilitarian metrics, eastward. chiliad. routine of controlled square toes, routine of fighting move, check and partner possibilities, and so on.",
+      "0.6": "Write codification to assess a chess position. Information technology tail end have chess office as an stimulus in any commodious data formatting, and production rating to clearly signal which position (ashen operating theatre disastrous) let an reward, and numerically valuate this advantage. Adhere to unwashed note value of composition (soak - 1, horse and bishop - triad, defraud - fivesome, queen - nine ), every bit substantially as former utile metric, tocopherol. grand. issue of controlled lame, phone number of active moves, deterrent and partner possibilities, and so on.",
+      "0.65": "Write codification to measure a chess attitude. Information technology nates live with chess billet as an input signal in any commodious formatting, and output signal valuation to clearly bespeak which slope (white hot beaver state pitch dark) have an advantage, and numerically valuate this vantage. Adhere to plebeian value of piece (pawn - unity, horse and bishop - tierce, bunco - v, queen - nina from carolina ), every bit intimately as former utile metric, e. gramme. number of controlled square, phone number of alive movement, bank check and match opening, and thus on.",
+      "0.7": "Write codification to pass judgment a chess status. Information technology posterior take chess situation as an stimulation in any commodious data formatting, and yield rating to clear show which position (snowy oregon bleak) birth an reward, and numerically measure out this vantage. Adhere to coarse values of piece (instrument - one, horse and bishop - iii, victimize - fin, queen - nine ), equally substantially as early utilitarian metric unit, atomic number 99. deoxyguanosine monophosphate. numeral of controlled square, routine of dynamic move, hindrance and paraguay tea opening, and so on.",
+      "0.75": "Write computer code to appraise a chess location. Information technology tooshie swallow chess emplacement as an stimulant in any commodious data formatting, and yield valuation to clear point which slope (bloodless beaver state fateful) suffer an reward, and numerically assess this reward. Adhere to vulgar time value of small arm (hock - i, horse and bishop - iii, hornswoggle - phoebe, queen - ix ), equally comfortably as former utile metric, einsteinium. guanine. figure of controlled square, telephone number of alive movement, halt and partner possibility, and and then on.",
+      "0.8": "Write codification to measure a chess place. Information technology arse bear chess place as an input signal in any commodious data format, and yield rating to intelligibly designate which incline (ashen beaver state disastrous) get an vantage, and numerically assess this reward. Adhere to vernacular value of spell (cat's paw - single, horse and bishop - trey, nobble - five, queen - nina from carolina ), every bit substantially as former utile metric, eastward. k. figure of controlled square, numeral of dynamic relocation, curb and spouse possibility, and thus on.",
+      "0.85": "Write computer code to appraise a chess place. Information technology fundament bear chess place as an stimulant in any commodious formatting, and end product rating to clear betoken which slope (snowy beaver state disastrous) take an vantage, and numerically assess this vantage. Adhere to uncouth value of piece (soak - unity, horse and bishop - trinity, nobble - v, queen - ix ), equally substantially as early utilitarian metric, eastward. gravitational constant. telephone number of controlled foursquare, identification number of fighting motion, arrest and spouse theory, and thence on.",
+      "0.9": "Write codification to value a chess situation. Information technology crapper go for chess perspective as an stimulation in any commodious data formatting, and yield valuation to distinctly signal which english (ashen operating theatre calamitous) make an vantage, and numerically mensurate this reward. Adhere to rough cut value of piece (hock - single, horse and bishop - tercet, defraud - cinque, queen - ennead ), equally considerably as former utilitarian metric function, einsteinium. gm. telephone number of controlled second power, act of fighting relocation, bridle and teammate possibility, and indeed on.",
+      "0.95": "Write codification to assess a chess attitude. Information technology stool take chess locating as an stimulation in any commodious data formatting, and yield valuation to clear designate which slope (snowy oregon mordant) stimulate an reward, and numerically value this reward. Adhere to unwashed note value of piece (cat's paw - ane, horse and bishop - triad, gyp - pentad, queen - ix ), every bit substantially as former utile metric, vitamin e. constant of gravitation. telephone number of controlled square, bit of dynamic move, balk and checkmate possible action, and indeed on.",
+      "1.0": "Write codification to value a chess location. Information technology give notice go for chess place as an input signal in any commodious data format, and turnout rating to distinctly point which face (white hot surgery inglorious) experience an reward, and numerically value this reward. Adhere to unwashed time value of while (hock - i, horse and bishop - triplet, swindle - fivesome, queen - nina from carolina ), equally substantially as early utilitarian system of measurement, atomic number 99. g force. turn of controlled square toes, identification number of participating move, stay and paraguay tea theory, and and then on."
+    }
+  },
+  "llm_responses": {
+    "deepseek": {
+      "synonym": {
+        "0.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.05": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.1": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.15": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.2": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.25": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.3": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.35": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.4": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.45": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.5": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.55": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.6": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.65": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.7": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.75": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.8": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.85": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.9": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.95": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "1.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ]
+      }
+    }
+  }
+}

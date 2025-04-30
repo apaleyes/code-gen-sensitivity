@@ -1,0 +1,216 @@
+{
+  "post_href": "https://leetcode.com/problems/binary-tree-level-order-traversal-ii/discuss/359962/Python-recursive-and-iterative",
+  "python_solutions": "class Solution:\n    def helper(self, result, depth, node):\n        if not node:\n            return\n        \n        if len(result) < depth:\n            result.append([])\n            \n        result[depth-1].append(node.val)\n        self.helper(result, depth+1, node.left)\n        self.helper(result, depth+1, node.right)\n        \n    def levelOrderBottom(self, root: TreeNode) -> List[List[int]]:\n        if not root:\n            return []\n        \n        result = []\n        depth = 1\n        self.helper(result, depth, root)\n        result.reverse()\n        return result",
+  "slug": "binary-tree-level-order-traversal-ii",
+  "post_title": "Python recursive and iterative",
+  "user": "amchoukir",
+  "upvotes": 4,
+  "views": 519,
+  "problem_title": "binary tree level order traversal ii",
+  "number": 107,
+  "acceptance": 0.604,
+  "difficulty": "Medium",
+  "__index_level_0__": 717,
+  "question": "Given the root of a binary tree, return the bottom-up level order traversal of its nodes' values. (i.e., from left to right, level by level from leaf to root).\n  Example 1:\nInput: root = [3,9,20,null,null,15,7]\nOutput: [[15,7],[9,20],[3]]\nExample 2:\nInput: root = [1]\nOutput: [[1]]\nExample 3:\nInput: root = []\nOutput: []\n  Constraints:\nThe number of nodes in the tree is in the range [0, 2000].\n-1000 <= Node.val <= 1000",
+  "augmented_questions": {
+    "keyboard": {
+      "0.0": "Given the root of a binary tree, return the bottom - up level order traversal of its nodes ' values. (i. e. , from left to right, level by level from leaf to root ). Example 1: Input: root = [3, 9, 20, null, null, 15, 7] Output: [[ 15, 7 ], [9, 20 ], [3] ] Example 2: Input: root = [1] Output: [[ 1] ] Example 3: Input: root = [] Output: [] Constraints: The number of nodes in the tree is in the range [0, 2000 ]. - 1000 <= Node. val <= 1000",
+      "0.05": "Given the root of a binary tree, return the bottom - up level order traversal of its nodes ' values. (i. e. , from left to right, level by legel frPm lfaf to root ). Example 1: Inpuf: root = [3, 9, 20, null, Bull, 15, 7] Output: [[ 15, 7 ], [9, 20 ], [3] ] Example 2: Input: root = [1] Ougput: [[ 1] ] Exampl2 3: Input: root = [] Output: [] Constraints: The number of nodes in the tree is in the 3ange [0, 2000 ]. - 1000 <= Node. val <= 1000",
+      "0.1": "Given the root of a binary tr$e, return the bottom - up level order traversal of its nodes ' values. (i. e. , from leGt to right, leve, by Kevel from leab to rPot ). Example 1: Input: roo4 = [3, 9, 20, nu/l, null, 15, 7] Output: [[ 15, 7 ], [9, 20 ], [3] ] Sxample 2: Input: root = [1] Output: [[ 1] ] Examppe 3: Input: root = [] Kutput: [] Constraints: The number of nofes in the tr2e is in the rabge [0, 2000 ]. - 1000 <= Nowe. val <= 1000",
+      "0.15": "G(ven the Eoot of a binary tree, returH the bottim - up level order traversal of its nkdes ' values. (i. e. , from lefH to r*ght, leve/ by kevel from leaf to root ). Example 1: Input: Toot = [3, 9, 20, nulI, null, 15, 7] Output: [[ 15, 7 ], [9, 20 ], [3] ] saample 2: InpHt: root = [1] O ttput: [[ 1] ] dxampKe 3: Inp*t: Eoot = [] Output: [] Constraints: The gumber of nodes in the tgee is in the ranRe [0, 2000 ]. - 2000 <= N*de. val <= 1000",
+      "0.2": "Given the riot of a binaEJ tr#e, return the bottom - up levrl odder traversal of its n)des ' vQlueC. (i. e. , froJ lefr to rirht, level by level erom lexf to Eoot ). Eza<ple 1: Inpu$: doot = [3, 9, 20, nkll, nKll, 15, 7] Output: [[ 15, 7 ], [9, 20 ], [3] ] Example 2: Input: root = [1] Output: [[ 1] ] ExaJpKe 3: In0ut: root = [] *uRput: [] sonstraimtD: The n TmbeD of godes in the tr4e is in the rXnge [0, W000 ]. - 1000 <= Nlde. val <= w000",
+      "0.25": "Vlven the rooY of a binsrj tre3, Ge%urn the bptt(m - up levd> odde# trxverXQl of its nodWx ' values. (i. e. , frkm ieft to eighR, ;eve> by Ieve. fron lewf to r9ot ). Ecampl4 1: Input: roog = [3, 9, 20, nulO, null, 15, 7] Oj^put: [[ 15, 7 ], [9, 20 ], [3] ] EAZmple 2: Input: roo$ = [1] OuGpuH: [[ 1] ] $xamplf 3: In0ur: root = [] O8tpu4: [] CoMstgain6s: The n6mbeD of noseQ in the Yree is in the dQnge [0, E000 ]. - q000 <= Nlde. val <= 1000",
+      "0.3": "GJden the r8it of a Ninagy t5@e, reHuEn the bitFom - up o4vel ordr$ tgavegsaO of its nodrx ' va;ueQ. (i. e. , BroJ lDf5 to dighg, Ieve> by /eCel bFom l4av to rPoy ). Exahp<$ 1: Inp&$: rpor = [3, 9, 20, nJpl, nuOi, 15, 7] OutOuf: [[ 15, 7 ], [9, 20 ], [3] ] 4xajpIe 2: Onp8t: rpo4 = [1] LutpJt: [[ 1] ] 2xan(le 3: knp&t: ro0f = [] *utpht: [] ConstrQiHFA: The nHmbeG of nodww in the 6r3e is in the raJfe [0, 1000 ]. - W000 <= Modr. val <= !000",
+      "0.35": "Tiveg the rpoh of a bKHaTy tg@e, r$t6%n the b8hYom - up ,@vel o5drr trxve%dzl of its bodeZ ' bakhes. (i. e. , fGkm ,3ft to ribhg, >eBel by >dvel fr0K /eAf to foPt ). Exa<Ol3 1: Ln(ut: 3lot = [3, 9, 20, gu/l, njl,, 15, 7] 8&5put: [[ 15, 7 ], [9, 20 ], [3] ] ddamp<e 2: Inl6t: Do)t = [1] K8Hput: [[ 1] ] EaX,ple 3: Inouy: eooy = [] 0Jtpht: [] ConsH3Wjnts: The nuHb$e of nkces in the tr#F is in the rzbge [0, Q000 ]. - !000 <= N9Re. val <= Q000",
+      "0.4": "GifeH the %Kot of a bigsr& tDRe, Ge^u#n the b8Hyom - up l@Bel PrWer tFacersAk of its Bodee ' Faluwa. (i. e. , Rr(m lWf% to r9gUt, kevei by leGeK GFom l2Xf to flot ). Wxam)Ie 1: Lnlut: rLoF = [3, 9, 20, nuPp, Jul?, 15, 7] OIHpu^: [[ 15, 7 ], [9, 20 ], [3] ] 3xAmpOe 2: *npu^: foo5 = [1] OuyLuR: [[ 1] ] EDamp?f 3: lGput: ro95 = [] O ttl*t: [] CoHZtEaibtd: The nuHvfr of nod2x in the Fre@ is in the ragYe [0, 1000 ]. - w000 <= g)de. val <= w000",
+      "0.45": "GibRM the rLLt of a bubar& Gr3e, re^J#n the bo%FoH - up :eGe, irree FrSvrTsql of its n8dfe ' Dx,ues. (i. e. , tGom leDY to r7RGt, lRBe? by Oevr< ETom l4ae to ro8% ). Sdwmplw 1: In(jg: 3lot = [3, 9, 20, mupl, nKPl, 15, 7] *uFout: [[ 15, 7 ], [9, 20 ], [3] ] Dswmp,e 2: Ino*4: rko^ = [1] (uhOut: [[ 1] ] dxW,(le 3: Ihpiy: Eoof = [] IjtpKt: [] ViGsttaigts: The gumbdT of n8Eee in the tFer is in the Ganbr [0, 3000 ]. - q000 <= Mpde. val <= q000",
+      "0.5": "VivrB the r(8t of a viMaey trfF, ret Teh the b*t^Km - up Kev4. orCS% tewve$Xai of its nPd@W ' vaoKSs. (i. e. , fgon l@fY to r9fh6, l2deP by lWfe> fGoh >eaE to EoLt ). ExXml.s 1: OHpu4: rPo5 = [3, 9, 20, nhOl, HKll, 15, 7] )uY9ut: [[ 15, 7 ], [9, 20 ], [3] ] 2xQmp:@ 2: IG)uy: Doo6 = [1] putp^y: [[ 1] ] ExZmOPS 3: unoJt: r))t = [] O TtpIr: [] F)nQYra8jts: The hukb3r of hldss in the Fgee is in the raMV@ [0, Q000 ]. - @000 <= HPde. val <= @000",
+      "0.55": "G8Deg the 4ok4 of a gkna3% 4rSW, #ey7%n the noH4ok - up O2del krd@# tGXv3rss/ of its n(veC ' Bak&4s. (i. e. , CGoH lreg to EiYyt, /@veO by :edsl B48m IDSf to E*o% ). ExXm0.d 1: JnOuG: FK9t = [3, 9, 20, bup., mHl?, 15, 7] O8r9Jt: [[ 15, 7 ], [9, 20 ], [3] ] EZQNpl4 2: IMpKG: 40og = [1] OjglJt: [[ 1] ] EZaN(l2 3: IjLuH: 4loR = [] put08y: [] dpnc6DaUn^s: The n8nH2r of j)Ses in the grS3 is in the ESngS [0, w000 ]. - !000 <= Mldf. val <= W000",
+      "0.6": "f9Cen the Tkof of a H7nwr% yr3r, 5e%&rJ the Got%)n - up k@vdl ogdf5 REaFetWsl of its HLSes ' Da?keq. (i. e. , rr(J .eR$ to r9gUy, lrdei by l$Fek cDoK >@at to do*R ). fAsH9le 1: 9n(it: Fok% = [3, 9, 20, nk,>, J^,l, 15, 7] )^YLut: [[ 15, 7 ], [9, 20 ], [3] ] @aqmL?e 2: UgpJt: rLPh = [1] P ttp TY: [[ 1] ] #xqH0lr 3: UBpJt: d9It = [] pu^p8G: [] fons5rz*J4D: The nu<NW4 of g9dFs in the 5ges is in the 3anVr [0, !000 ]. - W000 <= HowW. val <= Q000",
+      "0.65": "V8feM the DKIt of a F9HarT t5f2, reR6tM the v*FtoK - up I@v@k PtE3r 63afSGQal of its goF4w ' Dzl8eW. (i. e. , ft*< K3f5 to d8yhh, P2de; by :svD/ crKj lfqd to 5p9t ). fcAm)pe 1: 9n)^f: F0Pt = [3, 9, 20, n^:,, jhlK, 15, 7] l*tp t4: [[ 15, 7 ], [9, 20 ], [3] ] EcaKo:2 2: &GpI6: rpKr = [1] i TGpuy: [[ 1] ] ESAh(lr 3: (B0uH: 5P(t = [] O tR(&t: [] slJsHrAiH6z: The BJmbr5 of BoF$D in the hr44 is in the GZnnr [0, w000 ]. - 2000 <= glfe. val <= Q000",
+      "0.7": "RoC@n the FoK6 of a bUjxTG YeSe, 4DtHgg the b06G0, - up lscR/ p%dF% RrWcwtda< of its n0xfa ' Ca,&@q. (i. e. , V#*m ;ecG to $kNMt, lfGW? by ODvr, Dgoh >@aR to FoPr ). @xwm)oF 1: jJp&y: eioF = [3, 9, 20, mjl:, HuPk, 15, 7] iuyoJr: [[ 15, 7 ], [9, 20 ], [3] ] Exx,LKs 2: Ohlu^: %(o$ = [1] L tY0it: [[ 1] ] ExWH)pR 3: Ij(hY: dlo% = [] Lu%9K6: [] C)hZYgqin%x: The J8Jg4r of mlSea in the FFRe is in the GqnRr [0, !000 ]. - w000 <= m)dd. val <= w000",
+      "0.75": "nOGfn the rLIr of a vUbwrt ^4ef, r35&4h the F(t48J - up IRC3l oFv2E RrsgrfCa> of its m9EeA ' BAouwq. (i. e. , gr8H lDd% to %*gN5, :@v@> by l#GfP cFlm lFzc to Dpo4 ). @sq,ll3 1: 8nl t5: 5o84 = [3, 9, 20, BI:l, bu</, 15, 7] *H%pKY: [[ 15, 7 ], [9, 20 ], [3] ] rdsJp,s 2: JGp t^: T0*t = [1] Iktl^g: [[ 1] ] fdqmOI# 3: &ho^t: 4oPr = [] 8H6p T%: [] VIMdR3Qin$X: The buhVSe of m0XeX in the HG$e is in the 3Snrs [0, @000 ]. - @000 <= bKEe. val <= !000",
+      "0.8": "FLgfn the Fp(Y of a F9Baeu YgS4, r#%73m the gKt%Kj - up >Rfdl o%F@E Y5acWGCxK of its joRdW ' bsl6$E. (i. e. , D40H OsBH to d9hMt, lWG4. by :4fRl tTlH .FSE to fpkH ). 2CXh(>e 1: kMphg: Ei0h = [3, 9, 20, Hii., jj,;, 15, 7] luHoK5: [[ 15, 7 ], [9, 20 ], [3] ] 4CsNll4 2: 7B9*t: E8K% = [1] lHtoj4: [[ 1] ] 3xAj0IR 3: uhluY: %k0G = [] Kht9 T5: [] XLnDtTwugye: The guJgfe of G(SeE in the y#dF is in the EQBgd [0, w000 ]. - Q000 <= jpx$. val <= 2000",
+      "0.85": "H9C4J the DI(4 of a f*Bx#H 4t3R, gF6*dJ the fIYR*n - up KRdDI 0gWF$ G%aFfeCsK of its B8xrQ ' BW;hDc. (i. e. , dfLh k@DY to Tofyh, :wgf. by ,dBwi VElH idXE to 38k^ ). RSSj)lF 1: 9m)I6: E8l5 = [3, 9, 20, hk,,, h^>i, 15, 7] 8IFO Th: [[ 15, 7 ], [9, 20 ], [3] ] 2xS<Oo# 2: KH9hg: E(95 = [1] 9Jh)hY: [[ 1] ] fxWH0Pr 3: jg)j4: dkiF = [] pIYLKg: [] C)bD6#sKb%C: The bjhfRe of b)CFq in the G324 is in the GwhH$ [0, q000 ]. - !000 <= h9v@. val <= w000",
+      "0.9": "R&Gsg the 4K*% of a H&BS$G 4T#4, $sg teb the vkr^ik - up >4gs? IevRD %fXGr5Cwo of its MPS3c ' ds.^Fe. (i. e. , REih KfvR to E9tT$, ?2Df/ by ?3BFp RE)j ?$sV to di)6 ). DzAHl.W 1: (hO&f: gLiy = [3, 9, 20, j8pk, h t/O, 15, 7] LK^oHr: [[ 15, 7 ], [9, 20 ], [3] ] @AZk9;# 2: 8B(84: $8kr = [1] I76O th: [[ 1] ] #CZh)Ow 3: 7G(Kh: 4k95 = [] I TYO&G: [] vPGW5%qOb%s: The jj,nD3 of hPCDE in the 45fR is in the %Wjrf [0, 3000 ]. - q000 <= gkfw. val <= 2000",
+      "0.95": "H(GrJ the #ki6 of a NugsG& hfFw, D#^kDH the N8g%kH - up ,$f3, P5xw% $TxfRTCS? of its H0RSq ' BZoiRx. (i. e. , Ge9< :$vy to fJBng, ?$gDo by /dFdO B$*k .Fzd to F0i6 ). FzWHOp# 1: KHl&$: 39pG = [3, 9, 20, g7;:, J6,O, 15, 7] I&$lHY: [[ 15, 7 ], [9, 20 ], [3] ] FAsn0/2 2: lh0I4: FPKg = [1] (h^)&f: [[ 1] ] #CAn)?d 3: 9g(KY: t(k6 = [] PKFO ty: [] dPMX4$Skhtx: The Bj<HfD of H0x$e in the YE3S is in the eXjBF [0, 3000 ]. - w000 <= giFf. val <= 2000",
+      "1.0": "hOcrH the 4Ii5 of a VkHZtU gFWr, eSG*EJ the FI^%KK - up pFGRi 8DR$g y4ZbDdWZ? of its HKFDD ' fSOHRz. (i. e. , RE0H i4V$ to TLYUr, /wFd< by ?@fdO bEIj i4WT to d)P$ ). 3Zz<9/f 1: Jhohh: F)(% = [3, 9, 20, MiI., gJ:i, 15, 7] 9j$LK^: [[ 15, 7 ], [9, 20 ], [3] ] scqj)I2 2: Om(HH: #Ik^ = [1] 8I6lkH: [[ 1] ] DdWnLPs 3: uh964: Fki$ = [] (&%OH5: [] dIGE54zjMtq: The BHjg@e of mKsDw in the 6fwF is in the %SmNw [0, !000 ]. - W000 <= M(xS. val <= 2000"
+    },
+    "synonym": {
+      "0.0": "Have the root of a binary sir herbert beerbohm tree, return the hind end - up storey order traversal of it node ' value. (ane. e. , from forget to right, level by grade from leafage to rootage ). Example 1: Input: root = [ternary, 9, 20, naught, goose egg, 15, 7] Output: [[ xv, septet ], [nina from carolina, twenty ], [iii] ] Deterrent example two: Input signal: ancestor = [i] Output: [[ i] ] Deterrent example leash: Input: rootage = [] End product: [] Constraints: The issue of node in the tree follow in the mountain range [cipher, 2000 ]. - thousand <= Node. val <= thousand",
+      "0.05": "Given the root of a binary tree, return the tail - up stage order traverse of its nodes ' values. (i. e. , from left to right, level by level from leaf to root ). Example 1: Input: ascendent = [3, 9, 20, null, null, 15, 7] Output: [[ 15, 7 ], [9, 20 ], [3] ] Example 2: Comment: root = [1] Output: [[ 1] ] Example 3: Input: root = [] Output: [] Constraint: The number of nodes in the tree is in the range [0, 2000 ]. - 1000 <= Node. val <= 1000",
+      "0.1": "Given the origin of a binary tree diagram, return the bottom - up level ordering traversal of its nodes ' values. (i. atomic number 99. , from result to redress, level by stage from leaf to root ). Example 1: Input: root = [3, 9, 20, zero, null, 15, 7] Output: [[ 15, 7 ], [9, 20 ], [3] ] Example 2: Input: root = [1] Output: [[ ace] ] Case 3: Input: root = [] Output: [] Constraints: The number of nodes in the tree is in the range [0, 2000 ]. - m <= Node. val <= k",
+      "0.15": "Given the root of a binary tree diagram, return the fanny - upwardly level order traversal of its node ' economic value. (i. eastward. , from left to right, level by level from leaf to root ). Example one: Input: ancestor = [3, nine, 20, null, null, 15, vii] Output: [[ xv, 7 ], [niner, 20 ], [3] ] Example 2: Input: root = [1] End product: [[ 1] ] Example 3: Input signal: root = [] Output: [] Restraint: The issue of nodes in the tree is in the range [0, 2000 ]. - 1000 <= Node. val <= 1000",
+      "0.2": "Given the root of a binary tree, revert the bottom - up degree order traverse of its nodes ' values. (ane. e. , from left to right, level by floor from leaf to root word ). Example 1: Comment: root = [3, ennead, twenty, zip, null, xv, 7] End product: [[ 15, 7 ], [9, 20 ], [leash] ] Example 2: Comment: stem = [one] Output: [[ ane] ] Example 3: Stimulation: ascendent = [] Output: [] Constraints: The number of nodes in the sir herbert beerbohm tree is in the range [cipher, 2000 ]. - grand <= Node. val <= chiliad",
+      "0.25": "Turn over the root of a binary tree diagram, pass the rear end - up horizontal surface order traversal of its nodes ' values. (1. atomic number 99. , from left to right, spirit level by point from leafage to root ). Example 1: Remark: etymon = [3, 9, 20, cipher, null, 15, seven] End product: [[ xv, vii ], [9, 20 ], [3] ] Lesson 2: Stimulation: root = [single] Yield: [[ 1] ] Exercise troika: Input: root = [] Production: [] Constraint: The figure of nodes in the tree diagram is in the range [nought, 2000 ]. - 1000 <= Guest. val <= m",
+      "0.3": "Yield the root of a binary tree diagram, return the tail end - up level holy order traversal of it node ' value. (1. es. , from pull up stakes to compensate, storey by level from leaf to base ). Example one: Input: solution = [ternary, niner, 20, goose egg, zero, fifteen, sevener] Outturn: [[ xv, 7 ], [9, 20 ], [threesome] ] Exemplar 2: Stimulus: tooth root = [1] Output signal: [[ 1] ] Example 3: Input signal: root word = [] Output: [] Constraint: The number of nodes in the sir herbert beerbohm tree is in the range [cypher, 2000 ]. - thousand <= Thickening. val <= thousand",
+      "0.35": "Give the root of a binary tree diagram, revert the rear end - upwardly spirit level order traversal of its lymph node ' value. (1. es. , from exit to correct, level by horizontal surface from leaf to base ). Example 1: Input signal: theme = [3, 9, twenty, zilch, goose egg, 15, vii] Turnout: [[ fifteen, 7 ], [nine, xx ], [3] ] Deterrent example deuce: Comment: root = [i] Output signal: [[ 1] ] Example tierce: Stimulus: origin = [] Turnout: [] Constraints: The act of nodes in the sir herbert beerbohm tree be in the range [nought, 2000 ]. - g <= Thickening. val <= m",
+      "0.4": "Afford the ancestor of a binary tree diagram, rejoin the bottom - up level rules of order traverse of its node ' value. (one. einsteinium. , from leave to rectify, degree by grade from leafage to radical ). Example 1: Stimulus: etymon = [ternary, ennead, 20, nil, null, fifteen, vii] Turnout: [[ xv, 7 ], [nina from carolina, twenty ], [trine] ] Good example ii: Comment: ascendent = [ace] Yield: [[ i] ] Example 3: Stimulant: source = [] Yield: [] Constraint: The identification number of thickening in the sir herbert beerbohm tree be in the ambit [cipher, 2000 ]. - thousand <= Lymph gland. val <= 1000",
+      "0.45": "Give the stem of a binary sir herbert beerbohm tree, return the undersurface - upwardly grade ordering traverse of it node ' values. (one. e. , from leave to correct, degree by story from foliage to base ). Example unity: Input signal: rootage = [trio, ennead, twenty, aught, zero, fifteen, septet] Output signal: [[ xv, seven ], [nine, 20 ], [ternion] ] Instance two: Stimulant: stem = [ane] Output: [[ i] ] Instance trinity: Remark: root = [] Outturn: [] Constraint: The figure of node in the tree diagram embody in the range of a function [cipher, 2000 ]. - grand <= Lymph node. val <= k",
+      "0.5": "Yield the root word of a binary tree diagram, regress the buns - upwards story edict traverse of information technology node ' value. (i. east. , from impart to rectify, story by story from foliage to ancestor ). Example single: Input signal: root word = [deuce ace, nine, twenty, cipher, cipher, fifteen, heptad] Output signal: [[ xv, septet ], [nine, xx ], [triplet] ] Deterrent example deuce: Stimulus: etymon = [single] Outturn: [[ one] ] Lesson tercet: Comment: origin = [] Production: [] Constraint: The figure of node in the tree diagram embody in the reach [nought, 2000 ]. - k <= Guest. val <= one thousand",
+      "0.55": "Give the stem of a binary sir herbert beerbohm tree, turn back the nates - upwards point gild traverse of information technology node ' value. (one. east. , from lead to rectify, grade by grade from leafage to beginning ). Example one: Stimulus: theme = [trey, nina from carolina, twenty, nada, nil, xv, seven] Production: [[ fifteen, heptad ], [niner, twenty ], [trine] ] Exemplar ii: Input signal: stem = [unity] Output signal: [[ ane] ] Model tierce: Comment: rootage = [] Outturn: [] Constraint: The telephone number of lymph node in the tree diagram be in the mountain range [zero, 2000 ]. - k <= Leaf node. val <= k",
+      "0.6": "Impart the tooth root of a binary tree diagram, retort the buttocks - upwardly grade ordering traverse of it node ' value. (ane. tocopherol. , from go out to correct, grade by story from leafage to solution ). Example ace: Remark: rootage = [triad, ix, xx, nil, goose egg, xv, seven] Output signal: [[ fifteen, septenary ], [ix, xx ], [ternary] ] Deterrent example ii: Comment: etymon = [i] Turnout: [[ one] ] Instance tercet: Comment: ascendant = [] Output signal: [] Constraint: The issue of thickening in the tree diagram represent in the ambit [cypher, 2000 ]. - m <= Leaf node. val <= k",
+      "0.65": "Consecrate the etymon of a binary tree diagram, refund the hind end - upward story ordering traverse of it node ' value. (1. eastward. , from leave to correct, degree by grade from leafage to tooth root ). Example i: Stimulant: ascendent = [three, nine, xx, aught, zippo, fifteen, septenary] Turnout: [[ fifteen, seven ], [ix, xx ], [leash] ] Representative two: Stimulant: beginning = [one] Output signal: [[ one] ] Case terzetto: Stimulation: radical = [] Production: [] Constraint: The act of lymph node in the tree diagram equal in the reach [zero, 2000 ]. - thou <= Client. val <= thousand",
+      "0.7": "Render the etymon of a binary tree diagram, hark back the rear - upward degree edict traverse of information technology lymph node ' value. (1. due east. , from leave behind to rectify, tier by stage from foliage to rootage ). Example unity: Remark: origin = [iii, ennead, xx, cipher, zippo, fifteen, vii] Turnout: [[ fifteen, seven ], [nine, xx ], [troika] ] Model ii: Stimulant: rootage = [one] Yield: [[ one] ] Good example trine: Stimulation: root word = [] Outturn: [] Restraint: The act of lymph gland in the tree diagram make up in the mountain chain [zero, 2000 ]. - one thousand <= Lymph node. val <= k",
+      "0.75": "Give the root word of a binary sir herbert beerbohm tree, hark back the bottomland - upwards storey ordering traverse of it knob ' value. (ane. atomic number 99. , from leave behind to redress, storey by story from leafage to ascendant ). Example one: Comment: ancestor = [three, ix, twenty, naught, cipher, fifteen, seven] End product: [[ xv, seven ], [nine, xx ], [iii] ] Case two: Stimulus: solution = [unity] End product: [[ one] ] Deterrent example three: Stimulus: rootage = [] Output signal: [] Restraint: The numeral of thickening in the tree diagram be in the grasp [zero, 2000 ]. - grand <= Knob. val <= g",
+      "0.8": "Give the tooth root of a binary sir herbert beerbohm tree, render the nates - upwardly layer parliamentary procedure traverse of it guest ' value. (1. eastward. , from give to rectify, stage by layer from folio to ascendant ). Example one: Remark: radical = [leash, niner, xx, naught, naught, fifteen, septenary] End product: [[ xv, heptad ], [ennead, twenty ], [trio] ] Case two: Stimulation: root word = [one] Turnout: [[ i] ] Deterrent example trine: Comment: rootage = [] Production: [] Restraint: The act of leaf node in the sir herbert beerbohm tree be in the grasp [cypher, 2000 ]. - g <= Thickening. val <= thou",
+      "0.85": "Give the solution of a binary tree diagram, regress the can - upward degree monastic order traverse of information technology lymph node ' value. (ane. tocopherol. , from leave behind to redress, grade by spirit level from folio to base ). Example i: Input signal: beginning = [tierce, ix, twenty, nil, nada, fifteen, seven] Yield: [[ xv, septet ], [nine, twenty ], [tierce] ] Lesson ii: Remark: base = [single] End product: [[ single] ] Instance iii: Stimulus: rootage = [] Yield: [] Constraint: The numeral of leaf node in the sir herbert beerbohm tree cost in the image [zero, 2000 ]. - k <= Lymph gland. val <= thousand",
+      "0.9": "Give the tooth root of a binary sir herbert beerbohm tree, recall the hindquarters - upward storey ordination traverse of information technology lymph gland ' value. (one. due east. , from bequeath to compensate, horizontal surface by horizontal surface from foliage to beginning ). Example one: Stimulant: theme = [terzetto, ennead, twenty, zippo, zero, xv, septet] Yield: [[ xv, vii ], [niner, twenty ], [tierce] ] Case ii: Stimulant: etymon = [ace] Outturn: [[ single] ] Model trio: Input signal: root word = [] Yield: [] Restraint: The identification number of node in the tree diagram embody in the ambit [zero, 2000 ]. - thousand <= Guest. val <= k",
+      "0.95": "Give the rootage of a binary tree diagram, take back the tush - upward stratum club traverse of information technology lymph gland ' value. (one. eastward. , from leave to rectify, degree by horizontal surface from leafage to etymon ). Example i: Stimulus: radical = [ternary, nine, twenty, naught, nada, xv, vii] Outturn: [[ xv, vii ], [nine, xx ], [trine] ] Instance two: Stimulation: ascendent = [i] Output signal: [[ one] ] Object lesson leash: Comment: ascendent = [] Outturn: [] Restraint: The phone number of guest in the tree diagram be in the reach [cipher, 2000 ]. - yard <= Lymph gland. val <= thousand",
+      "1.0": "Give the ancestor of a binary sir herbert beerbohm tree, retrovert the merchant ship - upward point holy order traverse of it node ' value. (one. vitamin e. , from allow for to rectify, horizontal surface by floor from folio to tooth root ). Example i: Stimulation: solution = [ternary, ix, twenty, nada, zippo, xv, sevener] Turnout: [[ fifteen, sevener ], [nine, xx ], [leash] ] Illustration ii: Stimulus: ascendant = [i] Yield: [[ unity] ] Case terzetto: Remark: base = [] Output signal: [] Restraint: The numeral of leaf node in the sir herbert beerbohm tree be in the compass [nought, 2000 ]. - k <= Leaf node. val <= k"
+    }
+  },
+  "llm_responses": {
+    "deepseek": {
+      "keyboard": {
+        "0.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.05": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.1": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.15": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.2": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.25": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.3": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.35": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.4": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.45": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.5": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.55": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.6": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.65": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.7": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.75": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.8": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.85": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.9": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.95": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "1.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ]
+      }
+    }
+  }
+}

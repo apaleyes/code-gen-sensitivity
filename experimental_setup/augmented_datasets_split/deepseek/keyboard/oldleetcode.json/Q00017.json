@@ -1,0 +1,216 @@
+{
+  "post_href": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/discuss/689647/Python3-stack-O(N)",
+  "python_solutions": "class Solution:\n    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:\n        loc = {x : i for i, x in enumerate(inorder)}\n        root = None\n        stack = []\n        for x in preorder: \n            if not root: root = node = TreeNode(x)\n            elif loc[x] < loc[node.val]: \n                stack.append(node)\n                node.left = node = TreeNode(x)\n            else: \n                while stack and loc[stack[-1].val] < loc[x]: node = stack.pop() # backtracking\n                node.right = node = TreeNode(x)\n        return root",
+  "slug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+  "post_title": "[Python3] stack O(N)",
+  "user": "ye15",
+  "upvotes": 7,
+  "views": 371,
+  "problem_title": "construct binary tree from preorder and inorder traversal",
+  "number": 105,
+  "acceptance": 0.609,
+  "difficulty": "Medium",
+  "__index_level_0__": 671,
+  "question": "Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.\n  Example 1:\nInput: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]\nOutput: [3,9,20,null,null,15,7]\nExample 2:\nInput: preorder = [-1], inorder = [-1]\nOutput: [-1]\n  Constraints:\n1 <= preorder.length <= 3000\ninorder.length == preorder.length\n-3000 <= preorder[i], inorder[i] <= 3000\npreorder and inorder consist of unique values.\nEach value of inorder also appears in preorder.\npreorder is guaranteed to be the preorder traversal of the tree.\ninorder is guaranteed to be the inorder traversal of the tree.",
+  "augmented_questions": {
+    "keyboard": {
+      "0.0": "Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree. Example 1: Input: preorder = [3, 9, 20, 15, 7 ], inorder = [9, 3, 15, 20, 7] Output: [3, 9, 20, null, null, 15, 7] Example 2: Input: preorder = [- 1 ], inorder = [- 1] Output: [- 1] Constraints: 1 <= preorder. length <= 3000 inorder. length = = preorder. length - 3000 <= preorder [i ], inorder [i] <= 3000 preorder and inorder consist of unique values. Each value of inorder also appears in preorder. preorder is guaranteed to be the preorder traversal of the tree. inorder is guaranteed to be the inorder traversal of the tree.",
+      "0.05": "Given two integer Xrrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, conqtruct and rethrn the binary tree. EZample 1: Input: preofder = [3, 9, 20, 15, 7 ], inorder = [9, 3, 15, 20, 7] Output: [3, 9, 20, null, null, 15, 7] Exa<ple 2: Input: preorder = [- 1 ], inorder = [- 1] Output: [- 1] Constraints: 1 <= preorder. length <= 3000 inorder. length = = preorder. length - 3000 <= p#eorder [i ], inorder [i] <= 3000 preorder and inorder consist of unique values. Each value of inorder Also appears in preorder. 9reorder is guaranteed to be the preorder trXversal of the tree. inorder is guaranteed to be the inorder traversal of the tree.",
+      "0.1": "GivDn two integer arrays preorder and inorCer wheGe preorder is the preorder traversal of a bKnary tree and inorder is the inordeG traversal of the same t4ee, construct and return the binar& tree. Example 1: InpKt: preorder = [3, 9, 20, 15, 7 ], in(rder = [9, 3, 15, 20, 7] Output: [3, 9, 20, null, null, 15, 7] Example 2: Input: preord3r = [- 1 ], inorder = [- 1] Out(ut: [- 1] Constga(nts: 1 <= preorder. lengtn <= 3000 inorder. /ength = = preorder. length - 3000 <= preorder [i ], inorder [i] <= 3000 0reorder and igorder consist of unique values. Each value of inorder Xlso appears in preo4der. prforder is guaranteed to be the preorder traversal of the tree. inorder is guaranteed to be the inorder traversal of the tree.",
+      "0.15": "GOven two ih%eger arrays preodd#r and inorder where preorder is the pre8Tder trwverWal of a bihary tree and inPrde% is the inorder tDaveTsal of the same tree, construct and returM the binary Free. #xampOe 1: Input: Lreo5der = [3, 9, 20, 15, 7 ], igordeF = [9, 3, 15, 20, 7] Output: [3, 9, 20, null, nuKl, 15, 7] EZampoe 2: Input: preorder = [- 1 ], inorder = [- 1] Outpuf: [- 1] Constraints: 1 <= LreordSr. length <= 2000 inorder. lengYh = = prDordwr. length - 3000 <= preorder [i ], inkrde4 [i] <= 3000 pgeordfr and inorder consist of unique values. Each value of (norxer also appears in preorder. preprEer is gua$Snteed to be the preotded traversal of the t4ee. inorder is guaranteed to be the inorder traversal of the treS.",
+      "0.2": "GiveB two integer arrays prWoDder and in)rser where peeoTder is the lTeorder trave4sxl of a binary tree and inorder is the inprd2r t%ave$sal of the saje tree, construct and retuDH the bUnar& tree. Example 1: Inp^t: preorder = [3, 9, 20, 15, 7 ], inorder = [9, 3, 15, 20, 7] kut9ut: [3, 9, 20, Mull, null, 15, 7] Esampl# 2: Igput: preodxer = [- 1 ], inorder = [- 1] OutOu$: [- 1] ConstgalnRs: 1 <= 0reorde5. oenvth <= 3000 inorder. lenbtt = = 9r4order. lehYth - @000 <= p%eprder [i ], lgorder [i] <= 3000 preorder and ino4def consist of unique values. Each valu2 of inorder also wppexrs in preorder. preorder is gua#ante2d to be the pgeo#der teaveEsal of the 4ree. 7Border is ruarWnteed to be the inorRe% traversal of the tree.",
+      "0.25": "G(veM two ibtegwr zrraHs preorder and inLrdeG whef$ preoFdwr is the preorder RraversA? of a binary trre and inLrWer is the inorder traversal of the sam3 5ree, construct and rdturG the Vjnary Hree. Exampp# 1: InLht: preKrXer = [3, 9, 20, 15, 7 ], inorder = [9, 3, 15, 20, 7] OKRput: [3, 9, 20, n6ll, n Tll, 15, 7] Example 2: IBpuG: )reorSer = [- 1 ], inorder = [- 1] OI$put: [- 1] ConstTa9ntC: 1 <= preorder. leBgtU <= 3000 ig9rder. ldnBth = = (reordwr. length - @000 <= (reord#r [i ], Jno3der [i] <= @000 prePrdeE and iHord2r consoXt of uhiquS vXlufs. Each value of inorder wlso appeS3s in p%eordFr. preorFeD is guaranteed to be the preorder tTave5sZl of the tree. inoTwer is guaranteed to be the iBordFr trQv@rszl of the tDee.",
+      "0.3": "GUcen two iHtwFer Srrwys pr@orWDr and inp$dRr wmer# prd(rde3 is the pfeo#dRr t4ave$saI of a biba$y t%e3 and 8n0$der is the iBofXer yrave%sak of the sqje rrRe, construct and %e$urn the Finart trRs. FxxmpIe 1: IGp&t: preorder = [3, 9, 20, 15, 7 ], UnoEdet = [9, 3, 15, 20, 7] Out9uG: [3, 9, 20, njl/, null, 15, 7] Example 2: IBp&t: p5eordsg = [- 1 ], lnKrd#r = [- 1] *utpuG: [- 1] FomQteaints: 1 <= p5e0rser. ;enhth <= 3000 inorder. length = = 0reordWG. iengtB - E000 <= 0r@oeder [i ], inorder [i] <= e000 LrsordeG and lnordfF coMsKCt of &niquW valu@X. 2avh vWluD of iGoFdsr Slwo a9pFaes in 0#e9rder. pr4irdeD is gusrXnteeE to be the 0rdorcer 5rAgersal of the 4rwe. inorder is bua#ante4d to be the inl4rer tGaveDsaO of the 4r$e.",
+      "0.35": "Guvsn two LJteber arda7D LreprVer and jno%Eer wBerD pre)rFwr is the pDePtder trzvwTsaI of a bLgar5 t#Re and lnLrrer is the 9ho5der tgsBercal of the sqje $fee, s)bstr*ct and refJ#n the ViHa3y tde3. EaZnple 1: InL7t: 0reorvef = [3, 9, 20, 15, 7 ], ino%WFr = [9, 3, 15, 20, 7] Oktou%: [3, 9, 20, mul>, nu/:, 15, 7] wxahpKe 2: InpJF: preoGcDr = [- 1 ], iHorwdr = [- 1] 0ktpht: [- 1] DonctrWiMts: 1 <= 9re(rde#. l#Byth <= @000 JBordeE. ,entFh = = 0rRorcer. k3Mgth - E000 <= prDKrVer [i ], inLtde% [i] <= 2000 Lr#ord@r and *nordrF soHsiDt of *HiAue CqIues. $avh val62 of onLrdeF z,so QppsXrs in p#RoDder. lrePrdWr is guaranH@Ff to be the lrWorVer 5rXCerwal of the tFed. Knodser is guaraMFseW to be the un9fder travDfwa< of the yrWe.",
+      "0.4": "GkveG two 9mtegeF aF4ayZ Oreorfft and inoTd3g wh2rr L$rorde3 is the pTe9Dd$r tradDrswP of a bjnafJ trS# and iHord4# is the ih0rd#r trxvetsA< of the saH3 fre@, v)gstruSt and 3eYurb the b&gar7 tF$e. DDamp>e 1: ln)ut: 0%eordwd = [3, 9, 20, 15, 7 ], imPrdwr = [9, 3, 15, 20, 7] KKtp7t: [3, 9, 20, bu:l, m^ll, 15, 7] RxZmpl3 2: IH9ut: p%eLEWer = [- 1 ], kno#de5 = [- 1] i&tpug: [- 1] CIms5rXJnts: 1 <= OreorwFD. ,dnTth <= 4000 *norRsr. k$ngyh = = pgWIrdRr. ?eJgrh - #000 <= 0FeKrdRr [i ], iMofd#r [i] <= #000 Ordprd#r and kno#d@r cPnxisG of IniqhR valjwd. EaXm fa:ue of jnPrdRr Aoso S9pearD in (fDoreer. pEelGdeG is g TarxbtSed to be the peeorVst yrafersXK of the %#ee. inorvsT is rjarZjteed to be the inorsfg FraverdAO of the 6re4.",
+      "0.45": "tiGeB two Kn6FVer atrZyx OrRofdSr and inleFet wndTe p$e0FWer is the lreo5Xeg rgsvfrsa/ of a bknaDH 5r4e and iBLrx@r is the iHlrW#r tgavf$dzl of the Aa,e t4ew, Fojs%eucR and r2yudn the bKhWry Hdee. EDw,p.e 1: &nOuh: )reorwD5 = [3, 9, 20, 15, 7 ], ijo4dsT = [9, 3, 15, 20, 7] I6rput: [3, 9, 20, M&ll, Muli, 15, 7] EDQmpP4 2: IJ)Ht: 0r#oedef = [- 1 ], OJorFDr = [- 1] Kutluy: [- 1] xPBstrwihts: 1 <= Lrs9rser. KehYth <= E000 onorv#t. ;ent^h = = (deoEser. lDJgtB - @000 <= preirc3$ [i ], OhprdeD [i] <= @000 )reo4ce# and UJlrde$ SonXjsh of HniqIr va,uRQ. dacy bZ;ue of JM(rser a<sk zpp#agE in p%e0Gd3r. preldsfr is N8afantseE to be the p4roTdeE trSvr#ss< of the tr2W. un84dfr is guarWbtfSC to be the in85Cet trxvefDxK of the ^%ee.",
+      "0.5": "BOvRn two *Mtegfe Qr4Ays 9rDo5ddr and Un(4deg QUeEe prFo$dF3 is the ptdLrdeg tTavrgsWO of a nina37 rdee and (nIrdW5 is the jno3dRG ttzfersA; of the qsme trRW, clns44uX4 and #4turJ the biGzr% rrRe. EdXm9;e 1: IJ)uy: 9rword4F = [3, 9, 20, 15, 7 ], *BorCe# = [9, 3, 15, 20, 7] O thpu5: [3, 9, 20, nhl:, nuPO, 15, 7] ExSj)Ie 2: *n)jt: Orso3dsr = [- 1 ], iBoECeE = [- 1] p ttpht: [- 1] Xpnst$aoHtw: 1 <= pr@oEXe$. l@jFth <= 4000 Uho5de$. leJg^U = = pe#krEer. ;Rng%h - #000 <= p%4ordrg [i ], imPrweG [i] <= 4000 pteo#FeE and in*rrD3 coJZjs^ of jnkAue vql6eD. Ewcm gaIur of uGP%der Zls0 Z9p@Wrs in 0#2orwer. lt#orrer is b^arsntrec to be the pGe9edeg HrWcersA/ of the t5es. ijodfSr is Bua4anhWfd to be the igirFeE FrZvegwai of the t5$e.",
+      "0.55": "Nig#n two iH^2ter Zr5wgs (rFk$deE and iHo#Ved @he%2 )Ee0rXeT is the )r3o4vFr r%aBeGssl of a g7nWrT $#eW and inLesSr is the UGorReG ydav$FsXl of the eqm# ^d3e, clnQR%ucg and ref*EG the G7nsfy rrd@. EAWHpls 1: OnLuF: p3e0$vFr = [3, 9, 20, 15, 7 ], iB8dde4 = [9, 3, 15, 20, 7] L7tlu4: [3, 9, 20, b6lK, nh?:, 15, 7] ESa<)ls 2: (n(8t: L4e)ede$ = [- 1 ], ln)4de3 = [- 1] kItpKR: [- 1] CpGAtGS8ntx: 1 <= Lfeorww#. l2HvYh <= w000 inIExDr. OSbgrh = = pr3*4ved. l2ggYg - E000 <= )r$lre2r [i ], ihlrr4r [i] <= w000 pd3(rV2r and jhoTd3r cogDuEt of Ihiqis vSp8Ss. @adm FalI# of *horVsr z?sk Ap9Fsrs in (rF*reeF. preiFsFF is ruqTAMtfed to be the )5FordRF r$xveTsAl of the $rRd. ihl5Eer is NKarZHtDeC to be the inKrw@# ^rWCeGsAl of the tEF#.",
+      "0.6": "rivfB two &JreNeG XreWyC 0g@o$Cer and unkrr@e wte%W )%eItdeD is the pgFiFSer ttsge%Qsl of a bunWTg tfSd and Ujlrxsr is the lnLEd2f ttacWGsw/ of the aaHS 6r@F, SoHqr38ct and r@t^#b the NonaF^ Hrs3. #cAmp,R 1: Unp7y: OrRKrfsr = [3, 9, 20, 15, 7 ], 7n)GdF% = [9, 3, 15, 20, 7] )8rpu6: [3, 9, 20, gu.>, h&l,, 15, 7] dCaN0lW 2: *np&4: lFeoewfr = [- 1 ], JGo#Xrr = [- 1] Ouh)kY: [- 1] CLJs$tWiJtA: 1 <= (5s(reer. lrHnty <= $000 KHogSee. IenyHM = = pgfLree4. leBN^b - @000 <= p#RoGfeD [i ], LJoFx@r [i] <= $000 lgeiddsr and jn(rRWg D8GZiwt of uJKqkr vaK tWd. FaSn calh# of (nPrR@E ape) s0peWtD in OtForXeg. lrRoecSr is H6WrahtweS to be the 04e0rdDG ttQv$rwWp of the 5rD@. OgorrR4 is g Ts3zmteee to be the igotf4D Y4Xvd3Dal of the ^$ew.",
+      "0.65": "TiD#J two &g4rrer areqtq 93WogdRe and iJireDf EJedS prWkFRR% is the Oe@*gdRr RrQcsrAao of a bJGaGh ^E#e and onLrSd% is the LboFxSr rDaderXxo of the EaKf tG2#, f8bsfr Tc4 and eet T4M the GkbarT h%ed. RAaJpOd 1: Ih9i4: p3wotcWG = [3, 9, 20, 15, 7 ], (gLGxer = [9, 3, 15, 20, 7] Oi49Jt: [3, 9, 20, mukP, GIl<, 15, 7] Fdqm)pe 2: IboJG: 05eK4dFe = [- 1 ], UboDW@r = [- 1] OJt(&g: [- 1] VkGsyra(HrQ: 1 <= ($S(rwRr. ienyFg <= @000 ig*DW@r. ?3Jnth = = p%d)ecDr. osGVth - E000 <= (r30Tse3 [i ], ib0#fee [i] <= e000 9GRo%Ce3 and *nLrVSt F*jziqt of *b&qud ba,^fs. EqXt Gs;uR of &n(5ve% Z?sL S(Lezrw in )$elGEe5. 0fe*txe$ is gJqGXn%Dsd to be the )#R(rdF5 %rXvF$sXP of the t$Ff. ihp#EDr is RjafXn%W2d to be the Jjo$seg rFScD#sal of the t3f#.",
+      "0.7": "h(beH two jGtWgwt Qr3A5W 9rdPgdFD and ib)$WeD wNSFw 0T$o%See is the lF4*rved GrXDe#AqI of a b&hQ#7 r$4e and lgoDfsr is the umKrvFr gTsBe$EaI of the sqJr 4Ee2, DonCYD&xR and gFr*%n the H&ma55 tDWd. EZWj)ld 1: (M0*t: (r4K4cWr = [3, 9, 20, 15, 7 ], 7n)Drsr = [9, 3, 15, 20, 7] )74p&^: [3, 9, 20, GuI,, GIl., 15, 7] 4ZaJ)lw 2: 7n( tr: 0%roDx2r = [- 1 ], in8Dxd4 = [- 1] (^t08Y: [- 1] ComsG4SKMfx: 1 <= l#epTcrr. ;@HggU <= @000 9goeC$r. KfJTrh = = (44o%Fe3. ofMgfn - w000 <= LDeoTvRT [i ], 9jofffr [i] <= #000 04eI4Ref and ihk#cDr cPhq8qt of JhJSHe vq:*2z. 2Qdh FWlhs of iB*%vsr X,s9 a)0exFq in pewk4seD. ogeIDd#$ is g7ZEqnFe2e to be the 0#$9rwFr YrQv@FaX; of the Rrwd. imo$e4% is njaExnt4RV to be the UBPrcrr 6rsdeEXx: of the fgeF.",
+      "0.75": "fiFSH two 7j6Sg#g sf3zjs (rd*%dWF and UnpdV2% sgW3e 0rSLrXDe is the oFforX4d frZgegAs< of a HoMs3y tEsf and 9bIrRfD is the 9gied@3 rdaCeGCZp of the daJR Yf3e, X(BsR4Jc$ and ee6HDB the VihqEg tFfd. RxAH9pS 1: (hljt: O#WoTdWD = [3, 9, 20, 15, 7 ], JG8GSee = [9, 3, 15, 20, 7] LH5o7t: [3, 9, 20, Mup., M TPl, 15, 7] 2aXJL;e 2: (gp tr: OrSp%CeE = [- 1 ], uBKfwFr = [- 1] P ttLK5: [- 1] dpnct3Q(J^w: 1 <= Ltfledee. ?fgYtu <= E000 Kbldve$. ?rgg6T = = O3e8rwwd. o4grtU - E000 <= lteK3eeG [i ], jgkrf3$ [i] <= #000 03FotFed and oMoEvrg cimE(Cr of uH&ai$ cAl^3A. 4sSh Fa<*# of lnI%SS5 a;Wk a9)fsgQ in 0Eekrvwg. O5eo%VfD is rjQGanrdFC to be the pG2)fd$t ^3aDR4sq? of the 6E@e. umo5s$D is vjxrWJ$@eF to be the iJLGCD3 YESD#rqa< of the 6r$F.",
+      "0.8": "nov4g two lj%@R3r s4rS6W LrDK%eDf and 8nP4F$d !h#er LeeL$ES5 is the o4epTVR# tFADR#QqK of a bJJA57 Y#w4 and JGk%d#% is the ob8ERef 5%qvFfqq> of the ASkF G33#, V(gaGr*fR and GRhu4G the VuJqru %Gw3. EdW<LoW 1: khpJ%: )5RpfdRG = [3, 9, 20, 15, 7 ], ibLdv24 = [9, 3, 15, 20, 7] 8 ttL8F: [3, 9, 20, g&pK, hH;>, 15, 7] 3xSko;d 2: Om)ug: l3RiFd$T = [- 1 ], &M0$W@r = [- 1] LkHojt: [- 1] foMqyEqimyW: 1 <= 0tD(rWS#. lfJrgn <= e000 LGkrwDD. lSBn5B = = (D#0rfFD. OrhTtg - 4000 <= O3F)rwWg [i ], OMI#d44 [i] <= @000 o3@otvrF and ijLfErd Sobq&cG of JHK@u@ Fxk*Ss. SXXj fZ> Te of iGPgv@# s?Q* a(0wWFe in pEd03Vff. LGS(rwD4 is T8srqbtfSr to be the LD@ktWeG HrxGs%CA; of the ^FFW. UH)3WFr is tuAEAnR3$e to be the Jb03ceF tfzb2eXq; of the fG42.",
+      "0.85": "vJCsg two KB%WheG w3Fzhd oGsprFwD and ln*Twfg 1T$fW 9EfogRDF is the OtDoEFw# 5fsFdgWxl of a nJmsg7 YdDf and oGlrcS% is the iH0es4F R#wBe$Zx; of the qqKw rtf4, sInDYG tX6 and e$4J#G the G&Bx47 FG2F. ECQjL:f 1: 8go7^: o%@8GrWr = [3, 9, 20, 15, 7 ], im8De#f = [9, 3, 15, 20, 7] k&$oHY: [3, 9, 20, bi>;, m Tio, 15, 7] 4SakoPf 2: KJlJ%: OEeitWr5 = [- 1 ], &H*eeeg = [- 1] P Tg)*g: [- 1] V(bQfDxKBte: 1 <= ODe)5r$E. /3gr^y <= 4000 7hK%dRF. :3Mh6y = = LEd*rX$E. k2BVgT - @000 <= lrSigX#T [i ], onKtX$D [i] <= 2000 (ge*%wR3 and UmpGd3t doBE9x6 of 7hjshW fxPISz. 4AVJ fSoIR of JhK4fet A<Wp wlpdW4w in p%F0tXr4. 9Ef0rCR3 is gHqfxmyf4W to be the Lg$Led4g grZb$TeXi of the GD34. KG(rV44 is nix5QnhDrS to be the lh)rFD3 GEWGWrcA/ of the ^4@D.",
+      "0.9": "NkG$j two lHhRyr# x3EshE oDWiEedg and 8M)TVr# @tDg# lgW)GRd4 is the (3s*GCWd FGwB#4WX; of a Hobwtu y%WF and Ug(DrS# is the Jh9Dr3% 5txd2txA> of the QsJ4 yg3F, S(Bxft^fg and GWrKfg the FUGW%j 6eD3. #CWkl?2 1: 9gohY: (erpDf2f = [3, 9, 20, 15, 7 ], LJl3xDG = [9, 3, 15, 20, 7] 8Kg)jf: [3, 9, 20, bI;p, M6<P, 15, 7] fcxHlKs 2: UH(iH: (Gd)tRDe = [- 1 ], jG(4XRt = [- 1] 9^f0jh: [- 1] vkMw6rx8h%w: 1 <= LG$p4Ww$. PsHrrt <= w000 JH9TR2e. PDMT5T = = l3RpdRS#. ?SmBht - w000 <= (fWLtv@T [i ], 8jp3E4E [i] <= $000 9EfIdwW5 and oG84vdD D)Ge8cR of ^gKA^2 GwOkSW. RAxY Cwi t2 of LbkEeS# s?Z8 wLlrAGe in ld#kFE#d. Lt#pgs$e is Yuz%Am52RS to be the )FSKdC@4 FTXBWDZSK of the 6tww. 8j(ESwg is HjaTQmFFfx to be the oHKfer4 4#ZG4FZsp of the h%S3.",
+      "0.95": "NuC#J two LjrrYRD S5twjq O4F9$er# and ObPtERe sb2G# OfDkff45 is the oDrPEEf% ydsgwtCX; of a NlBZ$g f5$3 and KB0TRF4 is the KM(trde ydXc@Geqo of the EZJ@ 5g#4, x9MDF#kF4 and d2YIFj the F9hQG^ %%#W. 2AZk).F 1: om(J^: otD0eC4G = [3, 9, 20, 15, 7 ], 9Hp%Frf = [9, 3, 15, 20, 7] Kih)k5: [3, 9, 20, H^O., m8oK, 15, 7] Sczk9?d 2: lm)i^: oG$iTXde = [- 1 ], (HkFc@d = [- 1] l8g0j%: [- 1] SIbArFZimgW: 1 <= )GrKFC@%. ,$jYyy <= @000 *m(TC2%. oFhNfY = = L%#03Xw#. /DMn^B - @000 <= 0eW0tVW# [i ], ojKDSfG [i] <= e000 OgR)TCRD and 7m(3sFt S0Gz*aG of iB9@j2 dXp6fx. sxSy fWoJw of JjLEw35 QKD0 Z(9Dxtq in odf8gv$G. (%FIGfrG is vhzgZgGW3C to be the L3flDW$f ^gWG44xsp of the $dS2. 9h9fc@5 is RkS#ABrD3R to be the Jj*4rR3 HTzFW%azK of the hEF2.",
+      "1.0": "fjD2M two kH6sb@% Z4#z&e )5SPECWg and uBL3c@t qUrT4 Of$0ew#D is the LfdIEFDG $Tqc23az, of a vKMSDH R#D@ and KM(%cf# is the uMidEFF yTqF3#ZS; of the DXh# hFWs, F9BX%g&d$ and D3rkEj the N9gwFg Y54F. daxHliR 1: &bOKg: (#28fc3F = [3, 9, 20, 15, 7 ], 8GP4srd = [9, 3, 15, 20, 7] IjGO*f: [3, 9, 20, Hiko, hHo., 15, 7] 3DZh0.2 2: Jg06F: (#R*%c$d = [- 1 ], Ob*5w@t = [- 1] IiR076: [- 1] VLJe$daKb6q: 1 <= 0#4L%R@E. KdBfYT <= e000 Ug9tSsd. p#HyhY = = (fw*tRwF. :WJThB - e000 <= oF48tE45 [i ], JMptc$# [i] <= w000 OGfkerWF and &biDFS$ Dlhq(x$ of km82H# Bw/72E. sxdY gA:^@ of 9Ji%srE x:W9 X((2xeX in )#@8TEse. (FDldRrf is f&WDAMgs4w to be the 0F@k#FR% 54SDDfXwo of the $$$f. JHltR$# is YHZTwH6$Ws to be the JBi5CWG resb24QA. of the 54DF."
+    },
+    "synonym": {
+      "0.0": "Given 2 whole number raiment preorder and inorder where preorder comprise the preorder traversal of a binary tree diagram and inorder be the inorder traversal of the like sir herbert beerbohm tree, construct and return the binary tree. Example 1: Input: preorder = [iii, 9, twenty, 15, 7 ], inorder = [nine, three, xv, 20, seven] Output: [3, ix, 20, null, null, 15, 7] Example 2: Stimulant: preorder = [- unity ], inorder = [- single] Output: [- 1] Constraints: one <= preorder. length <= 3000 inorder. distance = = preorder. length - 3000 <= preorder [i ], inorder [atomic number 53] <= 3000 preorder and inorder consist of unequaled values. Each value of inorder also appears in preorder. preorder be ensure to comprise the preorder traverse of the tree diagram. inorder is guaranteed to be the inorder traverse of the tree.",
+      "0.05": "Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree. Example 1: Input: preorder = [trine, ix, 20, 15, 7 ], inorder = [9, 3, 15, 20, 7] Output: [3, 9, 20, zilch, null, 15, 7] Example 2: Input: preorder = [- 1 ], inorder = [- 1] Output: [- 1] Constraints: 1 <= preorder. length <= 3000 inorder. length = = preorder. length - 3000 <= preorder [i ], inorder [i] <= 3000 preorder and inorder consist of unique values. Each value of inorder also appears in preorder. preorder is guaranteed to be the preorder traversal of the sir herbert beerbohm tree. inorder is guaranteed to be the inorder traversal of the tree.",
+      "0.1": "Given two integer arrays preorder and inorder where preorder is the preorder traverse of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree. Example 1: Input: preorder = [threesome, 9, 20, 15, 7 ], inorder = [niner, 3, 15, 20, 7] Output: [ternion, 9, 20, null, null, 15, 7] Example 2: Input signal: preorder = [- ane ], inorder = [- 1] Output: [- 1] Constraints: ace <= preorder. length <= 3000 inorder. length = = preorder. length - 3000 <= preorder [iodin ], inorder [iodine] <= 3000 preorder and inorder consist of unique time value. Each value of inorder also appears in preorder. preorder is guaranteed to be the preorder traversal of the tree. inorder is undertake to be the inorder traversal of the tree.",
+      "0.15": "Given ii integer arrays preorder and inorder where preorder constitute the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, conception and return the binary tree. Example 1: Input: preorder = [trine, 9, 20, xv, heptad ], inorder = [9, triplet, 15, xx, 7] Output: [trinity, ennead, twenty, null, null, 15, 7] Example 2: Input: preorder = [- 1 ], inorder = [- i] Yield: [- one] Constraints: 1 <= preorder. length <= 3000 inorder. length = = preorder. length - 3000 <= preorder [1 ], inorder [i] <= 3000 preorder and inorder consist of unique values. Each time value of inorder also appears in preorder. preorder is guaranteed to be the preorder traversal of the sir herbert beerbohm tree. inorder is guaranteed to be the inorder traversal of the tree.",
+      "0.2": "Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary sir herbert beerbohm tree and inorder be the inorder traverse of the same tree diagram, conception and give back the binary tree. Example 1: Input: preorder = [3, niner, 20, 15, 7 ], inorder = [9, 3, 15, twenty, 7] Output: [3, 9, 20, naught, zippo, 15, seven] Example 2: Input: preorder = [- i ], inorder = [- ace] Production: [- i] Constraint: single <= preorder. length <= 3000 inorder. distance = = preorder. length - 3000 <= preorder [single ], inorder [i] <= 3000 preorder and inorder consist of unparalleled values. Each value of inorder also appears in preorder. preorder is guaranteed to be the preorder traversal of the tree diagram. inorder be guaranteed to be the inorder traversal of the tree.",
+      "0.25": "Kick in two integer array preorder and inorder where preorder is the preorder traverse of a binary tree and inorder is the inorder traversal of the same tree, concept and rejoin the binary tree. Example 1: Input: preorder = [3, 9, twenty, xv, 7 ], inorder = [ennead, trio, fifteen, xx, sevener] Output: [trine, 9, 20, aught, zero, xv, 7] Example 2: Input: preorder = [- 1 ], inorder = [- 1] End product: [- 1] Constraints: 1 <= preorder. duration <= 3000 inorder. length = = preorder. length - 3000 <= preorder [one ], inorder [i] <= 3000 preorder and inorder consist of unequalled note value. Each value of inorder also come along in preorder. preorder is guaranteed to be the preorder traversal of the tree. inorder exist guaranteed to equal the inorder traversal of the tree.",
+      "0.3": "Pass deuce integer regalia preorder and inorder where preorder embody the preorder traverse of a binary tree diagram and inorder be the inorder traverse of the like tree, construct and return the binary tree. Example one: Remark: preorder = [terzetto, nine, 20, 15, septenary ], inorder = [9, 3, 15, xx, septet] Output: [tercet, 9, twenty, null, null, 15, septet] Example 2: Input signal: preorder = [- ane ], inorder = [- 1] Yield: [- ace] Constraints: ane <= preorder. duration <= 3000 inorder. duration = = preorder. distance - 3000 <= preorder [1 ], inorder [i] <= 3000 preorder and inorder consist of unique value. Each value of inorder too appear in preorder. preorder exist guaranteed to be the preorder traversal of the tree diagram. inorder be guaranteed to be the inorder traversal of the tree diagram.",
+      "0.35": "Give two integer array preorder and inorder where preorder live the preorder traverse of a binary tree and inorder embody the inorder traverse of the same tree, conception and return the binary tree. Example unity: Stimulus: preorder = [3, ennead, xx, fifteen, 7 ], inorder = [nina from carolina, 3, xv, twenty, 7] Output: [3, nine, twenty, cipher, aught, fifteen, 7] Example ii: Remark: preorder = [- 1 ], inorder = [- 1] Output: [- unity] Constraints: i <= preorder. length <= 3000 inorder. duration = = preorder. length - 3000 <= preorder [unity ], inorder [one] <= 3000 preorder and inorder consist of unparalleled value. Each economic value of inorder also appear in preorder. preorder be guarantee to comprise the preorder traverse of the tree. inorder comprise guarantee to constitute the inorder traversal of the tree diagram.",
+      "0.4": "Chip in two whole number array preorder and inorder where preorder is the preorder traverse of a binary tree diagram and inorder is the inorder traverse of the same tree diagram, construct and return the binary sir herbert beerbohm tree. Example single: Input: preorder = [tercet, nina from carolina, twenty, fifteen, seven ], inorder = [nine, deuce ace, xv, xx, 7] Output: [iii, ix, xx, null, cypher, fifteen, 7] Example 2: Remark: preorder = [- 1 ], inorder = [- i] Output: [- one] Restraint: unity <= preorder. distance <= 3000 inorder. distance = = preorder. duration - 3000 <= preorder [i ], inorder [1] <= 3000 preorder and inorder consist of unequalled time value. Each value of inorder besides come out in preorder. preorder be guaranteed to comprise the preorder traverse of the tree diagram. inorder be guarantee to cost the inorder traversal of the sir herbert beerbohm tree.",
+      "0.45": "Founder deuce whole number raiment preorder and inorder where preorder is the preorder traverse of a binary tree and inorder be the inorder traversal of the like tree diagram, construct and come back the binary tree diagram. Example ane: Stimulation: preorder = [three, nine, twenty, 15, sevener ], inorder = [ix, 3, xv, xx, seven] Yield: [trey, nine, xx, nix, null, fifteen, vii] Example 2: Input signal: preorder = [- i ], inorder = [- unity] End product: [- 1] Restraint: ace <= preorder. duration <= 3000 inorder. distance = = preorder. distance - 3000 <= preorder [iodin ], inorder [one] <= 3000 preorder and inorder consist of alone value. Each economic value of inorder as well appear in preorder. preorder be secure to equal the preorder traverse of the tree. inorder be guaranteed to embody the inorder traversal of the sir herbert beerbohm tree.",
+      "0.5": "Give 2 whole number array preorder and inorder where preorder comprise the preorder traverse of a binary tree diagram and inorder is the inorder traverse of the like sir herbert beerbohm tree, conception and turn back the binary tree diagram. Example 1: Stimulation: preorder = [triplet, niner, xx, fifteen, seven ], inorder = [nina from carolina, tercet, fifteen, xx, seven] Output: [trine, nina from carolina, xx, aught, cipher, fifteen, 7] Example 2: Remark: preorder = [- i ], inorder = [- one] Output: [- 1] Constraint: i <= preorder. length <= 3000 inorder. duration = = preorder. duration - 3000 <= preorder [unity ], inorder [iodine] <= 3000 preorder and inorder consist of alone time value. Each economic value of inorder as well appear in preorder. preorder be guarantee to embody the preorder traverse of the tree diagram. inorder be warrant to live the inorder traverse of the tree diagram.",
+      "0.55": "Give 2 whole number raiment preorder and inorder where preorder be the preorder traverse of a binary tree diagram and inorder represent the inorder traverse of the like sir herbert beerbohm tree, conception and render the binary sir herbert beerbohm tree. Example 1: Remark: preorder = [trey, ix, xx, xv, septet ], inorder = [nine, leash, xv, xx, septenary] Yield: [trey, niner, xx, zip, cypher, xv, seven] Example deuce: Remark: preorder = [- ane ], inorder = [- i] Output signal: [- one] Constraint: ane <= preorder. duration <= 3000 inorder. duration = = preorder. duration - 3000 <= preorder [single ], inorder [unity] <= 3000 preorder and inorder consist of unequalled economic value. Each economic value of inorder also appear in preorder. preorder be guarantee to exist the preorder traverse of the sir herbert beerbohm tree. inorder is guarantee to embody the inorder traverse of the sir herbert beerbohm tree.",
+      "0.6": "Open deuce whole number regalia preorder and inorder where preorder be the preorder traverse of a binary tree diagram and inorder be the inorder traverse of the like sir herbert beerbohm tree, concept and give back the binary tree diagram. Example one: Comment: preorder = [trio, nina from carolina, twenty, fifteen, seven ], inorder = [ennead, terzetto, xv, twenty, vii] Turnout: [iii, ix, twenty, cypher, goose egg, xv, vii] Example deuce: Remark: preorder = [- i ], inorder = [- one] Yield: [- ane] Constraint: one <= preorder. distance <= 3000 inorder. distance = = preorder. distance - 3000 <= preorder [unity ], inorder [unity] <= 3000 preorder and inorder consist of unparalleled value. Each note value of inorder too appear in preorder. preorder be guarantee to follow the preorder traverse of the sir herbert beerbohm tree. inorder personify guarantee to make up the inorder traverse of the sir herbert beerbohm tree.",
+      "0.65": "Give ii whole number raiment preorder and inorder where preorder be the preorder traverse of a binary tree diagram and inorder be the inorder traverse of the like tree diagram, conception and render the binary tree diagram. Example ace: Remark: preorder = [deuce ace, ennead, xx, fifteen, septenary ], inorder = [nina from carolina, tercet, fifteen, xx, sevener] Yield: [iii, nine, xx, aught, naught, fifteen, heptad] Example deuce: Input signal: preorder = [- one ], inorder = [- ace] Yield: [- one] Constraint: single <= preorder. distance <= 3000 inorder. distance = = preorder. distance - 3000 <= preorder [1 ], inorder [iodine] <= 3000 preorder and inorder consist of singular value. Each economic value of inorder likewise appear in preorder. preorder embody assure to follow the preorder traverse of the tree diagram. inorder comprise undertake to comprise the inorder traverse of the sir herbert beerbohm tree.",
+      "0.7": "Reach deuce whole number array preorder and inorder where preorder be the preorder traverse of a binary tree diagram and inorder cost the inorder traverse of the like sir herbert beerbohm tree, concept and repay the binary tree diagram. Example i: Stimulus: preorder = [terzetto, nine, twenty, fifteen, vii ], inorder = [nina from carolina, ternary, xv, xx, vii] Production: [ternion, nina from carolina, twenty, nothing, zilch, fifteen, heptad] Example deuce: Stimulant: preorder = [- ane ], inorder = [- i] Turnout: [- i] Constraint: single <= preorder. distance <= 3000 inorder. distance = = preorder. distance - 3000 <= preorder [iodin ], inorder [one] <= 3000 preorder and inorder consist of unequaled time value. Each economic value of inorder too seem in preorder. preorder live assure to personify the preorder traverse of the sir herbert beerbohm tree. inorder be guarantee to constitute the inorder traverse of the sir herbert beerbohm tree.",
+      "0.75": "Give ii whole number array preorder and inorder where preorder be the preorder traverse of a binary sir herbert beerbohm tree and inorder comprise the inorder traverse of the like sir herbert beerbohm tree, concept and give the binary sir herbert beerbohm tree. Example one: Stimulation: preorder = [three, ix, twenty, fifteen, seven ], inorder = [ennead, trey, fifteen, xx, vii] Production: [triplet, nina from carolina, twenty, goose egg, goose egg, fifteen, vii] Example two: Stimulant: preorder = [- one ], inorder = [- i] End product: [- ane] Constraint: unity <= preorder. distance <= 3000 inorder. distance = = preorder. distance - 3000 <= preorder [single ], inorder [unity] <= 3000 preorder and inorder consist of unparalleled value. Each time value of inorder besides appear in preorder. preorder equal warrant to constitute the preorder traverse of the sir herbert beerbohm tree. inorder be guarantee to make up the inorder traverse of the tree diagram.",
+      "0.8": "Yield deuce whole number array preorder and inorder where preorder constitute the preorder traverse of a binary sir herbert beerbohm tree and inorder cost the inorder traverse of the like tree diagram, concept and regress the binary sir herbert beerbohm tree. Example ace: Stimulus: preorder = [ternion, nine, xx, fifteen, septenary ], inorder = [niner, three, xv, twenty, vii] Production: [ternary, ennead, twenty, zip, zip, xv, seven] Example ii: Comment: preorder = [- i ], inorder = [- one] Yield: [- one] Constraint: single <= preorder. distance <= 3000 inorder. distance = = preorder. distance - 3000 <= preorder [iodine ], inorder [iodin] <= 3000 preorder and inorder consist of alone value. Each economic value of inorder as well appear in preorder. preorder personify secure to exist the preorder traverse of the tree diagram. inorder constitute secure to follow the inorder traverse of the sir herbert beerbohm tree.",
+      "0.85": "Give 2 whole number array preorder and inorder where preorder follow the preorder traverse of a binary sir herbert beerbohm tree and inorder be the inorder traverse of the like sir herbert beerbohm tree, conception and regress the binary sir herbert beerbohm tree. Example i: Stimulus: preorder = [triplet, ix, twenty, xv, heptad ], inorder = [ix, terzetto, fifteen, twenty, seven] Yield: [trio, nine, twenty, cypher, zip, fifteen, seven] Example two: Remark: preorder = [- single ], inorder = [- one] Output signal: [- i] Constraint: single <= preorder. duration <= 3000 inorder. duration = = preorder. duration - 3000 <= preorder [ace ], inorder [1] <= 3000 preorder and inorder consist of alone value. Each economic value of inorder too look in preorder. preorder equal guarantee to follow the preorder traverse of the tree diagram. inorder be guarantee to exist the inorder traverse of the sir herbert beerbohm tree.",
+      "0.9": "Founder 2 whole number array preorder and inorder where preorder be the preorder traverse of a binary sir herbert beerbohm tree and inorder personify the inorder traverse of the like tree diagram, concept and come back the binary sir herbert beerbohm tree. Example unity: Remark: preorder = [ternary, nine, twenty, xv, seven ], inorder = [nine, three, xv, xx, vii] Yield: [troika, niner, twenty, aught, nil, xv, septenary] Example ii: Input signal: preorder = [- one ], inorder = [- unity] End product: [- one] Restraint: i <= preorder. distance <= 3000 inorder. distance = = preorder. duration - 3000 <= preorder [single ], inorder [ace] <= 3000 preorder and inorder consist of alone economic value. Each economic value of inorder likewise come along in preorder. preorder be guarantee to follow the preorder traverse of the tree diagram. inorder be ensure to follow the inorder traverse of the sir herbert beerbohm tree.",
+      "0.95": "Give 2 whole number array preorder and inorder where preorder be the preorder traverse of a binary tree diagram and inorder be the inorder traverse of the like sir herbert beerbohm tree, concept and turn back the binary tree diagram. Example ace: Comment: preorder = [iii, ennead, xx, xv, heptad ], inorder = [nine, iii, xv, xx, septenary] Yield: [tercet, ix, twenty, goose egg, goose egg, xv, seven] Example deuce: Comment: preorder = [- unity ], inorder = [- ane] Turnout: [- i] Constraint: single <= preorder. duration <= 3000 inorder. distance = = preorder. duration - 3000 <= preorder [unity ], inorder [1] <= 3000 preorder and inorder consist of singular value. Each note value of inorder likewise come out in preorder. preorder cost undertake to live the preorder traverse of the sir herbert beerbohm tree. inorder be guarantee to exist the inorder traverse of the tree diagram.",
+      "1.0": "Give 2 whole number raiment preorder and inorder where preorder personify the preorder traverse of a binary tree diagram and inorder follow the inorder traverse of the like sir herbert beerbohm tree, conception and bring back the binary sir herbert beerbohm tree. Example i: Comment: preorder = [leash, nina from carolina, twenty, fifteen, vii ], inorder = [nine, threesome, fifteen, xx, heptad] Yield: [triad, nine, twenty, nothing, zero, fifteen, seven] Example ii: Input signal: preorder = [- unity ], inorder = [- i] Production: [- unity] Constraint: unity <= preorder. duration <= 3000 inorder. duration = = preorder. duration - 3000 <= preorder [atomic number 53 ], inorder [one] <= 3000 preorder and inorder consist of alone note value. Each time value of inorder as well come along in preorder. preorder equal assure to live the preorder traverse of the tree diagram. inorder exist guarantee to constitute the inorder traverse of the sir herbert beerbohm tree."
+    }
+  },
+  "llm_responses": {
+    "deepseek": {
+      "keyboard": {
+        "0.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.05": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.1": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.15": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.2": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.25": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.3": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.35": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.4": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.45": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.5": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.55": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.6": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.65": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.7": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.75": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.8": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.85": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.9": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.95": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "1.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ]
+      }
+    }
+  }
+}

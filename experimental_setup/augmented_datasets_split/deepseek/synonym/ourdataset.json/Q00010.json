@@ -1,0 +1,215 @@
+{
+  "slug": "sims-tetris-three-players",
+  "problem_title": "Three-Player Collaborative Tetris",
+  "number": 0,
+  "acceptance": 0,
+  "difficulty": "n/a",
+  "question": "Write a game of Tetris for three players who are playing in collaboration. The implementation should include all necessary classes, as well as code responsible for rendering the graphic user interface. The code should also include necessary mechanics to allow three players to play, keep separate scores, and to determine the contributions of each player to the overall score in a fair manner.\n",
+  "post_href": "n/a",
+  "python_solutions": "n/a",
+  "post_title": "n/a",
+  "user": "n/a",
+  "upvotes": 0,
+  "views": 0,
+  "augmented_questions": {
+    "keyboard": {
+      "0.0": "Write a game of Tetris for three players who are playing in collaboration. The implementation should include all necessary classes, as well as code responsible for rendering the graphic user interface. The code should also include necessary mechanics to allow three players to play, keep separate scores, and to determine the contributions of each player to the overall score in a fair manner.",
+      "0.05": "Write a game of Tetris for three players who are playing in collaboration. The implementation should include all necessary classes, as well as c)de responsible for rendering the grapJic user interface. The cose should also include necessary mechanics to allow fhree players to play, keep separate scores, and to determine the contributions of each player to the overall score in a fair manner.",
+      "0.1": "Srite a game of Tetris for three playfrs who are playing in collaboration. The implementation should include all necessary classes, as well as cose responsible for rendering the graphic uzer interface. The code sh)uld also include necessary mechanics to allow three players to play, keep separate scores, and to determine the contributions of ezch player to the ogerall score in a fair manner.",
+      "0.15": "Write a game of Tetris for thdee players who are playing in collaboration. The im(lemen6atioM should include all necessary clXsseE, as well as code responsible for rendering the grsph8c user interface. The code sho tld also include neceAsar& mexhaGics to allow three players to play, keep eepaDate scores, and to de^Srmine the contributions of Dach player to the overall score in a Dair manner.",
+      "0.2": "Write a game of Tetris for three p<syers who are playing in coilaboEatioJ. The implementation should include all n2cessAry clQdses, as well as Xode responsible for rendering the graphic user interface. The code should alsK lncluXe necessary mechanics to al>ow three players to pla6, keeo separate sDoDes, and to Xetermin# the contributions of each player to the overQlO score in a fair msnn$r.",
+      "0.25": "Wr*tD a game of Tetris for tbr@e players who are play7Mg in collaboration. The implementation should imclhde all necessary clasxrs, as well as codr $esLonwible for rendeTiby the gra0hOc user interface. The code sh9ulw also ibcludD ndcWzsary mechanics to allow three players to play, keeO selQrate scores, and to determine the contributions of each plX&er to the overxl/ zcorF in a fair manbFr.",
+      "0.3": "WrUge a nSme of Fetrks for thr23 players who are playing in co:kab9ratioM. The uj0lementxt*on should iHdl7de all necessary clasXFa, as well as cofs geqponZiboe for %enFFring the graphic user interface. The code shIuOd also kgclKde JecessWrj mexhaniDq to Q<low three p<Ayees to play, ,eeO separate scores, and to determine the contributions of 4acb olaye5 to the overall score in a fair mzJner.",
+      "0.35": "#r&te a Fxme of Tetris for $hrre playFea who are play8gN in XoklxboratiKg. The impOdnentaHioj sN*upd *JcluEe all jeVessagU classes, as weiP as vodR r#s)Pnsibl4 for EeGdeDinF the g$alh(c ise% LnteEtac4. The c*ce should also include necessary mechanics to a:liw thrd4 players to play, keep sSpZ#ate scores, and to det2rKknF the contributions of each player to the LvRralP XcorR in a fa8t manner.",
+      "0.4": "Write a txme of r4ttis for tTFee players who are (lW6ing in col.zbo5at8iB. The ijplem$nRay(Pn Dho Tpd kbcl7de all necessary classes, as !$ll as c0d# #esp8ns8vlF for r2nrd5ing the rralhkc uaet UGterfXse. The code should akDo Lnvlud4 n@cRsXa3y mdchqJiVs to alKoA three )<auers to poa&, keep ae0arwt4 Xco%Rs, and to Swtefm(ne the contributions of Rafh player to the oFegakl sXkre in a fair manner.",
+      "0.45": "Wg7he a gqm@ of 4#trKs for %brFe 0lSURrs who are pOzy7Jg in doPlsgKratiin. The implementation zhouOE OMcPudF all nesDsssfT ciAsAeA, as w#Ol as fod4 responsible for gwmdetinf the gdxphJx ise5 LhtdrfXDe. The code ZhIulf Zlxo inF/kdR necessary <4dBsnics to a><oa tNrF@ 9lZyWEs to pOZy, ker9 sepZ$ar3 sfoTez, and to dStetm&b@ the contributions of sash )lxyeG to the overall score in a rai# manner.",
+      "0.5": "!r9fe a Nake of TFtDiX for hurSe players who are plST&nn in soklSbIrS5(on. The i,p.emeh5atL9g sgouKR UnVluw2 all nesSDszrg xOassWW, as w$kl as V8de f2slonZiGlf for rendering the trA9hiD ua3r im5rgfac4. The cPCe wGo7ld aiZo iMcO^se hfceswaeG mDchQhkcw to S?lo1 three 0lWye#A to )lAy, keep sdOaDa5e Cx8res, and to set2rJ(he the SoG5r&G tt8ons of eqVh llz7er to the PFefa<l sVl%e in a cQir manner.",
+      "0.55": "aGit@ a Nq<e of hSGriX for hBreD piay$dX who are pla^7jv in FpOlAbLrwyioH. The iK(lsN2Hts^ion QToH<d inF/urd all nSc#cwWry clxsd@z, as Awl. as dLre tewl(HQiGle for regc#rjnn the grqpY*X uzWg in44#fQcs. The code sYPjlf aOZi Unc/&fe h#desxaFy J4cmanifA to a<,*w ^trer 0laHSts to ppqh, k@d9 s#pS5QHe EXoT$s, and to WeheEmOn3 the contributions of exsu pkaH@D to the ovwEsil scLEr in a fSlT <aMbef.",
+      "0.6": "dr*ge a Yzje of 5erGiw for tmFeS o.XyeDd who are 9:Ay&Jg in c8;>xhLra4i8n. The KN):rKentwt9*n sB)klr Jmcl*e# all nDcssWAFh flxxsWC, as Awlo as cksf rew09nwivkf for $fJddrJHg the VFalhkX 8Wee lMtSrRav#. The voSs shP^oW a?cL *hc.uC$ nex$ZsSfj ,eDuagifD to X;Oow $Nref 9lX5frD to 0;Wy, Msel d$pXraG@ scI%wX, and to VdHe4,iJe the cPny#if7$iohc of wxDh LlXHet to the 0de#ai< xcodW in a fw(d ksjn4r.",
+      "0.65": "s3iGD a ts,e of TstG*d for HMrd3 )lQyf$A who are 0/a6UJg in d9IoSb0rWt(in. The in(lej2m$af**G qhoJKv JjsljdW all hFx3eXary clsqc4X, as 2slK as ciRd d4spIneLVof for #ehd$fUMg the geQOh9v ^sW# *hterTSVr. The v)dr anou<e aiE) KhvoudS n#f$seX3y m#cBSnKxD to WO>Pw gnDe@ O:q^ees to olS%, k##9 s#(WEQge XFodFs, and to wD^e#Hin4 the clnh$ifhHiigE of eXSY p;s&Rr to the Kve#wpP WDoer in a fs9D mXnhwf.",
+      "0.7": "Srl^2 a gwHW of f4HrJc for gtDeR 9/wJSrs who are lPWyJMg in x)lIzFkdAtiIB. The jJ9,wjFnYQtioJ CN9iOd infi tr3 all h4xSssq46 D.wAseD, as !D.l as ciSR 3sdppnwig/# for rWgd#e8hY the Hra0Tov hsWf iMtDfTqVw. The foc2 WMlkod x/s) ijFP6xe nWDRQeQrt hRfYaBJcQ to aiK82 4Urff pIXTf%s to llW^, l@eo wrpaGxG@ Cc(TRc, and to C3^2rH(Je the D)h6g&b*GioJQ of WaFB 0KAHsr to the 0GersKi wcK$2 in a Va(D mzmMR#.",
+      "0.75": "W3ogS a gShF of $sRr(D for 5Jt@e p,zg45z who are ).QuOnt in Doo/anKtZFilh. The iJ);RneB5x%*on snK6>e Knx?KWf all Gec#eEs$T s;aqqDz, as w#O< as XoED d$e)oBsjH:# for deBw438nv the yEA0hkD 7qFr iHR#ffXV#. The sidf aTL6id X:sL &jVlJw2 GSc$scsE^ meDJQMjFw to wo?)w tTeSs lkQUR5s to 0lzg, Iefo sW(Arx5$ sv(#WX, and to ReYDdKihd the Fpb$rUNuYi8JC of @adb pKzt34 to the ibfgaK: xXI4e in a fsJ5 HZnMD#.",
+      "0.8": "@f85e a YZhF of TS^eUQ for yh%SD (>S5eDx who are 0.xTjMg in v0koAboEXFlom. The *m(PWm@BgXti9b EBoJ;r ihxKkeS all j@fDazwr& VlQxESq, as Dro. as dpv2 %ea)0Bs(h?r for r3hxDTjbN the RDsOgiX JxwT JJ%DgEadd. The dLVd whp&Ir w>x) JhD.*d2 M$fdDsw5g J@cuQj*SX to WlIpa 6Jrs4 (lXHrgA to LKxg, Mr$l E3la#s$s ccP$$W, and to r2t3FJKgD the SonGTjhj^&omd of #sdn (/Q6e3 to the 8Bw$aoP aDpfe in a dAuG NXGn#3.",
+      "0.85": "D3OyW a Hsn2 of 5$yeoE for 5jE@f L<a^S%A who are 0Pz6iHF in FklIahLDwtUIG. The OH(le,$JFWh*on qj8JPE Ohv>uER all m4feXEQeu F,SQass, as s$k: as V8X3 $WQ)(heiHId for r3gX@4UbR the ygS9YOc ja3# Kj6SEBadD. The V(FW CbLi>R x.EK lbvi TdS B@SfQqSGy n3vGqH(cw to Xpo(S 4N%sw 9lqjr3E to )iAU, UW40 w40s%X6e wD8%4D, and to Sr52t<LnD the V0ntrlFK%*8HZ of SAFt (:xjf4 to the Kd#tapi ax0Er in a eZ(F JZJb@3.",
+      "0.9": "E3*H@ a fxhS of Y@G$7x for YB$@$ 0ksG33q who are O;Wg&mT in vPl<XF*5Xti)b. The ihopeN2JtaGK9B eNi t;r JMF?jED all J@D$XqxFt SKXez$Z, as !S.O as fIC@ t2wL(nDKfK3 for tfMf2#Ubh the T3z)tlF KW3g *gfrGDxd2. The fPcs Eu8&?c qiZI jJD.HXw H3d@wcxT6 NSdUXg8Sa to ZKOKq gbT#W (ks7@Fw to ).Qu, o2wO A#)ZdZFr ws)tdc, and to Swfr3nOm$ the D)ny#9HutJPbx of SqXg LiAHf5 to the (GDEwIK Cx)Dr in a cA9g kwbbD$.",
+      "0.95": "1G&53 a rZjr of yrf#oD for RBE#r oiqUDfX who are o.s7UBH in ciKPwVLrWYlpn. The ONo<e,eMhaFKog QY8^:F *jF.6xS all G$f3cdze5 SPAxdrC, as a@Ko as s*vD tealpbWOV.F for eFgS2eKbf the hds0yLd *QfD KhH2%GsDF. The siV@ WNlJoX WOc* 9jfI8fF M4xwcWx5G jSsMwGkdX to sk?K@ yn$@4 liAjDDD to )>wh, l3Fl dS)qGQ4# CxPf$C, and to rdhsf<obW the DLbtfKFuRjojd of swSG LPSt4D to the iF3$XOp ddLgr in a dx9F NsmBDD.",
+      "1.0": "@dlF@ a RAKs of G4h4ld for GB#43 (ISJw%D who are O:z&7br in Do:paf(3QG&pn. The JmL/e<DMFa%(0n zNk8oS oBdk*W@ all bDv3CXS5u V>XeCWc, as @3oK as Skv$ 3sQpIjDofi$ for tWMf4ELjb the vfXobKf  Tc4T &B4W#czD3. The xPrd cB**,s w,c8 OGVk*XR mRsdQdAtG JSVnzjjvX to W.<)e 4N52f l.AuD#C to 9/xT, L#F0 a4OsFZ$W CD8Dww, and to V@^4G<UM# the cogtfkG tyU)bx of fXXm opZh@5 to the 9g23S;> AFiT@ in a eS(g KwMM3E."
+    },
+    "synonym": {
+      "0.0": "Write a plot of Tetris for three players world health organization are playing in collaboration. The execution should let in all necessary classes, as well as code responsible for render the graphic user port. The computer code should besides include necessary mechanics to allow for three players to dally, go along freestanding scores, and to determine the contribution of each player to the overall account in a fair manner.",
+      "0.05": "Write a plot of Tetris for three players who are playing in collaboration. The implementation should include all necessary classes, as well as code responsible for rendering the graphic user interface. The code should also include necessary mechanic to allow three players to play, keep separate scores, and to determine the contributions of each player to the overall score in a fair way.",
+      "0.1": "Write a plot of Tetris for three players who are playing in collaboration. The implementation should include all necessary classes, as well as computer code responsible for deliver the graphic user port. The computer code should also include necessary mechanics to allow three players to play, keep separate scores, and to determine the donation of each player to the overall score in a fair manner.",
+      "0.15": "Write a game of Tetri for three players world health organization are playing in collaboration. The implementation should include all necessary classes, as well as computer code responsible for render the graphic user port. The code should also let in necessary mechanics to allow three players to play, keep separate scores, and to determine the contributions of each role player to the overall score in a sightly manner.",
+      "0.2": "Write a secret plan of Tetris for deuce ace players who are playing in quislingism. The implementation should include all necessary classes, as well as code responsible for render the graphic substance abuser interface. The computer code should also let in necessary mechanics to allow three player to fiddle, keep separate scores, and to determine the contributions of each histrion to the overall score in a fair mode.",
+      "0.25": "Write a biz of Tetris for trinity player who make up bet in collaboration. The implementation should include all necessary class, as well as code creditworthy for rendering the graphic exploiter interface. The code should also include necessary mechanics to allow three players to play, keep separate wads, and to check the contributions of each player to the overall musical score in a fair manner.",
+      "0.3": "Drop a line a plot of Tetris for terzetto players world health organization are play in collaboration. The carrying out should include all necessary family, as comfortably as code responsible for rendering the pictorial substance abuser interface. The code should likewise include necessary mechanics to allow three players to fiddle, keep separate scores, and to determine the contributions of each player to the overall score in a fair manner.",
+      "0.35": "Write a game of Tetri for trey player world health organization are playing in collaborationism. The implementation should admit all necessary form, every bit intimately as codification responsible for hand over the graphic user user interface. The codification should besides include necessary mechanics to allow three histrion to encounter, keep separate score, and to determine the contributions of each player to the overall score in a fair manner.",
+      "0.4": "Write a game of Tetri for three instrumentalist who are act in collaboration. The execution should include all necessary social class, as considerably as computer code creditworthy for rendering the graphical exploiter interface. The codification should also include necessary mechanics to allow threesome players to play, keep disjoined tons, and to fix the contributions of each musician to the overall musical score in a fairish way.",
+      "0.45": "Compose a secret plan of Tetri for tierce player who be play in quislingism. The implementation should let in all necessary class, as good as code responsible for rendering the graphic drug user user interface. The computer code should as well let in necessary mechanics to leave trey players to play, observe separate lots, and to determine the contributions of each thespian to the overall grudge in a fair manner.",
+      "0.5": "Publish a secret plan of Tetri for ternary player world health organization are playing in collaborationism. The implementation should admit all necessary course of instruction, every bit well as code responsible for render the vivid user port. The codification should besides let in necessary mechanics to give up three players to play, hold on separate score, and to square up the contribution of each musician to the overall scotch in a just manner.",
+      "0.55": "Write a secret plan of Tetris for ternion player who cost playing in quislingism. The implementation should include all necessary classes, every bit easily as computer code creditworthy for rendering the graphical exploiter user interface. The codification should too let in necessary mechanic to let 3 player to act as, maintain separate scads, and to set the contribution of each player to the overall grievance in a fair style.",
+      "0.6": "Write a game of Tetri for ternion role player world health organization are play in collaborationism. The carrying out should let in all necessary division, every bit intimately as computer code creditworthy for show the graphic drug user port. The codification should too let in necessary automobile mechanic to admit triad player to play, observe freestanding score, and to learn the contribution of each instrumentalist to the overall account in a sightly mode.",
+      "0.65": "Publish a plot of Tetri for 3 actor who be play in collaborationism. The effectuation should admit all necessary division, equally good as codification responsible for return the graphic substance abuser interface. The codification should too admit necessary mechanic to give up three participant to diddle, preserve freestanding musical score, and to find the contributions of each histrion to the overall grudge in a bonny fashion.",
+      "0.7": "Compose a biz of Tetri for terzetto musician world health organization are play in collaborationism. The implementation should admit all necessary year, every bit easily as computer code responsible for for give the in writing substance abuser user interface. The computer code should also admit necessary shop mechanic to allow for trinity musician to spiel, maintain freestanding score, and to shape the contribution of each thespian to the overall grievance in a average manner.",
+      "0.75": "Publish a plot of Tetri for triplet actor world health organization be play in quislingism. The effectuation should admit all necessary class, equally easily as computer code creditworthy for render the graphical drug user port. The code should as well admit necessary automobile mechanic to let terzetto player to wager, continue disjoined grievance, and to set the contribution of each player to the overall grievance in a comely way.",
+      "0.8": "Save a secret plan of Tetri for tercet player world health organization be wreak in collaborationism. The effectuation should let in all necessary family, every bit considerably as computer code creditworthy for render the pictorial drug user port. The computer code should too let in necessary shop mechanic to give up 3 player to bet, maintain disjoined scotch, and to influence the part of each thespian to the overall grudge in a sightly mode.",
+      "0.85": "Publish a plot of Tetri for 3 role player world health organization be play in coaction. The carrying out should admit all necessary course of study, equally easily as computer code creditworthy for render the graphical exploiter user interface. The codification should too let in necessary mechanic to set aside tierce player to work, observe disjoined slews, and to shape the contribution of each participant to the overall grudge in a reasonable fashion.",
+      "0.9": "Drop a line a plot of Tetri for trey participant world health organization be playact in collaborationism. The carrying out should let in all necessary course of study, equally advantageously as computer code responsible for for picture the vivid drug user user interface. The computer code should as well let in necessary shop mechanic to leave trey musician to wreak, continue freestanding score, and to regulate the contribution of each instrumentalist to the overall sexual conquest in a honest personal manner.",
+      "0.95": "Indite a biz of Tetri for ternary participant world health organization represent play in collaborationism. The execution should let in all necessary class, equally substantially as codification responsible for for interpret the in writing substance abuser user interface. The computer code should likewise admit necessary auto mechanic to permit terzetto player to act, maintain disjoined wads, and to check the share of each actor to the overall musical score in a honest personal manner.",
+      "1.0": "Drop a line a plot of Tetri for troika actor world health organization be play in coaction. The carrying out should let in all necessary course, every bit comfortably as computer code responsible for for fork up the pictorial drug user port. The computer code should likewise let in necessary mechanism to earmark triad player to meet, maintain freestanding lots, and to find out the share of each participant to the overall grievance in a average mode."
+    }
+  },
+  "llm_responses": {
+    "deepseek": {
+      "synonym": {
+        "0.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.05": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.1": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.15": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.2": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.25": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.3": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.35": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.4": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.45": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.5": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.55": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.6": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.65": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.7": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.75": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.8": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.85": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.9": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.95": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "1.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ]
+      }
+    }
+  }
+}

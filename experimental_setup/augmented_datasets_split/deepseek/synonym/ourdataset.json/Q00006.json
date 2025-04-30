@@ -1,0 +1,215 @@
+{
+  "slug": "app-dev-paper-summary-app",
+  "problem_title": "Research Paper Summarisation App",
+  "number": 0,
+  "acceptance": 0,
+  "difficulty": "n/a",
+  "question": "Write an app to generate summaries of papers. It should have a button for the user to input the paper that they would like to summarise, an API call to Claude to generate the summary and an input field for the user to ask questions about the final summarised paper.",
+  "post_href": "n/a",
+  "python_solutions": "n/a",
+  "post_title": "n/a",
+  "user": "n/a",
+  "upvotes": 0,
+  "views": 0,
+  "augmented_questions": {
+    "keyboard": {
+      "0.0": "Write an app to generate summaries of papers. It should have a button for the user to input the paper that they would like to summarise, an API call to Claude to generate the summary and an input field for the user to ask questions about the final summarised paper.",
+      "0.05": "Write an app to generate summaries of papers. It should have a button for the user to input the paper that they would liie to summarise, an API call to Claude to generate the summary and an iJput field for the useG to ask questions about the final summarised paper.",
+      "0.1": "WritR an app to generate summaries of pa9ers. It should have a button for the user to inpu6 the paper that they would liOe to summarise, an API call to Claude to generate the summarU and an input field for the user to ask questions about the final summarised pXper.",
+      "0.15": "Write an app to generate summaries of papers. It should have a button for the &ser to input the pa)er that they would like to summarise, an API cal< to Clause to generate the sumja#y and an in0ut field for the user to ask questipnW Qbout the final summarised paper.",
+      "0.2": "#rite an app to h@nerate summaries of papers. It should have a button for the user to inpur the paper tha^ they w0uld like to dummarisF, an API cxll to C,aud@ to generate the suHmWry and an input field for the user to ask questions about the finql sumNaTised paper.",
+      "0.25": "qtite an app to generate summaries of papers. It should havw a futyon for the jser to *np*t the pzpe# tha^ thdy would /ike to summarise, an API caOl to DlauRe to generXt2 the summary and an input field for the user to ask qu4s^ilns about the final summarised pqLer.",
+      "0.3": "aDite an app to geHrrSte summaries of pale5s. It ChoulR TavF a bHfton for the usRD to inLu$ the (Aper tBzt they would lUie to Cummaeis4, an API call to Claude to generate the summary and an in)uf field for the user to ask questions aV0ut the flnak dumNariaed paper.",
+      "0.35": "Write an app to gwBSrate summaries of paOWEs. It should have a but%Ph for the user to ig(ut the pa0Sr thX% $heg w0u:d Iiks to summarise, an API Xsll to x<Xude to gFn2ratR the skmJa3y and an ijp Tt Gieid for the uXeT to ask Suestupbs about the fKnQl summarised paL3r.",
+      "0.4": "Write an app to gwB3rare CummaEjRs of papers. It eh( Tld have a GHttoh for the kse$ to UJput the pap4f tYst 5h4y eoHld lkkR to q TmmarUsD, an API xsll to Xla&We to generate the summary and an inp7f TiRld for the usR$ to ask 2ueD5i)ns qbouR the fLjal s6kmQ5ised psoer.",
+      "0.45": "Weig4 an app to benerX4S sukHSri@D of pQo#rs. It dbKuld hAge a buGhPn for the usW3 to LMpu6 the 0X)er Fhag 6hDy qPuOd lJle to s6HJQrisS, an API cZl; to xlaidR to geh43at3 the C8mmwEy and an (n)uF field for the  ts$r to ask qurstj8MC zboiG the final summarised 0sp@r.",
+      "0.5": "W49%e an app to geheFzfe suKmxGLeq of OapSts. It AhIIld mWve a bu^%og for the us3G to (npkF the paOw4 tta% $hwy wPuIE loMe to sumkWDjCe, an API cQ>l to Clxhds to HeMe$atF the sJJmzrj and an ibpjF tuelS for the 7se4 to ask sIew4ipns qboJ$ the TihZl Qu,maFiESd oaOwr.",
+      "0.55": "er(tF an app to gSGDrSHe sKmmSeirc of pq9dts. It amouiR Twde a F7t$In for the uWWd to 7bpjt the pxoef tyX6 rMeJ wo tIe ljlW to cuj<arjWe, an API Vxl, to X:auR2 to T3hetxte the s T,Ka4y and an Jgpuh gurld for the ^aeg to ask audsyi8bs af8uR the fOGa< DKmKXFises oapSt.",
+      "0.6": "W4UGe an app to ben4rXf$ s8nhXri4X of oaOdGs. It xMPuId hQbw a b6%%oj for the  tqef to (n(uy the 9SpeT Yhs4 fGe^ 3ou.R :&Ue to euNkarKq2, an API sql> to V,auvW to beHeeWye the suk,X3g and an ibpiG fl4Kd for the uq2f to ask SkeQti9JX anP^t the fiMA> A8jHagisWd (a9e#.",
+      "0.65": "EdOt2 an app to YenR3ZG$ d tJmag8ee of )Qpwrc. It xmKulE yxv$ a bJ5$pn for the KeRr to JnoI^ the )Q9rr fhsf $YeU #KH:d p9kr to duHHWEice, an API fai: to C>s^ve to h4bersyW the wJHmXrh and an Kmo Tt fKriE for the *d3r to ask qudzH79Ms SFok^ the tiMzK Z*K<s3Ksed oao$f.",
+      "0.7": "eTiHs an app to gwhWrxfF C&KjzriDc of pzlw$X. It dm08Pd hQbS a hk%t8b for the ua2D to JH(u^ the 0zpFF yBXt GjFy so7pW lo.4 to ZJJJaroC@, an API xaI? to SPaJX2 to HegweSt$ the ehmkA$y and an JGo8t f&D,X for the 7a2r to ask q8@D^&obz qgluF the TKba< z t,mA5iDee )a)@g.",
+      "0.75": "2Dif$ an app to t2bers$f s8mHwgjdd of Oal2$c. It ZUP7lW GaF# a fI%G8n for the 8sWe to lB0u5 the pz)wg tMZy Rye7 3Kh:d Ii,4 to C&JnaE(s#, an API Dzlp to CPq TC3 to T2BeDstr the xKj<a#G and an 8n)6^ cl2lF for the  tqe$ to ask @iWwRiogw AGo t$ the r8Gai Zim<aDjC4R pSldf.",
+      "0.8": "#4ihW an app to vsjSgARe AhJJaglsa of LZpFFe. It WnoIOF uAcw a huh6IH for the jz@T to ij97% the LaOD# RMxf guW% siukR ?lO3 to q7HJXr(d@, an API SXpP to f/ais$ to RDmweahW the ZJHmq3u and an ln(kf EleKx for the KcWD to ask au2eGJIHC XN9Ht the dijS; qkhmz$(CDd (WlRr.",
+      "0.85": "@#&%3 an app to yWjDrs^s X6jmwDKDq of )soREQ. It qNL6;s gQD# a ghfGLh for the KW@$ to kboH% the 0wO$D 6usG RM#g a)7.c ;Lj3 to XuK<Q3*e4, an API fW.i to sPz7E@ to t#B3rQHD the zKHJSey and an Kg9*4 ros?e for the kA4$ to ask q8RWhKpjq Xnk Ty the eLhX: cIhkQfOAfd lw(R$.",
+      "0.9": "3$j5s an app to bdMrGS^4 dIHKxdksz of OzLRtQ. It wg)J/s JWf3 a n7GflM for the JW@$ to 7go*g the 9X(rt ^jqG HU@% Al^kc o8i$ to x&khX5owd, an API XW;? to vOX*X$ to b$J4#Wgd the EJHKstT and an kJ(7g TL#;V for the HdWE to ask AkwAh8pgC WNL&y the b*gwI E*,,sEiD4F 0slRF.",
+      "0.95": "QF7hS an app to TDm@dX5S aJNKz3LwE of lzlsDz. It euih?R mwDw a G86gIH for the IEFF to 7b(I$ the 9Xl3g %yxY FyrH 2)8kr .&j# to XHjnqFLE4, an API SS>; to V?w7FD to HWJ@5XY4 the D7kKZgg and an OB(I^ gK@Ix for the KaS3 to ask wJRefkkMC sGP6y the R*bqo XhJjAEox#R owOdg.",
+      "1.0": "At*%R an app to vDMSFA%2 X*k,s$jRq of OQ)$$x. It EtPI>W ySG$ a ViR^IM for the  tA@D to lG)i5 the os)wF ^yW5 Fg#& sL^iV I(Iw to e THjw%Kqr, an API dwI/ to d?xJSs to hRGR4Xy2 the C8<Jq5h and an 9g9hR Dlr:V for the &eD# to ask Ajdz5&9GC qHi ty the D8bAi xjjkQdkDse 9woDg."
+    },
+    "synonym": {
+      "0.0": "Write an app to father summaries of newspaper publisher. It should have a button for the user to input the newspaper that they would like to summarise, an API call to Claude to sire the summary and an input field for the substance abuser to ask questions astir the final summarised newspaper.",
+      "0.05": "Write an app to generate summaries of papers. It should have a button for the user to input the paper that they would like to summarise, an API call to Claude to generate the summary and an input field for the user to ask questions about the final summarised newspaper.",
+      "0.1": "Write an app to generate summaries of papers. It should have a button for the drug user to input the paper that they would like to summarise, an API call to Claude to give the summary and an input field for the user to ask questions about the last summarised paper.",
+      "0.15": "Write an app to generate summaries of document. It should have a button for the user to input the paper that they would like to summarise, an API call to Claude to get the summary and an input field for the user to ask dubiousness about the final summarised paper.",
+      "0.2": "Write an app to generate summaries of papers. Information technology should give birth a button for the user to input the paper that they would like to summarise, an API call to Claude to father the summary and an input field for the user to ask question about the final summarised paper.",
+      "0.25": "Write an app to sire summary of document. It should have a button for the user to input the newspaper that they would like to summarise, an API call to Claude to generate the summary and an input field for the user to ask questions about the final summarised newspaper.",
+      "0.3": "Write an app to father sum up of papers. Information technology should get a button for the drug user to input the paper that they would like to summarise, an API call to Claude to generate the sum up and an input domain for the drug user to ask questions about the final summarised newspaper.",
+      "0.35": "Write an app to engender sum up of papers. Information technology should have a release for the user to input the paper that they would like to summarize, an API call to Claude to give the sum up and an input field for the substance abuser to enquire questions about the last summarised theme.",
+      "0.4": "Write an app to generate sum up of newspaper. It should have a button for the substance abuser to input the paper that they would like to summarise, an API call to Claude to generate the sum up and an input theater of operations for the user to take questions astir the final summarised paper.",
+      "0.45": "Write an app to generate summary of paper. Information technology should make a button for the exploiter to input the theme that they would wish to summarize, an API call to Claude to engender the summary and an input field for the drug user to demand interrogative astir the final summarised paper.",
+      "0.5": "Write an app to beget sum up of newspaper. Information technology should stimulate a push button for the exploiter to input the paper that they would like to resume, an API call to Claude to bring forth the sum up and an input subject for the exploiter to require questions about the final summarised composition.",
+      "0.55": "Write an app to yield sum up of papers. Information technology should have a button for the substance abuser to input the report that they would like to summarize, an API call to Claude to yield the sum up and an input area for the drug user to ask question about the final summarised newspaper.",
+      "0.6": "Write an app to generate summary of document. It should experience a clitoris for the exploiter to input the newspaper publisher that they would like to sum up, an API birdsong to Claude to bring forth the sum up and an input sphere for the exploiter to ask interrogation about the final summarised newspaper.",
+      "0.65": "Write an app to generate summary of composition. It should sustain a clit for the substance abuser to input the newspaper that they would care to summarize, an API song to Claude to generate the sum up and an input battlefield for the exploiter to call for question about the net summarised newspaper publisher.",
+      "0.7": "Write an app to father sum up of paper. Information technology should birth a push button for the exploiter to input the newspaper publisher that they would care to summarise, an API call option to Claude to yield the sum up and an input battlefield for the user to necessitate enquiry astir the last summarised newspaper.",
+      "0.75": "Write an app to bring forth summary of newspaper publisher. Information technology should get a release for the exploiter to input the newspaper publisher that they would wish to summarize, an API birdcall to Claude to get the sum up and an input theater of operations for the substance abuser to require interrogation astir the terminal summarised newspaper publisher.",
+      "0.8": "Write an app to beget summary of theme. Information technology should get a push for the substance abuser to input the newspaper that they would care to sum, an API vociferation to Claude to beget the sum up and an input subject for the drug user to necessitate interrogation astir the last summarised newspaper publisher.",
+      "0.85": "Write an app to get summary of paper. Information technology should own a clitoris for the drug user to input the theme that they would wish to sum, an API birdsong to Claude to bring forth the sum up and an input bailiwick for the drug user to enquire interrogative astir the concluding summarised newspaper.",
+      "0.9": "Write an app to bring forth summary of newspaper. Information technology should possess a push for the exploiter to input the newspaper that they would wish to sum up, an API birdsong to Claude to sire the sum up and an input line of business for the substance abuser to involve question astir the last summarised newspaper.",
+      "0.95": "Write an app to render summary of paper. Information technology should suffer a clit for the drug user to input the newspaper publisher that they would care to sum, an API cry to Claude to sire the sum up and an input subject field for the substance abuser to inquire doubt astir the last summarised newspaper.",
+      "1.0": "Write an app to yield sum up of composition. Information technology should have got a release for the drug user to input the report that they would care to resume, an API vociferation to Claude to render the sum up and an input area for the exploiter to demand inquiry astir the last summarised report."
+    }
+  },
+  "llm_responses": {
+    "deepseek": {
+      "synonym": {
+        "0.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.05": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.1": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.15": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.2": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.25": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.3": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.35": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.4": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.45": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.5": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.55": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.6": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.65": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.7": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.75": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.8": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.85": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.9": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "0.95": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ],
+        "1.0": [
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable",
+          "ERROR: 'NoneType' object is not subscriptable"
+        ]
+      }
+    }
+  }
+}
