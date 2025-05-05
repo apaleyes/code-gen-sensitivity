@@ -4,7 +4,7 @@ from .base import BaseAugmenter
 
 
 class KeyboardAugmenter(BaseAugmenter):
-    def __init__(self, rate):
+    def __init__(self, rate, text_len=None):
         super().__init__("Keyboard", rate)
 
         # TODO: work out a proper way to calculate these rates
@@ -13,9 +13,8 @@ class KeyboardAugmenter(BaseAugmenter):
             aug_char_p=rate,
             aug_word_p=rate,
             aug_char_min=0,
-            aug_word_min=0,
             aug_char_max=None,
-            aug_word_max=None,
+            aug_word_max=text_len,
         )
 
     def augment(self, text):

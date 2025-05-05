@@ -60,7 +60,7 @@ def main():
     output_base = "augmented_datasets_split"
     os.makedirs(output_base, exist_ok=True)
 
-    # model_names = ["openai", "llama"]#, "gemini", "claude", "deepseek"]
+    # model_names = ["openai", "llama", "gemini", "claude", "deepseek"]
     model_names = ["deepseek"]
     n_repeats = 5
     request_buffer = 6
@@ -76,11 +76,6 @@ def main():
         for model_name in model_names:
             model = get_model(model_name)
             model_caller = ModelCaller(model, prompt_transform=ensure_python_code_prompt)
-
-            if model_name == "gemini":
-                request_buffer = 1
-            elif model_name == "claude":
-                request_buffer = 6
 
             for item_idx, item in enumerate(data):
                 augmented = item.get("augmented_questions", {})
@@ -99,9 +94,15 @@ def main():
                         prompts = [prompt] * request_buffer
 
                         try:
-                            with concurrent.futures.ThreadPoolExecutor() as executor:
-                                from math import ceil
-                                for _ in range(ceil(n_repeats / request_buffer)):
+                            # no concurrency for gemini free tier
+                            if model_name == "gemini":
+                                for _ in range(n_repeats):
+                                    result = call_with_retry(model_caller, prompt)
+                                    responses.append(result)
+                            else:
+                                # all other models
+                                with concurrent.futures.ThreadPoolExecutor() as executor:
+                                    from math import ceil
                                     futures = [executor.submit(call_with_retry, model_caller, p) for p in prompts]
                                     for future in concurrent.futures.as_completed(futures):
                                         if len(responses) >= n_repeats:
