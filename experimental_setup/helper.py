@@ -3,31 +3,8 @@
 import random
 import time
 import concurrent.futures
-import nlpaug.augmenter.char as nac
-import nlpaug.augmenter.word as naw
 from TSED import TSED
 import code_execute
-
-
-def get_augmenter(method, aug_rate, prompt_len):
-    if method == "keyboard":
-        return nac.KeyboardAug(
-            aug_char_p=aug_rate,
-            aug_word_p=aug_rate,
-            aug_char_min=0,
-            aug_word_max=prompt_len
-        )
-    elif method == "synonym":
-        return naw.SynonymAug(
-            aug_p=aug_rate,
-            aug_max=prompt_len
-        )
-    else:
-        raise ValueError(f"Unknown augmentation method: {method}")
-
-
-def generate_augmented_prompts(original_prompt, augmenter, n):
-    return [augmenter.augment(original_prompt, n=1)[0] for _ in range(n)]
 
 
 def call_with_retry(model_caller, prompt, retries=3, timeout=30):

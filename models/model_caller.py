@@ -82,8 +82,8 @@ class ModelCaller:
                 # do it right before we made a call
                 time.sleep(self.model.call_timeout)
                 response_string = self.model(prompt)
-            except ValueError:
-                print("Request failed, retrying")
+            except ValueError as e:
+                print(f"Request failed, retrying. Error: {e}")
             else:
                 code_string = sanitise_response(response_string)
                 if is_valid_python_code(code_string):
@@ -94,7 +94,7 @@ class ModelCaller:
                     break
                 else:
                     no_codes += 1
-                    print("Request failed, retrying")
+                    print("Request failed to produce valid code, retrying")
         else:
             raise RuntimeError(f"Failed to get valid code from {self.model.name}")
 
