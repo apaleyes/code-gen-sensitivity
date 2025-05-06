@@ -198,7 +198,7 @@ class LLMParaphraserPersonasWrapper(BaseParaphraser):
             self.paraphrasers[model_name] = LLMParaphraserPersonas(model_name)
         return self.paraphrasers[model_name]
 
-    def paraphrase(self, phrase: str, num_variations: int = 5, **kwargs) -> List[Dict]:
+    def paraphrase(self, phrase: str, num_variations: int = 5, persona: str = None, **kwargs) -> List[Dict]:
         model_name = kwargs.get("model_name")
         if not model_name:
             raise ValueError("model_name is required for LLM approach")
@@ -208,6 +208,7 @@ class LLMParaphraserPersonasWrapper(BaseParaphraser):
             return paraphraser.paraphrase(
                 phrase, 
                 num_variations, 
+                persona=persona,
                 temperature=kwargs.get("temperature", 1.0),
                 top_p=kwargs.get("top_p", 0.95),
                 top_k=kwargs.get("top_k", 120),

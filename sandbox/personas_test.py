@@ -1,4 +1,5 @@
 import os
+import json
 import warnings
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -100,36 +101,43 @@ class ParaphrasingExperiment:
             
             for phrase_data in data_source.get_phrases():
                 phrase = phrase_data['text']
-                for model_name in selected_models[approach_name]:
-                    for params in param_combinations:
-                        print(f"\nTesting {approach_name} with {model_name}")
-                        print(f"Parameters: {params}")
-                        print(f"Phrase: {phrase[:50]}...")
-                        try:
-                            paraphrased_phrases = approach.paraphrase(
-                                phrase, 
-                                num_variations=5,
-                                model_name=model_name,
-                                **params
-                            )
+                # Load the personas from file
+                personas = []
+                with open("sandbox/personas.json", "r") as file:
+                    personas = json.load(file)
+                for persona in personas:
+                    for model_name in selected_models[approach_name]:
+                        for params in param_combinations:
+                            print(f"\nTesting {approach_name} with {model_name}")
+                            print(f"Parameters: {params}")
+                            print(f"Persona: {persona[:50]}...")
+                            print(f"Phrase: {phrase[:50]}...")
+                            try:
+                                paraphrased_phrases = approach.paraphrase(
+                                    phrase, 
+                                    num_variations=5,
+                                    model_name=model_name,
+                                    persona=persona,
+                                    **params
+                                )
                             
-                            if paraphrased_phrases:
-                                eval_results = self.evaluator.evaluate_paraphrases(phrase, paraphrased_phrases)
-                                individual_results = eval_results['individual_results']
-                                for result in individual_results:
-                                    paraphrase = {
-                                        "original_phrase": phrase,
-                                        "paraphrase": result['text'],
-                                        "approach_name": approach_name,
-                                        "semantic_similarity": result['semantic_similarity'],
-                                        "bleu": result['bleu'],
-                                        "bert_score": result['bert_score'],
-                                        "sacre_bleu": result['sacre_bleu'],
-                                        **params
-                                    }
-                                    paraphrases.append(paraphrase)
-                        except Exception as e:
-                            print(f"Error: {str(e)}")
+                                if paraphrased_phrases:
+                                    eval_results = self.evaluator.evaluate_paraphrases(phrase, paraphrased_phrases)
+                                    individual_results = eval_results['individual_results']
+                                    for result in individual_results:
+                                        paraphrase = {
+                                            "original_phrase": phrase,
+                                            "paraphrase": result['text'],
+                                            "approach_name": approach_name,
+                                            "semantic_similarity": result['semantic_similarity'],
+                                            "bleu": result['bleu'],
+                                            "bert_score": result['bert_score'],
+                                            "sacre_bleu": result['sacre_bleu'],
+                                            "persona": persona
+                                        }
+                                        paraphrases.append(paraphrase)
+                            except Exception as e:
+                                print(f"Error: {str(e)}")
                         
                
 
@@ -165,6 +173,8 @@ class ParaphrasingExperiment:
                 plt.close()
 
         return paraphrases
+
+print("Starting...")
 
 if __name__ == "__main__":
     experiment = ParaphrasingExperiment()
