@@ -45,11 +45,11 @@ class ParaphrasingExperiment:
                 raise ValueError(f"Unsupported approach: {approach_name}")
         return self._approaches[approach_name]
 
-     def create_data_source(self, source_type: str, **kwargs) -> DataSource:
+    def create_data_source(self, source_type: str, **kwargs) -> DataSource:
          """Factory method to create data sources"""
          if source_type == "test_phrases":
-             phrases = kwargs.get('phrases', self.default_test_phrases)
-             return TestPhrasesDataSource(phrases)
+            phrases = kwargs.get('phrases', self.default_test_phrases)
+            return TestPhrasesDataSource(phrases)
          elif source_type == "leetcode":
              file_path = kwargs.get('file_path', 'sandbox/leetcode-dataset.json')
              return LeetCodeDataSource(file_path)
