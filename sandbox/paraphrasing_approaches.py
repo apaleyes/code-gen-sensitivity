@@ -3,6 +3,7 @@ from typing import Dict, List, Optional
 import torch
 from parrot import Parrot
 from llm_paraphraser import LLMParaphraser
+from llm_paraphraser_personas import LLMParaphraserPersonas
 
 class BaseParaphraser(ABC):
     def __init__(self, approach_name: str):
@@ -165,6 +166,36 @@ class LLMParaphraserWrapper(BaseParaphraser):
         """Get or create LLM paraphraser instance"""
         if model_name not in self.paraphrasers:
             self.paraphrasers[model_name] = LLMParaphraser(model_name)
+        return self.paraphrasers[model_name]
+
+    def paraphrase(self, phrase: str, num_variations: int = 5, **kwargs) -> List[Dict]:
+        model_name = kwargs.get("model_name")
+        if not model_name:
+            raise ValueError("model_name is required for LLM approach")
+            
+        try:
+            paraphraser = self.get_paraphraser(model_name)
+            return paraphraser.paraphrase(
+                phrase, 
+                num_variations, 
+                temperature=kwargs.get("temperature", 1.0),
+                top_p=kwargs.get("top_p", 0.95),
+                top_k=kwargs.get("top_k", 120),
+                frequency_penalty=kwargs.get("frequency_penalty", 0.0)
+            )
+        except Exception as e:
+            print(f"LLM error: {str(e)}")
+            return []
+
+class LLMParaphraserPersonasWrapper(BaseParaphraser):
+    def __init__(self):
+        super().__init__("llms")
+        self.paraphrasers = {}
+        
+    def get_paraphraser(self, model_name: str) -> LLMParaphraserPersonas:
+        """Get or create LLM paraphraser instance"""
+        if model_name not in self.paraphrasers:
+            self.paraphrasers[model_name] = LLMParaphraserPersonas(model_name)
         return self.paraphrasers[model_name]
 
     def paraphrase(self, phrase: str, num_variations: int = 5, **kwargs) -> List[Dict]:

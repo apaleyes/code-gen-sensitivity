@@ -7,8 +7,7 @@ from itertools import product
 from typing import Dict, List, Tuple
 import pandas as pd
 from paraphrasing_evaluation import ParaphraseEvaluator
-from paraphrasing_approaches import ParrotParaphraser, TransformerParaphraser, LLMParaphraserWrapper
-from paraphrasing_datasource import DataSource, TestPhrasesDataSource, LeetCodeDataSource, TasksDataSetDataSource, CSVDataSource
+from paraphrasing_approaches import LLMParaphraserPersonasWrapper
 from dotenv import load_dotenv
 
 class ParaphrasingExperiment:
@@ -25,12 +24,6 @@ class ParaphrasingExperiment:
 
         # Temperature is the only parameter that influences the BLEU score        
         self.param_grid = {
-            # "transformers": {
-            #     "temperature": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-            #     #"top_p": [0.9, 0.99, 0.999],
-            #     #"top_k": [10, 15, 20]
-            #     #"repetition_penalty": [0.5, 1.0, 1.5, 2.0]
-            # },
             "llms": {
                 "temperature": [1.0],
                 #"top_p": [0.9, 0.99, 0.999],
@@ -45,34 +38,12 @@ class ParaphrasingExperiment:
     def get_approach(self, approach_name: str):
         """Lazy load approaches only when needed"""
         if approach_name not in self._approaches:
-            # if approach_name == "parrot":
-            #     self._approaches[approach_name] = ParrotParaphraser()
-            # elif approach_name == "transformers":
-            #     self._approaches[approach_name] = TransformerParaphraser()
-            elif approach_name == "llms":
-                self._approaches[approach_name] = LLMParaphraserWrapper()
+            if approach_name == "llms":
+                self._approaches[approach_name] = LLMParaphraserPersonasWrapper()
             else:
                 raise ValueError(f"Unsupported approach: {approach_name}")
         return self._approaches[approach_name]
 
-    # def create_data_source(self, source_type: str, **kwargs) -> DataSource:
-    #     """Factory method to create data sources"""
-    #     if source_type == "test_phrases":
-    #         phrases = kwargs.get('phrases', self.default_test_phrases)
-    #         return TestPhrasesDataSource(phrases)
-    #     elif source_type == "leetcode":
-    #         file_path = kwargs.get('file_path', 'sandbox/leetcode-dataset.json')
-    #         return LeetCodeDataSource(file_path)
-    #     elif source_type == "tasks_dataset":
-    #         file_path = kwargs.get('file_path', 'sandbox/tasks_dataset.json')
-    #         return TasksDataSetDataSource(file_path)
-    #     elif source_type == "csv":
-    #         file_path = kwargs.get('file_path')
-    #         text_column = kwargs.get('text_column')
-    #         return CSVDataSource(file_path, text_column)
-    #     else:
-    #         raise ValueError(f"Unsupported data source type: {source_type}")
-        
     def run_experiments(self, 
                        selected_approaches: List[str], 
                        selected_models: List[str], 
@@ -175,6 +146,8 @@ class ParaphrasingExperiment:
                 plt.close()
 
         return paraphrases
+    
+print("Starting...")
 
 if __name__ == "__main__":
     experiment = ParaphrasingExperiment()
