@@ -33,6 +33,7 @@ experiment_data["augmentation_method"] = augmentation_method
 experiment_data["parameters"] = {
     "temperature": model.temperature,
     "n_repeats": n_repeats,
+
 }
 experiment_data["measurements"] = []
 
