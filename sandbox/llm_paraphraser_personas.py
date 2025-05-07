@@ -27,12 +27,15 @@ class LLMParaphraserPersonas:
         
         # Base prompt template for paraphrasing
         self.base_prompt = """
-        Write a paraphrase of this prompt as {persona}. Your task is to write a detailed prompt to an LLM for the given example.
+        You are {persona}. Your task is to paraphrase the following text based on your background, as a prompt to an LLM to generate code.
+        You cannot refer to your background explicitly in the output.
+        You cannot add additional requirements apart from those in the text.
+        Describe the text using knowledge and understanding that you would have in your background.
             
         Text to write a prompt for:
         "{text}" 
             
-        Format your response as a Python string,
+        Format your response as a string,
         Example format:
         [
             "Prompt here"
