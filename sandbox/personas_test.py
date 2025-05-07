@@ -143,8 +143,8 @@ class ParaphrasingExperiment:
 
                 # Save paraphrases to a CSV file
                 paraphrases_df = pd.DataFrame(paraphrases)
-                paraphrases_df.to_csv(f"{results_dir}/paraphrases.csv", index=False)
-                print(f"All paraphrases saved to {results_dir}/paraphrases.csv")
+                paraphrases_df.to_csv(f"{results_dir}/paraphrases_personas.csv", index=False)
+                print(f"All paraphrases saved to {results_dir}/paraphrases_personas.csv")
         
                 # Plot semantic_similarity vs BLEU
                 plt.figure(figsize=(10, 6))
