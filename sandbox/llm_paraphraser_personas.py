@@ -28,6 +28,9 @@ class LLMParaphraserPersonas:
         # Base prompt template for paraphrasing
         self.base_prompt = """
         You are {persona}. Your task is to paraphrase the following text based on your background, as a prompt to an LLM to generate code.
+        You cannot refer to your background explicitly in the output.
+        You cannot add additional requirements apart from those in the text.
+        Describe the text using knowledge and understanding that you would have in your background.
             
         Text to write a prompt for:
         "{text}" 
