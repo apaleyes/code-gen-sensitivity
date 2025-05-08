@@ -69,7 +69,7 @@ def calculate_metrics_to_csv(data_dir="augmented_datasets_split", out_dir="augme
                             rate_responses = method_responses.get(aug_rate, [])
                             index_within_rate = aug_counts.get(aug_rate, 0)
 
-                            if not partial or i % 20 == 0:
+                            if not partial or i % 20 < 5:
                                 code = rate_responses[index_within_rate]
                                 aug_counts[aug_rate] = index_within_rate + 1
 
@@ -83,13 +83,13 @@ def calculate_metrics_to_csv(data_dir="augmented_datasets_split", out_dir="augme
                                         row["tsed_score"] = tsed_score
                                         print(f"{model} {method} {dataset} {task} [TSED] @ {aug_rate} #{index_within_rate}: {tsed_score}")
 
-                                    if not row["bert_score"]:
-                                        changed = True
-                                        preds = [code] * len(original_codes)
-                                        refs = original_codes
-                                        score = bert_score_metric(preds, refs)["f1"].mean().item()
-                                        row["bert_score"] = score
-                                        print(f"{model} {method} {dataset} {task} [BERT] @ {aug_rate} #{index_within_rate}: {score}")
+                                    # if not row["bert_score"]:
+                                    #     changed = True
+                                    #     preds = [code] * len(original_codes)
+                                    #     refs = original_codes
+                                    #     score = bert_score_metric(preds, refs)["f1"].mean().item()
+                                    #     row["bert_score"] = score
+                                    #     print(f"{model} {method} {dataset} {task} [BERT] @ {aug_rate} #{index_within_rate}: {score}")
                         except Exception as e:
                             print(f"[ERROR] {item_path} – {e}")
                         # print(row)
