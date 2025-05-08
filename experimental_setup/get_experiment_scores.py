@@ -1,6 +1,7 @@
 import os
 import json
 import csv
+import torch
 import torchmetrics
 from TSED import TSED
 import warnings
@@ -9,11 +10,14 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
 
 def calculate_metrics_to_csv(data_dir="augmented_datasets_split", out_dir="augmented_datasets_metrics", partial=False):
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
     bert_score_metric = torchmetrics.text.BERTScore(
         model_name_or_path="roberta-large",
         max_length=512,
         truncation=True
-    )
+    ).to(device)
+    # consider chanign to nlp library (christian) try using spacy
 
     for model in os.listdir(data_dir):
         model_dir = os.path.join(data_dir, model)
@@ -83,13 +87,13 @@ def calculate_metrics_to_csv(data_dir="augmented_datasets_split", out_dir="augme
                                         row["tsed_score"] = tsed_score
                                         print(f"{model} {method} {dataset} {task} [TSED] @ {aug_rate} #{index_within_rate}: {tsed_score}")
 
-                                    # if not row["bert_score"]:
-                                    #     changed = True
-                                    #     preds = [code] * len(original_codes)
-                                    #     refs = original_codes
-                                    #     score = bert_score_metric(preds, refs)["f1"].mean().item()
-                                    #     row["bert_score"] = score
-                                    #     print(f"{model} {method} {dataset} {task} [BERT] @ {aug_rate} #{index_within_rate}: {score}")
+                                    if not row["bert_score"]:
+                                        changed = True
+                                        preds = [code] * len(original_codes)
+                                        refs = original_codes
+                                        score = bert_score_metric(preds, refs)["f1"].mean().item()
+                                        row["bert_score"] = score
+                                        print(f"{model} {method} {dataset} {task} [BERT] @ {aug_rate} #{index_within_rate}: {score}")
                         except Exception as e:
                             print(f"[ERROR] {item_path} – {e}")
                         # print(row)

@@ -26,13 +26,11 @@ tree_sitter_languages
 tree-sitter==0.21.3
 pyyaml
 
-# Google Gemini
-google-generativeai
-
 # models
 anthropic
 openai
 ollama
+google-generativeai
 
 # personas
 agents
