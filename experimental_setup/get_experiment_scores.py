@@ -11,7 +11,7 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
 
-def calculate_metrics_to_csv(data_dir="augmented_datasets_split", out_dir="augmented_datasets_metrics", partial=False):
+def calculate_metrics_to_csv(data_dir="./augmented_datasets_split", out_dir="./augmented_datasets_metrics", partial=False):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     bert_score_metric = torchmetrics.text.BERTScore(
