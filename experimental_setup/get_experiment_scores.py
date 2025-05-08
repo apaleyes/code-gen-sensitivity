@@ -1,9 +1,11 @@
 import os
+import sys
 import json
 import csv
 import torch
 import torchmetrics
-from TSED import TSED
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'TSED')))
+import TSED
 import warnings
 
 warnings.filterwarnings("ignore", category=FutureWarning)
