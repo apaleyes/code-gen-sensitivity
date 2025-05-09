@@ -59,7 +59,7 @@ class TasksDataSetDataSource(DataSource):
             yield {
                 'text': entry['question'],
                 'source': 'tasks dataset',
-                'phrase_id': entry['id']
+                'phrase_id': entry['number']
             }
 
 class CSVDataSource(DataSource):
