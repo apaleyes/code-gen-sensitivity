@@ -135,7 +135,7 @@ class TransformerParaphraser(BaseParaphraser):
                 if torch.cuda.is_available():
                     input_ids = input_ids.to('cuda')
                     # Convert to half precision
-                    input_ids = input_ids.half()
+                    # input_ids = input_ids.half()
                 
                 estimated_tokens = self.estimate_tokens(sentence, tokenizer)
 
