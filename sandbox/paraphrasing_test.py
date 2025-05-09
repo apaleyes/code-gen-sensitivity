@@ -208,32 +208,54 @@ class ParaphrasingExperiment:
         print(f"Not low: {not_low}")
         print(f"Not moderate: {not_moderate}")
         print(f"Not high: {not_high}")
-        return paraphrases
+        return paraphrases, not_low, not_moderate, not_high
 
 if __name__ == "__main__":
     experiment = ParaphrasingExperiment()
     
     # Example using our dataset
-    dataset = experiment.run_experiments(
+    dataset, not_low_our, not_moderate_our, not_high_our = experiment.run_experiments(
         selected_approaches=["transformers", "llms"],
         selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
         data_source_type="tasks_dataset"
     )
 
     # Example using old leetcode dataset
-    dataset = experiment.run_experiments(
+    dataset, not_low_leetcode, not_moderate_leetcode, not_high_leetcode = experiment.run_experiments(
         selected_approaches=["transformers", "llms"],
         selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
         data_source_type="leetcode"
     )
 
     # Example using new leetcode dataset
-    dataset = experiment.run_experiments(
+    dataset, not_low_leetcode_new, not_moderate_leetcode_new, not_high_leetcode_new = experiment.run_experiments(
         selected_approaches=["transformers", "llms"],
         selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
         data_source_type="leetcode_new"
     )
 
+    # Print missing paraphrases
+    print("Our dataset:")
+    print(f"Not low")
+    print(not_low_our)
+    print(f"Not moderate")
+    print(not_moderate_our)
+    print(f"Not high")
+    print(not_high_our)
+    print("Old leetcode dataset:")
+    print(f"Not low")
+    print(not_low_leetcode)
+    print(f"Not moderate")
+    print(not_moderate_leetcode)
+    print(f"Not high")
+    print(not_high_leetcode)
+    print("New leetcode dataset:")
+    print(f"Not low")
+    print(not_low_leetcode_new)
+    print(f"Not moderate")
+    print(not_moderate_leetcode_new)
+    print(f"Not high")
+    print(not_high_leetcode_new)
     # Print or process the dataset
     #for entry in dataset:
     #    print(entry)
