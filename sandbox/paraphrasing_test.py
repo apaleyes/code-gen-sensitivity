@@ -193,11 +193,12 @@ class ParaphrasingExperiment:
 
         for phrase_data in data_source.get_phrases():
             phrase = phrase_data['text']
-            paraphrased_phrase = paraphrases.filter(lambda x: x['original_phrase'] == phrase)
+            paraphrases_df = pd.DataFrame(paraphrases)
+            paraphrased_phrase = paraphrases_df[paraphrases_df['original_phrase'] == phrase]
             if len(paraphrased_phrase) == 0:
                 no_paraphrases.append(phrase)
             else:
-                for result in paraphrased_phrase:
+                for index, result in paraphrased_phrase.iterrows():
                     if result['sacre_bleu'] < 0.3333333333333333:
                         not_low.append(phrase)
                     elif result['sacre_bleu'] < 0.6666666666666666:
