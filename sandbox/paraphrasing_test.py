@@ -155,19 +155,6 @@ class ParaphrasingExperiment:
                                         **params
                                     }
                                     paraphrases.append(paraphrase)
-
-                                    if result['sacre_bleu'] < 0.3:
-                                        low += 1
-                                    elif result['sacre_bleu'] < 0.6:
-                                        moderate += 1
-                                    else:
-                                        high += 1
-                                if low == 0:
-                                    not_low.append(phrase)
-                                if moderate == 0:
-                                    not_moderate.append(phrase)
-                                if high == 0:
-                                     not_high.append(phrase)
                         except Exception as e:
                             print(f"Error: {str(e)}")
                         
@@ -204,10 +191,24 @@ class ParaphrasingExperiment:
                 plt.savefig(f"{results_dir}/bert_score_vs_sacre_bleu_{data_source_type}.png")
                 plt.close()
 
-        print(f"No paraphrases: {no_paraphrases}")
-        print(f"Not low: {not_low}")
-        print(f"Not moderate: {not_moderate}")
-        print(f"Not high: {not_high}")
+        for phrase_data in data_source.get_phrases():
+            phrase = phrase_data['text']
+            paraphrased_phrase = paraphrases.filter(lambda x: x['original_phrase'] == phrase)
+            if len(paraphrased_phrase) == 0:
+                no_paraphrases.append(phrase)
+            else:
+                for result in paraphrased_phrase:
+                    if result['sacre_bleu'] < 0.3333333333333333:
+                        not_low.append(phrase)
+                    elif result['sacre_bleu'] < 0.6666666666666666:
+                        not_moderate.append(phrase)
+                    else:
+                        not_high.append(phrase)
+        
+        print(f"No paraphrases: {len(no_paraphrases)}")
+        print(f"Not low: {len(not_low)}")
+        print(f"Not moderate: {len(not_moderate)}")
+        print(f"Not high: {len(not_high)}")
         return paraphrases, not_low, not_moderate, not_high
 
 if __name__ == "__main__":
