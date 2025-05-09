@@ -221,18 +221,18 @@ if __name__ == "__main__":
     )
 
     # Example using old leetcode dataset
-    dataset, not_low_leetcode, not_moderate_leetcode, not_high_leetcode = experiment.run_experiments(
-        selected_approaches=["transformers", "llms"],
-        selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
-        data_source_type="leetcode"
-    )
+    #dataset, not_low_leetcode, not_moderate_leetcode, not_high_leetcode = experiment.run_experiments(
+    #    selected_approaches=["transformers", "llms"],
+    #    selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
+    #    data_source_type="leetcode"
+    #)
 
     # Example using new leetcode dataset
-    dataset, not_low_leetcode_new, not_moderate_leetcode_new, not_high_leetcode_new = experiment.run_experiments(
-        selected_approaches=["transformers", "llms"],
-        selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
-        data_source_type="leetcode_new"
-    )
+    #dataset, not_low_leetcode_new, not_moderate_leetcode_new, not_high_leetcode_new = experiment.run_experiments(
+    #    selected_approaches=["transformers", "llms"],
+    #    selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
+    #    data_source_type="leetcode_new"
+    #)
 
     # Print missing paraphrases
     print("Our dataset:")
@@ -242,20 +242,20 @@ if __name__ == "__main__":
     print(not_moderate_our)
     print(f"Not high")
     print(not_high_our)
-    print("Old leetcode dataset:")
-    print(f"Not low")
-    print(not_low_leetcode)
-    print(f"Not moderate")
-    print(not_moderate_leetcode)
-    print(f"Not high")
-    print(not_high_leetcode)
-    print("New leetcode dataset:")
-    print(f"Not low")
-    print(not_low_leetcode_new)
-    print(f"Not moderate")
-    print(not_moderate_leetcode_new)
-    print(f"Not high")
-    print(not_high_leetcode_new)
+    #print("Old leetcode dataset:")
+    #print(f"Not low")
+    #print(not_low_leetcode)
+    #print(f"Not moderate")
+    #print(not_moderate_leetcode)
+    #print(f"Not high")
+    #print(not_high_leetcode)
+    #print("New leetcode dataset:")
+    #print(f"Not low")
+    #print(not_low_leetcode_new)
+    #print(f"Not moderate")
+    #print(not_moderate_leetcode_new)
+    #print(f"Not high")
+    #print(not_high_leetcode_new)
     # Print or process the dataset
     #for entry in dataset:
     #    print(entry)

@@ -1245,7 +1245,7 @@
     "number": 0,
     "acceptance": 0,
     "difficulty": "n/a",
-    "question": "Given a pandas dataframe with the columns: Patient ID, age, sex, procedure type, and a column each for the hours 1-10, write code to reorganise this dataframe to transform it from having one row for each Patient ID to having multiple rows for each Patient ID, organised by hour with the first column being \u201cTime since surgery\u201d. Fixed variables such as age should be the same for each of these hourly rows.",
+    "question": "Given a pandas dataframe with the columns: Patient ID, age, sex, procedure type, and a column each for the hours 1-10. Write code to reorganise this dataframe to transform it from having one row for each Patient ID to having multiple rows for each Patient ID, organised by hour with the first column being \u201cTime since surgery\u201d. Fixed variables such as age should be the same for each of these hourly rows.",
     "post_href": "n/a",
     "python_solutions": "n/a",
     "post_title": "n/a",
