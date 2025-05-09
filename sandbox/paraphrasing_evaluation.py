@@ -14,6 +14,7 @@ from itertools import product
 import os
 import json
 from datetime import datetime
+import torch
 
 nltk.download('punkt_tab')
 
@@ -47,6 +48,13 @@ class ParaphraseEvaluator:
             use_stemmer=True
         )
 
+        # Move BERTScore to GPU if available
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.bert_score_metric = torchmetrics.text.BERTScore(
+            model_name_or_path="roberta-large"
+        ).to(self.device)
+        self.sacre_bleu_metric = torchmetrics.text.SacreBLEUScore().to(self.device)
+
     def evaluate_single_paraphrase(self, original: str, paraphrase: str) -> Dict:
         """
         Evaluate a single paraphrase using multiple metrics
@@ -73,8 +81,7 @@ class ParaphraseEvaluator:
         # SacreBLEU is a metric for evaluating the quality of machine translation outputs.
         # It is based on the BLEU score but with some improvements to make it more accurate and robust.
         # A higher SacreBLEU Score means better translation quality.
-        sacre_bleu_metric = torchmetrics.text.SacreBLEUScore()
-        sacre_bleu = sacre_bleu_metric([paraphrase], [[original]]).item()
+        sacre_bleu = self.sacre_bleu_metric([paraphrase], [[original]]).item()
 
         # Calculate ROUGE Scores
         # ROUGE (Recall-Oriented Understudy for Gisting Evaluation) is a set of metrics used to evaluate the quality of text summarization and machine translation algorithms.
@@ -97,8 +104,7 @@ class ParaphraseEvaluator:
         # BERTScore is a metric that measures the similarity between two sentences based on their semantic meaning.
         # It uses a pre-trained BERT model to generate contextualized embeddings for each sentence and then computes the similarity between these embeddings.
         # A higher BERTScore indicates higher semantic similarity between the two sentences.
-        bert_score_metric = torchmetrics.text.bert.BERTScore(model_name_or_path="roberta-large")
-        bert_score = bert_score_metric([paraphrase],[original])
+        bert_score = self.bert_score_metric([paraphrase], [original])
         bert_score_f1 = bert_score['f1'].item()
         
         # Calculate Length Ratio
@@ -206,8 +212,8 @@ class ParaphraseEvaluator:
             
             # Get all metrics
             metrics = self.evaluate_single_paraphrase(original, paraphrase_text)
-            readability = self.evaluate_readability(paraphrase_text)
-            grammar = self.evaluate_grammar(paraphrase_text)
+            #readability = self.evaluate_readability(paraphrase_text)
+            #grammar = self.evaluate_grammar(paraphrase_text)
 
             # Combine all metrics
             result = {
@@ -216,9 +222,9 @@ class ParaphraseEvaluator:
                 'text': paraphrase_text,
                 'approach': approach,
                 'model': model,
-                **metrics,
-                'readability': readability,
-                'grammar': grammar
+                **metrics
+                #'readability': readability,
+                #'grammar': grammar
             }
             
             results.append(result)

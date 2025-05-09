@@ -97,8 +97,16 @@ class TransformerParaphraser(BaseParaphraser):
             self.tokenizers[model_name] = tokenizer_class.from_pretrained(model_name)
             self.models[model_name] = model_class.from_pretrained(model_name)
             
+            # Move model to GPU and enable half precision if available
             if torch.cuda.is_available():
-                self.models[model_name].to('cuda')
+                try:
+                    self.models[model_name] = self.models[model_name].to('cuda')
+                    # Enable half precision for faster inference
+                    self.models[model_name] = self.models[model_name].half()
+                except RuntimeError as e:
+                    print(f"Warning: Could not move model to GPU: {e}")
+                    print("Falling back to CPU")
+                    self.models[model_name] = self.models[model_name].to('cpu')
         
         return self.tokenizers[model_name], self.models[model_name]
 
@@ -114,6 +122,9 @@ class TransformerParaphraser(BaseParaphraser):
 
         try:
             tokenizer, model = self.load_model(model_name)
+            max_length = getattr(model.config, "max_position_embeddings", 512)
+            # Leave some room for special tokens
+            max_tokens = max_length - 50
 
             paraphrases = [""] * num_variations
             sentences = phrase.replace(":", ".").split(".")
@@ -123,14 +134,16 @@ class TransformerParaphraser(BaseParaphraser):
                 input_ids = tokenizer.encode(sentence, return_tensors="pt")
                 if torch.cuda.is_available():
                     input_ids = input_ids.to('cuda')
+                    # Convert to half precision
+                    input_ids = input_ids.half()
                 
                 estimated_tokens = self.estimate_tokens(sentence, tokenizer)
 
                 # Generate paraphrases
                 outputs = model.generate(
                     input_ids=input_ids,
-                    max_length=estimated_tokens * 3,
-                    min_length=estimated_tokens,
+                    max_length=min(estimated_tokens * 3, max_length),
+                    min_length=max(estimated_tokens // 2, 1),
                     do_sample=True,
                     temperature=kwargs.get("temperature", 1.0),
                     top_k=120,

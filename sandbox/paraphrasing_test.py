@@ -17,8 +17,12 @@ class ParaphrasingExperiment:
         warnings.filterwarnings("ignore")
         os.environ["TOKENIZERS_PARALLELISM"] = "false"
         
+        
         self.default_test_phrases = [
-            "Given a pandas dataframe with the columns: Patient ID, age, sex, procedure type, and a column each for the hours 1-10, write code to reorganise this dataframe to transform it from having one row for each Patient ID to having multiple rows for each Patient ID, organised by hour with the first column being 'Time since surgery'. Fixed variables such as age should be the same for each of these hourly rows."
+            #"Write a Calculator class. It shall contain common arithmetic operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry, roots, exponents."
+            #"Implement a REST API for a web application that implements a personal todo list using Flask. The API should allow a user to create, update and delete whole lists as well as individual items. It should also give users an idea of their progress, and give reminders of tasks due or overdue. You can assume the database layer was already implemented separately.",
+            #"Write code to create a database schema for an online bicycle shop that sells bicycles as well as their spare parts and accessories. Use SQAlchemy library to communicate with the database. The code should cover opening and closing of a new connection to the database, creation of necessary tables and their relations, common operations on items in the tables such as addition, deletion, updates, filtered selection and search.",
+            "Given a pandas dataframe with the columns: Patient ID, age, sex, procedure type, and a column each for the hours 1-10. Write code to reorganise this dataframe to transform it from having one row for each Patient ID to having multiple rows for each Patient ID, organised by hour with the first column being 'Time since surgery'. Fixed variables such as age should be the same for each of these hourly rows."
             ]
 
         # Temperature is the only parameter that influences the BLEU score        
@@ -59,13 +63,13 @@ class ParaphrasingExperiment:
             phrases = kwargs.get('phrases', self.default_test_phrases)
             return TestPhrasesDataSource(phrases)
         elif source_type == "leetcode":
-            file_path = kwargs.get('file_path', 'sandbox/leetcode-dataset.json')
+            file_path = kwargs.get('file_path', 'sandbox/oldleetcode.json')
             return LeetCodeDataSource(file_path)
         elif source_type == "leetcode_new":
-            file_path = kwargs.get('file_path', 'sandbox/leetcode-dataset-new.json')
+            file_path = kwargs.get('file_path', 'sandbox/newleetcode.json')
             return LeetCodeDataSource(file_path)
         elif source_type == "tasks_dataset":
-            file_path = kwargs.get('file_path', 'sandbox/tasks_dataset.json')
+            file_path = kwargs.get('file_path', 'sandbox/ourdataset.json')
             return TasksDataSetDataSource(file_path)
         elif source_type == "csv":
             file_path = kwargs.get('file_path')
@@ -96,6 +100,9 @@ class ParaphrasingExperiment:
         
         paraphrases = []
         no_paraphrases = []
+        not_low = []
+        not_moderate = []
+        not_high = []
         for approach_name in selected_approaches:
             try:
                 approach = self.get_approach(approach_name)
@@ -130,6 +137,9 @@ class ParaphrasingExperiment:
                                 no_paraphrases.append(phrase)
                                 continue
                             
+                            low = 0
+                            moderate = 0
+                            high = 0
                             if paraphrased_phrases:
                                 eval_results = self.evaluator.evaluate_paraphrases(phrase, paraphrased_phrases)
                                 individual_results = eval_results['individual_results']
@@ -145,6 +155,19 @@ class ParaphrasingExperiment:
                                         **params
                                     }
                                     paraphrases.append(paraphrase)
+
+                                    if result['sacre_bleu'] < 0.3:
+                                        low += 1
+                                    elif result['sacre_bleu'] < 0.6:
+                                        moderate += 1
+                                    else:
+                                        high += 1
+                                if low == 0:
+                                    not_low.append(phrase)
+                                if moderate == 0:
+                                    not_moderate.append(phrase)
+                                if high == 0:
+                                     not_high.append(phrase)
                         except Exception as e:
                             print(f"Error: {str(e)}")
                         
@@ -182,18 +205,35 @@ class ParaphrasingExperiment:
                 plt.close()
 
         print(f"No paraphrases: {no_paraphrases}")
+        print(f"Not low: {not_low}")
+        print(f"Not moderate: {not_moderate}")
+        print(f"Not high: {not_high}")
         return paraphrases
 
 if __name__ == "__main__":
     experiment = ParaphrasingExperiment()
     
-    # Example using test phrases
+    # Example using our dataset
     dataset = experiment.run_experiments(
         selected_approaches=["transformers", "llms"],
         selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
         data_source_type="tasks_dataset"
     )
-    
+
+    # Example using old leetcode dataset
+    dataset = experiment.run_experiments(
+        selected_approaches=["transformers", "llms"],
+        selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
+        data_source_type="leetcode"
+    )
+
+    # Example using new leetcode dataset
+    dataset = experiment.run_experiments(
+        selected_approaches=["transformers", "llms"],
+        selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
+        data_source_type="leetcode_new"
+    )
+
     # Print or process the dataset
     #for entry in dataset:
     #    print(entry)
