@@ -18,11 +18,6 @@ class ParaphrasingExperiment:
         os.environ["TOKENIZERS_PARALLELISM"] = "false"
         
         self.default_test_phrases = [
-            "Implement a REST API for a web application that implements a personal todo list using Flask. The API should allow a user to create, update and delete whole lists as well as individual items. It should also give users an idea of their progress, and give reminders of tasks due or overdue. You can assume the database layer was already implemented separately.",
-            "Implement a backend engine that tracks user interactions across a website, in an appropriate and efficient data structure. Interactions can be of multiple types, with potential new ones to be added later, which the system must be able to accommodate without major changes. Interactions include likes, ratings, uploads, settings changes. The system should adhere to privacy regulations, and not store any illegal information, and use hashing and anonymisation where possible without losing functionality.",
-            "Write a game of Tetris for three players who are playing in collaboration. The implementation should include all necessary classes, as well as code responsible for rendering the graphic user interface. The code should also include necessary mechanics to allow three players to play, keep separate scores, and to determine the contributions of each player to the overall score in a fair manner.",
-            "Implement gradient ascent algorithm using pure Python. Note that unlike the traditional 'gradient descent' algorithm, gradient ascent looks for the global maximum of a function. Do not use any advanced mathematical packages, such as NumPy or SciPy. The algorithm implementation can make reasonable assumptions about smoothness of the function being optimised, but should be able to handle functions that have multiple local maxima.",
-            "Implement a convex hull algorithm for 4D points. It should be able to take in a list of points, validate that all of them are of four dimensions, and calculate the minimal convex hull of the given list of points. It should be able to cover edge cases, such as a set of one point, points on a single plane, and more. Define the data structure that is most sensible for output of this problem, and make sure the algorithm returns data in that structure.",
             "Given a pandas dataframe with the columns: Patient ID, age, sex, procedure type, and a column each for the hours 1-10, write code to reorganise this dataframe to transform it from having one row for each Patient ID to having multiple rows for each Patient ID, organised by hour with the first column being 'Time since surgery'. Fixed variables such as age should be the same for each of these hourly rows."
             ]
 
@@ -66,6 +61,9 @@ class ParaphrasingExperiment:
         elif source_type == "leetcode":
             file_path = kwargs.get('file_path', 'sandbox/leetcode-dataset.json')
             return LeetCodeDataSource(file_path)
+        elif source_type == "leetcode_new":
+            file_path = kwargs.get('file_path', 'sandbox/leetcode-dataset-new.json')
+            return LeetCodeDataSource(file_path)
         elif source_type == "tasks_dataset":
             file_path = kwargs.get('file_path', 'sandbox/tasks_dataset.json')
             return TasksDataSetDataSource(file_path)
@@ -97,6 +95,7 @@ class ParaphrasingExperiment:
         data_source = self.create_data_source(data_source_type, **data_source_kwargs)
         
         paraphrases = []
+        no_paraphrases = []
         for approach_name in selected_approaches:
             try:
                 approach = self.get_approach(approach_name)
@@ -125,6 +124,11 @@ class ParaphrasingExperiment:
                                 model_name=model_name,
                                 **params
                             )
+
+                            if len(paraphrased_phrases) == 0:
+                                print(f"No paraphrased phrases found for {phrase}")
+                                no_paraphrases.append(phrase)
+                                continue
                             
                             if paraphrased_phrases:
                                 eval_results = self.evaluator.evaluate_paraphrases(phrase, paraphrased_phrases)
@@ -148,8 +152,8 @@ class ParaphrasingExperiment:
 
                 # Save paraphrases to a CSV file
                 paraphrases_df = pd.DataFrame(paraphrases)
-                paraphrases_df.to_csv(f"{results_dir}/paraphrases.csv", index=False)
-                print(f"All paraphrases saved to {results_dir}/paraphrases.csv")
+                paraphrases_df.to_csv(f"{results_dir}/paraphrases_{data_source_type}.csv", index=False)
+                print(f"All paraphrases saved to {results_dir}/paraphrases_{data_source_type}.csv")
         
                 # Plot semantic_similarity vs BLEU
                 plt.figure(figsize=(10, 6))
@@ -161,7 +165,7 @@ class ParaphrasingExperiment:
                 plt.ylabel('BLEU Score')
                 plt.grid(True)
                 plt.legend()
-                plt.savefig(f"{results_dir}/semantic_similarity_vs_bleu.png")
+                plt.savefig(f"{results_dir}/semantic_similarity_vs_bleu_{data_source_type}.png")
                 plt.close()
 
                 # Plot BERT score vs Sacre BLEU
@@ -171,12 +175,13 @@ class ParaphrasingExperiment:
                     plt.scatter(approach_data['bert_score'], approach_data['sacre_bleu'], alpha=0.5, label=approach_name)
                 plt.title('BERT Score vs Sacre BLEU')
                 plt.xlabel('BERT Score')
-                plt.ylabel('Sacre BLEU')
+                plt.ylabel('Sacre BLEU')                
                 plt.grid(True)
                 plt.legend()
-                plt.savefig(f"{results_dir}/bert_score_vs_sacre_bleu.png")
+                plt.savefig(f"{results_dir}/bert_score_vs_sacre_bleu_{data_source_type}.png")
                 plt.close()
 
+        print(f"No paraphrases: {no_paraphrases}")
         return paraphrases
 
 if __name__ == "__main__":

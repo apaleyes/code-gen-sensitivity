@@ -116,7 +116,7 @@ class TransformerParaphraser(BaseParaphraser):
             tokenizer, model = self.load_model(model_name)
 
             paraphrases = [""] * num_variations
-            sentences = phrase.split(".")
+            sentences = phrase.replace(":", ".").split(".")
             sentences = [sentence for sentence in sentences if sentence.strip()]
             for sentence in sentences:
                 # Prepare input
@@ -125,7 +125,7 @@ class TransformerParaphraser(BaseParaphraser):
                     input_ids = input_ids.to('cuda')
                 
                 estimated_tokens = self.estimate_tokens(sentence, tokenizer)
-            
+
                 # Generate paraphrases
                 outputs = model.generate(
                     input_ids=input_ids,
