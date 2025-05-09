@@ -83,7 +83,7 @@ def calculate_metrics_to_csv(data_dir="./augmented_datasets_split/", out_dir="./
                                     if not row["tsed_score"]:
                                         changed = True
                                         tsed_score = sum(
-                                            TSED.Calaulte("python", ref, code, 1.0, 0.8, 1.0)
+                                            TSED.TSED.Calaulte("python", ref, code, 1.0, 0.8, 1.0)
                                             for ref in original_codes
                                         ) / len(original_codes)
                                         row["tsed_score"] = tsed_score
