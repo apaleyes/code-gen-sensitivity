@@ -19,25 +19,39 @@ class ParaphrasingExperiment:
         
         
         self.default_test_phrases = [
-            #"Write a Calculator class. It shall contain common arithmetic operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry, roots, exponents."
-            #"Implement a REST API for a web application that implements a personal todo list using Flask. The API should allow a user to create, update and delete whole lists as well as individual items. It should also give users an idea of their progress, and give reminders of tasks due or overdue. You can assume the database layer was already implemented separately.",
-            #"Write code to create a database schema for an online bicycle shop that sells bicycles as well as their spare parts and accessories. Use SQAlchemy library to communicate with the database. The code should cover opening and closing of a new connection to the database, creation of necessary tables and their relations, common operations on items in the tables such as addition, deletion, updates, filtered selection and search.",
-            "Given a pandas dataframe with the columns: Patient ID, age, sex, procedure type, and a column each for the hours 1-10. Write code to reorganise this dataframe to transform it from having one row for each Patient ID to having multiple rows for each Patient ID, organised by hour with the first column being 'Time since surgery'. Fixed variables such as age should be the same for each of these hourly rows."
+            'Write code to create a database schema for an online bicycle shop that sells bicycles as well as their spare parts and accessories. Use SQAlchemy library to communicate with the database. The code should cover opening and closing of a new connection to the database, creation of necessary tables and their relations, common operations on items in the tables such as addition, deletion, updates, filtered selection and search.',
+            'Write a Calculator class. It shall contain common arithmetic operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry, roots, exponents.', 
+            'Implement a REST API for a web application that implements a personal todo list using Flask. The API should allow a user to create, update and delete whole lists as well as individual items. It should also give users an idea of their progress, and give reminders of tasks due or overdue. You can assume the database layer was already implemented separately.\n', 
+            #'Implement a script that generates accounting reports for a medium size retail business. It should be customizable to cover variable periods of time (month, quarter, year). You can assume data for the report is coming from one of the common accounting systems, such as QuickBooks or Sage. These reports are intended both for internal consumption (such as verification by accountants or management) and for external use (such as submission to tax authority).', 
+            #'Implement a backend engine that tracks user interactions across a website, in an appropriate and efficient data structure. Interactions can be of multiple types, with potential new ones to be added later, which the system must be able to accommodate without major changes. Interactions include likes, ratings, uploads, settings changes. The system should adhere to privacy regulations, and not store any illegal information, and use hashing and anonymisation where possible without losing functionality.\n', 
+            #'Write a workout tracking app that can import from several fitness apps including Strava, Polar Flow, MyFitnessPal to put together a dashboard of workouts and nutrition information. The user should be able to customise the views by sport as well as by overall mileage or other stats that transfer across sports such as heart rate or total time. Heart rate data should be aggregated to display the total amount of time at different intensity zones. The user should be able to see a graph of their overall progress by pace or by mileage using a dropdown to switch between them.', 
+            #'Implement a simulation of multiple lifts operating in a skyscraper that is used as an office building. The number of lifts should be a tunable parameter, as well as the number of floors in the building. It should also be possible to run the simulation for different crowd sizes. The simulation should clearly display expected behavior, e.g. lifts being busier during the morning and evening hours, used sparingly during the day and barely used at night.', 
+            #'Implement a controller system for a network of automated teller machines (ATM). As ATMs operate in a highly sensitive financial setting, the system should have extra measures in place to prevent problems with distributed operations, such as failed transactions, concurrent operations, race conditions. Additionally it should have protection measures in place to prevent fraud.', 
+            #'Write code to evaluate a chess position. It can accept chess position as an input in any convenient format, and output evaluation to clearly indicate which side (white or black) has an advantage, and numerically measure this advantage. Adhere to common values of pieces (pawn - 1, knight and bishop - 3, rook - 5, queen - 9), as well as other useful metrics, e.g. number of controlled squares, number of active moves, check and mate possibilities, and so on.', 
+            #'The game of Blokus Duo has two players placing pieces in order on a board. The pieces are all the possible combinations of 1x1 square blocks joined together, up to 5 pieces, but cancelling out any symmetries, as the pieces can be flipped and rotated by the players. There is 1 piece that has 1 square (simple 1x1), 1 piece that has 2 squares (simple 1x2), 2 pieces that have 3 squares (1x3 rectangle, and a corner), etc. Write code that finds the number of possible n-square pieces, and lists the possibilities.', 
+            #'LEGO claims that 6 standard 2X4 bricks can be connected in 915,103,765 combinations. Write code that verifies this claim, and design a heuristic to decide which combinations are trivial, and which are complicated, giving each a class rating.', 
+            #'Write a game of snake like that on the Nokia phones in 1997 that can be played on a laptop while a software update runs. The user should be able to maneuver the snake with the arrow keys. If the snake’s head runs into any part of its body or edge of the game boundary, the game is over. The snake grows by moving around the screen grid and finding “food” in different blocks, getting longer as it eats.', 
+            #'Implement gradient ascent algorithm using pure Python. Note that unlike the traditional “gradient descent” algorithm, gradient ascent looks for the global maximum of a function. Do not use any advanced mathematical packages, such as NumPy or SciPy. The algorithm implementation can make reasonable assumptions about smoothness of the function being optimised, but should be able to handle functions that have multiple local maxima.', 
+            #'Implement a deep neural network using pure Python. Do not use any deep learning frameworks such as Tensorflow or PyTorch. The network should support fully connected layers, activations, and allow for forwards and backwards passes. It should also allow for a variable number of hidden layers, input and output layers.  Include an example of how this network can be trained for regression and classification problems.\n', 
+            #'Given a set of 2n coins, each biased with a different p(heads) value, pick a set of coins that gives the highest probability that when tossed, the number of heads will be n. Note that this is not necessarily the same as expected value. Pick the sets using different methods, and compare their computational complexities.', 
+            #'Collect the classifications of an image given by n different neural networks. Knowing the accuracy of each of these networks’ predictions, design an ensemble method that will output the most likely classification given the individual guesses. Also state the confidence level of your guess.', 
+            #'Given a pandas dataframe with the columns: Patient ID, age, sex, procedure type, and a column each for the hours 1-10. Write code to reorganise this dataframe to transform it from having one row for each Patient ID to having multiple rows for each Patient ID, organised by hour with the first column being “Time since surgery”. Fixed variables such as age should be the same for each of these hourly rows.', 
+            #'Write a sorting function that sorts strings according to underlying ordering. So 8 9 10 should be sorted 8 9 10, not alphabetically 10 8 9. Also take into consideration cases like worded Nine Ten Eleven, or months 31 January - 1 February, etc. It’s one function, and the methods used have to be decided automatically. Default back to alphabetical order if no pattern is found. Partial matching patterns should also be used (eg. iPhone 9, iPhone X, iPhone 11).'
             ]
 
         # Temperature is the only parameter that influences the BLEU score        
         self.param_grid = {
             "transformers": {
                 "temperature": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-                #"top_p": [0.9, 0.99, 0.999],
-                #"top_k": [10, 15, 20]
-                #"repetition_penalty": [0.5, 1.0, 1.5, 2.0]
+                "top_p": [0.7, 0.8, 0.9],
+                "top_k": [5, 25, 50],
+                "repetition_penalty": [0.5, 1.0, 1.5, 2.0]
             },
             "llms": {
                 "temperature": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-                #"top_p": [0.9, 0.99, 0.999],
-                #"top_k": [10, 15, 20]
-                #"frequency_penalty": [-2.0, 0.0, 1.9]
+                "top_p": [0.7, 0.8, 0.9],
+                "top_k": [5, 25, 50],
+                "repetition_penalty": [0.5, 1.0, 1.5, 2.0]
             }
         }
         
@@ -229,7 +243,7 @@ if __name__ == "__main__":
     dataset, not_low_our, not_moderate_our, not_high_our = experiment.run_experiments(
         selected_approaches=["transformers", "llms"],
         selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
-        data_source_type="tasks_dataset"
+        data_source_type="test_phrases"
     )
 
     # Example using old leetcode dataset
