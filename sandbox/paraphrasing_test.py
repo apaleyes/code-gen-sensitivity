@@ -137,9 +137,6 @@ class ParaphrasingExperiment:
                                 no_paraphrases.append(phrase)
                                 continue
                             
-                            low = 0
-                            moderate = 0
-                            high = 0
                             if paraphrased_phrases:
                                 eval_results = self.evaluator.evaluate_paraphrases(phrase, paraphrased_phrases)
                                 individual_results = eval_results['individual_results']
