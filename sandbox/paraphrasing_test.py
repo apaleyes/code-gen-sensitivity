@@ -195,13 +195,26 @@ class ParaphrasingExperiment:
             if len(paraphrased_phrase) == 0:
                 no_paraphrases.append(phrase)
             else:
+                low = 0
+                moderate = 0
+                high = 0
                 for index, result in paraphrased_phrase.iterrows():
                     if result['sacre_bleu'] < 0.3333333333333333:
-                        not_low.append(phrase)
+                        low = low + 1
                     elif result['sacre_bleu'] < 0.6666666666666666:
-                        not_moderate.append(phrase)
+                        moderate = moderate + 1
                     else:
-                        not_high.append(phrase)
+                        high = high + 1
+
+                    if low > 0 and moderate > 0 and high > 0:
+                        break
+                
+                if low == 0:
+                    not_low.append(phrase)
+                if moderate == 0:
+                    not_moderate.append(phrase)
+                if high == 0:
+                    not_high.append(phrase)
         
         print(f"No paraphrases: {len(no_paraphrases)}")
         print(f"Not low: {len(not_low)}")
