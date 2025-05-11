@@ -19,9 +19,9 @@ class ParaphrasingExperiment:
         
         
         self.default_test_phrases = [
-            'Write code to create a database schema for an online bicycle shop that sells bicycles as well as their spare parts and accessories. Use SQAlchemy library to communicate with the database. The code should cover opening and closing of a new connection to the database, creation of necessary tables and their relations, common operations on items in the tables such as addition, deletion, updates, filtered selection and search.',
-            'Write a Calculator class. It shall contain common arithmetic operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry, roots, exponents.', 
-            'Implement a REST API for a web application that implements a personal todo list using Flask. The API should allow a user to create, update and delete whole lists as well as individual items. It should also give users an idea of their progress, and give reminders of tasks due or overdue. You can assume the database layer was already implemented separately.\n', 
+            #-'Write code to create a database schema for an online bicycle shop that sells bicycles as well as their spare parts and accessories. Use SQAlchemy library to communicate with the database. The code should cover opening and closing of a new connection to the database, creation of necessary tables and their relations, common operations on items in the tables such as addition, deletion, updates, filtered selection and search.',
+            #'Write a Calculator class. It shall contain common arithmetic operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry, roots, exponents.', 
+            'Implement a REST API for a web application that implements a personal todo list using Flask. The API should allow a user to create, update and delete whole lists as well as individual items. It should also give users an idea of their progress, and give reminders of tasks due or overdue. You can assume the database layer was already implemented separately.\n'
             #'Implement a script that generates accounting reports for a medium size retail business. It should be customizable to cover variable periods of time (month, quarter, year). You can assume data for the report is coming from one of the common accounting systems, such as QuickBooks or Sage. These reports are intended both for internal consumption (such as verification by accountants or management) and for external use (such as submission to tax authority).', 
             #'Implement a backend engine that tracks user interactions across a website, in an appropriate and efficient data structure. Interactions can be of multiple types, with potential new ones to be added later, which the system must be able to accommodate without major changes. Interactions include likes, ratings, uploads, settings changes. The system should adhere to privacy regulations, and not store any illegal information, and use hashing and anonymisation where possible without losing functionality.\n', 
             #'Write a workout tracking app that can import from several fitness apps including Strava, Polar Flow, MyFitnessPal to put together a dashboard of workouts and nutrition information. The user should be able to customise the views by sport as well as by overall mileage or other stats that transfer across sports such as heart rate or total time. Heart rate data should be aggregated to display the total amount of time at different intensity zones. The user should be able to see a graph of their overall progress by pace or by mileage using a dropdown to switch between them.', 
@@ -41,17 +41,18 @@ class ParaphrasingExperiment:
 
         # Temperature is the only parameter that influences the BLEU score        
         self.param_grid = {
-            "transformers": {
-                "temperature": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-                "top_p": [0.7, 0.8, 0.9],
-                "top_k": [5, 25, 50],
-                "repetition_penalty": [0.5, 1.0, 1.5, 2.0]
-            },
+            #"transformers": {
+            #    "temperature": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+            #    "top_p": [0.7, 0.8, 0.9],
+            #    "top_k": [5, 25, 50],
+            #    "repetition_penalty": [0.5, 1.0, 1.5, 2.0]
+            #},
             "llms": {
                 "temperature": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-                "top_p": [0.7, 0.8, 0.9],
-                "top_k": [5, 25, 50],
-                "repetition_penalty": [0.5, 1.0, 1.5, 2.0]
+                "diversity_rate": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+                #"top_p": [0.7, 0.8, 0.9],
+                #"top_k": [5, 25, 50],
+                #"repetition_penalty": [0.5, 1.0, 1.5, 2.0]
             }
         }
         
@@ -241,9 +242,11 @@ if __name__ == "__main__":
     
     # Example using our dataset
     dataset, not_low_our, not_moderate_our, not_high_our = experiment.run_experiments(
-        selected_approaches=["transformers", "llms"],
-        selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
-        data_source_type="test_phrases"
+        #selected_approaches=["transformers", "llms"],
+        selected_approaches=["llms"],
+        #selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
+        selected_models={"llms": ["gemini"]},
+        data_source_type="tasks_dataset"
     )
 
     # Example using old leetcode dataset

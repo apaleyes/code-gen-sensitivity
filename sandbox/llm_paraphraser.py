@@ -26,16 +26,20 @@ class LLMParaphraser:
         
         # Base prompt template for paraphrasing
         self.base_prompt = """
-        You are a paraphrasing assistant. Your task is to paraphrase the given text.
+        You are a paraphrasing assistant. Your task is to paraphrase the given text according to the diversity rate. The diversity rate is the percentage of words you must change in the original text. If the percentage is 0, the original sentence must be kept. If the percentage is 100, all the words must be changed.
         
         Requirements:
         - Maintain the exact same meaning
         - The paraphrases must be semantically similar to the input text
         - Be clear and natural
         - Do not add or remove information
+        - Change the words according the diversity rate parameter
+        - Ignore your repetition penalty parameter if needed
         
         Text to paraphrase:
         "{text}"
+
+        Diversity rate: "{diversity_rate}"
         
         Generate {num_variations} different paraphrased versions. 
         
@@ -56,18 +60,19 @@ class LLMParaphraser:
         """Transform the input text into a proper prompt"""
         return text
     
-    def paraphrase(self, text: str, rule: str, num_variations: int = 5, temperature: float=1.0, top_p: float=0.95, top_k: int=120, frequency_penalty: float=0.0) -> List[Dict]:
+    def paraphrase(self, text: str, rule: str, num_variations: int = 5, diversity_rate: int = 100, temperature: float=1.0, top_p: float=0.95, top_k: int=120, frequency_penalty: float=0.0) -> List[Dict]:
         """
         Generate paraphrased versions of the input text
         
         Args:
             text: Text to paraphrase
             num_variations: Number of paraphrased versions to generate
+            diversity_percentage: Percentage of words to change in the original sentence
             
         Returns:
             List of dictionaries containing paraphrased versions and metadata
         """
-        prompt = self.base_prompt.format(text=text, num_variations=num_variations, rule=rule)
+        prompt = self.base_prompt.format(text=text, num_variations=num_variations, rule=rule, diversity_rate=diversity_rate)
         self.model.temperature = temperature
         self.model.top_p = top_p
         self.model.top_k = top_k

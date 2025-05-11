@@ -191,6 +191,7 @@ class LLMParaphraserWrapper(BaseParaphraser):
             return paraphraser.paraphrase(
                 phrase, 
                 num_variations, 
+                diversity_rate=kwargs.get("diversity_rate", 100),
                 temperature=kwargs.get("temperature", 1.0),
                 top_p=kwargs.get("top_p", 0.95),
                 top_k=kwargs.get("top_k", 120),
