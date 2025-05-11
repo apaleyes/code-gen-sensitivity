@@ -19,9 +19,14 @@ class ParaphrasingExperiment:
         os.environ["TOKENIZERS_PARALLELISM"] = "false"
         
         self.default_test_phrases = [
+            # 'Write a prompt to an LLM to create a calculator app',
+            # 'Write a prompt to an LLM to create a database for an online bicycle shop'
+            'Write code to create a database schema for an online bicycle shop that sells bicycles as well as their spare parts and accessories. Use SQAlchemy library to communicate with the database. The code should cover opening and closing of a new connection to the database, creation of necessary tables and their relations, common operations on items in the tables such as addition, deletion, updates, filtered selection and search.',
+            'Write a Calculator class. It shall contain common arithmetic operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry, roots, exponents.', 
+            'Implement a REST API for a web application that implements a personal todo list using Flask. The API should allow a user to create, update and delete whole lists as well as individual items. It should also give users an idea of their progress, and give reminders of tasks due or overdue. You can assume the database layer was already implemented separately.\n', 
             # "Write Python code for addition, subtraction, division, multiplication, and other similar operations, all a part of one class",
             # "Given the business logic code below, implement Flask backend. Do not include example of usage or the business logic, do not repeat any code from this prompt. Only write the Flask API code.",
-            "Write a Calculator class. It shall contain common operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry."
+            # "Write a Calculator class. It shall contain common operations, such as addition or multiplication, but also more advanced operations, such as logarithm (of variable bases), factorial, trigonometry."
         ]
 
         # Temperature is the only parameter that influences the BLEU score        
