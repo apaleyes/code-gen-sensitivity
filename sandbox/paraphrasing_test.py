@@ -200,6 +200,7 @@ class ParaphrasingExperiment:
                             print(f"Skipping phrase because it already exists")
                         if 'short_phrase' in results_df.columns:
                             results_df = results_df.drop('short_phrase', axis=1)
+                
                 if len(paraphrases) > 0:
                     # Save paraphrases to a CSV file
                     paraphrases_df = pd.DataFrame(paraphrases)
@@ -244,9 +245,9 @@ class ParaphrasingExperiment:
                         with open("./sandbox/experiments_results_status.json", "r") as file:
                             experiment_results_status = json.load(file)
                         print("Experiment results loaded successfully.")
-                        not_low = experiment_results_status.get('low', 0)
-                        not_moderate = experiment_results_status.get('moderate', 0)
-                        not_high = experiment_results_status.get('high', 0)
+                        not_low = experiment_results_status.get('not_low', [])
+                        not_moderate = experiment_results_status.get('not_moderate', [])
+                        not_high = experiment_results_status.get('not_high', [])
                     except FileNotFoundError:
                         print("Experiment results file not found. Starting with empty status.")
                     
