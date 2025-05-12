@@ -35,6 +35,8 @@ class LLMParaphraser:
         - Do not add or remove information
         - Change the words according the diversity rate parameter
         - Ignore your repetition penalty parameter if needed
+        - When the rate is between 0 and 50, change words but not the sentence structure
+        - When the rate is between 50 and 100, change words and the sentence structure
         
         Text to paraphrase:
         "{text}"
