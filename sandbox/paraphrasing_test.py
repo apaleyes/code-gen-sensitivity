@@ -121,7 +121,6 @@ class ParaphrasingExperiment:
         else:
             results_df = pd.DataFrame()
 
-        paraphrases = []
         no_paraphrases = []
         not_low = []
         not_moderate = []
@@ -145,6 +144,7 @@ class ParaphrasingExperiment:
                 phrase_id = phrase_data['phrase_id']
                 for model_name in selected_models[approach_name]:
                     for params in param_combinations:
+                        paraphrases = []
                         print(f"\nTesting {approach_name} with {model_name}")
                         print(f"Parameters: {params}")
                         print(f"Phrase: {phrase[:50]}...")
@@ -201,16 +201,15 @@ class ParaphrasingExperiment:
                         if 'short_phrase' in results_df.columns:
                             results_df = results_df.drop('short_phrase', axis=1)
                 
-                if len(paraphrases) > 0:
+                if not results_df.empty:
                     # Save paraphrases to a CSV file
-                    paraphrases_df = pd.DataFrame(paraphrases)
-                    paraphrases_df.to_csv(f"{results_dir}/paraphrases_{data_source_type}.csv", index=False)
+                    results_df.to_csv(f"{results_dir}/paraphrases_{data_source_type}.csv", index=False)
                     print(f"All paraphrases saved to {results_dir}/paraphrases_{data_source_type}.csv")
         
                     # Plot semantic_similarity vs BLEU
                     plt.figure(figsize=(10, 6))
-                    for approach_name in paraphrases_df['approach_name'].unique():
-                        approach_data = paraphrases_df[paraphrases_df['approach_name'] == approach_name]
+                    for approach_name in results_df['approach_name'].unique():
+                        approach_data = results_df[results_df['approach_name'] == approach_name]
                         plt.scatter(approach_data['semantic_similarity'], approach_data['bleu'], alpha=0.5, label=approach_name)
                     plt.title('Semantic Similarity vs BLEU')
                     plt.xlabel('Semantic Similarity')
@@ -222,8 +221,8 @@ class ParaphrasingExperiment:
 
                     # Plot BERT score vs Sacre BLEU
                     plt.figure(figsize=(10, 6))
-                    for approach_name in paraphrases_df['approach_name'].unique():
-                        approach_data = paraphrases_df[paraphrases_df['approach_name'] == approach_name]
+                    for approach_name in results_df['approach_name'].unique():
+                        approach_data = results_df[results_df['approach_name'] == approach_name]
                         plt.scatter(approach_data['bert_score'], approach_data['sacre_bleu'], alpha=0.5, label=approach_name)
                     plt.title('BERT Score vs Sacre BLEU')
                     plt.xlabel('BERT Score')
@@ -272,7 +271,7 @@ class ParaphrasingExperiment:
                     }
                     with open(f"./sandbox/experiments_results_status.json", "w") as f:
                         json.dump(experiment_results_status, f)
-        return paraphrases, not_low, not_moderate, not_high
+        return results_df, not_low, not_moderate, not_high
 
 if __name__ == "__main__":
     experiment = ParaphrasingExperiment()
