@@ -1,6 +1,6 @@
 model,method,dataset,task,augmentation_rate,tsed_score,bert_score
 openai,synonym,ourdataset.json,Q00021,0.0,0.6187464387464392,0.9652811884880066
-openai,synonym,ourdataset.json,Q00021,0.0,,
+openai,synonym,ourdataset.json,Q00021,0.0,0.616296296296297,0.9650378227233887
 openai,synonym,ourdataset.json,Q00021,0.0,,
 openai,synonym,ourdataset.json,Q00021,0.0,,
 openai,synonym,ourdataset.json,Q00021,0.0,,
@@ -20,7 +20,7 @@ openai,synonym,ourdataset.json,Q00021,0.15,,
 openai,synonym,ourdataset.json,Q00021,0.15,,
 openai,synonym,ourdataset.json,Q00021,0.15,,
 openai,synonym,ourdataset.json,Q00021,0.2,0.30511945392491435,0.946384072303772
-openai,synonym,ourdataset.json,Q00021,0.2,,
+openai,synonym,ourdataset.json,Q00021,0.2,0.3861224489795929,0.943917453289032
 openai,synonym,ourdataset.json,Q00021,0.2,,
 openai,synonym,ourdataset.json,Q00021,0.2,,
 openai,synonym,ourdataset.json,Q00021,0.2,,
@@ -43,7 +43,7 @@ openai,synonym,ourdataset.json,Q00021,0.4,0.3111827956989259,0.9449024200439453
 openai,synonym,ourdataset.json,Q00021,0.4,,
 openai,synonym,ourdataset.json,Q00021,0.4,,
 openai,synonym,ourdataset.json,Q00021,0.4,,
-openai,synonym,ourdataset.json,Q00021,0.4,,
+openai,synonym,ourdataset.json,Q00021,0.4,0.34205607476635574,0.9456933736801147
 openai,synonym,ourdataset.json,Q00021,0.45,,
 openai,synonym,ourdataset.json,Q00021,0.45,,
 openai,synonym,ourdataset.json,Q00021,0.45,,
@@ -60,10 +60,10 @@ openai,synonym,ourdataset.json,Q00021,0.55,,
 openai,synonym,ourdataset.json,Q00021,0.55,,
 openai,synonym,ourdataset.json,Q00021,0.55,,
 openai,synonym,ourdataset.json,Q00021,0.6,0.3685207100591721,0.9511893391609192
-openai,synonym,ourdataset.json,Q00021,0.6,,
-openai,synonym,ourdataset.json,Q00021,0.6,,
-openai,synonym,ourdataset.json,Q00021,0.6,,
-openai,synonym,ourdataset.json,Q00021,0.6,,
+openai,synonym,ourdataset.json,Q00021,0.6,0.3685207100591721,0.9511893391609192
+openai,synonym,ourdataset.json,Q00021,0.6,0.3685207100591721,0.9511893391609192
+openai,synonym,ourdataset.json,Q00021,0.6,0.3685207100591721,0.9511893391609192
+openai,synonym,ourdataset.json,Q00021,0.6,0.3685207100591721,0.9511893391609192
 openai,synonym,ourdataset.json,Q00021,0.65,,
 openai,synonym,ourdataset.json,Q00021,0.65,,
 openai,synonym,ourdataset.json,Q00021,0.65,,
@@ -80,10 +80,10 @@ openai,synonym,ourdataset.json,Q00021,0.75,,
 openai,synonym,ourdataset.json,Q00021,0.75,,
 openai,synonym,ourdataset.json,Q00021,0.75,,
 openai,synonym,ourdataset.json,Q00021,0.8,0.35074509803921605,0.9447044134140015
-openai,synonym,ourdataset.json,Q00021,0.8,,
-openai,synonym,ourdataset.json,Q00021,0.8,,
-openai,synonym,ourdataset.json,Q00021,0.8,,
-openai,synonym,ourdataset.json,Q00021,0.8,,
+openai,synonym,ourdataset.json,Q00021,0.8,0.35074509803921605,0.9447044134140015
+openai,synonym,ourdataset.json,Q00021,0.8,0.34756972111553813,0.946587085723877
+openai,synonym,ourdataset.json,Q00021,0.8,0.35074509803921605,0.9447044134140015
+openai,synonym,ourdataset.json,Q00021,0.8,0.34756972111553813,0.9456623196601868
 openai,synonym,ourdataset.json,Q00021,0.85,,
 openai,synonym,ourdataset.json,Q00021,0.85,,
 openai,synonym,ourdataset.json,Q00021,0.85,,
@@ -100,7 +100,7 @@ openai,synonym,ourdataset.json,Q00021,0.95,,
 openai,synonym,ourdataset.json,Q00021,0.95,,
 openai,synonym,ourdataset.json,Q00021,0.95,,
 openai,synonym,ourdataset.json,Q00021,1.0,0.32616438356164285,0.9439316987991333
-openai,synonym,ourdataset.json,Q00021,1.0,,
+openai,synonym,ourdataset.json,Q00021,1.0,0.350708661417323,0.9464236497879028
 openai,synonym,ourdataset.json,Q00021,1.0,,
 openai,synonym,ourdataset.json,Q00021,1.0,,
 openai,synonym,ourdataset.json,Q00021,1.0,,
