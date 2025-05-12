@@ -1,9 +1,9 @@
 model,method,dataset,task,augmentation_rate,tsed_score,bert_score
 openai,keyboard,oldleetcode.json,Q00005,0.0,1.0,0.9999998807907104
-openai,keyboard,oldleetcode.json,Q00005,0.0,,
-openai,keyboard,oldleetcode.json,Q00005,0.0,,
-openai,keyboard,oldleetcode.json,Q00005,0.0,,
-openai,keyboard,oldleetcode.json,Q00005,0.0,,
+openai,keyboard,oldleetcode.json,Q00005,0.0,1.0,1.0
+openai,keyboard,oldleetcode.json,Q00005,0.0,1.0,1.0
+openai,keyboard,oldleetcode.json,Q00005,0.0,1.0,1.0
+openai,keyboard,oldleetcode.json,Q00005,0.0,1.0,1.0
 openai,keyboard,oldleetcode.json,Q00005,0.05,,
 openai,keyboard,oldleetcode.json,Q00005,0.05,,
 openai,keyboard,oldleetcode.json,Q00005,0.05,,
