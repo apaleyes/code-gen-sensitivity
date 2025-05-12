@@ -232,7 +232,6 @@ class ParaphrasingExperiment:
                     plt.savefig(f"{results_dir}/bert_score_vs_sacre_bleu_{data_source_type}.png")
                     plt.close()
 
-
                     experiment_results_status = {}
                     not_low = []
                     not_moderate = []
@@ -250,7 +249,7 @@ class ParaphrasingExperiment:
                     except FileNotFoundError:
                         print("Experiment results file not found. Starting with empty status.")
                     
-                    for index, result in paraphrases_df.iterrows():
+                    for index, result in results_df.iterrows():
                         if result['sacre_bleu'] < 0.3333333333333333:
                             low = low + 1
                         elif result['sacre_bleu'] < 0.6666666666666666:
