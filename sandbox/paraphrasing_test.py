@@ -49,7 +49,7 @@ class ParaphrasingExperiment:
             #    "repetition_penalty": [0.5, 1.0, 1.5, 2.0]
             #},
             "llms": {
-                "temperature": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+                "temperature": [0.0, 1.0, 2.0],
                 "diversity_rate": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
                 #"top_p": [0.7, 0.8, 0.9],
                 #"top_k": [5, 25, 50],
