@@ -20,7 +20,7 @@ llama,synonym,ourdataset.json,Q00011,0.15,,
 llama,synonym,ourdataset.json,Q00011,0.15,,
 llama,synonym,ourdataset.json,Q00011,0.15,,
 llama,synonym,ourdataset.json,Q00011,0.2,0.2025015634771981,0.9454105496406555
-llama,synonym,ourdataset.json,Q00011,0.2,,
+llama,synonym,ourdataset.json,Q00011,0.2,0.2087527352297554,0.9426113963127136
 llama,synonym,ourdataset.json,Q00011,0.2,,
 llama,synonym,ourdataset.json,Q00011,0.2,,
 llama,synonym,ourdataset.json,Q00011,0.2,,
@@ -60,10 +60,10 @@ llama,synonym,ourdataset.json,Q00011,0.55,,
 llama,synonym,ourdataset.json,Q00011,0.55,,
 llama,synonym,ourdataset.json,Q00011,0.55,,
 llama,synonym,ourdataset.json,Q00011,0.6,0.2028901734104263,0.9459925889968872
+llama,synonym,ourdataset.json,Q00011,0.6,0.20462962962963602,0.9443785548210144
 llama,synonym,ourdataset.json,Q00011,0.6,,
 llama,synonym,ourdataset.json,Q00011,0.6,,
-llama,synonym,ourdataset.json,Q00011,0.6,,
-llama,synonym,ourdataset.json,Q00011,0.6,,
+llama,synonym,ourdataset.json,Q00011,0.6,0.20286738351256645,0.945172905921936
 llama,synonym,ourdataset.json,Q00011,0.65,,
 llama,synonym,ourdataset.json,Q00011,0.65,,
 llama,synonym,ourdataset.json,Q00011,0.65,,
@@ -80,10 +80,10 @@ llama,synonym,ourdataset.json,Q00011,0.75,,
 llama,synonym,ourdataset.json,Q00011,0.75,,
 llama,synonym,ourdataset.json,Q00011,0.75,,
 llama,synonym,ourdataset.json,Q00011,0.8,0.2016501650165336,0.9451694488525391
+llama,synonym,ourdataset.json,Q00011,0.8,0.2090702947845761,0.9432905316352844
 llama,synonym,ourdataset.json,Q00011,0.8,,
-llama,synonym,ourdataset.json,Q00011,0.8,,
-llama,synonym,ourdataset.json,Q00011,0.8,,
-llama,synonym,ourdataset.json,Q00011,0.8,,
+llama,synonym,ourdataset.json,Q00011,0.8,0.2099255583126513,0.9432905316352844
+llama,synonym,ourdataset.json,Q00011,0.8,0.20860215053762915,0.9433959722518921
 llama,synonym,ourdataset.json,Q00011,0.85,,
 llama,synonym,ourdataset.json,Q00011,0.85,,
 llama,synonym,ourdataset.json,Q00011,0.85,,
@@ -100,7 +100,7 @@ llama,synonym,ourdataset.json,Q00011,0.95,,
 llama,synonym,ourdataset.json,Q00011,0.95,,
 llama,synonym,ourdataset.json,Q00011,0.95,,
 llama,synonym,ourdataset.json,Q00011,1.0,0.20256574727391768,0.9464670419692993
-llama,synonym,ourdataset.json,Q00011,1.0,,
-llama,synonym,ourdataset.json,Q00011,1.0,,
+llama,synonym,ourdataset.json,Q00011,1.0,0.20452488687783524,0.9469766616821289
+llama,synonym,ourdataset.json,Q00011,1.0,0.20842105263157631,0.9439176321029663
 llama,synonym,ourdataset.json,Q00011,1.0,,
 llama,synonym,ourdataset.json,Q00011,1.0,,
