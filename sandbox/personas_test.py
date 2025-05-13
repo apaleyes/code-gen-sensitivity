@@ -67,7 +67,7 @@ class ParaphrasingExperiment:
              text_column = kwargs.get('text_column')
              return CSVDataSource(file_path, text_column)
         elif source_type == "our_dataset":
-             file_path = kwargs.get('file_path', 'sandbox/tasks_dataset.json')
+             file_path = kwargs.get('file_path', 'sandbox/ourdataset.json')
              return TasksDataSetDataSource(file_path)
          else:
              raise ValueError(f"Unsupported data source type: {source_type}")
@@ -108,7 +108,7 @@ class ParaphrasingExperiment:
                 param_combinations = [{}]
             
             for phrase_data in data_source.get_phrases():
-                phrase = phrase_data['text']
+                phrase = phrase_data['short_question']
                 # Load the personas from file
                 personas = []
                 with open("sandbox/personas.json", "r") as file:
