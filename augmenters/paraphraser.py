@@ -20,7 +20,7 @@ class ParaphraserAugmenter(BaseAugmenter):
         return paraphrases_df
     
     def _determine_range(self, rate):
-        ranges = [(0,0.2), (0.2,0.4), (0.4,0.6), (0.6,0.8), (0.8,1.0)]
+        ranges = [(0,0.001), (0.001,0.5), (0.5,0.8), (0.8,1.0)] # Range for the sacre BLEU score  (original, low, moderate, high)
         for r in ranges:
             if r[0] <= rate <= r[1]:
                 return r

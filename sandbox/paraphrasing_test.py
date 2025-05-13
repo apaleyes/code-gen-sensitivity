@@ -273,6 +273,7 @@ class ParaphrasingExperiment:
         return results_df, not_low, not_moderate, not_high
 
 if __name__ == "__main__":
+
     experiment = ParaphrasingExperiment()
     
     # Example using our dataset
