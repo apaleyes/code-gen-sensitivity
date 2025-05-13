@@ -9,7 +9,7 @@ class ParaphraserAugmenter(BaseAugmenter):
             # don't compare to 0.0 directly to avoid precision issues
             self.is_no_op = True
         else:
-            rate = 1 - rate
+            rate = 1 - rate # convert from aug rate to bleu score
             self.range = self._determine_range(rate)
             self.paraphrases_df = self._load_paraphrases(paraphrases_file)
             self.is_no_op = False
@@ -20,11 +20,16 @@ class ParaphraserAugmenter(BaseAugmenter):
         return paraphrases_df
     
     def _determine_range(self, rate):
-        ranges = [(0,0.2), (0.2,0.4), (0.4,0.6), (0.6,0.8), (0.8,1.0)]
+        ranges = [ # Ranges for the sacre BLEU score  (original, low, moderate, high)
+            (1.0-0.001, 1.0), # original, unused
+            (0.5, 1.0-0.001), # low variation band
+            (0.2, 0.5), # medium variation band
+            (0.0, 0.2), # high variation band
+        ] 
         for r in ranges:
             if r[0] <= rate <= r[1]:
                 return r
-    
+
     def augment(self, text):
         if self.is_no_op:
             return text
