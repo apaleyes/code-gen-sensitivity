@@ -29,7 +29,7 @@ class LLMParaphraserPersonas:
         self.base_prompt = """
         You are {persona}. Your task is to paraphrase the provided sentence, which is a prompt for an LLM to generate code, in your own words.
         You cannot refer to your background explicitly in the output.
-        Use your background and assumed knowledge from this to inform the vocabulary and description that you use.
+        Use your background and assumed knowledge from this to inform the vocabulary and description that you use and add details that you think are relevant.
             
         Text to write a prompt for:
         "{text}" 
