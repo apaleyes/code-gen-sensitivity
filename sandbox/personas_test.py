@@ -66,7 +66,7 @@ class ParaphrasingExperiment:
              file_path = kwargs.get('file_path')
              text_column = kwargs.get('text_column')
              return CSVDataSource(file_path, text_column)
-        elif source_type == "our_dataset":
+         elif source_type == "our_dataset":
              file_path = kwargs.get('file_path', 'sandbox/ourdataset.json')
              return TasksDataSetDataSource(file_path)
          else:
@@ -191,7 +191,7 @@ if __name__ == "__main__":
     dataset = experiment.run_experiments(
         selected_approaches=["llms"],
         selected_models={"llms": ["gemini"]},
-        data_source_type="test_phrases",
+        data_source_type="our_dataset",
     )
     
     # Print or process the dataset

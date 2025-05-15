@@ -33,11 +33,15 @@ class LLMParaphraserPersonas:
             
         Text to write a prompt for:
         "{text}" 
-            
-        Format your response as a string,
+
+        Generate {num_variations} different paraphrased versions. 
+        
+        Format your response as a list of strings, one paraphrase per string.
         Example format:
         [
-            "Prompt here"
+            "First paraphrase here",
+            "Second paraphrase here",
+            "Third paraphrase here"
         ]
         """
     
