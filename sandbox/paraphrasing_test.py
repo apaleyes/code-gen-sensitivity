@@ -82,10 +82,10 @@ class ParaphrasingExperiment:
             file_path = kwargs.get('file_path', 'sandbox/oldleetcode.json')
             return LeetCodeDataSource(file_path)
         elif source_type == "leetcode_new":
-            file_path = kwargs.get('file_path', 'sandbox/newleetcode.json')
+            file_path = kwargs.get('file_path', 'experimental_setup/augmented_datasets/newleetcode.json')
             return LeetCodeDataSource(file_path)
         elif source_type == "tasks_dataset":
-            file_path = kwargs.get('file_path', 'sandbox/ourdataset.json')
+            file_path = kwargs.get('file_path', 'experimental_setup/ourdataset.json')
             return TasksDataSetDataSource(file_path)
         elif source_type == "csv":
             file_path = kwargs.get('file_path')
@@ -282,7 +282,7 @@ if __name__ == "__main__":
         selected_approaches=["llms"],
         #selected_models={"transformers": ["tuner007/pegasus_paraphrase"], "llms": ["gemini"]},
         selected_models={"llms": ["gemini"]},
-        data_source_type="tasks_dataset"
+        data_source_type="leetcode_new"
     )
 
     # Example using old leetcode dataset
