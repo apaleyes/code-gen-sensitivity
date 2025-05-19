@@ -195,7 +195,7 @@ class ParaphrasingExperiment:
                                     results_df = results_df.drop('short_phrase', axis=1)
                                 paraphrases_df = pd.DataFrame(paraphrases)
                                 results_df = pd.concat([results_df, paraphrases_df], ignore_index=True)
-                                results_df.to_csv(f"./sandbox/paraphrases_{data_source_type}.csv", index=False)
+                                results_df.to_csv(f"./personas_experiments/paraphrases_{data_source_type}.csv", index=False)
                         else:
                             print(f"Skipping phrase because it already exists")
                         if 'short_phrase' in results_df.columns:
@@ -240,7 +240,7 @@ class ParaphrasingExperiment:
                     moderate = 0
                     high = 0
                     try:
-                        with open("./sandbox/experiments_results_status.json", "r") as file:
+                        with open("./personas_experiments/experiments_results_status.json", "r") as file:
                             experiment_results_status = json.load(file)
                         print("Experiment results loaded successfully.")
                         not_low = experiment_results_status.get('not_low', [])
@@ -268,7 +268,7 @@ class ParaphrasingExperiment:
                         "not_moderate": not_moderate,
                         "not_high": not_high
                     }
-                    with open(f"./sandbox/experiments_results_status.json", "w") as f:
+                    with open(f"./personas_experiments/experiments_results_status.json", "w") as f:
                         json.dump(experiment_results_status, f)
         return results_df, not_low, not_moderate, not_high
 
