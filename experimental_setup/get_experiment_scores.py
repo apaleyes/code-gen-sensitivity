@@ -75,7 +75,7 @@ def calculate_metrics_to_csv(data_dir="./augmented_datasets_split/", out_dir="./
                             rate_responses = method_responses.get(aug_rate, [])
                             index_within_rate = aug_counts.get(aug_rate, 0)
 
-                            if not partial or i % 20 < 5:
+                            if not partial or i % 10 < 5:
                                 code = rate_responses[index_within_rate]
                                 aug_counts[aug_rate] = index_within_rate + 1
 

@@ -12,7 +12,7 @@ json_files = [f for f in os.listdir(datasets_dir) if f.endswith(".json")]
 aug_methods = {
     # "keyboard": [x / 20.0 for x in range(0, 21)],
     # "synonym": [x / 20.0 for x in range(0, 21)],
-    "paraphraser": [0.0] + [(x / 5 + 0.1) for x in range(0, 5)]
+    "paraphraser": [0.0, 0.25, 0.6, 0.9]
 }
 
 for filename in json_files:
