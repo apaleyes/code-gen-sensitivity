@@ -67,7 +67,7 @@ class ParaphrasingExperiment:
              text_column = kwargs.get('text_column')
              return CSVDataSource(file_path, text_column)
          elif source_type == "our_dataset":
-             file_path = kwargs.get('file_path', 'sandbox/ourdataset.json')
+             file_path = kwargs.get('file_path', 'personas_experiments/ourdataset.json')
              return TasksDataSetDataSource(file_path)
          else:
              raise ValueError(f"Unsupported data source type: {source_type}")
