@@ -50,9 +50,7 @@ class ParaphraseEvaluator:
 
         # Move BERTScore to GPU if available
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.bert_score_metric = torchmetrics.text.BERTScore(
-            model_name_or_path="roberta-large"
-        ).to(self.device)
+        self.bert_score_metric = torchmetrics.text.BERTScore(model_name_or_path="roberta-large").to(self.device)
         self.sacre_bleu_metric = torchmetrics.text.SacreBLEUScore().to(self.device)
 
     def evaluate_single_paraphrase(self, original: str, paraphrase: str) -> Dict:
@@ -104,8 +102,19 @@ class ParaphraseEvaluator:
         # BERTScore is a metric that measures the similarity between two sentences based on their semantic meaning.
         # It uses a pre-trained BERT model to generate contextualized embeddings for each sentence and then computes the similarity between these embeddings.
         # A higher BERTScore indicates higher semantic similarity between the two sentences.
-        bert_score = self.bert_score_metric([paraphrase], [original])
-        bert_score_f1 = bert_score['f1'].item()
+        try:
+            # Ensure inputs are strings and not empty
+            if not isinstance(paraphrase, str) or not isinstance(original, str):
+                raise ValueError("Inputs must be strings")
+            if not paraphrase.strip() or not original.strip():
+                raise ValueError("Inputs cannot be empty")
+                
+            # Calculate BERTScore
+            bert_score = self.bert_score_metric([paraphrase], [original])
+            bert_score_f1 = bert_score['f1'].item()
+        except Exception as e:
+            print(f"Warning: BERTScore calculation failed: {str(e)}")
+            bert_score_f1 = semantic_similarity
         
         # Calculate Length Ratio
         # Length ratio measures the proportion of the length of the paraphrased text to the original text.

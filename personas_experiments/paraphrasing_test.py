@@ -115,7 +115,7 @@ class ParaphrasingExperiment:
         data_source = self.create_data_source(data_source_type, **data_source_kwargs)
         
         ## Read results file if exist
-        results_file_path = f"./sandbox/paraphrases_{data_source_type}.csv"
+        results_file_path = f"./personas_experiments/paraphrases_{data_source_type}.csv"
         if os.path.exists(results_file_path):
             results_df = pd.read_csv(results_file_path)
         else:
@@ -275,7 +275,7 @@ class ParaphrasingExperiment:
 if __name__ == "__main__":
 
 
-    import pandas as pd
+    """import pandas as pd
     import matplotlib.pyplot as plt
 
     # Load the dataset
@@ -288,7 +288,7 @@ if __name__ == "__main__":
     plt.xlabel('Phrase ID')
     plt.ylabel('Sacre BLEU')
     plt.grid(True)
-    plt.show()
+    plt.show()"""
 
     experiment = ParaphrasingExperiment()
     
