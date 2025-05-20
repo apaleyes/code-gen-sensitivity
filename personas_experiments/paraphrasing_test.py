@@ -147,12 +147,15 @@ class ParaphrasingExperiment:
                         paraphrases = []
                         print(f"\nTesting {approach_name} with {model_name}")
                         print(f"Parameters: {params}")
+                        print(f"Phrase ID: {phrase_id}")
                         print(f"Phrase: {phrase[:50]}...")
                         skip_phrase = True
                         if not results_df.empty:
                             results_df['short_phrase'] = results_df['original_phrase'].str[:50]
-                            if not ((results_df['short_phrase'] == phrase[:50]) & (results_df['temperature'] == params['temperature']) & (results_df['diversity_rate'] == params['diversity_rate'] )).any():
+                            if not ((results_df['phrase_id'] == phrase_id) & (results_df['short_phrase'] == phrase[:50]) & (results_df['temperature'] == params['temperature']) & (results_df['diversity_rate'] == params['diversity_rate'] )).any():
                                 skip_phrase = False
+                            else:
+                                skip_phrase = True
                         else:
                             skip_phrase = False
                         
@@ -275,11 +278,11 @@ class ParaphrasingExperiment:
 if __name__ == "__main__":
 
 
-    """import pandas as pd
+    import pandas as pd
     import matplotlib.pyplot as plt
 
     # Load the dataset
-    dataset = pd.read_csv('personas_experiments/paraphrases_leetcode_new.csv')
+    """dataset = pd.read_csv('personas_experiments/paraphrases_leetcode_new.csv')
 
     # Create a scatter plot
     plt.figure(figsize=(10, 6))
