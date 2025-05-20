@@ -274,6 +274,22 @@ class ParaphrasingExperiment:
 
 if __name__ == "__main__":
 
+
+    import pandas as pd
+    import matplotlib.pyplot as plt
+
+    # Load the dataset
+    dataset = pd.read_csv('personas_experiments/paraphrases_leetcode_new.csv')
+
+    # Create a scatter plot
+    plt.figure(figsize=(10, 6))
+    plt.scatter(dataset['phrase_id'], dataset['sacre_bleu'], alpha=0.5)
+    plt.title('Phrase ID vs Sacre BLEU')
+    plt.xlabel('Phrase ID')
+    plt.ylabel('Sacre BLEU')
+    plt.grid(True)
+    plt.show()
+
     experiment = ParaphrasingExperiment()
     
     # Example using our dataset
