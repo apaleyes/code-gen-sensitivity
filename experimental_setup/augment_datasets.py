@@ -29,7 +29,12 @@ for filename in json_files:
             aug_rates = aug_methods[method]
             augmented_versions[method] = {}
             for rate in aug_rates:
-                augmenter_kwargs = {"text_len": len(prompt), "paraphrases_file": "datasets/paraphrases.csv"}
+                if "leetcode" in filename:
+                    paraphrases_file = "datasets/paraphrases_leetcode_new.csv"
+                else:
+                    paraphrases_file = "datasets/paraphrases_ourdataset.csv"
+
+                augmenter_kwargs = {"text_len": len(prompt), "paraphrases_file": paraphrases_file}
                 augmenter = get_augmenter(method, rate, **augmenter_kwargs)
                 augmented_prompt = augmenter.augment(prompt)
                 augmented_versions[method][str(round(rate, 2))] = augmented_prompt
