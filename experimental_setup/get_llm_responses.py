@@ -90,6 +90,10 @@ def main():
                             print("[SKIP]", model_name, filename, item_idx, method, rate_str)
                             continue
 
+                        if prompt is None or prompt == "":
+                            print("[SKIP][None]", model_name, filename, item_idx, method, rate_str)
+                            continue
+
                         responses = existing if isinstance(existing, list) else []
                         prompts = [prompt] * request_buffer
 
