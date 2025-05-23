@@ -1,0 +1,6 @@
+model,method,dataset,task,augmentation_rate,tsed_score,bert_score
+llama,paraphraser,ourdataset.json,Q00020,0.0,0.9354045307443364,0.9958010911941528
+llama,paraphraser,ourdataset.json,Q00020,0.0,0.9354045307443364,0.9958010911941528
+llama,paraphraser,ourdataset.json,Q00020,0.0,0.8163734820083951,0.9927647709846497
+llama,paraphraser,ourdataset.json,Q00020,0.0,0.9415066166810856,0.9965927004814148
+llama,paraphraser,ourdataset.json,Q00020,0.0,0.9415066166810856,0.9965927004814148

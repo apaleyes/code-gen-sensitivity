@@ -1,0 +1,11 @@
+model,method,dataset,task,augmentation_rate,tsed_score,bert_score
+deepseek,paraphraser,newleetcode.json,Q00015,0.0,0.6726784798823744,0.9914795160293579
+deepseek,paraphraser,newleetcode.json,Q00015,0.0,0.6439206224712107,0.9904521107673645
+deepseek,paraphraser,newleetcode.json,Q00015,0.0,0.6706624338624341,0.9918335676193237
+deepseek,paraphraser,newleetcode.json,Q00015,0.0,0.6203174603174602,0.9920551180839539
+deepseek,paraphraser,newleetcode.json,Q00015,0.0,0.6236924648786719,0.9915817975997925
+deepseek,paraphraser,newleetcode.json,Q00015,0.9,,
+deepseek,paraphraser,newleetcode.json,Q00015,0.9,,
+deepseek,paraphraser,newleetcode.json,Q00015,0.9,,
+deepseek,paraphraser,newleetcode.json,Q00015,0.9,,
+deepseek,paraphraser,newleetcode.json,Q00015,0.9,,

@@ -1,0 +1,16 @@
+model,method,dataset,task,augmentation_rate,tsed_score,bert_score
+deepseek,paraphraser,newleetcode.json,Q00005,0.0,0.8995373199476211,0.9958598017692566
+deepseek,paraphraser,newleetcode.json,Q00005,0.0,0.8995373199476211,0.9960483312606812
+deepseek,paraphraser,newleetcode.json,Q00005,0.0,0.8440927150835489,0.9941688776016235
+deepseek,paraphraser,newleetcode.json,Q00005,0.0,0.8974799941801251,0.9957536458969116
+deepseek,paraphraser,newleetcode.json,Q00005,0.0,0.7406896551724138,0.9941169023513794
+deepseek,paraphraser,newleetcode.json,Q00005,0.25,,
+deepseek,paraphraser,newleetcode.json,Q00005,0.25,,
+deepseek,paraphraser,newleetcode.json,Q00005,0.25,,
+deepseek,paraphraser,newleetcode.json,Q00005,0.25,,
+deepseek,paraphraser,newleetcode.json,Q00005,0.25,,
+deepseek,paraphraser,newleetcode.json,Q00005,0.9,0.7667893317216757,0.9917904138565063
+deepseek,paraphraser,newleetcode.json,Q00005,0.9,0.7983103560196534,0.9936765432357788
+deepseek,paraphraser,newleetcode.json,Q00005,0.9,0.3179775934817409,0.9854251742362976
+deepseek,paraphraser,newleetcode.json,Q00005,0.9,0.8180811906185635,0.9955698847770691
+deepseek,paraphraser,newleetcode.json,Q00005,0.9,0.8440927150835489,0.9939814805984497

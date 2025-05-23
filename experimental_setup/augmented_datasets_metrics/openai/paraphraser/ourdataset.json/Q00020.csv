@@ -1,0 +1,6 @@
+model,method,dataset,task,augmentation_rate,tsed_score,bert_score
+openai,paraphraser,ourdataset.json,Q00020,0.0,0.9215189873417721,0.9976563453674316
+openai,paraphraser,ourdataset.json,Q00020,0.0,0.9581434599156118,0.9983893632888794
+openai,paraphraser,ourdataset.json,Q00020,0.0,0.9581434599156118,0.9983280301094055
+openai,paraphraser,ourdataset.json,Q00020,0.0,0.9215189873417721,0.9976563453674316
+openai,paraphraser,ourdataset.json,Q00020,0.0,0.9581434599156118,0.9983893632888794

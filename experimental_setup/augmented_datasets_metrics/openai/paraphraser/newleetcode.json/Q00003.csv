@@ -1,0 +1,16 @@
+model,method,dataset,task,augmentation_rate,tsed_score,bert_score
+openai,paraphraser,newleetcode.json,Q00003,0.0,1.0,0.9999998807907104
+openai,paraphraser,newleetcode.json,Q00003,0.0,1.0,0.9999998807907104
+openai,paraphraser,newleetcode.json,Q00003,0.0,1.0,0.9999998807907104
+openai,paraphraser,newleetcode.json,Q00003,0.0,1.0,0.9999998807907104
+openai,paraphraser,newleetcode.json,Q00003,0.0,1.0,0.9999998807907104
+openai,paraphraser,newleetcode.json,Q00003,0.6,,
+openai,paraphraser,newleetcode.json,Q00003,0.6,,
+openai,paraphraser,newleetcode.json,Q00003,0.6,,
+openai,paraphraser,newleetcode.json,Q00003,0.6,,
+openai,paraphraser,newleetcode.json,Q00003,0.6,,
+openai,paraphraser,newleetcode.json,Q00003,0.9,0.56,0.9824810028076172
+openai,paraphraser,newleetcode.json,Q00003,0.9,0.42000000000000004,0.9858698844909668
+openai,paraphraser,newleetcode.json,Q00003,0.9,0.56,0.9824810028076172
+openai,paraphraser,newleetcode.json,Q00003,0.9,0.544,0.9845832586288452
+openai,paraphraser,newleetcode.json,Q00003,0.9,0.56,0.9824810028076172

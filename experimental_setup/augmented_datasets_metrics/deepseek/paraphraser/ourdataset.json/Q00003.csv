@@ -1,0 +1,16 @@
+model,method,dataset,task,augmentation_rate,tsed_score,bert_score
+deepseek,paraphraser,ourdataset.json,Q00003,0.0,0.3620725388601251,0.9512292146682739
+deepseek,paraphraser,ourdataset.json,Q00003,0.0,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.0,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.0,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.0,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.25,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.25,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.25,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.25,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.25,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.6,0.2272253490152054,0.9454320669174194
+deepseek,paraphraser,ourdataset.json,Q00003,0.6,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.6,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.6,,
+deepseek,paraphraser,ourdataset.json,Q00003,0.6,,

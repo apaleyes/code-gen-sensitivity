@@ -1,0 +1,16 @@
+model,method,dataset,task,augmentation_rate,tsed_score,bert_score
+claude,paraphraser,newleetcode.json,Q00003,0.0,0.36369991292397114,0.9798076748847961
+claude,paraphraser,newleetcode.json,Q00003,0.0,0.774641110376735,0.9907163381576538
+claude,paraphraser,newleetcode.json,Q00003,0.0,0.7559550561797754,0.9907078742980957
+claude,paraphraser,newleetcode.json,Q00003,0.0,0.6315839654213745,0.9861636161804199
+claude,paraphraser,newleetcode.json,Q00003,0.0,0.774641110376735,0.9906474351882935
+claude,paraphraser,newleetcode.json,Q00003,0.6,,
+claude,paraphraser,newleetcode.json,Q00003,0.6,,
+claude,paraphraser,newleetcode.json,Q00003,0.6,,
+claude,paraphraser,newleetcode.json,Q00003,0.6,,
+claude,paraphraser,newleetcode.json,Q00003,0.6,,
+claude,paraphraser,newleetcode.json,Q00003,0.9,0.44280611509884055,0.9798496961593628
+claude,paraphraser,newleetcode.json,Q00003,0.9,0.774641110376735,0.9906474351882935
+claude,paraphraser,newleetcode.json,Q00003,0.9,0.4174524263891347,0.978793740272522
+claude,paraphraser,newleetcode.json,Q00003,0.9,0.774641110376735,0.9906474351882935
+claude,paraphraser,newleetcode.json,Q00003,0.9,0.774641110376735,0.9894483685493469
