@@ -76,25 +76,10 @@
           "import pandas as pd\n\ndef reorganize_dataframe(df):\n    \"\"\"\n    Reorganizes a pandas dataframe to transform it from having one row for each Patient ID\n    to having multiple rows for each Patient ID, organized by hour with the first column\n    being \"Time since surgery\". Fixed variables such as age should be the same for each\n    of these hourly rows.\n\n    Args:\n        df (pd.DataFrame): Input dataframe with columns 'Patient ID', 'age', 'sex',\n                             'procedure type', and columns for hours 1-10.\n\n    Returns:\n        pd.DataFrame: Reorganized dataframe.\n    \"\"\"\n\n    # Create an empty list to store the reorganized data\n    reorganized_data = []\n\n    # Iterate over each row in the original dataframe\n    for index, row in df.iterrows():\n        patient_id = row['Patient ID']\n        age = row['age']\n        sex = row['sex']\n        procedure_type = row['procedure type']\n\n        # Iterate over the hours (1 to 10)\n        for hour in range(1, 11):\n            # Create a dictionary for each hour\n            hour_data = {\n                'Patient ID': patient_id,\n                'Time since surgery': hour,\n                'age': age,\n                'sex': sex,\n                'procedure type': procedure_type,\n                'value': row[str(hour)]  # Assuming hour columns are named '1', '2', ..., '10'\n            }\n            reorganized_data.append(hour_data)\n\n    # Create a new dataframe from the reorganized data\n    reorganized_df = pd.DataFrame(reorganized_data)\n\n    return reorganized_df\n\nif __name__ == '__main__':\n    # Example usage:\n    data = {\n        'Patient ID': [1, 2, 3],\n        'age': [60, 70, 80],\n        'sex': ['M', 'F', 'M'],\n        'procedure type': ['A', 'B', 'C'],\n        '1': [10, 15, 20],\n        '2': [12, 17, 22],\n        '3': [14, 19, 24],\n        '4': [16, 21, 26],\n        '5': [18, 23, 28],\n        '6': [20, 25, 30],\n        '7': [22, 27, 32],\n        '8': [24, 29, 34],\n        '9': [26, 31, 36],\n        '10': [28, 33, 38]\n    }\n    df = pd.DataFrame(data)\n\n    reorganized_df = reorganize_dataframe(df)\n    print(reorganized_df)"
         ],
         "0.25": [
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found"
         ],
         "0.6": [
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found"
         ],
         "0.9": [
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found"
         ]
       }
     }

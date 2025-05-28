@@ -76,25 +76,10 @@
           "import pandas as pd\n\n# Assuming your original dataframe is called 'df'\ndf_long = pd.melt(df, id_vars=['Patient ID', 'age', 'sex', 'procedure type'], var_name='Time since surgery', value_name='Value')\n\n# Sort the dataframe by Patient ID and Time since surgery\ndf_long = df_long.sort_values(['Patient ID', 'Time since surgery'])"
         ],
         "0.25": [
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found"
         ],
         "0.6": [
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found"
         ],
         "0.9": [
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found",
-          "ERROR: sequence item 1: expected str instance, NoneType found"
         ]
       }
     }

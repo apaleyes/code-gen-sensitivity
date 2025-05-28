@@ -64,74 +64,24 @@
     "openai": {
       "keyboard": {
         "0.0": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.05": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.1": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.15": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.2": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.25": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.3": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.35": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.4": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.45": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.5": [
           "def reverse_integer(x):\n    sign = -1 if x < 0 else 1\n    x *= sign\n    reversed_x = int(str(x)[::-1]) * sign\n    \n    if reversed_x < -2**31 or reversed_x > 2**31 - 1:\n        return 0\n    return reversed_x\n\n# Test cases\nprint(reverse_integer(123))    # Output: 321\nprint(reverse_integer(-123))   # Output: -321\nprint(reverse_integer(120))    # Output: 21",

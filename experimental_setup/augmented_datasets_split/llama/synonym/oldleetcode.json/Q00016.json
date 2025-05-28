@@ -141,74 +141,24 @@
           "class TreeNode:\n    def __init__(self, x):\n        self.val = x\n        self.left = None\n        self.right = None\n\ndef maxDepth(root):\n    if root is None:\n        return 0\n    else:\n        left_depth = maxDepth(root.left)\n        right_depth = maxDepth(root.right)\n        return max(left_depth, right_depth) + 1\n\ndef deepestNode(root):\n    if root is None:\n        return None\n    max_depth = maxDepth(root)\n    queue = [(root, 1)]\n    while queue:\n        node, depth = queue.pop(0)\n        if depth == max_depth:\n            return node.val\n        if node.left:\n            queue.append((node.left, depth + 1))\n        if node.right:\n            queue.append((node.right, depth + 1))\n\ndef createTree(nodes):\n    if not nodes:\n        return None\n    root = TreeNode(nodes[0])\n    queue = [root]\n    i = 1\n    while i < len(nodes):\n        current = queue.pop(0)\n        if nodes[i] is not None:\n            current.left = TreeNode(nodes[i])\n            queue.append(current.left)\n        i += 1\n        if i < len(nodes) and nodes[i] is not None:\n            current.right = TreeNode(nodes[i])\n            queue.append(current.right)\n        i += 1\n    return root\n\ndef solution(nodes):\n    root = createTree(nodes)\n    return deepestNode(root)\n\nprint(solution([3, 9, 20, None, None, 15, 7]))\nprint(solution([1, None, 2]))"
         ],
         "0.55": [
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}"
         ],
         "0.6": [
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}"
         ],
         "0.65": [
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}"
         ],
         "0.7": [
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}"
         ],
         "0.75": [
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}"
         ],
         "0.8": [
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}"
         ],
         "0.85": [
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}"
         ],
         "0.9": [
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}"
         ],
         "0.95": [
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}"
         ],
         "1.0": [
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}",
-          "ERROR: Error code: 500 - {'error': {'message': 'Internal Server Error', 'code': 500}}"
         ]
       }
     }

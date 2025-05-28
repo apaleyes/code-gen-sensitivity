@@ -81,134 +81,43 @@
           "def convert(s, numRows):\n    if numRows == 1 or numRows >= len(s):\n        return s\n\n    rows = [''] * numRows\n    cur_row = 0\n    going_down = False\n\n    for char in s:\n        rows[cur_row] += char\n        if cur_row == 0:\n            going_down = True\n        elif cur_row == numRows - 1:\n            going_down = False\n        cur_row += 1 if going_down else -1\n\n    return ''.join(rows)",
           "def convert(s, numRows):\n    if numRows == 1 or numRows >= len(s):\n        return s\n\n    rows = [''] * numRows\n    cur_row = 0\n    going_down = False\n\n    for char in s:\n        rows[cur_row] += char\n        if cur_row == 0:\n            going_down = True\n        elif cur_row == numRows - 1:\n            going_down = False\n        cur_row += 1 if going_down else -1\n\n    return ''.join(rows)",
           "def convert(s, numRows):\n    if numRows == 1 or numRows >= len(s):\n        return s\n\n    rows = [''] * numRows\n    cur_row = 0\n    going_down = False\n\n    for char in s:\n        rows[cur_row] += char\n        if cur_row == 0:\n            going_down = True\n        elif cur_row == numRows - 1:\n            going_down = False\n        cur_row += 1 if going_down else -1\n\n    return ''.join(rows)",
-          "def convert(s, numRows):\n    if numRows == 1 or numRows >= len(s):\n        return s\n\n    rows = [''] * numRows\n    cur_row = 0\n    going_down = False\n\n    for char in s:\n        rows[cur_row] += char\n        if cur_row == 0:\n            going_down = True\n        elif cur_row == numRows - 1:\n            going_down = False\n        cur_row += 1 if going_down else -1\n\n    return ''.join(rows)",
-          "ERROR: Connection error."
+          "def convert(s, numRows):\n    if numRows == 1 or numRows >= len(s):\n        return s\n\n    rows = [''] * numRows\n    cur_row = 0\n    going_down = False\n\n    for char in s:\n        rows[cur_row] += char\n        if cur_row == 0:\n            going_down = True\n        elif cur_row == numRows - 1:\n            going_down = False\n        cur_row += 1 if going_down else -1\n\n    return ''.join(rows)"
         ],
         "0.15": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.2": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.25": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.3": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.35": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.4": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.45": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.5": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.55": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.6": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.65": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.7": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.75": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.8": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.85": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.9": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.95": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "1.0": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Timeout after 3 attempts"
         ]
       }
     }

@@ -184,8 +184,6 @@
         "0.85": [
           "def solve():\n    arr = list(map(int, input().split()))\n    \n    def calculate_sum(arr):\n        if len(arr) == 0:\n            return 0\n        if len(arr) == 1:\n            return 0\n        \n        max_val = max(arr[0], arr[1])\n        remaining_arr = arr[2:]\n        \n        if len(remaining_arr) > 0:\n            return max_val + calculate_sum(remaining_arr)\n        else:\n            return max_val\n    \n    print(calculate_sum(arr))\n\nsolve()",
           "def solve():\n    arr = list(map(int, input().split()))\n    \n    def calculate_sum(arr):\n        if len(arr) == 0:\n            return 0\n        if len(arr) == 1:\n            return 0\n        \n        max_val = max(arr[0], arr[1])\n        remaining_arr = arr[2:]\n        \n        if len(remaining_arr) > 0:\n            return max_val + calculate_sum(remaining_arr)\n        else:\n            return max_val\n    \n    print(calculate_sum(arr))\n\nsolve()",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
           "def solve():\n    arr = list(map(int, input().split()))\n    \n    def calculate_sum(arr):\n        if len(arr) == 0:\n            return 0\n        if len(arr) == 1:\n            return 0\n        \n        max_val = max(arr[0], arr[1])\n        remaining_arr = arr[2:]\n        \n        if len(remaining_arr) > 0:\n            return max_val + calculate_sum(remaining_arr)\n        else:\n            return max_val\n    \n    print(calculate_sum(arr))\n\nsolve()"
         ],
         "0.9": [

@@ -64,151 +64,46 @@
     "openai": {
       "synonym": {
         "0.0": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.05": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.1": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.15": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.2": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.25": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.3": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.35": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.4": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.45": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.5": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.55": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.6": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.65": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.7": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.75": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.8": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.85": [
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error.",
-          "ERROR: Connection error."
         ],
         "0.9": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "0.95": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ],
         "1.0": [
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts",
-          "ERROR: Timeout after 3 attempts"
         ]
       }
     }
