@@ -62,7 +62,7 @@ def main():
     output_base = "augmented_datasets_split"
     os.makedirs(output_base, exist_ok=True)
 
-    model_names = ["openai", "llama", "deepseek"]
+    model_names = ["openai", "llama"]
     # model_names = ["gemini", "claude"]
     n_repeats = 5
     request_buffer = 6
