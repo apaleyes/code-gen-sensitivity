@@ -56,14 +56,19 @@ def save_response(output_path, original_item, model, method, rate_str, responses
 
 
 def main():
-    # input_dir = "experimental_setup/augmented_datasets"
-    # output_base = "experimental_setup/augmented_datasets_split"
-    input_dir = "augmented_datasets"
-    output_base = "augmented_datasets_split"
+    input_dir = "experimental_setup/augmented_datasets"
+    output_base = "experimental_setup/augmented_datasets_split"
+    # input_dir = "augmented_datasets"
+    # output_base = "augmented_datasets_split"
     os.makedirs(output_base, exist_ok=True)
 
+<<<<<<< HEAD
     model_names = ["openai", "llama"]
     # model_names = ["gemini", "claude"]
+=======
+    # model_names = ["openai", "llama", "deepseek"]
+    model_names = ["claude", "gemini"]
+>>>>>>> f7ba3a3 (Cleanup, backfilling some errors)
     n_repeats = 5
     request_buffer = 6
 

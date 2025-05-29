@@ -35,5 +35,4 @@ class Gemini(BaseModel):
 
     @property
     def call_timeout(self):
-        # This is to stay within free tier for Gemini
-        return 5
+        return 0.5
