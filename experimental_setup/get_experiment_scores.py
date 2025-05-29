@@ -93,8 +93,8 @@ def calculate_metrics_to_csv(data_dir="./augmented_datasets_split/", out_dir="./
                                         changed = True
                                         preds = [code] * len(original_codes)
                                         refs = original_codes
-                                        score = bert_score_metric(preds, refs)["f1"].mean().item()
-                                        row["bert_score"] = score
+                                        #score = bert_score_metric(preds, refs)["f1"].mean().item()
+                                        row["bert_score"] = 0.0
                                         print(f"{model} {method} {dataset} {task} [BERT] @ {aug_rate} #{index_within_rate}: {score}")
                         except Exception as e:
                             print(f"[ERROR] {item_path} – {e}")
