@@ -2,8 +2,8 @@ model,method,dataset,task,augmentation_rate,tsed_score,bert_score
 llama,keyboard,ourdataset.json,Q00014,0.0,0.45490722358982494,0.9726494550704956
 llama,keyboard,ourdataset.json,Q00014,0.0,0.5324413240190593,0.9751432538032532
 llama,keyboard,ourdataset.json,Q00014,0.0,0.5336224489795924,0.9745179414749146
-llama,keyboard,ourdataset.json,Q00014,0.0,,
-llama,keyboard,ourdataset.json,Q00014,0.0,,
+llama,keyboard,ourdataset.json,Q00014,0.0,0.740944670395911,0.0
+llama,keyboard,ourdataset.json,Q00014,0.0,0.6586265403519009,0.0
 llama,keyboard,ourdataset.json,Q00014,0.05,,
 llama,keyboard,ourdataset.json,Q00014,0.05,,
 llama,keyboard,ourdataset.json,Q00014,0.05,,
@@ -43,7 +43,7 @@ llama,keyboard,ourdataset.json,Q00014,0.4,0.3261831153388835,0.963021457195282
 llama,keyboard,ourdataset.json,Q00014,0.4,0.33460154964200595,0.9721778035163879
 llama,keyboard,ourdataset.json,Q00014,0.4,0.3590452059827808,0.9694832563400269
 llama,keyboard,ourdataset.json,Q00014,0.4,0.26314649757576536,0.9629279375076294
-llama,keyboard,ourdataset.json,Q00014,0.4,,
+llama,keyboard,ourdataset.json,Q00014,0.4,0.43328374070138065,0.0
 llama,keyboard,ourdataset.json,Q00014,0.45,,
 llama,keyboard,ourdataset.json,Q00014,0.45,,
 llama,keyboard,ourdataset.json,Q00014,0.45,,
@@ -62,8 +62,8 @@ llama,keyboard,ourdataset.json,Q00014,0.55,,
 llama,keyboard,ourdataset.json,Q00014,0.6,0.16135071681805138,0.9490545988082886
 llama,keyboard,ourdataset.json,Q00014,0.6,0.16135071681805138,0.9490545392036438
 llama,keyboard,ourdataset.json,Q00014,0.6,0.19320834034934964,0.9563156366348267
-llama,keyboard,ourdataset.json,Q00014,0.6,,
-llama,keyboard,ourdataset.json,Q00014,0.6,,
+llama,keyboard,ourdataset.json,Q00014,0.6,0.04962053286792728,0.0
+llama,keyboard,ourdataset.json,Q00014,0.6,0.04962053286792728,0.0
 llama,keyboard,ourdataset.json,Q00014,0.65,,
 llama,keyboard,ourdataset.json,Q00014,0.65,,
 llama,keyboard,ourdataset.json,Q00014,0.65,,
