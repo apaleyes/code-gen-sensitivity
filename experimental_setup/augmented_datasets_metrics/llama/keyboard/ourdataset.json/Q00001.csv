@@ -11,8 +11,8 @@ llama,keyboard,ourdataset.json,Q00001,0.05,,
 llama,keyboard,ourdataset.json,Q00001,0.05,,
 llama,keyboard,ourdataset.json,Q00001,0.1,0.558831795013087,0.982638955116272
 llama,keyboard,ourdataset.json,Q00001,0.1,0.6323770556473935,0.9795107841491699
-llama,keyboard,ourdataset.json,Q00001,0.1,,
-llama,keyboard,ourdataset.json,Q00001,0.1,,
+llama,keyboard,ourdataset.json,Q00001,0.1,0.5363376945714995,0.0
+llama,keyboard,ourdataset.json,Q00001,0.1,0.5363376945714995,0.0
 llama,keyboard,ourdataset.json,Q00001,0.1,,
 llama,keyboard,ourdataset.json,Q00001,0.15,,
 llama,keyboard,ourdataset.json,Q00001,0.15,,
@@ -22,8 +22,8 @@ llama,keyboard,ourdataset.json,Q00001,0.15,,
 llama,keyboard,ourdataset.json,Q00001,0.2,0.5670316200898963,0.9819048047065735
 llama,keyboard,ourdataset.json,Q00001,0.2,0.6289378215398238,0.9800883531570435
 llama,keyboard,ourdataset.json,Q00001,0.2,0.5245889324838497,0.9793211221694946
-llama,keyboard,ourdataset.json,Q00001,0.2,,
-llama,keyboard,ourdataset.json,Q00001,0.2,,
+llama,keyboard,ourdataset.json,Q00001,0.2,0.566541650211237,0.0
+llama,keyboard,ourdataset.json,Q00001,0.2,0.5178965020306562,0.0
 llama,keyboard,ourdataset.json,Q00001,0.25,,
 llama,keyboard,ourdataset.json,Q00001,0.25,,
 llama,keyboard,ourdataset.json,Q00001,0.25,,
@@ -33,7 +33,7 @@ llama,keyboard,ourdataset.json,Q00001,0.3,0.48577912254160455,0.9634252786636353
 llama,keyboard,ourdataset.json,Q00001,0.3,0.4796191548389688,0.9722511172294617
 llama,keyboard,ourdataset.json,Q00001,0.3,0.4785618729097013,0.9672906994819641
 llama,keyboard,ourdataset.json,Q00001,0.3,0.46557221783741554,0.966870903968811
-llama,keyboard,ourdataset.json,Q00001,0.3,,
+llama,keyboard,ourdataset.json,Q00001,0.3,0.42400550398422715,0.0
 llama,keyboard,ourdataset.json,Q00001,0.35,,
 llama,keyboard,ourdataset.json,Q00001,0.35,,
 llama,keyboard,ourdataset.json,Q00001,0.35,,
@@ -42,7 +42,7 @@ llama,keyboard,ourdataset.json,Q00001,0.35,,
 llama,keyboard,ourdataset.json,Q00001,0.4,0.19457841986328478,0.958188533782959
 llama,keyboard,ourdataset.json,Q00001,0.4,0.20268787370664798,0.9603046178817749
 llama,keyboard,ourdataset.json,Q00001,0.4,0.22984276053154545,0.9605644941329956
-llama,keyboard,ourdataset.json,Q00001,0.4,,
+llama,keyboard,ourdataset.json,Q00001,0.4,0.209592819385061,0.0
 llama,keyboard,ourdataset.json,Q00001,0.4,0.209592819385061,0.9580825567245483
 llama,keyboard,ourdataset.json,Q00001,0.45,,
 llama,keyboard,ourdataset.json,Q00001,0.45,,

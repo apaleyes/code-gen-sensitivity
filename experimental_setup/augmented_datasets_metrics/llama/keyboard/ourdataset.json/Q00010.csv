@@ -1,9 +1,9 @@
 model,method,dataset,task,augmentation_rate,tsed_score,bert_score
 llama,keyboard,ourdataset.json,Q00010,0.0,0.37854258121159867,0.9629794955253601
 llama,keyboard,ourdataset.json,Q00010,0.0,0.37386669960867364,0.9597457647323608
-llama,keyboard,ourdataset.json,Q00010,0.0,,
-llama,keyboard,ourdataset.json,Q00010,0.0,,
-llama,keyboard,ourdataset.json,Q00010,0.0,,
+llama,keyboard,ourdataset.json,Q00010,0.0,0.6082605585501626,0.0
+llama,keyboard,ourdataset.json,Q00010,0.0,0.6082605585501626,0.0
+llama,keyboard,ourdataset.json,Q00010,0.0,0.4585206087165755,0.0
 llama,keyboard,ourdataset.json,Q00010,0.05,,
 llama,keyboard,ourdataset.json,Q00010,0.05,,
 llama,keyboard,ourdataset.json,Q00010,0.05,,
@@ -11,9 +11,9 @@ llama,keyboard,ourdataset.json,Q00010,0.05,,
 llama,keyboard,ourdataset.json,Q00010,0.05,,
 llama,keyboard,ourdataset.json,Q00010,0.1,0.3063365909123696,0.958931565284729
 llama,keyboard,ourdataset.json,Q00010,0.1,0.22519605997092507,0.9583417773246765
-llama,keyboard,ourdataset.json,Q00010,0.1,,
-llama,keyboard,ourdataset.json,Q00010,0.1,,
-llama,keyboard,ourdataset.json,Q00010,0.1,,
+llama,keyboard,ourdataset.json,Q00010,0.1,0.37050880535447994,0.0
+llama,keyboard,ourdataset.json,Q00010,0.1,0.3992033195020757,0.0
+llama,keyboard,ourdataset.json,Q00010,0.1,0.349787716187644,0.0
 llama,keyboard,ourdataset.json,Q00010,0.15,,
 llama,keyboard,ourdataset.json,Q00010,0.15,,
 llama,keyboard,ourdataset.json,Q00010,0.15,,
@@ -22,8 +22,8 @@ llama,keyboard,ourdataset.json,Q00010,0.15,,
 llama,keyboard,ourdataset.json,Q00010,0.2,0.26076140118060537,0.9590895771980286
 llama,keyboard,ourdataset.json,Q00010,0.2,0.2537552565768403,0.9590895771980286
 llama,keyboard,ourdataset.json,Q00010,0.2,0.24276336770285795,0.9562166333198547
-llama,keyboard,ourdataset.json,Q00010,0.2,,
-llama,keyboard,ourdataset.json,Q00010,0.2,,
+llama,keyboard,ourdataset.json,Q00010,0.2,0.36582791608620246,0.0
+llama,keyboard,ourdataset.json,Q00010,0.2,0.3597174497919765,0.0
 llama,keyboard,ourdataset.json,Q00010,0.25,,
 llama,keyboard,ourdataset.json,Q00010,0.25,,
 llama,keyboard,ourdataset.json,Q00010,0.25,,

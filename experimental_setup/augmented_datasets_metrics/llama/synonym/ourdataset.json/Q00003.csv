@@ -2,8 +2,8 @@ model,method,dataset,task,augmentation_rate,tsed_score,bert_score
 llama,synonym,ourdataset.json,Q00003,0.0,0.43032541776605804,0.9705475568771362
 llama,synonym,ourdataset.json,Q00003,0.0,0.4042254547868863,0.970840334892273
 llama,synonym,ourdataset.json,Q00003,0.0,0.4005238149865911,0.9705766439437866
-llama,synonym,ourdataset.json,Q00003,0.0,,
-llama,synonym,ourdataset.json,Q00003,0.0,,
+llama,synonym,ourdataset.json,Q00003,0.0,0.5458362403959929,0.0
+llama,synonym,ourdataset.json,Q00003,0.0,0.5282474598836205,0.0
 llama,synonym,ourdataset.json,Q00003,0.05,,
 llama,synonym,ourdataset.json,Q00003,0.05,,
 llama,synonym,ourdataset.json,Q00003,0.05,,
@@ -23,7 +23,7 @@ llama,synonym,ourdataset.json,Q00003,0.2,0.28301380128693315,0.9662006497383118
 llama,synonym,ourdataset.json,Q00003,0.2,0.2881244668715424,0.9671497344970703
 llama,synonym,ourdataset.json,Q00003,0.2,0.2802801120448291,0.9524024724960327
 llama,synonym,ourdataset.json,Q00003,0.2,0.26029238839799695,0.967557430267334
-llama,synonym,ourdataset.json,Q00003,0.2,,
+llama,synonym,ourdataset.json,Q00003,0.2,0.3113622309205807,0.0
 llama,synonym,ourdataset.json,Q00003,0.25,,
 llama,synonym,ourdataset.json,Q00003,0.25,,
 llama,synonym,ourdataset.json,Q00003,0.25,,
@@ -33,7 +33,7 @@ llama,synonym,ourdataset.json,Q00003,0.3,0.27265286266617,0.9642564654350281
 llama,synonym,ourdataset.json,Q00003,0.3,0.27926062958094666,0.9636996984481812
 llama,synonym,ourdataset.json,Q00003,0.3,0.29692004632928826,0.9657815098762512
 llama,synonym,ourdataset.json,Q00003,0.3,0.28101276203805065,0.9648898243904114
-llama,synonym,ourdataset.json,Q00003,0.3,,
+llama,synonym,ourdataset.json,Q00003,0.3,0.3924619811596733,0.0
 llama,synonym,ourdataset.json,Q00003,0.35,,
 llama,synonym,ourdataset.json,Q00003,0.35,,
 llama,synonym,ourdataset.json,Q00003,0.35,,
@@ -73,7 +73,7 @@ llama,synonym,ourdataset.json,Q00003,0.7,0.19848895844660466,0.9548823237419128
 llama,synonym,ourdataset.json,Q00003,0.7,0.26131336096516267,0.9661781191825867
 llama,synonym,ourdataset.json,Q00003,0.7,0.24265859609369084,0.9535804986953735
 llama,synonym,ourdataset.json,Q00003,0.7,0.2621446919404523,0.9663713574409485
-llama,synonym,ourdataset.json,Q00003,0.7,,
+llama,synonym,ourdataset.json,Q00003,0.7,0.214669593143013,0.0
 llama,synonym,ourdataset.json,Q00003,0.75,,
 llama,synonym,ourdataset.json,Q00003,0.75,,
 llama,synonym,ourdataset.json,Q00003,0.75,,
@@ -82,8 +82,8 @@ llama,synonym,ourdataset.json,Q00003,0.75,,
 llama,synonym,ourdataset.json,Q00003,0.8,0.29069897521522375,0.9647380709648132
 llama,synonym,ourdataset.json,Q00003,0.8,0.2856796114871322,0.9673093557357788
 llama,synonym,ourdataset.json,Q00003,0.8,0.26965123390455215,0.9644945859909058
-llama,synonym,ourdataset.json,Q00003,0.8,,
-llama,synonym,ourdataset.json,Q00003,0.8,,
+llama,synonym,ourdataset.json,Q00003,0.8,0.2893499584571763,0.0
+llama,synonym,ourdataset.json,Q00003,0.8,0.24926488748675416,0.0
 llama,synonym,ourdataset.json,Q00003,0.85,,
 llama,synonym,ourdataset.json,Q00003,0.85,,
 llama,synonym,ourdataset.json,Q00003,0.85,,
@@ -102,5 +102,5 @@ llama,synonym,ourdataset.json,Q00003,0.95,,
 llama,synonym,ourdataset.json,Q00003,1.0,0.24851354560804956,0.9626663327217102
 llama,synonym,ourdataset.json,Q00003,1.0,0.3053815936683887,0.9679723978042603
 llama,synonym,ourdataset.json,Q00003,1.0,0.24171703615079515,0.9672340154647827
-llama,synonym,ourdataset.json,Q00003,1.0,,
-llama,synonym,ourdataset.json,Q00003,1.0,,
+llama,synonym,ourdataset.json,Q00003,1.0,0.41426435870834977,0.0
+llama,synonym,ourdataset.json,Q00003,1.0,0.40362889341554203,0.0

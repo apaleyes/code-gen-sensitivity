@@ -1,5 +1,5 @@
 model,method,dataset,task,augmentation_rate,tsed_score,bert_score
-llama,keyboard,ourdataset.json,Q00011,0.0,,
+llama,keyboard,ourdataset.json,Q00011,0.0,1.0,0.0
 llama,keyboard,ourdataset.json,Q00011,0.0,0.36454545454545284,0.9568214416503906
 llama,keyboard,ourdataset.json,Q00011,0.0,,
 llama,keyboard,ourdataset.json,Q00011,0.0,,

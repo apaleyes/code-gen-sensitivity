@@ -2,8 +2,8 @@ model,method,dataset,task,augmentation_rate,tsed_score,bert_score
 llama,keyboard,ourdataset.json,Q00007,0.0,0.5589304528304293,0.9707905054092407
 llama,keyboard,ourdataset.json,Q00007,0.0,0.5589304528304293,0.9707905054092407
 llama,keyboard,ourdataset.json,Q00007,0.0,0.4619279128248192,0.9651436805725098
-llama,keyboard,ourdataset.json,Q00007,0.0,,
-llama,keyboard,ourdataset.json,Q00007,0.0,,
+llama,keyboard,ourdataset.json,Q00007,0.0,0.8269568832841572,0.0
+llama,keyboard,ourdataset.json,Q00007,0.0,0.7917054669349243,0.0
 llama,keyboard,ourdataset.json,Q00007,0.05,,
 llama,keyboard,ourdataset.json,Q00007,0.05,,
 llama,keyboard,ourdataset.json,Q00007,0.05,,
@@ -23,7 +23,7 @@ llama,keyboard,ourdataset.json,Q00007,0.2,0.2738782881845903,0.9553249478340149
 llama,keyboard,ourdataset.json,Q00007,0.2,0.4352000398265231,0.9707905054092407
 llama,keyboard,ourdataset.json,Q00007,0.2,0.4113285551397269,0.9707905054092407
 llama,keyboard,ourdataset.json,Q00007,0.2,0.4502076271883717,0.9662486910820007
-llama,keyboard,ourdataset.json,Q00007,0.2,,
+llama,keyboard,ourdataset.json,Q00007,0.2,0.6630423895188062,0.0
 llama,keyboard,ourdataset.json,Q00007,0.25,,
 llama,keyboard,ourdataset.json,Q00007,0.25,,
 llama,keyboard,ourdataset.json,Q00007,0.25,,
@@ -32,8 +32,8 @@ llama,keyboard,ourdataset.json,Q00007,0.25,,
 llama,keyboard,ourdataset.json,Q00007,0.3,0.24703053319475163,0.9593445658683777
 llama,keyboard,ourdataset.json,Q00007,0.3,0.31754108775430223,0.9632457494735718
 llama,keyboard,ourdataset.json,Q00007,0.3,0.3026356092147841,0.9622309803962708
-llama,keyboard,ourdataset.json,Q00007,0.3,,
-llama,keyboard,ourdataset.json,Q00007,0.3,,
+llama,keyboard,ourdataset.json,Q00007,0.3,0.2888181391079524,0.0
+llama,keyboard,ourdataset.json,Q00007,0.3,0.23306952183285884,0.0
 llama,keyboard,ourdataset.json,Q00007,0.35,,
 llama,keyboard,ourdataset.json,Q00007,0.35,,
 llama,keyboard,ourdataset.json,Q00007,0.35,,
@@ -53,7 +53,7 @@ llama,keyboard,ourdataset.json,Q00007,0.5,0.26662114641456497,0.9526512026786804
 llama,keyboard,ourdataset.json,Q00007,0.5,0.2628883547573039,0.953822135925293
 llama,keyboard,ourdataset.json,Q00007,0.5,0.27573492848844694,0.9575122594833374
 llama,keyboard,ourdataset.json,Q00007,0.5,0.23317684593740653,0.9558660387992859
-llama,keyboard,ourdataset.json,Q00007,0.5,,
+llama,keyboard,ourdataset.json,Q00007,0.5,0.34410174880763644,0.0
 llama,keyboard,ourdataset.json,Q00007,0.55,,
 llama,keyboard,ourdataset.json,Q00007,0.55,,
 llama,keyboard,ourdataset.json,Q00007,0.55,,
