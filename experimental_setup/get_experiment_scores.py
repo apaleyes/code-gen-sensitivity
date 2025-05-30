@@ -14,11 +14,11 @@ os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
 def calculate_metrics_to_csv(data_dir="./augmented_datasets_split/", out_dir="./augmented_datasets_metrics/", partial=False):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    bert_score_metric = torchmetrics.text.BERTScore(
+    """bert_score_metric = torchmetrics.text.BERTScore(
         model_name_or_path="roberta-large",
         max_length=512,
         truncation=True
-    ).to(device)
+    ).to(device)"""
     # consider chanign to nlp library (christian) try using spacy
 
     for model in os.listdir(data_dir):
@@ -74,11 +74,9 @@ def calculate_metrics_to_csv(data_dir="./augmented_datasets_split/", out_dir="./
                             aug_rate = row["augmentation_rate"]
                             rate_responses = method_responses.get(aug_rate, [])
                             index_within_rate = aug_counts.get(aug_rate, 0)
-
                             if not partial or i % 10 < 5:
                                 code = rate_responses[index_within_rate]
                                 aug_counts[aug_rate] = index_within_rate + 1
-
                                 if code and not code.startswith("ERROR"):
                                     if not row["tsed_score"]:
                                         changed = True
@@ -95,7 +93,7 @@ def calculate_metrics_to_csv(data_dir="./augmented_datasets_split/", out_dir="./
                                         refs = original_codes
                                         #score = bert_score_metric(preds, refs)["f1"].mean().item()
                                         row["bert_score"] = 0.0
-                                        print(f"{model} {method} {dataset} {task} [BERT] @ {aug_rate} #{index_within_rate}: {score}")
+                                        print(f"{model} {method} {dataset} {task} [BERT] @ {aug_rate} #{index_within_rate}: {0.0}")
                         except Exception as e:
                             print(f"[ERROR] {item_path} – {e}")
                         # print(row)
