@@ -166,7 +166,5 @@ TSED/
 
 # vscode
 .vscode/
-/rs2071_experiments/experiments/
-/rs2071_experiments/experiments-new/
 
 /paraphrasing_results/
