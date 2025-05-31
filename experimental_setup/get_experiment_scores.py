@@ -25,7 +25,7 @@ def calculate_metrics_to_csv(data_dir="./augmented_datasets_split/", out_dir="./
         model_dir = os.path.join(data_dir, model)
         for method in ['paraphraser']:#os.listdir(model_dir):
             method_dir = os.path.join(model_dir, method)
-            for dataset in ['newleetcode.json']:# os.listdir(method_dir):
+            for dataset in ['ourdataset.json']:# os.listdir(method_dir):
                 dataset_dir = os.path.join(method_dir, dataset)
 
                 for item_file in os.listdir(dataset_dir):
