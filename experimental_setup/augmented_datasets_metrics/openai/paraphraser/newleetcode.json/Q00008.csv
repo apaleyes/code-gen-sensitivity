@@ -4,11 +4,11 @@ openai,paraphraser,newleetcode.json,Q00008,0.0,0.8138848920863311,0.994426369667
 openai,paraphraser,newleetcode.json,Q00008,0.0,0.7894372605548342,0.9910049438476562
 openai,paraphraser,newleetcode.json,Q00008,0.0,0.8077322022978632,0.992078423500061
 openai,paraphraser,newleetcode.json,Q00008,0.0,0.8034280038655641,0.9946037530899048
-openai,paraphraser,newleetcode.json,Q00008,0.25,,
-openai,paraphraser,newleetcode.json,Q00008,0.25,,
-openai,paraphraser,newleetcode.json,Q00008,0.25,,
-openai,paraphraser,newleetcode.json,Q00008,0.25,,
-openai,paraphraser,newleetcode.json,Q00008,0.25,,
+openai,paraphraser,newleetcode.json,Q00008,0.25,0.5674820143884888,0.0
+openai,paraphraser,newleetcode.json,Q00008,0.25,0.5771122994652401,0.0
+openai,paraphraser,newleetcode.json,Q00008,0.25,0.5674820143884888,0.0
+openai,paraphraser,newleetcode.json,Q00008,0.25,0.5605776791206436,0.0
+openai,paraphraser,newleetcode.json,Q00008,0.25,0.5771122994652401,0.0
 openai,paraphraser,newleetcode.json,Q00008,0.6,0.29468966083117637,0.9624162912368774
 openai,paraphraser,newleetcode.json,Q00008,0.6,0.3224693205511833,0.9635494351387024
 openai,paraphraser,newleetcode.json,Q00008,0.6,0.3224904823492972,0.9637435078620911
