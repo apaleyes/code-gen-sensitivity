@@ -1,7 +1,7 @@
 model,method,dataset,task,augmentation_rate,tsed_score,bert_score
-llama,paraphraser,ourdataset.json,Q00011,0.0,1.0,
+llama,paraphraser,ourdataset.json,Q00011,0.0,1.0,0.0
 llama,paraphraser,ourdataset.json,Q00011,0.0,0.3612708498808839,0.9564124941825867
-llama,paraphraser,ourdataset.json,Q00011,0.0,,
+llama,paraphraser,ourdataset.json,Q00011,0.0,0.5741489684000323,0.0
 llama,paraphraser,ourdataset.json,Q00011,0.0,,
 llama,paraphraser,ourdataset.json,Q00011,0.0,,
 llama,paraphraser,ourdataset.json,Q00011,0.25,,
@@ -10,9 +10,9 @@ llama,paraphraser,ourdataset.json,Q00011,0.25,,
 llama,paraphraser,ourdataset.json,Q00011,0.25,,
 llama,paraphraser,ourdataset.json,Q00011,0.25,,
 llama,paraphraser,ourdataset.json,Q00011,0.6,0.17966640190627503,0.0
-llama,paraphraser,ourdataset.json,Q00011,0.6,,
-llama,paraphraser,ourdataset.json,Q00011,0.6,,
-llama,paraphraser,ourdataset.json,Q00011,0.6,,
+llama,paraphraser,ourdataset.json,Q00011,0.6,0.19925755181059876,0.0
+llama,paraphraser,ourdataset.json,Q00011,0.6,0.206184731378172,0.0
+llama,paraphraser,ourdataset.json,Q00011,0.6,0.206184731378172,0.0
 llama,paraphraser,ourdataset.json,Q00011,0.6,0.20191458879246632,0.9508088827133179
 llama,paraphraser,ourdataset.json,Q00011,0.9,,
 llama,paraphraser,ourdataset.json,Q00011,0.9,,
