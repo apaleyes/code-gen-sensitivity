@@ -4,11 +4,11 @@ llama,paraphraser,newleetcode.json,Q00009,0.0,0.8135030940429713,0.9954203367233
 llama,paraphraser,newleetcode.json,Q00009,0.0,0.8242431685517146,0.9961335062980652
 llama,paraphraser,newleetcode.json,Q00009,0.0,0.7476252319109461,0.9935843348503113
 llama,paraphraser,newleetcode.json,Q00009,0.0,0.6895918367346939,0.9942675828933716
-llama,paraphraser,newleetcode.json,Q00009,0.25,,
-llama,paraphraser,newleetcode.json,Q00009,0.25,,
-llama,paraphraser,newleetcode.json,Q00009,0.25,,
-llama,paraphraser,newleetcode.json,Q00009,0.25,,
-llama,paraphraser,newleetcode.json,Q00009,0.25,,
+llama,paraphraser,newleetcode.json,Q00009,0.25,0.8135030940429713,0.0
+llama,paraphraser,newleetcode.json,Q00009,0.25,0.7690238472329065,0.0
+llama,paraphraser,newleetcode.json,Q00009,0.25,0.7690764439464411,0.0
+llama,paraphraser,newleetcode.json,Q00009,0.25,0.7470834879406308,0.0
+llama,paraphraser,newleetcode.json,Q00009,0.25,0.7470834879406308,0.0
 llama,paraphraser,newleetcode.json,Q00009,0.9,0.6009925788497216,0.9903279542922974
 llama,paraphraser,newleetcode.json,Q00009,0.9,0.6009925788497216,0.9903279542922974
 llama,paraphraser,newleetcode.json,Q00009,0.9,0.6217077175697865,0.9908801317214966
