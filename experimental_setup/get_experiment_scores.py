@@ -23,9 +23,9 @@ def calculate_metrics_to_csv(data_dir="./augmented_datasets_split/", out_dir="./
 
     for model in os.listdir(data_dir):
         model_dir = os.path.join(data_dir, model)
-        for method in os.listdir(model_dir):
+        for method in ['paraphraser']:#os.listdir(model_dir):
             method_dir = os.path.join(model_dir, method)
-            for dataset in os.listdir(method_dir):
+            for dataset in ['ourdataset.json']:# os.listdir(method_dir):
                 dataset_dir = os.path.join(method_dir, dataset)
 
                 for item_file in os.listdir(dataset_dir):
@@ -74,7 +74,7 @@ def calculate_metrics_to_csv(data_dir="./augmented_datasets_split/", out_dir="./
                             aug_rate = row["augmentation_rate"]
                             rate_responses = method_responses.get(aug_rate, [])
                             index_within_rate = aug_counts.get(aug_rate, 0)
-                            if not partial or i % 10 < 5:
+                            if not partial or i % 10 < 10:
                                 code = rate_responses[index_within_rate]
                                 aug_counts[aug_rate] = index_within_rate + 1
                                 if code and not code.startswith("ERROR"):
