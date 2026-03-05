@@ -1,6 +1,6 @@
 # Code generation sensitivity
 
-This repository accompanies paper TODO: title here
+This repository accompanies paper "Code Roulette: How Prompt Variability Affects LLM Code Generation", LLM4Code workshop, ICSE 2026
 
 To install dependencies:
 1. (Recommended) Create a virtual environment
